@@ -1,0 +1,38 @@
+\thispagestyle{empty}
+
+\begin{figure}[h!]
+\begin{tikzpicture}[remember picture,overlay,shift=(current page.south west)] 
+	\begin{scope}
+		% Koordinaten für Titel...
+		\coordinate (A) at (3.7cm,20cm);
+		% ... und Angaben
+		\coordinate (B) at (3.7cm,3cm);
+		
+		% Uni-Logo
+		\node [right] at (2cm,25cm) {\includegraphics[width=12cm]{pictures/UNIHRO_LOGO_2025.pdf}};
+		
+		% Rahmen
+		\draw[line width=2pt,colorscheme,rounded corners=2ex] (0cm,0cm) +(2cm,0cm) --(2cm,23.5cm) -- (19cm,23.5cm) -- (19cm,0cm);
+		
+		% Titel
+		\node at (A) [below right] {\parbox{.85\textwidth}{\noindent\bfseries\sffamily{\Huge\raggedright \textcolor{colorscheme}{\titleasastring}\par}}};
+		
+		% Angaben
+		\node at (B) [above right] {\parbox{.85\textwidth}{
+				\begin{tabular}{ll}
+					Name: & \Large\authorasastring				\\[2pt]
+					Matrikelnummer: & 221201256					\\[1ex]
+					Abgabedatum: & \dateasastring				\\[5ex]
+					Betreuer und Gutachter: & \supervisor  		\\[2pt]
+					& Universität Rostock						\\[2pt]
+					& \ief										\\
+				\end{tabular}
+			}
+		};
+		
+		\fill[colorscheme] (0cm,0cm) +(2cm,0cm) rectangle (19cm,2cm);
+		\path (3.7cm,1.5cm) [right,white] node{\Large\sffamily\textbf{\Large{Bachelorarbeit}} \small{am \iuk}};
+		\path (3.7cm,.8cm) [right,white] node{\Large\sffamily\textbf{\ief}};
+	\end{scope}
+\end{tikzpicture}
+\end{figure}
