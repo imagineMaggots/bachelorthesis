@@ -10,7 +10,7 @@
 
 
 ## directories
-| <div style="width:10vw">Ordner</div> | <div style="width:25vw">Korresp. Teilaufgabe</div> | <div style="width:40vw">Inhalte</div> |
+| <div style="width:15vw">Ordner</div> | <div style="width:25vw">Korresp. Teilaufgabe</div> | <div style="width:40vw">Inhalte</div> |
 | --- | --- | --- |
 | quarantine | keine | alles aus dem alten GitHub landet immer zunächst hier |
 | thesis | alle | die Bachelorarbeit (TeX) |
