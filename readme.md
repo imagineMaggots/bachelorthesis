@@ -1,5 +1,5 @@
 ## Automatische Sprachübersetzung von LaTeX-Dokumenten
-| <div style="width:80vw">Teilaufgaben (ein wenig umsortiert und umformuliert)</div> |
+| <div style="width:90vw">Teilaufgaben (ein wenig umsortiert und umformuliert)</div> |
 |---|
 | Herausarbeiten der typischen Problemfälle und Testen der bestehenden Ansätze an diesen Problemfällen |
 | Übersicht zu bestehenden Ansätzen der Problemlösung |
@@ -10,7 +10,7 @@
 
 
 ## directories
-| <div style="width:15vw">Ordner</div> | <div style="width:25vw">Korresp. Teilaufgabe</div> | <div style="width:40vw">Inhalte</div> |
+| <div style="width:15vw">Ordner</div> | <div style="width:25vw">Korresp. Teilaufgabe</div> | <div style="width:48vw">Inhalte</div> |
 | --- | --- | --- |
 | quarantine | keine | alles aus dem alten GitHub landet immer zunächst hier |
 | thesis | alle | die Bachelorarbeit (TeX) |
