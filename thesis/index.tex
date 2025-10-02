@@ -1,0 +1,69 @@
+\documentclass[11pt,toc]{article}
+\usepackage[left=2cm,right=2cm, top = 2cm ]{geometry}
+\author{Hendrik Theede}
+\title{\ldots}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning}
+\usepackage{pgfplots}
+\usepackage[nottoc]{tocbibind}
+
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+
+%%% Uni-HRO relevantes
+\newcommand{\authorasastring}{Hendrik Theede}											% Autor
+\newcommand{\dateasastring}{2025\-12\-02}												% Datum, siehe oben
+\newcommand{\titleasastring}{Automatische Sprachübersetzung von \LaTeX{}-Dokumenten}	% Titel
+\newcommand{\supervisor}{Prof.\ Dr.\ rer.\ nat.\ habil. Clemens H. Cap}					% Betreuer
+\newcommand{\ief}{Fakultät für Elektrotechnik und Informatik}							% Fakultaet
+\definecolor{colorscheme}{cmyk}{0.90, 0.30, 0.00, 0.00} 								% Farbschema der Fakultaet; Siehe Corp. Design
+\newcommand{\iuk}{Lehrstuhl für Informations- und Kommunikationsdienste}				% Institut
+
+%%% TeX-relevant (siehe: titlepage.tex)
+\author{\authorasastring}
+\date{\datesasatring}
+\title{\titleasastring}
+
+%%% "Deutsche Sprache"-relevant
+\renewcommand*\contentsname{Inhaltsverzeichnis}
+
+% Muss ans Ende, weil sonst übernimmt ein Biber aus der Bibliothek
+\usepackage{hyperref}					% TeX!	
+\hypersetup{
+		linktoc=all,
+		% colorlinks=true, % Für offizielle Releases das % vorne wegnehmen. Ersetzt die Boxen um Links durch die eigentlichen Farben
+		linkcolor=black,
+		urlbordercolor={1 0 0},
+		urlcolor=blue, 
+		breaklinks=true,
+		pdftitle=Abschlussarbeit Theede 221201256,
+		pdfauthor=Hendrik Theede,
+		pageanchor,
+		backref,
+}
+
+\begin{document}
+\pagenumbering{Roman}
+\input{titlepage}
+\newpage
+\newpage
+\section*{Abstrakt}
+placeholder
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\include{introduction/short}
+\include{problem/list}
+\newpage
+\section{Eigenständigkeitserklärung}
+Ich versichere hiermit, dass ich die vorliegende Arbeit selbstständig angefertigt und ohne fremde Hilfe verfasst habe. %, es sei denn die Aufgabenstellung verlangte unausweichlich einer (maschinellen) Unterstützung
+Dazu habe ich keine außer den von mir angegebenen Hilfsmitteln und Quellen verwendet und die den benutzten Werken inhaltlich und
+wörtlich entnommenen Stellen habe ich als solche kenntlich gemacht. 
+Ich versichere, dass die eingereichte elektronische Fassung mit den gedruckten Exemplaren übereinstimmt.
+\bibliography{index}
+\end{document}

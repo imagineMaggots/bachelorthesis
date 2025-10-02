@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
+\contentsline {section}{\numberline {2}Problemfälle}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Simple Probleme}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Komplexere Probleme}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Spezielle Probleme}{4}{subsection.2.3}%
+\contentsline {subparagraph}{In Tabellen}{4}{section*.13}%
+\contentsline {subparagraph}{In mathematischen Umgebungen}{4}{section*.14}%
+\contentsline {subsection}{\numberline {2.4}Weitere Schwierigkeiten}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{6}{section.3}%
