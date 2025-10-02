@@ -12,5 +12,9 @@
 ## directories
 | <div style="width:15vw">Ordner</div> | <div style="width:25vw">Korresp. Teilaufgabe</div> | <div style="width:48vw">Inhalte</div> |
 | --- | --- | --- |
+| guides | keine | manuals und tutorials |
 | quarantine | keine | alles aus dem alten GitHub landet immer zunächst hier |
 | thesis | alle | die Bachelorarbeit (TeX) |
+
+## important notes
+- 'Space' (%20) ist nicht die einzige Art und Weise Whitespace zu produzieren, denkbar sind auch '\ ', '\@' und Tilde
