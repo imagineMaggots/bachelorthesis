@@ -17,4 +17,4 @@
 | thesis | alle | die Bachelorarbeit (TeX) |
 
 ## important notes
-- 'Space' (%20) ist nicht die einzige Art und Weise Whitespace zu produzieren, denkbar sind auch '\ ', '\@' und Tilde
+- 'Space' (%20) ist nicht die einzige Art und Weise Whitespace zu produzieren, denkbar sind auch '\ ', '\@' und Tilde (erstes simples Problem wird whitespace und letztes spezielles problem wird auch wieder whitespace =)
