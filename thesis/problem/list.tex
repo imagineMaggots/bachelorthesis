@@ -24,7 +24,7 @@ Gleiches ist zu berücksichtigen, sollte das Kommando \verb|\renewcommand| verwe
 wodurch sich neben den in~\ref{par:whitespace} aufgezeigten Problemen nicht nur für etwaige Farboptionen und -einstellungen Strings aufzeigen, welche nicht übersetzt werden dürfen, sondern auch eigens (vom \TeX{}-User) Ausgedachte (#Hier: Verweis auf Anhang passend).
 
 % Eigentlich PGF, aber Frage mich gerade auch: könnten u.U. Links übersetzt werden? Und auch die Optionen von hyperref sollten mal ggb. einer Übersetzung geprüft werden!!!
-\paragraph*{Pakete} bieten eine \TeX{}-Schnittstelle für die gesamte Welt! Zumindest rein theoretisch natürlich. Technisch gesehen bieten sie die Möglichkeit zuvor beschriebene Umgebungen und Makros in einer eigenen \texttt{.bst} zu bündeln, welche ihrerseits (vorrangig via) CTAN (jedoch auch auf jeglichem anderem Wege) zu anderen \TeX{}-Usern übertragen werden könnte. Verschiedene Pakete könnten hierbei eine Vielzahl individueller Probleme aufwerfen, zunächst ist jedoch mehr ein Fokus auf solche zu setzen, welche die Arbeit anderer Programme involvieren. Sie in Dokument mit einzubinden ist recht leicht und funktioniert nur auf eine begrenzte Anzahl an Methoden (\texttt{requirepackage} und \texttt{usepackage}) und sind ihrerseits, genauso wie~\ref{par:anderedateien} 
+\paragraph*{Pakete} bieten eine \TeX{}-Schnittstelle für die gesamte Welt! Zumindest rein theoretisch natürlich. Technisch gesehen bieten \textit{packages} die Möglichkeit zuvor beschriebene Umgebungen und Makros in einer eigenen \texttt{.sty} zu bündeln, welche ihrerseits (vorrangig via) CTAN (jedoch auch auf jeglichem anderem Wege) zu anderen \TeX{}-Usern übertragen werden könnte. Verschiedene Pakete könnten hierbei eine Vielzahl individueller Probleme aufwerfen, zunächst ist jedoch mehr ein Fokus auf solche zu setzen, welche die Arbeit anderer Programme involvieren. Sie in einem Dokument einzubinden ist recht leicht und funktioniert nur mit einer begrenzten Anzahl an Methoden (\texttt{requirepackage} und \texttt{usepackage}) und muss ihrerseits, genauso wie~\ref{par:anderedateien}, stets zur Kompilierzeit im System vorhanden sein. 
 
 \subparagraph*{Ti\textit{k}Z} ist zum Einen eine Möglichkeit in \TeX{} zu malen, jedoch hauptsächlich dahingegen konszipiert in einem wissenschaftlichen Kontext verwendbare Diagramme mathematisch zu beschreiben oder auf Grundlage von Messwerten zu erzeugen. Die Syntax von Ti\textit{k}Z und \texttt{pgfplots} kann innerhalb eines Dokumentes auch freistehende englische Wörter beinhalten, wie zum Beispiel in\ldots
 \begin{verbatim}
@@ -48,9 +48,44 @@ wodurch sich neben den in~\ref{par:whitespace} aufgezeigten Problemen nicht nur 
 \subparagraph*{Mathematische Formeln} selbst sind kein eigenes Paket, jedoch einer der praktischsten Use-Cases von \TeX{}. Insbesondere für Menschen, welche sich eine handschriftliche Qualität und \enquote{Streichlust} (meint:\ das Durchstreichen auf dem Papier, sollte man sich verschrieben haben) mit der des Autoren (dieser Arbeit) teilen, sollte das digitale Medium \TeX{} einiges an Aufwand ersparen und jegliche Herleitungen deutlicher und übersichtlicher machen. % Theorem Package, jedoch auch insgesamt
 Hierzu gibt es wiederum mehrere denkbare Pakete, welche diesen bereits in \TeX{} inhärent verankerten \enquote{\textit{math mode}} erweitern oder vereinfachen können. Dabei muss man sich jedoch zunächst wieder vor Augen führen, welche Inhalte man darstellen möchte und inwiefern ein Programm, welches \texttt{.tex} übersetzt bestimmte Inhalte übersetzen muss. Dadurch wird schnell klar, dass Pakete, wie zum Beispiel \texttt{amsmath} und Untergeordnete nicht sonderlich relevant werden, da sie ihrerseits nur Befehle beinhalten, welche der \enquote{normalen} \TeX{}-Syntax obliegen. Lediglich Pakete wie zum Beispiel \texttt{theorem} sind hierbei (im Kontext der gegebenen Aufgabenstellung) von näherem Interesse, da sie sich dadurch auszeichen, dass sie bereits zur (Kompilierzeit in der) Präambel auf eigener Syntax basierend rein textliche Strings definieren. Aus jeglichem Mathematikmodul, -seminar, -kurs, -unterricht und dergleichen sollten einige geläufige Teile von Herleitungen oder Beweisen bekannt sein sowie übliche Terminologie für solche Sektionen. Beispielsweise müsste das Wort \enquote{Definition} einem jeden Studierenden einen kalten Schauer den Rücken herunterlaufen lassen, muss es glücklicherweise in diesem Moment allerdings nicht, da in \TeX{} (bzw.\ \texttt{thesis}) dieses Wort nur ein Mal (und auch vor dem eigentlichen Dokument) definiert wird und zwar in der Form \verb|\newtheorem{definition}{Definition}|. \TeX{}nisch gesehen passiert hier nichts weiter, als eine Definition einer neuen Umgebung, welche sich danach (innerhalb des Dokumentes) darin äußert, dass das Wort in den Zweiten geschwungenen Klammern breit gedruckt wird und als Wiedererkennungsmerkmal für (hier:) eine Definition dienen soll. Normalerweise sollte es in der Mathematik nur wenigen Definitionen bedürfen. Anders ist dies jedoch bei Beweisen, von welchen überabzählbar viele gebraucht werden und gebraucht werden könnten. Eine sich hierbei aufzeigende Schwierigkeit könnte es werden einen Überblick über solche zu schaffen (innerhalb einer z.B.\ Vorlesung) ohne diesen einen Weg mitzugeben schnellstmöglich wiederauffindbar zu werden, ohne den gesamten Beweis zu denotieren. Hierzu kann man die Fähigkeit von \texttt{theorem} nutzen, dass man z.B.\ Theoreme/Behauptungen einem \TeX{}-Abschnitt zuordnen kann und auch andere \texttt{theorem}-Umgebungen Anderen desselben Paketes (über eckige Klammern nach (um ein \enquote{\texttt{.zahl}} zu erzeugen) oder vor der Benennung dieser namensgebenden Definition (um ein \enquote{\texttt{nächsthöhere "theorem"-zahl}} zu erzeugen)).% Ergibt Voriges Sinn?
 
+% Oh weh, des hier könnte schwierig werden!!!!!!!!!!!!!!!!!!!!!!!!!
+\subparagraph*{Eigene} Pakete innerhalb \LaTeX{} zu erstellen ist natürlich auch möglich, wobei danach zu differenzieren ist, ob man ein \textit{Klasse} oder ein \textit{Paket} schreiben möchte. Das \LaTeX{} Project Team beschreibt den Unterschied grob als eine Kompatibilität der definierten Kommandos mit jeglicher anderen Klasse als ein Paket und nur anderenfalls als eine Klasse. (Siehe, an #Hendrik gerichtet und zukünftig zu entfernen: https://www.latex-project.org/help/documentation/clsguide.pdf, falls dies zu lesen ist: ein Oversight).
+
 % Wo man eher weniger dran denkt
-\subsection{Spezielle Probleme}
+\subsection{Spezielle(re) Probleme}
 \paragraph*{Höhere Vernestungsgrade}% hier passt \relax mit rein, so als Beispiel, hab da ja ein zwei Tabellen rumliegen
+können in \TeX{} auf verschiedenste Arten und Weisen entstehen, daher zunächst eine kurze Erinnerung, was der Begriff in der Informatik und Mathematik meint. Recht einfach wird die Problemstellung der Vernestung an einem Beispiel verdeutlichbar: Ist $((((((((1+1)-1)-2)*3)/4)\% 5)/6)*7)$ leicht auszuwerten? Eine hohe Vernestung bedeutet mehrerlei Klammern innerhalb von (einer) Klammer(n) vorzufinden. Inwiefern kann dies in der Informatik auftreten? Betrachtet man bestimmte syntaktische Elemente als klammerähnlich (wie z.B.\ ein \texttt{for(a)\{befehl()\}} in C, wobei es sich interessanterweise um tatsächliche Klammern hält), zeigt sich schnell eine Unlesbarkeit in Quelltexten auf, sollte man den Grad dieser Verklammerung erhöhen. Wäre z.B.\ 
+\begin{verbatim}
+    if(x)
+    {
+        if(y)
+        {
+            if(z)
+            {
+                if(k)
+                {
+                    if(l)
+                    {
+                        if(m)
+                        {
+                            if(n)
+                            {
+                                if(a)
+                                {
+                                    if(b)
+                                    {
+                                        if(c) return true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+\end{verbatim}
+ein guter und gut wartbarer C-Code? (Nein, jedoch syntaktisch richtig). Dies ergibt mathematisch die Aussage: $ans=1&c&b&a&n&m&l&k&z&y&x$ (eigentlich: XOR statt OR, @Hendrik: fixe das!!!). Auch wenn solche hohen Vernestungsgrade nicht erstrebenswert sind, sollte die wohlmögliche Existenz dieser nicht missachtet sein. Dies wirft die Frage auf, wo solche Vernestungen schnellmals auch unbemerkt entstehen könnten.
 \subparagraph{In Tabellen}
 \subparagraph{Zwischen verschiedenen Umgebungen}
 \subparagraph{Insgesamt} kann man innerhalb von \TeX{} auf gar absurde Art und Weise eine hohe Vernestung erzielen.% Hier brauchst du wirklich ein gutes Beispiel, um das Wort "absurd" in der BA zu verwenden. Wenn du das schaffst, dann wirklich props an dich. (props: proper respect(s))
