@@ -5,7 +5,7 @@
 \contentsline {subsection}{\numberline {2.3}Spezielle Probleme}{7}{subsection.2.3}%
 \contentsline {subparagraph}{In Tabellen}{7}{section*.15}%
 \contentsline {subparagraph}{Zwischen verschiedenen Umgebungen}{8}{section*.16}%
-\contentsline {subsection}{\numberline {2.4}Weitere Schwierigkeiten}{9}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{10}{section.3}%
-\contentsline {section}{Literaturverzeichnis}{11}{section*.25}%
-\contentsline {section}{\numberline {A}Anhänge}{12}{section.chX.1}%
+\contentsline {subsection}{\numberline {2.4}Weitere Schwierigkeiten}{11}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{12}{section.3}%
+\contentsline {section}{Literaturverzeichnis}{13}{section*.25}%
+\contentsline {section}{\numberline {A}Anhänge}{14}{section.chX.1}%

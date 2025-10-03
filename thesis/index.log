@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  3 OCT 2025 14:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  3 OCT 2025 19:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1014,30 +1014,37 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              for symbol `textbraceleft' on input line 89.
 
 [7] [8]
-Overfull \hbox (1.81738pt too wide) in paragraph at lines 177--179
+Overfull \hbox (7.74286pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10.95 n^^?amlich neben den ein-facheren Beispie-len, dass sich Ti\
+OT1/cmr/m/it/10.95 k\OT1/cmr/m/n/10.95 Z Graphiken, Quell-code an-derer Sprache
+n, Kapitelti-
+ []
+
+[9]
+Overfull \hbox (1.81738pt too wide) in paragraph at lines 234--236
 \OT1/cmr/m/n/10.95 Beabsichtigt ist dieser Ab-schnitt nicht in der Reihe von Pr
 ob-le-men aufge-fasst, son-dern als Schwierigkeit$($en$)$
  []
 
-
-Overfull \hbox (17.67905pt too wide) in paragraph at lines 179--181
+[10]
+Overfull \hbox (17.67905pt too wide) in paragraph at lines 237--239
  []\OT1/cmr/bx/n/10.95 Mehrdeutigkeiten \OT1/cmr/m/n/10.95 in-ner-halb einer Sp
-rache f^^?uhren unter Umst^^?anden zu missverst^^?andlichen []Ubersetzungen. 
+rache f^^?uhren unter Umst^^?anden zu missverst^^?andlichen []Ubersetzungen.
  []
 
 
-Overfull \hbox (2.9935pt too wide) in paragraph at lines 183--185
+Overfull \hbox (2.9935pt too wide) in paragraph at lines 242--244
 \OT1/cmr/m/n/10.95 auszuge-hen sein, dass diese in-ter-na-tional Ver-wen-dung f
 inden. Einzig und allein Distanz- und Masseangaben
  []
 
-) [9] [10
+) [11] [12
 
 
-] (index.bbl) [11]
+] (index.bbl) [13]
 \openout2 = `appendices/appendix.aux'.
 
- (appendices/appendix.tex) [12
+ (appendices/appendix.tex) [14
 
 ] (index.aux
 (introduction/short.aux) (problem/list.aux) (appendices/appendix.aux))
@@ -1059,10 +1066,10 @@ Package rerunfilecheck Info: File `index.out' has not changed.
 (rerunfilecheck)             Checksum: A415BE0DD3080A0A568294A39EE6B20D;1223.
  ) 
 Here is how much of TeX's memory you used:
- 33029 strings out of 474485
- 773225 string characters out of 5744206
+ 33032 strings out of 474485
+ 773247 string characters out of 5744206
  1951542 words of memory out of 5000000
- 54731 multiletter control sequences out of 15000+600000
+ 54732 multiletter control sequences out of 15000+600000
  571548 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,87p,2704b,850s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1085,9 +1092,9 @@ type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Sxyx/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Sxyx/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on index.pdf (15 pages, 693762 bytes).
+Output written on index.pdf (17 pages, 701302 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
+ 289 PDF objects out of 1000 (max. 8388607)
+ 55 named destinations out of 1000 (max. 500000)
  90 words of extra memory for PDF output out of 10000 (max. 10000000)
 

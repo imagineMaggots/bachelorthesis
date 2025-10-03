@@ -1,0 +1,31 @@
+\documentclass{article}
+\begin{document}
+{
+    \catcode98=2 % b=}
+    \catcode99=1 % c={
+
+    c\Large This is large textb\\
+}
+and this is regular one.
+
+{
+    \newcommand{\kk}{\catcode}
+    \kk98=2 % b=}
+    \kk99=1 % c={
+
+    c\Large This is large textb\\
+}
+and this is regular one.
+
+{
+    \newcommand{\kk}{\catcode}
+    \def\www{\newcommand}
+    \renewcommand{\newcommand}{\www}
+    \www{\abc}{ABC}
+    \kk98=2 % b=}
+    \kk99=1 % c={
+    
+    c\Large This is large textb\\
+}
+and this is regular one.
+\end{document}

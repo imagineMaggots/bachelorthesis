@@ -114,7 +114,7 @@ können in \TeX{} auf verschiedenste Arten und Weisen entstehen, daher zunächst
         }
     }
 \end{verbatim}
-ein leicht lesbares, verständliches und demnach wartbares C-Code-Fragment? (Nein, könnte jedoch syntaktisch richtig sein). Dies ergibt mathematisch die Aussage: $return=1\land c\land b\land a\land m\land l\land k\land z\land y\land x$. Auch wenn solche hohen Vernestungsgrade nicht erstrebenswert sind, sollte die wohlmögliche Existenz dieser nicht missachtet sein. Dies wirft die Frage auf, wo solche Vernestungen schnellmals auch unbemerkt entstehen könnten.
+ein leicht lesbares, verständliches und demnach wartbares C-Code-Fragment? (Nein, könnte jedoch syntaktisch richtig sein). Dies ergibt mathematisch/logisch die Aussage: $return=1\land c\land b\land a\land m\land l\land k\land z\land y\land x$. Auch wenn solche hohen Vernestungsgrade nicht erstrebenswert sind, sollte die wohlmögliche Existenz dieser nicht missachtet sein. Dies wirft die Frage auf, wo solche Vernestungen schnellmals auch unbemerkt entstehen könnten.
 
 \subparagraph{In Tabellen} ist eine Vernestung zunächst nicht auszuschließen. So kann es schnellmalig der Fall sein, dass man innerhalb einer Zelle einen numerischen Wert mathematisch abbilden möchte, jedoch eine physische Einheit textlich formatiert sehen will (ohne sich hierbei dem \texttt{siunitx} Paket zu bedienen). % Veranschaulicht in Anhang XY
 Nun sollte man zumindest davon ausgehen, dass sich Tabellen, wie man sie in wissenschaftlichen Veröffentlichungen vorfinden kann, zunächst in einer Form wie beispielsweise: 
@@ -157,7 +157,8 @@ So ist es auch denkbar, dass man eine Tabelle erstellen möchte, in welcher eine
     4x &= 2 \\
     x &= \frac{1}{2} \textrm{\@\ldots zeigt zugleich, dass $\frac{1}{2}\times 4=2$ ist}
 \end{align*}
-Dies alleine ist natürlich noch keine sonderlich hohe Vernestung, zeigt jedoch die Vorgehensweise auf, mit welcher solche Vernestungen erzeugt werden können. Nun könnte argumentiert werden, dass in der herkömmlichen Dokumentenklasse \texttt{article} solche \textit{in-line} Wechsel nur bedingt oft vorkommen und behandelt werden müssten, da ansonsten zu lange Zeilen nicht mehr innerhalb eines Dokumentes angezeigt werden würden, jedoch gibt es einen Workaround hierfür, nämlich die Dokumentenklasse \texttt{standalone}, welche theoretisch gesehen unendlich lange Dokumente erzeugen könnte, selbst wenn diese nur eine sehr lange Zeile sind.% Man könnte auch mal nen (De-) Coder bauen, der solche Dokumente via einer z.B. Kamera liest während diese laufend gedruckt werden und dann (auf diesen gelesenen Zeichen basierend) einen binären Code ausgibt. Am besten würde man hier erstmal mit Zahlen und einfachen Rechenoperationen anfangen (wobei: Buchstaben = Zahlen).
+Dies alleine ist natürlich noch keine sonderlich hohe Vernestung, zeigt jedoch die Vorgehensweise auf, mit welcher solche Vernestungen erzeugt werden können. Nun könnte argumentiert werden, dass in der herkömmlichen Dokumentenklasse \texttt{article} solche \textit{in-line} Wechsel nur bedingt oft vorkommen und behandelt werden müssten, da ansonsten zu lange Zeilen nicht mehr innerhalb eines Dokumentes angezeigt werden würden. Hierfür existiert allerdings ein Workaround und zwar die Dokumentenklasse \texttt{standalone}, welche theoretisch gesehen unendlich lange Dokumente erzeugen kann, selbst wenn diese nur eine sehr lange Zeile sind.% Man könnte auch mal nen (De-) Coder bauen, der solche Dokumente via einer z.B. Kamera liest während diese laufend gedruckt werden und dann (auf diesen gelesenen Zeichen basierend) einen binären Code ausgibt. Am besten würde man hier erstmal mit Zahlen und einfachen Rechenoperationen anfangen (wobei: Buchstaben = Zahlen).
+Solange auf jeden Wechsel in eine mathematische Umgebung ein Wechsel (an geeigneter Stelle) aus dieser heraus folgt und das Gleiche auch für Text-Umgebungen vergewissert ist, gibt es an sich keinen Grund ein Limit bei dieser Art von Vernestung zu setzen.
 %%% Genaueres Beispiel zeigen, im Zweifel auch erstmal in der Mail.
 
 % \subparagraph{Insgesamt} kann man innerhalb von \TeX{} auf nahezu absurde Art und Weise eine hohe Vernestung erzielen.% Hier brauchst du wirklich ein gutes Beispiel, um das Wort "absurd" in der BA zu verwenden. Wenn du das schaffst, dann wirklich props an dich. (props: proper respect(s))
@@ -168,21 +169,79 @@ Dies alleine ist natürlich noch keine sonderlich hohe Vernestung, zeigt jedoch 
 
 
 \paragraph*{Kommentare}% mit das Fieseste, was mir eingefallen ist
+sind ein aus jeglicher Programmiersprache bekanntes Feature um die Funktionsweise eines Quellcodes zu erklären, damit das Nachvollziehen dieses Codes einem anderen Entwickler erleichtert wird. Zu erwarten wäre zunächst nur eine reine Nutzung von Kommentaren für ihren ursprünglichen Zweck, also in der Form: 
+\begin{Verbatim}[breaklines=true, breakanywhere=true]
+    This is some text.\\[7pt]
+    \noindent This is some more text.\\
+    % This is a comment
+    \noindent Comments won't be printed!
+\end{Verbatim}
+Andererseits ist es auch nicht unüblich Code auszukommentieren, insofern dieser nicht funktioniert, da er syntaktische Fehler (ggb.\ der jeweiligen Programmiersprache) beherbergt. 
+\begin{Verbatim}[breaklines=true, breakanywhere=true]
+    %\begin[environment]
+    %    Testing a new environment!
+    %\end[environment]
+    % Why doesn't this work???
+\end{Verbatim}
+Fraglich wird hierbei, inwiefern auch hier mitunter komplexere Beispiele erfasst werden. Denkbar ist nämlich neben den einfacheren Beispielen, dass sich Ti\textit{k}Z Graphiken, Quellcode anderer Sprachen, Kapiteltitel (welche übersetzt werden sollten) oder gar Kommentare in Einzelnen dieser \TeX{}-Quellcodes befinden.
 
-\paragraph*{Definitionen\label{par:definitionen}} 
-\paragraph*{Catcode und Unicode}
+\paragraph*{Definitionen\label{par:definitionen}} sind die technische \TeX{} Grundlage von \LaTeX{} Makros. Neben der Möglichkeit einzelne Zahlen (und Zeichenketten) mit Hilfe von ihnen zu definieren, kann man sie ebenfalls dafür nutzen eigene Logik in einem Dokument zu integrieren. 
+\begin{Verbatim}[breaklines=true, breakanywhere=true]
+    \def\a{Nummer}
+    \def\b{Zahl}
 
+    \ifx\a\b
+    This sentence will be expected to be read, if this document has been translated into english.
+    \else
+    Dieser Satz wird zu sehen sein, wenn dies ein deutsches Dokument ist.
+    \fi
+
+    \a\b\a\b
+\end{Verbatim}
+Wenn nun die beiden Definitionen übersetzt werden würden, dann würden die inhaltlichen Aussagen der beiden Sätze stimmen. Dreht man jedoch die Logik der beiden Sätze um (\textit{has}$\rightarrow$\textit{hasn't} und \textit{ein}$\rightarrow$\textit{kein}), dann würde eine Übersetzung die inhaltlichen Aussagen der Sätze verfälschen. Ob in solchen Fällen \texttt{def}'s übersetzt werden sollen, wäre unvorhersagbar, sollte man keine Informationen darüber erhalten können, inwiefern sie logisch genutzt werden. Diese Information liegt jedoch im Dokument vor, zumindest rein theoretisch gesehen und es wäre denkbar, dass ein übersetzendes Programm erst prüfen könnte, ob sowohl \verb|\def| genutzt wurde und danach diese definierten Makros mit einer Logik verknüpft wurden, damit danach innerhalb dieser Verknüpfung (bspw.\ die obige \texttt{if-else}) danach geforscht werden kann, inwiefern dies Rückschlüße darauf liefern kann, ob übersetzt werden soll oder nicht.
+
+\paragraph*{Catcode und Unicode} hätten eigentlich nicht nur einen eigenen Paragraphen, sondern wahrscheinlich ein ganzes Kapitel verdient. Jedoch lässt sich die Funktionsweise von \texttt{catcode} sehr schnell auf den Punkt bringen. Jedem Unicode-konformen Zeichen (welches in einer Textdatei auf einem Computer, bzw.\ innerhalb der \TeX{}-Engine landen kann) könnte eine Bedeutung für den \TeX{}-Parser zugewiesen werden. Die Buchstaben \texttt{c} und \texttt{b} könnten von ihrer Bedeutung mit den Zeichen \verb|{| und \verb|}| gleichgesetzt werden. 
+\begin{Verbatim}[breaklines=true, breakanywhere=true]
+    {
+        \catcode99=1 % c={
+        \catcode98=2 % b=}
+    
+        c\Large This is large textb\\
+    }
+    and this is regular one.
+\end{Verbatim}
+Geht man bedacht an die Sache heran und definiert passend jeweilige Makros um:
+\begin{Verbatim}[breaklines=true, breakanywhere=true]
+    {
+        \catcode99=1 % c={
+        \catcode98=2 % b=}
+    
+        c\Large This is large textb\\
+    }
+    and this is regular one.
+\end{Verbatim}
+So lassen sich einzelnen Zeichen völlig neue Bedeutungen für die \TeX{}-Engine geben! Vermutlich könnte man sogar dazu in der Lage sein, dass man jegliche Zeichenkette zu einem denkbaren und beliebig interpretierbaren Makro macht, sodass selbst:
+\begin{Verbatim}[breaklines=true, breakanywhere=true]
+    afcq2h9d.bcshd<
+\end{Verbatim} 
+äquivalent zu 
+\begin{Verbatim}[breaklines=true, breakanywhere=true]
+    \section{begin}
+\end{Verbatim} 
+werden könnte. Hierbei stellt sich jedoch die Frage, inwiefern dies sinnvoll ist und eine Erleichterung in der Erstellung von Dokumenten bietet.
 
 \subsection{Weitere Schwierigkeiten}\label{subsec:weitereschwierigkeiten}
 Beabsichtigt ist dieser Abschnitt nicht in der Reihe von Problemen aufgefasst, sondern als Schwierigkeit$($en$)$ formuliert, da man sich hier von den Problemen abwenden würde, welche in der \TeX{}-Syntax auftreten und bei sprachliche Hürden angelangt, welche sich für und zwischen verschiedenen Sprachen zeigen könnten.
 % Siehe uni/thesisbsc/tests/prblems/list.md/##9
-\paragraph*{Mehrdeutigkeiten} innerhalb einer Sprache führen unter Umständen zu missverständlichen Übersetzungen.  % Hier würde das von Warren, siehe andere Einleitung (introduction/intro.tex) evtl. eignen für weitere Beispiele, nicht nur welche von mir? k.P.
+
+\paragraph*{Mehrdeutigkeiten} innerhalb einer Sprache führen unter Umständen zu missverständlichen Übersetzungen. Ein recht einfaches Beispiel bietet bereits das sehr allgegenwärtige Wort \enquote{ungerade}, welches je nach Kontext als \enquote{schief} interpretiert werden könnte, oder aber für die Aussage, dass eine Zahl modulo 2 nicht 0 ergibt. Weiterhin existieren selbst sprachunabängig Mehrdeutigkeiten für bestimmte Wörter/Konstante. So muss zum Beispiel für eine \enquote{Meile} je nach Kontext abgewogen werden, ob es sich um eine Seemeile oder eine Landmeile handelt (zwischen welchen immerhin rund 200 Meter Unterschied bestehen).  % Hier würde das von Warren, siehe andere Einleitung (introduction/intro.tex) evtl. eignen für weitere Beispiele, nicht nur welche von mir? k.P.
 % Beispiel: Seemeile vs. Landmeile auch sprachenübergreifend unterschiedlich und kontextabhängig
-\paragraph*{Redewendungen} sind eine Art und Weise\ldots
+
+\paragraph*{Redewendungen} sind eine Art und Weise anderweits nicht beschreibbare Inhalte und Situationen zu schildern. Jedoch unterscheiden sich diese je nach Sprache, sodass das deutsche \enquote{Ich glaub ich spinne} im Englischen nur Verwirrung schüren würde, sollte es Wort für Wort übersetzt worden sein.
 
 \paragraph*{SI-Einheiten\label{par:siunits}} sind die eigentlichen Grundeinheiten, auf welche man versucht physikalische Größen (genauer:\ für diese hergeleiteten Einheiten) zurückzuführen. Mit sehr wenigen Ausnahmen sollte davon auszugehen sein, dass diese international Verwendung finden. Einzig und allein % die Ami's
 Distanz- und Masseangaben \textit{könnten} je nach Sprache variieren, wie das imperiale Maß gegenüber dem metrischen Maß (e.g., Zoll und Meile ggb.\ Zentimeter und Kilometern, \texttt{lbs} ggb.\ \texttt{kg}; bei welchen es sich zwar nicht um die \textit{eigentlichen} Grundeinheiten handelt, jedoch in dieser Form in der realen Größenordnung miteinander vergleichbarer werden).% vergleichbarer um nicht näher zu sagen, weil "näher" wäre hier objektiv falsch (1kg\approx 2.205 lbs und 1km\approx 1.6 Landmeilen und 1km\approx 1.8 Seemeilen)
 
 \paragraph*{Wirrer Sprachwechsel} meint ein rapides Springen zwischen verschiedenen Menschensprachen innerhalb eines Dokumentes. Die Fragestellung hierbei ist, inwiefern ein sprachlicher Wechsel innerhalb eines Dokumentes erfasst wird, sollte eine automatische Spracherkennung der Ausgangssprache stattfinden. Dabei können verschiedenste (theoretisch: überabzählbar viele) Fälle auftreten, unter welchen z.B.\ Wechsel aus dem Deutschen in das Englische an beliebieger Stelle im Dokument, satzweisige Wechsel zwischen zwei und mehreren Sprachen, sowie ein nur kurzfristiger Wechsel in eine Sprache, innerhalb eines ansonstig monolingualen Dokumentes, welche allerdings Lexeme dieser beinhält (bspw.:\ ein norwegisches Dokument beinhält ein dänisches Zitat).
 
-\paragraph*{Whitespace}
+\paragraph*{Whitespace} lässt sich in \TeX{} nicht nur mit \' ' erzeugen. Die Zeichen, bzw.\ Zeichenketten \verb|\ |, \verb|\@| und \verb|~| können genauso Freifläche zwischen einzelnen Strings produzieren.
