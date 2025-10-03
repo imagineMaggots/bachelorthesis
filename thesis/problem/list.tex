@@ -5,14 +5,15 @@ Mittels \TeX{} ist prinzipiell alles möglich (wie sich später zeigen wird), je
 % Erwartung: Wer das nicht rafft ist doof.
 \subsection{Simple Probleme}
 % Befehle innerhalb der TeX-Engine (nativ) dürfen nicht übersetzt werden.
-\paragraph*{Zeichenketten\label{par:zeichenketten}} sind eine übliche Art und Weise, mit welcher man Wörter einer Sprache darstellen kann. Jedoch gehen die meisten Übersetzungs-Tools nicht davon aus, dass solche Zeichenketten Zeichen beinhalten, welche das folgende Wort zu einem Befehl (für eine Programmiersprache) machen. Zwar würde z.B.\ Google Translate für die Zeichenkette \texttt{Hello} korrekterweise das Deutsche \texttt{Hallo} liefern, aber bereits die Präambel von \TeX{}-Dokumenten zeigt, wie \verb|\title|, \verb|\author| und \verb|\date| respektiv zu \verb|\Titel|, \verb|\Autorin| und \verb|\Datum| übersetzt werden würden (Stand: 01.10.2025). Benanntes Tool zeigt sich zudem inkonsistent. Beispielsweise wird \verb|\section{saw}| zu \verb|\Abschnitt{Säge}| übersetzt und \verb|\section{Introduction}| zu \verb|\section{Einführung}| übersetzt.
+\paragraph*{Zeichenketten\label{par:zeichenketten}} sind eine übliche Art und Weise, mit welcher man Wörter einer Sprache darstellen kann. Jedoch gehen die meisten Übersetzungs-Tools nicht davon aus, dass solche Zeichenketten Zeichen beinhalten, welche das folgende Wort zu einem Befehl (für eine Programmiersprache) machen. Zwar würde z.B.\ Google Translate für die Zeichenkette \texttt{Hello} korrekterweise das Deutsche \texttt{Hallo} liefern, aber bereits die Präambel von \TeX{}-Dokumenten zeigt, wie \verb|\title|, \verb|\author| und \verb|\date| respektiv zu \verb|\Titel|, \verb|\Autorin| und \verb|\Datum| übersetzt werden würden (Stand: 01.10.2025). Benanntes Tool zeigt sich zudem inkonsistent. Beispielsweise wird \verb|\section{saw}| zu \verb|\Abschnitt{Säge}| übersetzt und \verb|\section{Introduction}| zu \verb|\section{Einführung}| übersetzt. 
 
 % Von Wörtern zu mehreren Wörtern
 \paragraph*{Whitespace\label{par:zeichenketten}} sind eine herkömmliche Art verschiedene Wörter einer Sprache voneinander zu trennen (bspw.\ in den lateinischen oder kyrillischen Sprachen). Neben anfänglichen Schwierigkeiten, welche sich innerhalb von einzelnen Zeichenketten aufzeigen könnten, ist es genauso denkbar, dass einzelne Optionen in \TeX{} oder \LaTeX{} innerhalb von eckigen oder geschwungenen Klammern nicht übersetzt werden dürften, ohne die Syntax zu brechen oder übersetzt werden müssten, damit ein gesamtes Dokument übersetzt wird. Denkbar sind hier direkt für das Erstere Farbdefinitionen, wie zum Beispiel \verb|\definecolor{super light red}{rgb}{1,.5,.5}|. Sollte man versuchen~\ref{par:zeichenketten}/Zeichenketten dadurch zu lösen, dass man einfach die Präambel in der Übersetzung ausschließt (also alles vor \verb|\begin{document}|), so würde ein späteres Nutzen dieser Farbe \texttt{super light red} dafür sorgen, dass das Wort \textit{light} alleine steht, und somit für nicht weit durchdachte Ansätze als ein zu übersetzendes Wort gelten würde. 
 
-\paragraph*{Einbinden von anderen Dateien\label{par:anderedateien}} ist eine denkbare Art größere \TeX{}-Dokumente in übersichtlichere kleinere Dateien zu strukturieren. Neben der Möglichkeit \TeX{}-Dokumente selbst via \texttt{include} und \texttt{input} in ein übergreifendes Dokument einzufügen, ist es jedoch auch möglich verschiedene andere, bildliche Formate (bspw.\ PNG, PDF, \ldots) im Dokument zu integrieren. Insbesondere bei PDF kann es sehr interessant werden, ob und inwieweit textliche Inhalte erfasst und übersetzt werden, jedoch sind PDF ihrerseits wieder eine von \LaTeX{} und \TeX{} abweichende Datei-/Dokumentenform und daher nicht weiter kritisch. Schade wäre es, wenn solche eingebundenen \TeX{}-Dateien und deren textlichen Inhalte übersehen werden würden, andererseits unerwartet jedoch hervorragend, sollten sogar textliche Inhalte von PDF erkannt (und übersetzt) werden. Einer Erkennung von textlichen Inhalten auf einem Bild wird nicht weiter nachgesehen, da hierbei davon ausszugehen sein sollte, dass die Übersetzung von textuellen Inhalten in Bildern eine andere, gesonderte Disziplin in der Bildverarbeitung ist. (#Evtl? Beispiele zeigen, dass hieran geforscht wird?)% # damit der Compiler meckert... (kompilieren kann es trotzdem)
+\paragraph*{Einbinden von anderen Dateien\label{par:anderedateien}} ist eine denkbare Art größere \TeX{}-Dokumente in übersichtlichere kleinere Dateien zu strukturieren. Neben der Möglichkeit \TeX{}-Dokumente selbst via \texttt{include} und \texttt{input} in ein übergreifendes Dokument einzufügen, ist es jedoch auch möglich verschiedene andere, bildliche Formate (bspw.\ PNG, PDF, \ldots) im Dokument zu integrieren. Insbesondere bei PDF kann es sehr interessant werden, ob und inwieweit textliche Inhalte erfasst und übersetzt werden, jedoch sind PDF ihrerseits wieder eine von \LaTeX{} und \TeX{} abweichende Datei-/Dokumentenform und daher nicht weiter kritisch. Schade wäre es, wenn solche eingebundenen \TeX{}-Dateien und deren textlichen Inhalte übersehen werden würden, andererseits unerwartet jedoch hervorragend, sollten sogar textliche Inhalte von PDF erkannt (und übersetzt) werden. Einer Erkennung von textlichen Inhalten auf einem Bild wird nicht weiter nachgesehen, da hierbei davon ausszugehen sein sollte, dass die Übersetzung von textuellen Inhalten in Bildern eine andere, gesonderte Disziplin in der Bildverarbeitung ist.% Beispiele?
 
 % Denkt man nicht direkt dran, ist jedoch auch wichtig
+\newpage
 \subsection{Komplexere Probleme}
 Neben den zuvor geschilderten sehr einfachen Problemen, welche sich auch unabhängig von \TeX{} (und \LaTeX{}) zeigen könnten (denn z.B.\ ein Übersetzen von Hashtags im Social Media sollte keine neue Idee sein) und gelöst sein müssen (da ansonsten sehr einfache und rudimentäre Werkzeuge für eine Dokumentenerstellung verloren gehen, da man sich ohne diese simplem Formatierungsoptionen wieder auf einfache Textdateien berufen könnte).% Bitte die Klammer nochmal reviewen
 
@@ -21,7 +22,23 @@ Neben den zuvor geschilderten sehr einfachen Problemen, welche sich auch unabhä
 Gleiches ist zu berücksichtigen, sollte das Kommando \verb|\renewcommand| verwendet werden, wobei dieses allerdings noch ein wenig mehr zulässt. Hiermit ist man auch dazu in der Lage existierende Befehle der \LaTeX{}-Syntax zu ändern, wodurch ein \verb|\Abschnitt{Einleitung}| ebenfalls valide \LaTeX{}-Syntax werden könnte, welche ein \TeX{}-Compiler als \verb|\section{Einleitung}| richtig interpretieren könnte, aber ein übersetzendes Programm könnte dieses womoglich in \verb|\section{example}| überführen. Dies scheint zunächst kein Problem zu sein, jedoch hätte zwischen einem \verb|\renewcommand{\section}{\Abschnitt}| genauso ein \verb|\newcommand{\section}{\frac{1+\sqrt{5}}{2}}| stattfinden können, wodurch \verb|\section{example}| nicht in einem Abschnitt mit Titel \enquote{example}, sondern in $\frac{1+\sqrt{5}}{2}${example} resultieren würde.
 
 \paragraph*{Umgebungen} sind, wie der Name es vermuten lässt, einzelne Bereiche im Dokument, welche gesondert behandelt werden und für welche sich jegliche Einstellungen, wie z.B.\ Textfarbe, Textgröße, Schriftart, Font und vieles Weitere nur für eine solche Umgebung anpassen lassen. Einerseits kann man über geschwungene Klammern \verb|{}| eine Umgebung einmalig betreten oder verlassen, möchte jedoch auch die Möglichkeit erhalten diese erneut zu verwenden und ihr verschiedene Parameter zu übergeben. Eine Definition einer Umgebung in der Präambel lässt dies zu, % Es ist so schwer keine selbstzweifelnden Kommentare hier zu schreiben, wenn man sich selbst hasst.
-wodurch sich neben den in~\ref{par:whitespace} aufgezeigten Problemen nicht nur für etwaige Farboptionen und -einstellungen Strings aufzeigen, welche nicht übersetzt werden dürfen, sondern auch eigens (vom \TeX{}-User) Ausgedachte (#Hier: Verweis auf Anhang passend).
+wodurch sich neben den in~\ref{par:whitespace} aufgezeigten Problemen nicht nur für etwaige Farboptionen und -einstellungen Strings aufzeigen, welche nicht übersetzt werden dürfen, sondern auch eigens (vom \TeX{}-User) Ausgedachte, wie das an \citep{latex:overleaf:environments} angelehnte Beispiel:
+\begin{Verbatim}
+    \newenvironment{boxed}[2][this is an example]
+    {
+        \begin{center}
+        Argument 1 (\#1)=#1\\[1ex]
+        \begin{tabular}{|p|}
+        \hline\\
+        Argument 2 (\#2)=#2\\[2ex]
+    }
+    { 
+        \\\\\hline
+        \end{tabular} 
+        \end{center}
+    }
+\end{Verbatim}
+Diese Umgebungen selbst sind zunächst nur von Interesse, wenn sie \textit{default} Werte beinhalten, wie obiges \texttt{this is an example}, bei welchem es wünschenswert wäre, wenn ein Programm, welches \TeX{} übersetzt, diese erfässt. Auffällig wird an dieser Stelle bereits, dass noch sehr viel mehr mit Umgebungen möglich ist, worauf in~\ref{par:definitionen} näher eingegangen werden soll.
 
 % Eigentlich PGF, aber Frage mich gerade auch: könnten u.U. Links übersetzt werden? Und auch die Optionen von hyperref sollten mal ggb. einer Übersetzung geprüft werden!!!
 \paragraph*{Pakete} bieten eine \TeX{}-Schnittstelle für die gesamte Welt! Zumindest rein theoretisch natürlich. Technisch gesehen bieten \textit{packages} die Möglichkeit zuvor beschriebene Umgebungen und Makros in einer eigenen \texttt{.sty} zu bündeln, welche ihrerseits (vorrangig via) CTAN (jedoch auch auf jeglichem anderem Wege) zu anderen \TeX{}-Usern übertragen werden könnte. Verschiedene Pakete könnten hierbei eine Vielzahl individueller Probleme aufwerfen, zunächst ist jedoch mehr ein Fokus auf solche zu setzen, welche die Arbeit anderer Programme involvieren. Sie in einem Dokument einzubinden ist recht leicht und funktioniert nur mit einer begrenzten Anzahl an Methoden (\texttt{requirepackage} und \texttt{usepackage}) und muss ihrerseits, genauso wie~\ref{par:anderedateien}, stets zur Kompilierzeit im System vorhanden sein. 
@@ -37,24 +54,39 @@ wodurch sich neben den in~\ref{par:whitespace} aufgezeigten Problemen nicht nur 
         \end{axis}
     \end{tikzpicture}
 \end{verbatim}
-\ldots bei welchem ein Übersetzen von \enquote{domain} Fehler produzieren würde, da Ti\textit{k}, bzw.\ \texttt{pgf} von dem englischen Wort ausgeht, um die Grenzen des Plots bei $-8$ und $+8$ zu setzen. 
+\ldots bei welchem ein Übersetzen von \enquote{domain} Fehler produzieren würde, da Ti\textit{k}, bzw.\ \texttt{pgf} von dem englischen Wort ausgeht, um die Grenzen des Plots bei $-8$ und $+8$ zu setzen. Jedoch besitzt Ti\textit{k}Z noch einen größeren funktionalen Umfang. Wohingegen ein Erstellen und Nachbearbeiten von präzisen Graphiken in z.B.\ Adobe Photoshop, GIMP, Paint, Blender,~\ldots zwar schnelle Korrekturen auf Pixelebene zulassen, ist jedoch kein \enquote{einfaches} Verschieben von z.B.\ einer Kante oder eines Knoten eines Graphen gegeben, geschweige denn ein Hinzufügen eines neuen Knoten zu einem Graphen. Dies ist in Ti\textit{k}Z jedoch kinderleicht, da man sich hier nur um eine Beschreibung eines Graphen kümmern muss, welche sich leichter anpassen lässt, als ein$($e$)$ gesamte$($s$)$, existierende$($s$)$ Graphik oder Modell. Hierzu könnte man beispielsweise mit
+\begin{Verbatim}[breaklines=true, breakanywhere=true]
+    \tikz \graph {
+    a -> b ->[green] {
+            c,e,g
+        };
+        c ->[red] e,
+        e ->[blue] g,
+        a ->[yellow] g
+    };
+\end{Verbatim}
+den nichtsaussagenden Graphen in~\ref{app:graphsimple} erzeugen. Natürlich lassen sich auch zahlreiche andere Typen von Graphen erzeugen~\citep{pgf:tillTantau:tikz}, wichtig ist jedoch nur wann und wie innerhalb dieser Texte auftreten könnten, welche interessant sein könnten, wenn man ein \LaTeX{}-Dokument übersetzen möchte.
 
 %%%%%
 %%%
 %     Bitte nochmal reviewen, ja?
-\subparagraph*{Bib\TeX{}} wird genutzt um Zitationen/Referenzen/Literaturverweise innerhalb eines Einzelnen oder mehreren Dokumenten zu nutzen und zu verwalten. Die Bib\TeX{}-Notation selbst beläuft sich auf eine einfache JavaScript Object Notation und trägt mit einer Ausnahme nur nicht zu übersetzende Inhalte, wie den Autor, den Titel des Werkes (welcher in der Originalsprache oder der durch den Autoren genehmigten übersetzten Titel), das Datum, einer URL, einer DOI, einer Angabe darüber, ob das zitierte Werk aus einem Buch, einer laufenden Reihe an wissenschaftlichen Publikationen (bspw.\ \textit{nature}, \textit{science}, \textit{ACM Computating Surveys},\ldots) oder einer Konferenz (oder Ähnlichem) stammt. Neben diesen Angaben, welche allesamt nicht übersetzt werden brauchen, bleibt das Abstrakt eines zitierten Werkes interessant für einen Übersetzungsvorgang, sollte man davon ausgehen, dass man im Anschluss entstehende, übersetzte \texttt{.tex} Dateien an einen neuen Autoren übergeben möchte. %Welcher obviously die Sprache spricht, in welche übersetzt wurde.
+\subparagraph*{Bib\TeX{}} wird genutzt um Zitationen/Referenzen/Literaturverweise innerhalb eines Einzelnen oder mehreren Dokumenten zu nutzen und zu verwalten. Die Bib\TeX{}-Notation selbst beläuft sich auf eine einfache JavaScript Object Notation \texttt{.json} und trägt mit nur einer Ausnahme nicht zu übersetzende Inhalte, wie den Autor, den Titel des Werkes (welcher in der Originalsprache stehen muss, andernfalls sollte die Übersetzung vom Autoren bestätigt werden), das Datum, einer URL, einer DOI und einer Angabe über die Art der Publikation, also ob das zitierte Werk aus einem Buch, einer laufenden Reihe/Serie an wissenschaftlichen Publikationen (bspw.\ \textit{nature}, \textit{science}, \textit{ACM Computing Surveys},\ldots) oder einer Konferenz (oder Sonstigem) stammt. Neben diesen Angaben bleibt das Abstrakt eines zitierten Werkes interessant für einen Übersetzungsvorgang, sollte man davon ausgehen, dass im Anschluss entstehende, übersetzte \texttt{.tex} Dateien an einen neuen Autoren übergeben werden. %Welcher obviously die Sprache spricht, in welche übersetzt wurde.
 
 %%% Könnte ne gute Überleitung zu den "Speziellen Problemen" ergeben
 \subparagraph*{Mathematische Formeln} selbst sind kein eigenes Paket, jedoch einer der praktischsten Use-Cases von \TeX{}. Insbesondere für Menschen, welche sich eine handschriftliche Qualität und \enquote{Streichlust} (meint:\ das Durchstreichen auf dem Papier, sollte man sich verschrieben haben) mit der des Autoren (dieser Arbeit) teilen, sollte das digitale Medium \TeX{} einiges an Aufwand ersparen und jegliche Herleitungen deutlicher und übersichtlicher machen. % Theorem Package, jedoch auch insgesamt
-Hierzu gibt es wiederum mehrere denkbare Pakete, welche diesen bereits in \TeX{} inhärent verankerten \enquote{\textit{math mode}} erweitern oder vereinfachen können. Dabei muss man sich jedoch zunächst wieder vor Augen führen, welche Inhalte man darstellen möchte und inwiefern ein Programm, welches \texttt{.tex} übersetzt bestimmte Inhalte übersetzen muss. Dadurch wird schnell klar, dass Pakete, wie zum Beispiel \texttt{amsmath} und Untergeordnete nicht sonderlich relevant werden, da sie ihrerseits nur Befehle beinhalten, welche der \enquote{normalen} \TeX{}-Syntax obliegen. Lediglich Pakete wie zum Beispiel \texttt{theorem} sind hierbei (im Kontext der gegebenen Aufgabenstellung) von näherem Interesse, da sie sich dadurch auszeichen, dass sie bereits zur (Kompilierzeit in der) Präambel auf eigener Syntax basierend rein textliche Strings definieren. Aus jeglichem Mathematikmodul, -seminar, -kurs, -unterricht und dergleichen sollten einige geläufige Teile von Herleitungen oder Beweisen bekannt sein sowie übliche Terminologie für solche Sektionen. Beispielsweise müsste das Wort \enquote{Definition} einem jeden Studierenden einen kalten Schauer den Rücken herunterlaufen lassen, muss es glücklicherweise in diesem Moment allerdings nicht, da in \TeX{} (bzw.\ \texttt{thesis}) dieses Wort nur ein Mal (und auch vor dem eigentlichen Dokument) definiert wird und zwar in der Form \verb|\newtheorem{definition}{Definition}|. \TeX{}nisch gesehen passiert hier nichts weiter, als eine Definition einer neuen Umgebung, welche sich danach (innerhalb des Dokumentes) darin äußert, dass das Wort in den Zweiten geschwungenen Klammern breit gedruckt wird und als Wiedererkennungsmerkmal für (hier:) eine Definition dienen soll. Normalerweise sollte es in der Mathematik nur wenigen Definitionen bedürfen. Anders ist dies jedoch bei Beweisen, von welchen überabzählbar viele gebraucht werden und gebraucht werden könnten. Eine sich hierbei aufzeigende Schwierigkeit könnte es werden einen Überblick über solche zu schaffen (innerhalb einer z.B.\ Vorlesung) ohne diesen einen Weg mitzugeben schnellstmöglich wiederauffindbar zu werden, ohne den gesamten Beweis zu denotieren. Hierzu kann man die Fähigkeit von \texttt{theorem} nutzen, dass man z.B.\ Theoreme/Behauptungen einem \TeX{}-Abschnitt zuordnen kann und auch andere \texttt{theorem}-Umgebungen Anderen desselben Paketes (über eckige Klammern nach (um ein \enquote{\texttt{.zahl}} zu erzeugen) oder vor der Benennung dieser namensgebenden Definition (um ein \enquote{\texttt{nächsthöhere "theorem"-zahl}} zu erzeugen)).% Ergibt Voriges Sinn?
+Hierzu gibt es wiederum mehrere denkbare Pakete, welche diesen bereits in \TeX{} inhärent verankerten \enquote{\textit{math mode}} erweitern oder vereinfachen können. Dabei muss man sich jedoch zunächst wieder vor Augen führen, welche Inhalte man darstellen möchte und inwiefern ein Programm, welches \texttt{.tex} übersetzt bestimmte Inhalte übersetzen muss. Dadurch wird schnell klar, dass Pakete, wie zum Beispiel \texttt{amsmath} und Untergeordnete nicht sonderlich relevant werden, da sie ihrerseits nur Befehle beinhalten, welche der \enquote{normalen} \TeX{}-Syntax obliegen. Lediglich Pakete wie zum Beispiel \texttt{theorem} sind hierbei (im Kontext der gegebenen Aufgabenstellung) von näherem Interesse, da sie sich dadurch auszeichen, dass sie bereits zur (Kompilierzeit in der) Präambel auf eigener Syntax basierend rein textliche Strings definieren. Aus jeglichem Mathematikmodul, -seminar, -kurs, -unterricht und dergleichen sollten einige geläufige Teile von Herleitungen oder Beweisen bekannt sein sowie übliche Terminologie für solche Sektionen. Beispielsweise müsste das Wort \enquote{Definition} einem jeden Studierenden einen kalten Schauer den Rücken herunterlaufen lassen, muss es glücklicherweise in diesem Moment allerdings nicht, da in \TeX{} (bzw.\ \texttt{thesis}) dieses Wort nur ein Mal (und auch vor dem eigentlichen Dokument) definiert wird und zwar in der Form \verb|\newtheorem{definition}{Definition}|. \TeX{}nisch gesehen passiert hier nichts weiter, als eine Definition einer neuen Umgebung, welche sich danach (innerhalb des Dokumentes) darin äußert, dass das Wort in den Zweiten geschwungenen Klammern breit gedruckt wird und als Wiedererkennungsmerkmal für (hier:) eine Definition dienen soll. Normalerweise sollte es in der Mathematik nur wenigen Definitionen bedürfen. Anders ist dies jedoch bei Beweisen, von welchen überabzählbar viele gebraucht werden und gebraucht werden könnten. Eine sich hierbei aufzeigende Schwierigkeit könnte es werden einen Überblick über solche zu schaffen (innerhalb einer z.B.\ Vorlesung) ohne diesen einen Weg mitzugeben schnellstmöglich wiederauffindbar zu werden, ohne den gesamten Beweis zu denotieren. Hierzu kann man die Fähigkeit von \texttt{theorem} nutzen, dass man z.B.\ Theoreme/Behauptungen einem \TeX{}-Abschnitt zuordnen kann und auch andere \texttt{theorem}-Umgebungen Anderen desselben Paketes (über eckige Klammern nach (um ein \enquote{\texttt{.zahl}} zu erzeugen) oder vor der Benennung dieser namensgebenden Definition (um ein \enquote{\textit{nächsthöhere \texttt{theorem}-zahl}} zu erzeugen)).% Ergibt Voriges Sinn?
+
+% Ja auch hieran
+\subparagraph*{Quelltexte}lassen sich mit Hilfe der Pakete \texttt{minted} und \texttt{lstlisting} in einem \TeX{}-Dokument darstellen und formatieren. Dies scheint auf den ersten Moment noch kein allzu großes Problem zu sein, da man diese anhand der jeweiligen Umgebungen \verb|\begin{minted}| und \verb|\begin{listing}| erkennen könnte und auch aus z.B.\ den Einstellungsmöglichkeiten für die Sprache, welche formatiert werden soll nicht zu übersetzende Token kennen könnte. Hierbei ist nunmehr interessant, ob in diesen Quelltexten nicht eventuell Zeichenketten verankert sind, welche für eine Übersetzung interessant wären. (Wird beispielsweise ein String ausgegeben, welcher von \texttt{Hello World} zu \texttt{Hallo Welt} übersetzt werden könnte/sollte?) Darüber hinaus wäre es in Erwägung zu ziehen \TeX{}-Quellcode selbst in einer solchen Umgebung darzustellen, oder aber HTML, bei welchem fraglich ist, bis zu welchem Grad die richtigen Zeichenketten erfasst werden und nicht versehentlich ein \texttt{<div stlye=\enquote{color:red}>} zu \texttt{<div stlye=\enquote{Farbe:rot}>} übersetzt werden würde. (Hier gerät man an einen ähnlichen Punkt, wie~\ref{subpar:envswitch} an, nur in einem recht spezifischen Kontext.) 
 
 % Oh weh, des hier könnte schwierig werden!!!!!!!!!!!!!!!!!!!!!!!!!
-\subparagraph*{Eigene} Pakete innerhalb \LaTeX{} zu erstellen ist natürlich auch möglich, wobei danach zu differenzieren ist, ob man ein \textit{Klasse} oder ein \textit{Paket} schreiben möchte. Das \LaTeX{} Project Team beschreibt den Unterschied grob als eine Kompatibilität der definierten Kommandos mit jeglicher anderen Klasse als ein Paket und nur anderenfalls als eine Klasse. (Siehe, an #Hendrik gerichtet und zukünftig zu entfernen: https://www.latex-project.org/help/documentation/clsguide.pdf, falls dies zu lesen ist: ein Oversight).
+\subparagraph*{Eigene}Pakete innerhalb \LaTeX{} zu erstellen ist natürlich auch möglich, wobei danach zu differenzieren ist, ob man ein \textit{Klasse} oder ein \textit{Paket} schreiben möchte. Der Unterschied wird danach festgelegt, ob sich die Befehle innerhalb der jeweiligen \texttt{.cls} oder \texttt{.sty} mit jeder Art (Klasse, das Dokument aus logischer Sichtweise hinsichtlich Aufbau/Struktur) verwenden lassen. Ist dies der Fall spricht man von einem Paket \texttt{.sty}, andernfalls von einer Dokumentenklasse \texttt{.cls}~\citep{latex:documentation:clsguide}. Es handelt sich ihrerseits jedoch auch wieder um reine Textdateien, in welchen man zuvorig geschilderte komplexe (und folgende speziellere) Probleme verschwinden lassen könnte. An sich handelt es sich bei diesem Problem also um eine sehr spezifische Erweiterung des letzten simplen/einfachen Problemes in~\ref{par:anderedateien}.
 
 % Wo man eher weniger dran denkt
-\subsection{Spezielle(re) Probleme}
+\newpage
+\subsection{Spezielle Probleme}
 \paragraph*{Höhere Vernestungsgrade}% hier passt \relax mit rein, so als Beispiel, hab da ja ein zwei Tabellen rumliegen
-können in \TeX{} auf verschiedenste Arten und Weisen entstehen, daher zunächst eine kurze Erinnerung, was der Begriff in der Informatik und Mathematik meint. Recht einfach wird die Problemstellung der Vernestung an einem Beispiel verdeutlichbar: Ist $((((((((1+1)-1)-2)*3)/4)\% 5)/6)*7)$ leicht auszuwerten? Eine hohe Vernestung bedeutet mehrerlei Klammern innerhalb von (einer) Klammer(n) vorzufinden. Inwiefern kann dies in der Informatik auftreten? Betrachtet man bestimmte syntaktische Elemente als klammerähnlich (wie z.B.\ ein \texttt{for(a)\{befehl()\}} in C, wobei es sich interessanterweise um tatsächliche Klammern hält), zeigt sich schnell eine Unlesbarkeit in Quelltexten auf, sollte man den Grad dieser Verklammerung erhöhen. Wäre z.B.\ 
+können in \TeX{} auf verschiedenste Arten und Weisen entstehen, daher zunächst eine kurze Erinnerung, was der Begriff in der Informatik und Mathematik meint. Recht einfach wird die Problemstellung der Vernestung an einem Beispiel verdeutlichbar: Ist $((((((((1+1)-1)-2)*3)/4)\% 5)/6)*7)$ leicht auszuwerten? Eine hohe Vernestung bedeutet mehrerlei Klammern innerhalb von (einer) Klammer$($n$)$ vorzufinden. Inwiefern kann dies in der Informatik auftreten? Betrachtet man bestimmte syntaktische Elemente als klammerähnlich (wie z.B.\ ein \texttt{for (condition) \{befehl~()\}} in C, wobei es sich um tatsächliche Klammern hält), zeigt sich schnell eine Unlesbarkeit in Quelltexten auf, sollte man den Grad dieser Verklammerung erhöhen. Wäre z.B.\ 
 \begin{verbatim}
     if(x)
     {
@@ -68,14 +100,11 @@ können in \TeX{} auf verschiedenste Arten und Weisen entstehen, daher zunächst
                     {
                         if(m)
                         {
-                            if(n)
+                            if(a)
                             {
-                                if(a)
+                                if(b)
                                 {
-                                    if(b)
-                                    {
-                                        if(c) return true;
-                                    }
+                                    if(c) return true;
                                 }
                             }
                         }
@@ -85,21 +114,62 @@ können in \TeX{} auf verschiedenste Arten und Weisen entstehen, daher zunächst
         }
     }
 \end{verbatim}
-ein guter und gut wartbarer C-Code? (Nein, jedoch syntaktisch richtig). Dies ergibt mathematisch die Aussage: $ans=1&c&b&a&n&m&l&k&z&y&x$ (eigentlich: XOR statt AND, @Hendrik: fixe das!!!). Auch wenn solche hohen Vernestungsgrade nicht erstrebenswert sind, sollte die wohlmögliche Existenz dieser nicht missachtet sein. Dies wirft die Frage auf, wo solche Vernestungen schnellmals auch unbemerkt entstehen könnten.
+ein leicht lesbares, verständliches und demnach wartbares C-Code-Fragment? (Nein, könnte jedoch syntaktisch richtig sein). Dies ergibt mathematisch die Aussage: $return=1\land c\land b\land a\land m\land l\land k\land z\land y\land x$. Auch wenn solche hohen Vernestungsgrade nicht erstrebenswert sind, sollte die wohlmögliche Existenz dieser nicht missachtet sein. Dies wirft die Frage auf, wo solche Vernestungen schnellmals auch unbemerkt entstehen könnten.
 
-\subparagraph{In Tabellen} ist eine Vernestung zunächst nicht auszuschließen. So kann es schnellmalig der Fall sein, dass man innerhalb einer Zelle einen numerischen Wert mathematisch abbilden möchte, jedoch eine physische Einheit textlich formatiert sehen will. % Veranschaulicht in Anhang XY
+\subparagraph{In Tabellen} ist eine Vernestung zunächst nicht auszuschließen. So kann es schnellmalig der Fall sein, dass man innerhalb einer Zelle einen numerischen Wert mathematisch abbilden möchte, jedoch eine physische Einheit textlich formatiert sehen will (ohne sich hierbei dem \texttt{siunitx} Paket zu bedienen). % Veranschaulicht in Anhang XY
+Nun sollte man zumindest davon ausgehen, dass sich Tabellen, wie man sie in wissenschaftlichen Veröffentlichungen vorfinden kann, zunächst in einer Form wie beispielsweise: 
+\begin{Verbatim}[breaklines=true, breakanywhere=true]
+    \begin{table}[h!tb]
+        \centering
+        \begin{tabular}[l r]
+            \toprule
+                distance $[$m$]$ & time $[$s$]$
+            \midrule
+                $400$ & $60$   \\ % starting at a fast pace
+                $800$ & $121$  \\
+                $1200$ & $183$ \\
+                $1600$ & $242$ \\
+                $2000$ & $300$ \\ % starts to sprint
+                $2400$ & $350$ \\
+                $2800$ & $420$ \\ % starts feeling fatigued
+                $3200$ & $470$ \\
+                $3600$ & $550$ \\ % fatigue ultimately looses time from this point on
+                $4000$ & $710$ \\ 
+            \bottomrule
+        \end{tabular}
+        \caption{Track-record of a fictional runner's pace on \today. This table requires the packages \texttt{caption} and \texttt{booktabs}!}
+        \label{tab:1}
+    \end{table}
+\end{Verbatim}
+\ldots vorliegen würde, wobei zu übersetzende Wörter frei stehen. Jedoch wird hier eine Hürde der sprachlichen Übersetzung insgesamt erkenntlich, auf welche in~\ref{par:siunits} kurz eingegangen wird. Diese recht einfache Nutzung ist recht handhabbar, kratzt allerdings nur an der Oberfläche der Möglichkeiten, welche \TeX{} bieten kann. 
+So ist es auch denkbar, dass man eine Tabelle erstellen möchte, in welcher eine Spalte einen erwarteten Funktionsverlauf einer Größe gegenüber z.B.\ der Zeit darstellt, eine zweite Spalte real bemessene Werte zu verschiedenen Zeitpunkten, eine Dritte in welcher die Werte über den erwarteten Verlauf gelegt werden und eine Letzte, in welcher nun Mittelwerte, Varianz und weitere Bemerkungen festgehalten werden. (Sollte zuvorige Beschreibung etwas irritierend sein, dann dient~ref{app:functiontable} als Veranschaulichung). % Anhang fehlt noch. #####
 
-\subparagraph{Zwischen verschiedenen Umgebungen} kann (quasi-) beliebig hin- und hergewechselt werden.
-\subparagraph{Insgesamt} kann man innerhalb von \TeX{} auf gar absurde Art und Weise eine hohe Vernestung erzielen.% Hier brauchst du wirklich ein gutes Beispiel, um das Wort "absurd" in der BA zu verwenden. Wenn du das schaffst, dann wirklich props an dich. (props: proper respect(s))
+
+\subparagraph{Zwischen verschiedenen Umgebungen\label{subpar:envswitch}} kann (quasi-) beliebig hin- und hergewechselt werden. Dies ist zunächst keine neue und wichtige Information, spielt aber insbesondere auf die Darstellung von mathematischen Inhalten ein. So ist es nicht unbedingt erforderlich, dass nach dem Betreten einer mathematischen Umgebung (via z.B.\ \verb|$|, \verb|$$|, \verb|\(|, \verb|\[|, sowie \verb|\begin{equation*}|, \verb|\begin{align*}|, \verb|\begin{gather*}| mit und ohne \texttt{*},~\ldots) diese zwangsweise direkt wieder verlassen werden muss, bevor man wieder textliche Inhalte produzieren und beliebig formatieren kann. Die gewöhnlichen Kommandos zum Erzeugen von breit gedruckten, kursiven oder anderweitigen Texten (\textbf{textbf}, \textit{textit}, \textrm{textrm}, \textsc{textsc}, \textsf{textsf}, \texttt{texttt},~\ldots) reichen hierzu zunächst\ldots lassen es ihrerseits jedoch zu, dass man wieder in eine mathematische Umgebung wechselt. Ein valides \TeX{}-Beispiel: % Hier: rapides wechseln zwischen Math und Text Mode
+\begin{Verbatim}[breaklines=true, breakanywhere=true]
+    \begin{align*}
+        4x &= 2 \\
+        x &= \frac{1}{2} \textrm{\@\ldots zeigt zugleich, dass $\frac{1}{2}\times 4=2$ ist}
+    \end{align*}
+\end{Verbatim}
+(produziert:)
+\begin{align*}
+    4x &= 2 \\
+    x &= \frac{1}{2} \textrm{\@\ldots zeigt zugleich, dass $\frac{1}{2}\times 4=2$ ist}
+\end{align*}
+Dies alleine ist natürlich noch keine sonderlich hohe Vernestung, zeigt jedoch die Vorgehensweise auf, mit welcher solche Vernestungen erzeugt werden können. Nun könnte argumentiert werden, dass in der herkömmlichen Dokumentenklasse \texttt{article} solche \textit{in-line} Wechsel nur bedingt oft vorkommen und behandelt werden müssten, da ansonsten zu lange Zeilen nicht mehr innerhalb eines Dokumentes angezeigt werden würden, jedoch gibt es einen Workaround hierfür, nämlich die Dokumentenklasse \texttt{standalone}, welche theoretisch gesehen unendlich lange Dokumente erzeugen könnte, selbst wenn diese nur eine sehr lange Zeile sind.% Man könnte auch mal nen (De-) Coder bauen, der solche Dokumente via einer z.B. Kamera liest während diese laufend gedruckt werden und dann (auf diesen gelesenen Zeichen basierend) einen binären Code ausgibt. Am besten würde man hier erstmal mit Zahlen und einfachen Rechenoperationen anfangen (wobei: Buchstaben = Zahlen).
+%%% Genaueres Beispiel zeigen, im Zweifel auch erstmal in der Mail.
+
+% \subparagraph{Insgesamt} kann man innerhalb von \TeX{} auf nahezu absurde Art und Weise eine hohe Vernestung erzielen.% Hier brauchst du wirklich ein gutes Beispiel, um das Wort "absurd" in der BA zu verwenden. Wenn du das schaffst, dann wirklich props an dich. (props: proper respect(s))
 
 
 
 % Woran man direkt denkt, wenn man LaTeX für eine wissenschaftliche Arbeit nutzen möchte
 
-\paragraph*{Quelltexte}% Ja auch hieran
+
 \paragraph*{Kommentare}% mit das Fieseste, was mir eingefallen ist
 
-\paragraph*{Definitionen} 
+\paragraph*{Definitionen\label{par:definitionen}} 
 \paragraph*{Catcode und Unicode}
 
 
@@ -107,6 +177,12 @@ ein guter und gut wartbarer C-Code? (Nein, jedoch syntaktisch richtig). Dies erg
 Beabsichtigt ist dieser Abschnitt nicht in der Reihe von Problemen aufgefasst, sondern als Schwierigkeit$($en$)$ formuliert, da man sich hier von den Problemen abwenden würde, welche in der \TeX{}-Syntax auftreten und bei sprachliche Hürden angelangt, welche sich für und zwischen verschiedenen Sprachen zeigen könnten.
 % Siehe uni/thesisbsc/tests/prblems/list.md/##9
 \paragraph*{Mehrdeutigkeiten} innerhalb einer Sprache führen unter Umständen zu missverständlichen Übersetzungen.  % Hier würde das von Warren, siehe andere Einleitung (introduction/intro.tex) evtl. eignen für weitere Beispiele, nicht nur welche von mir? k.P.
+% Beispiel: Seemeile vs. Landmeile auch sprachenübergreifend unterschiedlich und kontextabhängig
 \paragraph*{Redewendungen} sind eine Art und Weise\ldots
 
+\paragraph*{SI-Einheiten\label{par:siunits}} sind die eigentlichen Grundeinheiten, auf welche man versucht physikalische Größen (genauer:\ für diese hergeleiteten Einheiten) zurückzuführen. Mit sehr wenigen Ausnahmen sollte davon auszugehen sein, dass diese international Verwendung finden. Einzig und allein % die Ami's
+Distanz- und Masseangaben \textit{könnten} je nach Sprache variieren, wie das imperiale Maß gegenüber dem metrischen Maß (e.g., Zoll und Meile ggb.\ Zentimeter und Kilometern, \texttt{lbs} ggb.\ \texttt{kg}; bei welchen es sich zwar nicht um die \textit{eigentlichen} Grundeinheiten handelt, jedoch in dieser Form in der realen Größenordnung miteinander vergleichbarer werden).% vergleichbarer um nicht näher zu sagen, weil "näher" wäre hier objektiv falsch (1kg\approx 2.205 lbs und 1km\approx 1.6 Landmeilen und 1km\approx 1.8 Seemeilen)
+
 \paragraph*{Wirrer Sprachwechsel} meint ein rapides Springen zwischen verschiedenen Menschensprachen innerhalb eines Dokumentes. Die Fragestellung hierbei ist, inwiefern ein sprachlicher Wechsel innerhalb eines Dokumentes erfasst wird, sollte eine automatische Spracherkennung der Ausgangssprache stattfinden. Dabei können verschiedenste (theoretisch: überabzählbar viele) Fälle auftreten, unter welchen z.B.\ Wechsel aus dem Deutschen in das Englische an beliebieger Stelle im Dokument, satzweisige Wechsel zwischen zwei und mehreren Sprachen, sowie ein nur kurzfristiger Wechsel in eine Sprache, innerhalb eines ansonstig monolingualen Dokumentes, welche allerdings Lexeme dieser beinhält (bspw.:\ ein norwegisches Dokument beinhält ein dänisches Zitat).
+
+\paragraph*{Whitespace}

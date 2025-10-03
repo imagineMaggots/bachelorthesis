@@ -1,0 +1,7 @@
+\newpage
+\renewcommand\thesection{\Alph{section}}
+\setcounter{section}{0}
+\renewcommand*{\theHsection}{chX.\the\value{section}} % Danke an: https://tex.stackexchange.com/questions/71162/reset-section-numbering-between-unnumbered-chapters
+% \thesection = der TeX interne Abschnittscounter
+% \theHsection = der Hyperref interne Sektionencounter. Arbeite zwar nur in einem chapter, jedoch ist chX.0 ein neuer String ggb. (wahrscheinlich) ch0.0
+\section{Anhänge}

@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{graphs,quotes}
+
+\begin{document}
+\tikz \graph {
+    a -> b ->[green] {
+        c,e,g
+    };
+    c ->[red] e,
+    e ->[blue] g,
+    a ->[yellow] g
+};
+
+\end{document}

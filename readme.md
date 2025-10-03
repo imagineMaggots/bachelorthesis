@@ -21,4 +21,9 @@
 
 ## important notes
 - 'Space' (%20) ist nicht die einzige Art und Weise Whitespace zu produzieren, denkbar sind auch '\ ', '\@' und Tilde (erstes simples Problem wird whitespace und letztes spezielles problem wird auch wieder whitespace =)
-- Vernestung von TikZ in Tabellen möglich
+
+## additional ressources (possibly relevant in the future)
+- https://github.com/pgf-tikz/pgfplots/blob/master/doc/latex/pgfplots/TeX-programming-notes.tex
+- https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/natbib/natbib.pdf
+- https://ftp.rrzn.uni-hannover.de/pub/mirror/tex-archive/macros/latex/contrib/hyperref/doc/hyperref-doc.html#x1-70004.1
+- https://tex.stackexchange.com/questions/1050/whats-the-difference-between-newcommand-and-newcommand

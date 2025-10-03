@@ -2,8 +2,10 @@
 \contentsline {section}{\numberline {2}Problemfälle}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Simple Probleme}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Komplexere Probleme}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Spezielle Probleme}{4}{subsection.2.3}%
-\contentsline {subparagraph}{In Tabellen}{4}{section*.13}%
-\contentsline {subparagraph}{In mathematischen Umgebungen}{4}{section*.14}%
-\contentsline {subsection}{\numberline {2.4}Weitere Schwierigkeiten}{5}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{6}{section.3}%
+\contentsline {subsection}{\numberline {2.3}Spezielle Probleme}{7}{subsection.2.3}%
+\contentsline {subparagraph}{In Tabellen}{7}{section*.15}%
+\contentsline {subparagraph}{Zwischen verschiedenen Umgebungen}{8}{section*.16}%
+\contentsline {subsection}{\numberline {2.4}Weitere Schwierigkeiten}{9}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{10}{section.3}%
+\contentsline {section}{Literaturverzeichnis}{11}{section*.25}%
+\contentsline {section}{\numberline {A}Anhänge}{12}{section.chX.1}%

@@ -10,3 +10,7 @@ Dieser Ordner beherbergt jegliche für die Abschlussarbeit relevante Dateien, na
 | technologies | Technologischer Stand |  | <li>Studien und Technologien (Software) welche sich mit dem Thema beschäftigen<li>Gezieltes Probe auf die gelisteten, denkbaren Problemfälle<li>Auswertung, warum die Fehler auftreten  |
 | solution | Lösung |  | <li>Den vielversprechensten Ansatz nochmal genauer herausstellen<li>Kann dieser bereits alles?<li>Kann man diesen verbessern? |
 | conclusion | Fazit |  | <li>Juhu |
+
+### further remarks
+Es existieren zwei verschiedene <b style="font-family:courier">.bib</b> innerhalb dieses Verzeichnis'. Die erste <b style="font-family:courier">all.bib</b> beherbergt jegliche gefundene Quelle, welche interessant aussieht, jedoch entweder noch keinen vollständigen BibTeX Eintrag besitzt oder nicht explizit in der Arbeit verwendet wurde. Letztere sind in vollständiger BibTeX Notation <b style="font-family:courier">index.bib</b> zu entnehmen.
+

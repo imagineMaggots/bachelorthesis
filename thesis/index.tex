@@ -3,6 +3,7 @@
 \author{Hendrik Theede}
 \title{\ldots}
 
+%\usepackage[document]{ragged2e} % Damit alles: Links aligned (der linkeste Punkt eines jeden Buchstaben ist auf einer Linie für alle zeilen) und so viel Platz nach rechts ausnutzt, wie möglich (nein, macht TeX nicht standardmäßig); muss man nicht für das gesamte Dokument machen (wie hier), geht auch per \raggedright oder \RaggedRight für/vor Paragraphen; gibt auch Umgebungen für rechtsbündigen Text https://de.overleaf.com/learn/latex/Text_alignment
 \usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx}
 \usepackage{csquotes}
@@ -10,9 +11,15 @@
 \usetikzlibrary{calc,positioning}
 \usepackage{pgfplots}
 \usepackage[nottoc]{tocbibind}
+\usepackage{amsmath}
+
+% Danke an https://tex.stackexchange.com/questions/14342/verbatim-environment-that-can-break-long-lines
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+% !!! Funktioniert nur mit ASCII-Zeichen (nicht mit deutschen Umlauten ä,ö,ü(,ß))
 
 \usepackage{natbib}
-\bibliographystyle{plainnat}
+\bibliographystyle{agsm}
 
 %%% Uni-HRO relevantes
 \newcommand{\authorasastring}{Hendrik Theede}											% Autor
@@ -29,16 +36,18 @@
 \title{\titleasastring}
 
 %%% "Deutsche Sprache"-relevant
-\renewcommand*\contentsname{Inhaltsverzeichnis}
+\renewcommand*\contentsname{\hypertarget{toc}{Inhaltsverzeichnis}} % cannot contain \par (and thus: newlines)
+\renewcommand*\refname{Literaturverzeichnis} % can contain \par (and thus: newlines)
 
 % Muss ans Ende, weil sonst übernimmt ein Biber aus der Bibliothek
 \usepackage{hyperref}					% TeX!	
 \hypersetup{
 		linktoc=all,
-		% colorlinks=true, % Für offizielle Releases das % vorne wegnehmen. Ersetzt die Boxen um Links durch die eigentlichen Farben
+		colorlinks=true, % Für offizielle Releases das % vorne wegnehmen. Ersetzt die Boxen um Links durch die eigentlichen Farben
 		linkcolor=black,
 		urlbordercolor={1 0 0},
 		urlcolor=blue, 
+		citecolor=magenta,
 		breaklinks=true,
 		pdftitle=Abschlussarbeit Theede 221201256,
 		pdfauthor=Hendrik Theede,
@@ -47,8 +56,9 @@
 }
 
 \begin{document}
-\pagenumbering{Roman}
 \input{titlepage}
+\pagenumbering{Roman}
+\setcounter{page}{0}
 \newpage
 \newpage
 \section*{Abstrakt}
@@ -59,11 +69,14 @@ placeholder
 \pagenumbering{arabic}
 \include{introduction/short}
 \include{problem/list}
+%\include{technologies/sota}
 \newpage
 \section{Eigenständigkeitserklärung}
 Ich versichere hiermit, dass ich die vorliegende Arbeit selbstständig angefertigt und ohne fremde Hilfe verfasst habe. %, es sei denn die Aufgabenstellung verlangte unausweichlich einer (maschinellen) Unterstützung
 Dazu habe ich keine außer den von mir angegebenen Hilfsmitteln und Quellen verwendet und die den benutzten Werken inhaltlich und
 wörtlich entnommenen Stellen habe ich als solche kenntlich gemacht. 
 Ich versichere, dass die eingereichte elektronische Fassung mit den gedruckten Exemplaren übereinstimmt.
+\newpage
 \bibliography{index}
+\include{appendices/appendix}
 \end{document}
