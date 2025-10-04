@@ -1,0 +1,36 @@
+\section{Technologischer Stand}
+\subsection{Generische, fundamentale Technologien}
+Den vorigen Abschnitt beginnend wurde Google Translate zur Erläuterung herangezogen, da sich mit dieser Ressource recht einfach typische Fehler aufzeigen, welche dem zugrundeliegen, dass Software dieser Art, bzw.\ in der Art, wie sie verwendet wurde, nicht davon ausgeht Strings einzulesen, welche kein Teil einer menschlichen Sprache sind, wie zum Beispiel \verb|{Beispiel}|. Ein Mensch kann hierbei die Klammern ignorieren, ein Computer oder ein Programm ohne Weiteres jedoch nicht.% Passt im Kontext Programm recht gut in dieser Formulierung. 
+Jedoch basieren heutige Technologien zur Sprachübersetzung nicht mehr auf Programmen, welche einen festen Input mit syntaktischen Vorgaben erwarten, sondern auf weitaus mächtigerer Software, welche je nach erforderlichem Use-Case eine andere Art an Input erwartet. Als Endnutzer würde man sich zunächst jegliche Optionen offen halten wollen, wodurch man recht schnell bei den Technologien größerer und bekannter Anbieter angelangt, welche Anwendungs- und Nutzerschnittstellen für ihre Sprachmodelle anbieten. Von den Dingen, welche aus marktwissenschaftlicher Argumentation heraus direkt weniger vielversprechend sein \textit{müssten} (da diese Anbieter andere Software zur Dokumentenerstellung produzieren, welche sie verständlicherweise gegenüber einen kostenfreien Technologie wie \TeX{} in den Vordergrund stellen möchten), wird zunächst noch nicht abgesehen, sondern jegliche denkbare Technologie hinsichtlich ihrer potentiellen Möglichkeiten betrachtet. 
+
+\paragraph*{ChatGPT}\label{par:chatgpt}
+Der von OpenAI präsentierte statistische Ansatz zur Entwicklung einer künstlichen Intelligenz ist ein im ersten Moment naheliegender Ansatz, da man sich hier erhoffen könnte, dass diese Technologie mit Hilfe eines passenden \enquote{Prompting} auf längere Zeit gesehen sowohl qualitativ hochwertige Übersetzungen erzielt, als auch geschickt jede \TeX{}-Syntax geschuldete Hürde umgeht. Allerdings scheitert dieser Ansatz% zum Glück
+bereits konzeptionell, denn der \TeX{}-Compiler (jeder) selbst wird dazu in der Lage bleiben \textit{nur} reine Zeichenketten von Befehlen, Makros und Ähnlichem zu unterscheiden, da diese ansonsten nicht wie gewünscht in einem Dokument als solche Zeichenkette vorzufinden wären. Da dieses Programm selbst auch deterministisch arbeitet (und arbeiten muss), benötigt man an dieser Stelle noch keine Einbindung einer potentiellen Fehleranfälligkeit.
+
+
+
+% Hier beginnen die genauen! Fehler zu zeigen, jeweils an den Softwares
+
+%%% Kurze Bemerkung zur Fragestellung jeweils:
+%%% Wie sieht die API aus? Kann man überhaupt Kontext (z.B. TeX, in TeX geschrieben, ...) mitgeben? Falls nein: gar nicht weiter verfolgen.
+%%% Gibt es solch umfangreiche Glossare wie in DeepL? Bzw. wie tuen sich die Anbieter mit menschensprachlichen Kontexten? (Angaben der Anbieter; sollten die einwandfrei mit TeX umgehen, dann gezielte sprachliche Fehlerquellen prüfen... des wird dann aber sehr aufwendig und erfordert unweigerlich dann eine BLEU)
+%%% Kann man die Kontexte: "Das ist ein LaTeX"-Dokument und "Es geht um Thema XY" gesondert mitgeben, damit dieser Unterschied klar wird?
+%%% Falls alles ja ergibt (was ich bezweifle): Gezieltes Testen auf die gelisteten Problemfälle! (Aber nur dann)
+\paragraph*{DeepL}\label{par:DeepL}
+\paragraph*{Microsoft Translate}\label{par:Microsoft Translate}
+\paragraph*{Google Cloud Translate}\label{par:Google Cloud Translate}
+
+\subsection{Interessante Ansätze}
+\paragraph*{Paper Ohri und Schmah}
+\paragraph*{PlasTeX} und dann DeepL
+\paragraph*{TransLaTex}
+% outlier
+\paragraph*{MathTranslate}
+
+
+\paragraph*{Die \TeX{}-Compiler Familie} und rein innerhalb \TeX{}-basierte Ansätze sind durchaus denkbar, erfordern jedoch einen höheren menschlichen Aufwand. Auf diese Art und Weise wäre eine Trennung von \TeX{} und menschensprachlichen Texten direkt und ohne weiteres Nachdenken gegeben, sodass hierbei zwar Verluste hinsichtlich der Kompilationszeiten entstehen könnten, jedoch die gegebene Aufgabe technisch gesehen erfüllen könnten. Bemerkt sei hierbei, dass solch ein Ansatz natürlich bei Live-Editoren, wie beispielsweise Overleaf weniger geeignet wären, da diese für ihr Live-Rendering von PDFs bei jeder Veränderung des \TeX{}-Dokumentes 
+\subparagraph*{Das translate package} und dessen Glossare anpassen
+\subparagraph*{Einen Compiler} anpassen wäre möglich, sodass dieser alle Textstrings (hierbei: abhängig vom Token-Typ, welchen der \TeX{}-Parser liefert) in z.B.\ YAML überführt, welche ihrerseits als Input für eine KI genutzt werden könnte, sodass mit Recht wenig Kontext weiß, welche Token sie übersetzen soll und in welchem Kontext sie stehen. Jedoch braucht dies nicht unbedingt tiefersitzend in einem spezifischen Compiler verankert integriert werden, sondern ließe sich auch, wie vorangegangene Ansätze des Abschnittes es zeigten, auch gesondert lösen. Daher sollte zunächst die Frage geklärt werden, inwiefern es sinnvoll ist große, komplexe und dadurch nur mit hohem Zeitaufwand nachzuvollziehnde Technologien als nicht-offizieller Mitentwickler zu verändern, sodass bei jedem offiziellen, neuen Release dieser Software inoffizielle Änderungen \enquote{mitgeschliffen} werden müssten, oder ob es nicht vorzuziehen wäre, dass man ein gesondertes Problem getrennt löst, sollte dies, wie hier, möglich sein.% -> hier aber überleiten zu: dafür brauchen wir nicht ein Programm in einem Compiler, sondern können auch ein kleineres, unabhängiges und leichter zu verstehendes und damit leichter wartbares Programm erstellen
+
+%%% Näher in Betracht zu ziehen
+\paragraph*{Nach TeX} entstehende PDF könnten theortisch gesehen auch als Grundlage innerhalb eines automatischen Workflows denkbar sein. Denkbar sind Technologien, welche z.B.\ eine PDF in HTML oder XML zerlegen und diese als Grundlage nutzen, um eine automatische Übersetzung, für welche bekannte Browser eine Unterstützung bieten, zu nutzen. Diese Übersetzten HTML danach wieder in PDF zu übertragen ist noch leichter, da dies die herkömmlichen Browser ohnehin können. Und wem das Kompilieren auf diesem Weg zu lange dauert, darf sich in der Zwischenzeit dem Dokument in HTML/XML bedienen, welches ein Browser anzeigen kann. Sollten hiernach noch kleinere Änderungen von Nöten sein, so müsste nur noch eine entstandene, übersetzte PDF nur noch in den erwähnten Überlappungen innerhalb Ti\textit{k}Z aufgrunde von unabdingbaren sprachlichen Verhältnissen angepasst werden, was dann einmalig in HTML erfolgen müsste. Hierbei könnten dann jedoch auch menschliche Spracheditoren den entstandenen Dokumenten einer Kontroll-/ Korrekturlesung unterziehen, sollte sich solche Menschen finden lassen. Dies zeigt nun vorerst jedoch noch ein weiteres Problem und zwar wie man eine PDF in eine HTML-Datei überführt (ChatGPT scheint das zu können).
