@@ -1,0 +1,19 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Overleaf}{2025}{latex:overleaf:environments}
+Overleaf  \harvardyearleft 2025\harvardyearright , `Environments - overleaf,
+  online latex editor', \url{https://www.overleaf.com/learn/latex/Environments}
+  (last Access: 03.10.2025).
+
+\harvarditem{Tantau}{2013}{pgf:tillTantau:tikz}
+Tantau, T.  \harvardyearleft 2013\harvardyearright , `Tikz and pgf: Manual for
+  version 3.1.11a', \url{https://pgf-tikz.github.io/pgf/pgfmanual.pdf} (last
+  Access: 03.10.2025).
+
+\harvarditem{{The LaTeX-Project Team}}{2025}{latex:documentation:clsguide}
+{The LaTeX-Project Team}  \harvardyearleft 2025\harvardyearright , `Latex for
+  package and class authors',
+  \url{https://www.latex-project.org/help/documentation/clsguide.pdf} (last
+  Access: 03.10.2025).
+
+\end{thebibliography}

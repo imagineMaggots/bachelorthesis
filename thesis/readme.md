@@ -3,7 +3,7 @@
 Dieser Ordner beherbergt jegliche für die Abschlussarbeit relevante Dateien, namentlich '.bib' und '.tex', welche von (in meinem Fall) __pdflatex__ benötigt werden, damit am Ende ein vollständiges PDF-Dokument entsteht. Die einzelnen Unterordner korrespondieren mit den jeweiligen Abschnitten der Arbeit (Stufe 1). 
 
 ### subdirectories
-| <div style="width:20vw">folder | <div style="width:20vw">chapter name | <div style="width:10vw">subchapters | <div style="width:42vw">description |
+| <div style="width:16vw">folder | <div style="width:16vw">chapter name | <div style="width:16vw">subchapters | <div style="width:40vw">description |
 |---|---|---|---|
 | introduction | Einleitung | 1 | <li>recent version: short.tex<li>Kurze Einleitung in das Thema der Arbeit <li>Hierbei aktuell zwei Versionen in Arbeit (eine sehr Direkte und eine etwas Ausschweifendere) |
 | problem | Problemstellung | 3 | <li>Schilderung der Probleme, auf welche man stoßen könnte (im Rahmen des Themas)<li style="color:gray">Ursache dieser Probleme<li>Einfach umgängliche Probleme<li>Komplexere Probleme<li>Speziellere Probleme |
