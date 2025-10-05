@@ -9,8 +9,8 @@
 | Ausblick auf mögliche Erweiterungs- und Optimierungspotentiale |
 
 ## rules (for this repository)
-- only editing of this readme is prohibited while using mobile devices
-- for all other files, don't just wildly edit and commit, but think your changes through thoroughly
+- Handy-Commits auf main
+- Working-Branch is 'public'
 
 ## directories
 | <div style="width:15vw">Ordner</div> | <div style="width:25vw">Korresp. Teilaufgabe</div> | <div style="width:48vw">Inhalte</div> |
@@ -22,6 +22,8 @@
 ## further remarks
 - i am somewhat confident that the pronunciation of TeX and LaTeX is made up. A lot of english-speakers struggle with a german "ch" sound (as in e.g., Kirche, Küche, Licht, Wicht, ...), that is required for the \[x] (the sound the greek Xi makes), as it is not a sound the english language is familiar with. hence i am inclined to believe, that any english speaker working on TeX regularly would't refer to it as Teks or (german) Tech, but rather Tek. 
 - kann Copilot übersetzen? Ist ne KI von Microsoft. Wäre denkbar, dass bei der Frage "Übersetze XY so und so" zwischendrin auf "Microsoft Translator" zugegriffen wird
+- Kommentare sind durch Umgebung auch in-line moeglich... wird nach einem Kommentar folgende Zeichenkete erfasst? was wenn darin neue Kommentare vorkommen
+- in Kommentar-Kapitel ist eig die Frage, warum man diese Übersetzen sollte. mit Lamport begruendbar 
 
 ## additional ressources (possibly relevant in the future)
 - https://github.com/pgf-tikz/pgfplots/blob/master/doc/latex/pgfplots/TeX-programming-notes.tex
