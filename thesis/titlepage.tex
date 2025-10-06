@@ -15,14 +15,14 @@
 		\draw[line width=2pt,colorscheme,rounded corners=2ex] (0cm,0cm) +(2cm,0cm) --(2cm,23.5cm) -- (19cm,23.5cm) -- (19cm,0cm);
 		
 		% Titel
-		\node at (A) [below right] {\parbox{.85\textwidth}{\noindent\bfseries\sffamily{\Huge\raggedright \textcolor{colorscheme}{\titleasastring}\par}}};
+		\node at (A) [below right] {\parbox{.85\textwidth}{\noindent\bfseries\sffamily{\Huge\raggedright \textcolor{colorscheme}{\@title}\par}}};
 		
 		% Angaben
 		\node at (B) [above right] {\parbox{.85\textwidth}{
 				\begin{tabular}{ll}
-					Name: & \Large\authorasastring				\\[2pt]
-					Matrikelnummer: & 221201256					\\[1ex]
-					Abgabedatum: & \dateasastring				\\[5ex]
+					Name: & \Large\@author				\\[2pt]
+					Matrikelnummer: & \matrikelnummer					\\[1ex]
+					Abgabedatum: & \@date				\\[5ex]
 					Betreuer und Gutachter: & \supervisor  		\\[2pt]
 					& Universität Rostock						\\[2pt]
 					& \ief										\\

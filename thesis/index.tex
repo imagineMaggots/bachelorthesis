@@ -1,12 +1,11 @@
 \documentclass[11pt,toc]{article}
-\usepackage[left=2cm,right=2cm, top = 2cm ]{geometry}
-\author{Hendrik Theede}
-\title{\ldots}
-
+\renewcommand{\familydefault}{\sfdefault}
+\setcounter{secnumdepth}{6}
+\usepackage[left=2cm,right=2cm, top = 2cm]{geometry}
 %\usepackage[document]{ragged2e} % Damit alles: Links aligned (der linkeste Punkt eines jeden Buchstaben ist auf einer Linie für alle zeilen) und so viel Platz nach rechts ausnutzt, wie möglich (nein, macht TeX nicht standardmäßig); muss man nicht für das gesamte Dokument machen (wie hier), geht auch per \raggedright oder \RaggedRight für/vor Paragraphen; gibt auch Umgebungen für rechtsbündigen Text https://de.overleaf.com/learn/latex/Text_alignment
 \usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx}
-\usepackage{csquotes}
+\usepackage[babel,german=quotes]{csquotes} % "" nur auf deutsche Art und Weise
 \usepackage{tikz}
 \usetikzlibrary{calc,positioning}
 \usepackage{pgfplots}
@@ -22,18 +21,17 @@
 \bibliographystyle{agsm}
 
 %%% Uni-HRO relevantes
-\newcommand{\authorasastring}{Hendrik Theede}											% Autor
-\newcommand{\dateasastring}{02.12.2025}													% Datum, siehe oben
-\newcommand{\titleasastring}{Automatische Sprachübersetzung von \LaTeX{}-Dokumenten}	% Titel
+%%% TeX-relevant (siehe: titlepage.tex)
+\author{Hendrik Theede}
+\date{02.12.2025}
+\title{Automatische Sprachübersetzung von \LaTeX{}-Dokumenten}
+\def\matrikelnummer{221201256}
 \newcommand{\supervisor}{Prof.\ Dr.\ rer.\ nat.\ habil. Clemens H. Cap}					% Betreuer
 \newcommand{\ief}{Fakultät für Elektrotechnik und Informatik}							% Fakultaet
 \definecolor{colorscheme}{cmyk}{0.90, 0.30, 0.00, 0.00} 								% Farbschema der Fakultaet; Siehe Corp. Design
 \newcommand{\iuk}{Lehrstuhl für Informations- und Kommunikationsdienste}				% Institut
 
-%%% TeX-relevant (siehe: titlepage.tex)
-\author{\authorasastring}
-\date{\datesasatring}
-\title{\titleasastring}
+
 
 %%% "Deutsche Sprache"-relevant
 \renewcommand*\contentsname{\hypertarget{toc}{Inhaltsverzeichnis}} % cannot contain \par (and thus: newlines)
@@ -43,20 +41,29 @@
 \usepackage{hyperref}					% TeX!	
 \hypersetup{
 		linktoc=all,
+		allcolors=black,
 		colorlinks=true, % Für offizielle Releases das % vorne wegnehmen. Ersetzt die Boxen um Links durch die eigentlichen Farben
 		linkcolor=black,
 		urlbordercolor={1 0 0},
 		urlcolor=blue, 
 		citecolor=magenta,
 		breaklinks=true,
-		pdftitle=Abschlussarbeit Theede 221201256,
+		pdftitle=Abschlussarbeit,
 		pdfauthor=Hendrik Theede,
+		pdfsubject=Matrikelnummer 221201256,
 		pageanchor,
 		backref,
 }
 
 \begin{document}
+
+
+\makeatletter % um \@author und co zu nutzen
 \input{titlepage}
+\makeatother
+
+
+
 \pagenumbering{Roman}
 \setcounter{page}{0}
 \newpage
@@ -67,16 +74,36 @@ placeholder
 \tableofcontents
 \newpage
 \pagenumbering{arabic}
+
+\begingroup
+\hypersetup{hidelinks,pdfborder={0 0 1},allbordercolors=magenta}% Hat länger gedauert, als mir lieb ist. sagt TeX: innerhalb dieser Gruppe sollen links nicht farbig sein. würde zuerst auch implizieren, dass keine Rahmen in der PDF angezeigt werden sollen. Wie löst man das? Indem man manuell sagt: Wir haben einen Rahmen um Hyperrefs mit Offset X = 0, Offset Y = 0 und Stärke in Pixeln: 1 (standard)
+
 \include{introduction/short}
 \include{problem/list}
 \include{technologies/tek}
+
+\endgroup
+
 \newpage
+
+\makeatletter
 \section{Eigenständigkeitserklärung}
 Ich versichere hiermit, dass ich die vorliegende Arbeit selbstständig angefertigt und ohne fremde Hilfe verfasst habe. %, es sei denn die Aufgabenstellung verlangte unausweichlich einer (maschinellen) Unterstützung
 Dazu habe ich keine außer den von mir angegebenen Hilfsmitteln und Quellen verwendet und die den benutzten Werken inhaltlich und
 wörtlich entnommenen Stellen habe ich als solche kenntlich gemacht. 
 Ich versichere, dass die eingereichte elektronische Fassung mit den gedruckten Exemplaren übereinstimmt.
+\vspace{2cm}
+\begin{figure}[b]
+	\raggedright{}
+	Rostock, den \@date\\[8ex]% \date setzt das Datum (eine Variable), während \@ zuerst impliziert: Wir befassen uns mit einem Befehl, der eine Variable sein könnte und das @ bestätigt: es ist eine Variable und wir wollen auf den Wert zugreifen.
+	$\overline{\text{\@author}}$% overline = linie über dem umklammerten, \text: hier steht Text in einer mathematischen Formel, 
+	\vspace{2cm}
+\end{figure}
+\makeatother
+
 \newpage
+
+
 \bibliography{index}
 \include{appendices/appendix}
 \end{document}
