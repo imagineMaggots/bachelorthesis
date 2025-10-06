@@ -1,8 +1,26 @@
 \section{Einleitung}
+\subsection{Hintergrund}
+% Was haben wir probiert und auf welches Problem sind wir gestoßen?
+Der Versuch Software zur Übersetzung von menschlicher Sprache auf Quelltexte der Programmiersprache \TeX{} (bzw.\ den meisten Programmiersprachen) anzuwenden, scheitert recht schnell und produziert nicht mehr kompilierbare oder nicht vollständig übersetzte Dokumente. Google Translate zeigt hierbei schnell woraus dieses Problem entspringt, bzw.\ wie sich dieses äußert. Beispielsweise führt eine Übersetzung von \verb|hello wor\textit{ld}| nicht zu \verb|Hallo We\textit{lt}|, sondern zu \verb|hallo wor\textit{ld}|. Abgesehen von der Frage, wo die kursive Hervorhebung im eigentlichen String erfolgen soll, ist dem Leser eines kompilierten Dokumentes am Ende klar, dass es sich um ein Wort handelt, denn diese Zeichenkette wird zu \enquote{hello wor\textit{ld}} aufgelöst, in welcher das Wort \enquote{world} für einen menschlichen Leser als das englische Wort für \enquote{Welt} erkenntlich bleibt. Andererseits führt bereits die Möglichkeit die Dateiendung (bei der Arbeit mit mehreren \TeX{}-Dateien) auszulassen dazu, dass \verb|\include{clock}| fälschlich zu \verb|\include{Uhr}| übersetzt wird (Stand: 06.10.2025), wohingegen \verb|\include{clock.tex}| erhalten bleibt.\\% written
+\noindent 
+
+% Okay hier und da wird mal ein Wort ausgelassen, warum ist das in größeren Dokumenten problematisch? Man kann doch das Wort fix googlen?
+Betrachtet man \enquote{einen Übersetzer} zunächst als Konzept, mit welchem ohne Vorwissen von den (sprachlichen) Inhalten eines Dokumentes eine Übersetzung dieses Dokumentes in andere Sprachen entstehen soll, stellt man fest, dass selbst einzelne fehlende Worte zum Verlust des größeren Kontextes führen würden. Nimmt man bspw.\ Wörter mit zeitlichen oder räumlichen Bezügen (bei welchen eine Markierung gewisser Elemente hilfreich sein Könnte), so verlieren einzelne Sätze schnell ihre sprachliche Bedeutung. Der Satz \textit{Morgen wird es regnen.} könnte ohne das Wort \enquote{morgen} als Frage mit schwacher deutscher Rechtschreibung interpretiert werden können (\textit{Wird es regnen?}). Hierbei geht jegliche Aussage verloren und nur eine Fragestellung bleibt übrig. 
+
+% Warum ist das blöd. wenn S#tze ihre Bedeutung verlieren?
+Während ein Auslassen einzelner Worte sich zwar seltener aufzeigen sollte, da \LaTeX{} für eine systematische Erstellung größerer Dokumente verwendet wird, innerhalb welcher vorrangig größere sprachliche Strukturen (meint: Paragraphen, Abschnitte, Kapitel, Überschriften, \ldots) und deren Formatierung beschrieben werden, lassen sich auch hier alltägliche Schwierigkeiten einer naiven Nutzung solcher Software wiederfinden, sollte die sprachliche Bedeutung einzelner Sätze verloren gehen. Wenn bereits zu Beginn auch nur ein Satz nicht übersetzt wird, welcher einen Kontext setzt, so könnten sich später im Dokument Probleme aufzeigen.
+
+% Konkretes Beispiel, wo ein fehlender Kontext eine falsche Übersetzung liefern würde
+Beispielsweise wird das deutsche Wort \enquote{ungerade} von einer künstlichen Intelligenz fälschlich mit umgangsprachlicher Bedeutung interpretiert worden sien, sollte es im Englischen nicht als \enquote{odd}, sondern zu \enquote{crooked} vorliegen. Neben einer solchen Erhaltung von Kontexten ist auch eine selbstständige Erkennung der zu übersetzenden Sprache (Originalsprache eines Dokumentes) interessant, jedoch nicht zwingend erforderlich.\\
+\noindent
+
+\subsection{Übersetzung von Dokumenten im Web}
+% Warum nicht einfacher über HTML-Dokumente lösen, statt TeX zu nutzen?
 Wohingegen sich die Sprachübersetzung im Web schnell auf gängige Technologien wie DeepL oder Google's Gemini zurückführen lässt, zeigt sich eine ähnliche Übersetzung von \TeX{} und \LaTeX{} Dokumenten nur in ernüchternder Weise verfolgt. Lösungsansätze zu diesem Problem existieren bereits, allerdings gehen diese oftmals Umwege und trennen die Fähigkeiten der \TeX{}-Engine nicht in jedem Fall von den Technologien, welche verwendet werden sollen, um textliche Inhalte einer menschlichen Sprache in eine Andere zu übersetzen.\\
 \noindent
-Wo eine naive Nutzung solcher Software bereits im Alltag schnell Schwierigkeiten aufzeigt, ist insbesondere in einem wissenschaftlichen und mathematischem Kontext eine gezielte Verwendung der dieser Technologien erstrebenswert, sodass nicht jegliche Texte unabhängig voneinander und kontextlos übersetzt werden. Andernfalls wäre es denkbar, dass das deutsche Wort \enquote{ungerade} seine Bedeutung gegenüber einer mathematischen Operation verliert (nach welcher eine Zahl modulo 2 in 1 resultiert) und als umgangssprachliches \enquote{schief} interpretiert wird und im Englischen respektiv als \enquote{odd}, bzw.\ \enquote{crooked} übersetzt werden würde. Neben einer solchen Erhaltung von Kontexten ist auch eine selbstständige Erkennung der zu übersetzenden Sprache (Originalsprache eines Dokumentes) interessant, jedoch nicht zwingend erforderlich.\\
-\noindent
+
+
+% 
 Weiterhin dürfen Übersetzungsprozesse selbstverständlich nicht darin enden, dass eine entstehende (bspw.) PDF entweder vollständig unlesbar wird. % TeX Syntax kaputt
 Daneben sollten allerdings auch keine unlesbaren Sektionen innerhalb der jeweiligen Dokumente entstehen, die aus von Layouting-Problemen resultieren, welche sich für die Übersetzung in einige Sprachen zeigen (jedoch in einigen Fällen unvermeidbar sind).\\ 
 \noindent
