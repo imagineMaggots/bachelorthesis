@@ -1,11 +1,16 @@
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
 \contentsline {section}{\numberline {2}Problemfälle}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Simple Probleme}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Komplexere Probleme}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Spezielle Probleme}{7}{subsection.2.3}%
-\contentsline {subparagraph}{In Tabellen}{7}{section*.15}%
-\contentsline {subparagraph}{Zwischen verschiedenen Umgebungen}{8}{section*.16}%
-\contentsline {subsection}{\numberline {2.4}Weitere Schwierigkeiten}{11}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{12}{section.3}%
-\contentsline {section}{Literaturverzeichnis}{13}{section*.25}%
-\contentsline {section}{\numberline {A}Anhänge}{14}{section.chX.1}%
+\contentsline {subsection}{\numberline {2.2}Komplexere Probleme}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Spezielle Probleme}{8}{subsection.2.3}%
+\contentsline {subparagraph}{\numberline {2.3.0.0.1}In Tabellen}{8}{subparagraph.2.3.0.0.1}%
+\contentsline {subparagraph}{\numberline {2.3.0.0.2}Zwischen verschiedenen Umgebungen}{9}{subparagraph.2.3.0.0.2}%
+\contentsline {subsection}{\numberline {2.4}Weitere Schwierigkeiten}{12}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Technologischer Stand und denkbare Lösungswege}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Generische, fundamentale Technologien}{13}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Denkbare Workflows}{13}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Existierende Ansätze}{14}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Eigenständigkeitserklärung}{16}{section.4}%
+\contentsline {section}{Literaturverzeichnis}{17}{section*.38}%
+\contentsline {section}{\numberline {A}Anhänge}{18}{section.chX.1}%
+\contentsline {subsection}{\numberline {A.1}Google Suche vom 03.10.2025}{18}{subsection.chX.1.1}%
