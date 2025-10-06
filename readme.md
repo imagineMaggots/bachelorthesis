@@ -9,8 +9,10 @@
 | Ausblick auf mögliche Erweiterungs- und Optimierungspotentiale |
 
 ## rules (for this repository)
-- Handy-Commits auf main
-- Working-Branch is 'public'
+- working branch is 'main'
+- pls think about the title of your commits
+- try to keep commit-frequency on main below 1 or 2 a day
+- rapid commits are fine on any other branch (these are unavoidable when using gh mobile)
 
 ## directories
 | <div style="width:15vw">Ordner</div> | <div style="width:25vw">Korresp. Teilaufgabe</div> | <div style="width:48vw">Inhalte</div> |
