@@ -1,10 +1,37 @@
 \section{Einleitung}
-Wohingegen sich die Sprachübersetzung im Web schnell auf gängige Technologien wie DeepL oder Google's Gemini zurückführen lässt, zeigt sich eine ähnliche Übersetzung von \TeX{} und \LaTeX{} Dokumenten nur in ernüchternder Weise verfolgt. Lösungsansätze zu diesem Problem existieren bereits, allerdings gehen diese oftmals Umwege und trennen die Fähigkeiten der \TeX{}-Engine nicht in jedem Fall von den Technologien, welche verwendet werden sollen, um textliche Inhalte einer menschlichen Sprache in eine Andere zu übersetzen.\\
-\noindent
-Wo eine naive Nutzung solcher Software bereits im Alltag schnell Schwierigkeiten aufzeigt, ist insbesondere in einem wissenschaftlichen und mathematischem Kontext eine gezielte Verwendung der dieser Technologien erstrebenswert, sodass nicht jegliche Texte unabhängig voneinander und kontextlos übersetzt werden. Andernfalls wäre es denkbar, dass das deutsche Wort \enquote{ungerade} seine Bedeutung gegenüber einer mathematischen Operation verliert (nach welcher eine Zahl modulo 2 in 1 resultiert) und als umgangssprachliches \enquote{schief} interpretiert wird und im Englischen respektiv als \enquote{odd}, bzw.\ \enquote{crooked} übersetzt werden würde. Neben einer solchen Erhaltung von Kontexten ist auch eine selbstständige Erkennung der zu übersetzenden Sprache (Originalsprache eines Dokumentes) interessant, jedoch nicht zwingend erforderlich.\\
-\noindent
-Weiterhin dürfen Übersetzungsprozesse selbstverständlich nicht darin enden, dass eine entstehende (bspw.) PDF entweder vollständig unlesbar wird. % TeX Syntax kaputt
-Daneben sollten allerdings auch keine unlesbaren Sektionen innerhalb der jeweiligen Dokumente entstehen, die aus von Layouting-Problemen resultieren, welche sich für die Übersetzung in einige Sprachen zeigen (jedoch in einigen Fällen unvermeidbar sind).\\ 
-\noindent
-Wünschenswert ist neben vorigen Aspekten auch Möglichkeiten für den Endnutzer zu erlauben, sollte dieser spezielle Übersetzungen oder Kontexte für einige Wörter wünschen, welche jedoch nicht aus dem Dokument selbst hervorgehen. % Schaffe ich es in dieser Arbeit das Wort "inhärent" NICHT zu verwenden?
-Außerdem sollte ein möglichst hoher Support für sowohl verschiedene menschliche Sprachen, aber auch verschiedene \LaTeX{}-Pakete gegeben sein, wobei Letzteres nur ein Bonus ist, sollten Systeme wie Ti\textit{k}Z, bzw.\ \texttt{pgfplots} oder Bib\TeX{} innerhalb \LaTeX{} (zusammen mit \TeX{}) nutzbar bleiben.% Da sich durch diese sämtliche Verhalten anderer Pakete reproduzieren ließen.
+\subsection{Hintergrund}\phantomsection\label{einleitung:hintergrund}
+% Was haben wir probiert und auf welches Problem sind wir gestoßen?
+Beim Versuch herkömmliche Software zur Übersetzung von menschlicher Sprache auf \TeX{}-Quellcode anzuwenden, werden schnellig Dokumente erzeugt, welche entweder nicht vollständig übersetzt wurden oder sich nicht kompilieren lassen. Google Translate zeigt hierbei schnell die Gründe hierfür, bzw.\ wie sich diese äußern. Beispielsweise führt eine Übersetzung von \verb|hello wor\textit{ld}| nicht zu \verb|Hallo We\textit{lt}|, sondern zu \verb|hallo wor\textit{ld}|. Abgesehen von der Frage, wo die kursive Hervorhebung im eigentlichen String erfolgen soll, werden Leser eines kompilierten Dokumentes das Wort \enquote{Welt} erkennen können. Zuvor beschriebene Zeichenkette wird zu \enquote{hello wor\textit{ld}} aufgelöst, in welcher das Wort \enquote{world} für einen menschlichen Leser als das englische Wort für \enquote{Welt} erkenntlich bleibt.% warum doppelt
+\\\noindent
+% reviewed: 1
+
+
+
+% Okay hier und da wird mal ein Wort ausgelassen, warum ist das in größeren Dokumenten problematisch? Man kann doch das Wort fix googlen? Oh weh wir weichen ab von TeX
+Diese Tatsache scheint im ersten Augenblick nicht weiter verheerend, kann jedoch bei größeren Dokumenten einen Logikbruch hervorrufen. 
+Betrachtet man \enquote{einen Übersetzer} zunächst als Konzept, mit welchem, ohne Vorwissen von den (sprachlichen) Inhalten eines Dokumentes, diese Inhalte in eine andere Sprache als die Originale übersetzt werden soll, stellt man ein Risiko des Kontextverlustes fest. Als einfaches sprachliches Beispiel dienen hier zum Beispiel Wörter mit zeitlichem/räumlichen Bezug. Einzelne Sätze schnell ihre sprachliche Bedeutung, wenn einzelne Wörter verloren gehen, welche für den Kontext oder die Semantik des Satzes unabdingbar sind. Der Satz \textit{Morgen wird es regnen.} könnte ohne das Wort \enquote{morgen} als Frage mit $($schwacher$)$ deutscher Rechtschreibung interpretiert werden können. $($\textit{Wird es regnen?}$)$. Nun wird keine Aussage mehr getroffen, sondern folgend eine Aussage erhofft.
+% reviewed: 0
+
+
+\phantomsection\label{einleitung:inclusion}
+% Wieder zurück zu TeX! Ja gut, hier und da mal etwas TeX Syntax zu übersehen kann ja nicht schaden, solange das Dok. kompiliert... oder?
+Genauso wie das Fehlen einzelner Wörter die sprachliche Bedeutung brechen kann, könnte auch das Übersetzen von \LaTeX{}-Makros zu einem semantischen Verlust (von einzelnen Worten) für die \TeX{}-Engine beitragen. Konträr zu dem zuvor geschilderten \enquote{Verpassen} von Texten, welche übersetzt werden sollen, steht man hier vor dem Problem, dass zu viele textliche Strings übersetzt werden. Bereits die Möglichkeit eine Dateiendung (in bestimmten Fällen) auszulassen, führt dazu, dass z.B.\ \verb|\include{clock}| fälschlich zu \verb|\include{Uhr}| übersetzt wird (Google Translaten am 06.10.2025), wohingegen \verb|\include{clock.tex}| erhalten bleiben würde. Ersteres hätte zur Folge, dass die eingebundene Datei nicht mehr referenziert und demnach während des Kompilier-Prozesses nicht mehr erfasst werden würde.\\\noindent 
+% reviewed: 1
+
+% Oh weh, was wenn der Kontext des Dokumentes verloren geht?
+\LaTeX{} erlaubt viele solcher Syntax-Brüche und es könnten theoretisch gesehen auch (leicht) fehlerhafte \TeX{}-Quellcodes kompiliert werden. Während~\hyperref[einleitung:hintergrund]{einleitende Beispiele} eher wenig intuitiv folgende Beispiele präsentieren, zeigen jedoch die Folgen dieser weitreichende Probleme auf (innerhalb eines Dokumente). Als Beispiel für ein deutsches Wort, welches von einem übersetzenden Programm fälschlich aufgegriffen werden könnte, wäre \enquote{ungerade}. Insofern dieses Wort umgangssprachlich interpretiert werden würde, müsste es im z.B.\ Englischen in dem Wort \enquote{crooked} (im Sinne:\ \textit{schief}) enden, aber im Bezug auf eine Zahl als \enquote{odd}.\\\noindent
+% reviewed: 0
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Noch unter eigenem Review}
+Bemerkung:\ Nein, sowas landet nicht \enquote{aus Versehen} in der eigentlichen, abgegebenen Abschlussarbeit. Solche Bemerkungen würde ich andernfalls nicht in Überschriften vermerken.\\\\
+
+Neben solchen rein technischen Details, darf eine menschliche Perspektive nicht missachtet bleiben und so dürfen keine Übersetzungsprozesse dazu führen, dass in einem Dokument versteckte (im Sinne:\ nicht lesbare) Inhalte entstehen. Solche sind zunächst aus verschiedenen Layouting-Problemen herleitbar und abhängig von einzelnen Sprachen unterschiedlich. 
+
+
+% Daneben sollten allerdings auch keine unlesbaren Sektionen innerhalb der jeweiligen Dokumente entstehen, die aus von Layouting-Problemen resultieren, welche sich für die Übersetzung in einige Sprachen zeigen (jedoch in einigen Fällen unvermeidbar sind).\\ 
+% \noindent
+% Wünschenswert ist neben vorigen Aspekten auch Möglichkeiten für den Endnutzer zu erlauben, sollte dieser spezielle Übersetzungen oder Kontexte für einige Wörter wünschen, welche jedoch nicht aus dem Dokument selbst hervorgehen. % Schaffe ich es in dieser Arbeit das Wort "inhärent" NICHT zu verwenden?
+% Außerdem sollte ein möglichst hoher Support für sowohl verschiedene menschliche Sprachen, aber auch verschiedene \LaTeX{}-Pakete gegeben sein, wobei Letzteres nur ein Bonus ist, sollten Systeme wie Ti\textit{k}Z, bzw.\ \texttt{pgfplots} oder Bib\TeX{} innerhalb \LaTeX{} (zusammen mit \TeX{}) nutzbar bleiben.% Da sich durch diese sämtliche Verhalten anderer Pakete reproduzieren ließen.

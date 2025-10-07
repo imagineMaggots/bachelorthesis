@@ -11,6 +11,10 @@ Dieser Ordner beherbergt jegliche für die Abschlussarbeit relevante Dateien, na
 | solution | Lösung |  | <li>Den vielversprechensten Ansatz nochmal genauer herausstellen<li>Kann dieser bereits alles?<li>Kann man diesen verbessern? |
 | conclusion | Fazit |  | <li>Juhu |
 
+### tracked
+- Number of times i have reviewed each paragraph. % reviewed:(number) at the end of said paragraph
+- NOT: How much time i put into each paragraph. idc about arbitrary stuff like that
+
 ### further remarks
 Es existieren zwei verschiedene <b style="font-family:courier">.bib</b> innerhalb dieses Verzeichnis'. Die erste <b style="font-family:courier">all.bib</b> beherbergt jegliche gefundene Quelle, welche interessant aussieht, jedoch entweder noch keinen vollständigen BibTeX Eintrag besitzt oder nicht explizit in der Arbeit verwendet wurde. Letztere sind in vollständiger BibTeX Notation <b style="font-family:courier">index.bib</b> zu entnehmen.
 
