@@ -1,10 +1,13 @@
 \documentclass[11pt,toc]{article}
 \renewcommand{\familydefault}{\sfdefault}
 \setcounter{secnumdepth}{6}
-\usepackage[left=2cm,right=2cm, top = 2cm]{geometry}
+\usepackage[left=2cm,right=2cm]{geometry}
 %\usepackage[document]{ragged2e} % Damit alles: Links aligned (der linkeste Punkt eines jeden Buchstaben ist auf einer Linie für alle zeilen) und so viel Platz nach rechts ausnutzt, wie möglich (nein, macht TeX nicht standardmäßig); muss man nicht für das gesamte Dokument machen (wie hier), geht auch per \raggedright oder \RaggedRight für/vor Paragraphen; gibt auch Umgebungen für rechtsbündigen Text https://de.overleaf.com/learn/latex/Text_alignment
 \usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx}
+\usepackage{pdfpages} 
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage[babel,german=quotes]{csquotes} % "" nur auf deutsche Art und Weise
 \usepackage{tikz}
 \usetikzlibrary{calc,positioning}
@@ -36,6 +39,9 @@
 %%% "Deutsche Sprache"-relevant
 \renewcommand*\contentsname{\hypertarget{toc}{Inhaltsverzeichnis}} % cannot contain \par (and thus: newlines)
 \renewcommand*\refname{Literaturverzeichnis} % can contain \par (and thus: newlines)
+\renewcommand*\figurename{Abbildung}
+
+
 
 % Muss ans Ende, weil sonst übernimmt ein Biber aus der Bibliothek
 \usepackage{hyperref}					% TeX!	
@@ -80,7 +86,7 @@ placeholder
 
 \include{introduction/short}
 \include{problem/list}
-\include{technologies/tek}
+%\include{technologies/tek}
 
 \endgroup
 
@@ -105,5 +111,10 @@ Ich versichere, dass die eingereichte elektronische Fassung mit den gedruckten E
 
 
 \bibliography{index}
+
+\begingroup
+\hypersetup{hidelinks,pdfborder={0 0 1},allbordercolors=magenta}
 \include{appendices/appendix}
+\endgroup
+
 \end{document}

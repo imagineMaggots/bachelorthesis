@@ -1,12 +1,15 @@
 \begin{thebibliography}{xx}
 
 \harvarditem{Knuth}{1986}{texbook}
-Knuth, D.~E.  \harvardyearleft 1986\harvardyearright , {\em The TeXbook},
-  Addison-Wesley Professional.
+Knuth, D.~E.  \harvardyearleft 1986\harvardyearright , {\em The TeXbook, ISBN:
+  9780201134476}, Addison-Wesley Professional.
 
 \harvarditem{Lamport}{2003}{specifyingSystems:leslieLamport:asciiOfMathTypesetting}
-Lamport, L.  \harvardyearleft 2003\harvardyearright , {\em Specifying Systems},
-  Addison-Wesley.
+Lamport, L.  \harvardyearleft 2003\harvardyearright , {\em Specifying Systems,
+  ISBN: 9780321143068}, Addison-Wesley.
+\newblock \url{https://lamport.azurewebsites.net/tla/book-21-07-04.pdf} oder
+  \url{https://lamport.azurewebsites.net/tla/book.html} (last Access:
+  04.10.2025).
 
 \harvarditem{Overleaf}{2025}{latex:overleaf:environments}
 Overleaf  \harvardyearleft 2025\harvardyearright , `Environments - overleaf,

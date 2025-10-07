@@ -15,16 +15,16 @@ A level-1 auxiliary file: appendices/appendix.aux
 Database file #1: index.bib
 You've used 6 entries,
             2909 wiz_defined-function locations,
-            673 strings with 5826 characters,
-and the built_in function-call counts, 15364 in all, are:
-= -- 2460
+            673 strings with 5868 characters,
+and the built_in function-call counts, 15373 in all, are:
+= -- 2462
 > -- 144
 < -- 0
 + -- 1115
 - -- 42
 * -- 1202
-:= -- 3284
-add.period$ -- 6
+:= -- 3286
+add.period$ -- 7
 call.type$ -- 6
 change.case$ -- 82
 chr.to.int$ -- 6
@@ -32,13 +32,13 @@ cite$ -- 6
 duplicate$ -- 76
 empty$ -- 163
 format.name$ -- 54
-if$ -- 2715
+if$ -- 2717
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 4
-newline$ -- 21
+newline$ -- 22
 num.names$ -- 60
-pop$ -- 50
+pop$ -- 49
 preamble$ -- 1
 purify$ -- 90
 quote$ -- 0
@@ -53,4 +53,4 @@ type$ -- 20
 warning$ -- 0
 while$ -- 126
 width$ -- 0
-write$ -- 74
+write$ -- 76

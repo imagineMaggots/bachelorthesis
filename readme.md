@@ -15,8 +15,8 @@
 
 ## branches
 - main: The public branch containing the files that are okay to be seen
-- hendrik-desktop: branch for any remote file changes that happen using my pc
-- origin/imagineMaggots-patch-1: branch for any mobile changes, usually updates for 'readme's
+- hendrik-desk: branch for any remote file changes that happen using my pc
+- origin/imagineMaggots-patch-1: branch for any mobile changes, usually only updates 'readme's
 
 ## directories
 | <div style="width:15vw">Ordner</div> | <div style="width:25vw">Korresp. Teilaufgabe</div> | <div style="width:48vw">Inhalte</div> |
