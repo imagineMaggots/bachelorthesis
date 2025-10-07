@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  7 OCT 2025 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  7 OCT 2025 13:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -937,8 +937,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [toc].
 
-(index.aux (introduction/short.aux) (problem/list.aux) (technologies/tek.aux)
-(appendices/appendix.aux))
+(index.aux (introduction/short.aux) (problem/list.aux) (appendices/appendix.aux
+))
 \openout1 = `index.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
@@ -1049,7 +1049,7 @@ Package hyperref Info: Link coloring ON on input line 64.
 \openout5 = `index.out'.
 
  (titlepage.tex
-<pictures/UNIHRO_LOGO_2025.pdf, id=66, 703.62875pt x 144.54pt>
+<pictures/UNIHRO_LOGO_2025.pdf, id=54, 703.62875pt x 144.54pt>
 File: pictures/UNIHRO_LOGO_2025.pdf Graphic file (type pdf)
 <use pictures/UNIHRO_LOGO_2025.pdf>
 Package pdftex.def Info: pictures/UNIHRO_LOGO_2025.pdf  used on input line 12.
@@ -1073,20 +1073,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--8
 
  []
 
+[1
 
+]
 Underfull \hbox (badness 10000) in paragraph at lines 17--19
 
  []
 
-[1
-
-]
-Overfull \hbox (6.80312pt too wide) in paragraph at lines 20--21
+)
+Overfull \hbox (6.80312pt too wide) in paragraph at lines 20--87
 []\OT1/cmss/m/n/10.95 Daher muss nach einer L^^?osung gesucht wer-den, welche d
 iese tech-nis-chen und sprach-lichen H^^?urden ^^?uberwinden
  []
 
-) [2]
+[2]
 \openout2 = `problem/list.aux'.
 
  (problem/list.tex
@@ -1183,22 +1183,7 @@ se an-der-weits nicht beschreib-bare In-halte und Sit-u-a-tio-nen zu schildern.
 
  []
 
-[14]) [15]
-\openout2 = `technologies/tek.aux'.
-
- (technologies/tek.tex
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-6.
-
-(C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
-File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-[16
-
-
-
-{C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-
-ts1.enc}] [17]) [18] [19
+[14]) [15] [16
 
 
 ] (index.bbl
@@ -1208,16 +1193,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--13
 bsites . net / tla /
  []
 
-) [20]
+) [17]
 \openout2 = `appendices/appendix.aux'.
 
- (appendices/appendix.tex (appendices/fontscaling.tex [21
+ (appendices/appendix.tex (appendices/fontscaling.tex [18
 
 ]
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample1.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample1.pdf, id=306, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample1.pdf, id=264, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample1.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample1.pdf>
 Package pdftex.def Info: appendices/fontscalingexample1.pdf  used on input line
@@ -1234,19 +1219,19 @@ m/n/10 obige
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample2.pdf, id=309, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample2.pdf, id=267, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample2.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample2.pdf>
 Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
  57.
 (pdftex.def)             Requested size: 80.07498pt x 113.12413pt.
-)) [22 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2
+)) [19 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2
 .pdf
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
->] (index.aux (introduction/short.aux) (problem/list.aux) (technologies/tek.aux
-) (appendices/appendix.aux))
+>] (index.aux (introduction/short.aux) (problem/list.aux)
+(appendices/appendix.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1258,15 +1243,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: 8ED22942D8C1B17009D47FBEA57C92FB;2401.
+(rerunfilecheck)             Checksum: 2FE982D79A61D9A2E2B62F363EB71CAA;1671.
  ) 
 Here is how much of TeX's memory you used:
- 35461 strings out of 474485
- 820081 string characters out of 5744206
+ 35390 strings out of 474485
+ 818284 string characters out of 5744206
  1944542 words of memory out of 5000000
- 57075 multiletter control sequences out of 15000+600000
- 571713 words of font info for 85 fonts, out of 8000000 for 9000
+ 57036 multiletter control sequences out of 15000+600000
+ 571415 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,87p,2704b,883s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
@@ -1279,17 +1267,17 @@ type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Sxyx/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Sxyx/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/User
-s/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pf
-b><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mssi10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmsy6.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Sxyx/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on index.pdf (25 pages, 734826 bytes).
+s/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss9.pfb><
+C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss
+bx10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmssi10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Sxyx/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on index.pdf (22 pages, 731166 bytes).
 PDF statistics:
- 433 PDF objects out of 1000 (max. 8388607)
- 91 named destinations out of 1000 (max. 500000)
- 148 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 73 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 

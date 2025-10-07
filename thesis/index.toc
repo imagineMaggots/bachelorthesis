@@ -1,15 +1,12 @@
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Hintergrund}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Anforderungen}{2}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Problemfälle}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Simple Probleme}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Komplexere Probleme}{5}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Spezielle Probleme}{10}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Weitere Schwierigkeiten}{14}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Technologischer Stand und denkbare Lösungswege}{16}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Generische, fundamentale Technologien}{16}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Denkbare Workflows}{16}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Existierende Ansätze}{18}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Eigenständigkeitserklärung}{19}{section.4}%
-\contentsline {section}{Literaturverzeichnis}{20}{section*.41}%
-\contentsline {section}{\numberline {A}Anhänge}{21}{section.chX.1}%
-\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{21}{subsection.chX.1.1}%
+\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{16}{section.3}%
+\contentsline {section}{Literaturverzeichnis}{17}{section*.28}%
+\contentsline {section}{\numberline {A}Anhänge}{18}{section.chX.1}%
+\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{18}{subsection.chX.1.1}%

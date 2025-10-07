@@ -6,27 +6,18 @@ Anders wäre dies, wenn das Auslassen von auch nur einem Wort keine Rückschlüs
 \\\noindent
 % reviewed: 2
 
-
 %% Warum ist es so schwer _keine_ Konzessivsätze zu schreiben???
 % Okay hier und da wird mal ein Wort ausgelassen, warum ist das in größeren Dokumenten problematisch? Man kann doch das Wort fix googlen? Oh weh wir weichen ab von TeX
 Eine Betrachtung eines \enquote{Übersetzers} als Konzept veranschaulicht die Problematik auf abstrakterer Ebene. Sollte der Kontext des Dokumentes unbekannt sein, werden sich unausweichlich semantische Fehler einschleichen. Bereits~\hyperref[einleitung:hintergrund]{das gezeigte Beispiel} könnte für z.B.\ eine Folie einer Lesung den restlichen Kontext der Seite entfernen und dadurch die Möglichkeit bieten umgangssprachliche Bedeutungen in Wörter zu interpretieren, anstatt einer Mathematischen (bspw.\ \enquote{ungerade} könnte im Englischen \enquote{crooked}, statt \enquote{odd} produzieren). Noch weitere sprachliche Beispiele finden sich schnellig durch Wörter mit zeitlichem/räumlichen Bezug. Der Satz \texttt{Morgen wird es regnen.} könnte ohne das Wort \enquote{morgen} als Frage mit unzureichend eingehaltener deutscher Grammatik interpretiert werden. $($\textit{Wird es regnen?}$)$. Hierbei verliert man eine getroffene Aussage über das Wetter, welches bekanntlicherweise nur schwer vorhergesagt werden kann.% Siehe ansonsten: Internetseiten des deutschen Wetterdienstes. Evtl braucht das 'nen Anhang???
 % reviewed: 1
 
-\phantomsection\label{einleitung:tex}
+\newpage
+\subsection{Anforderungen}\phantomsection\label{einleitung:tex}
 % Wieder zurück zu TeX! Ja gut, hier und da mal etwas TeX Syntax zu übersehen kann ja nicht schaden, solange das Dok. kompiliert... oder?
 Genauso wie das Fehlen einzelner Wörter die sprachliche Bedeutung für einen Menschen brechen kann, treten ähnliche Probleme auch in \TeX{} auf. Einzelne \LaTeX{} Makros \textit{nicht} zu übersetzen ist unbedeutend, da sie ihre Bedeutung für einen \TeX{} Compiler behalten. Alleine einzelne Wörter eines Makros zu übersetzen kann dazu führen, dass größere Inhalte (im Sinne: Menge an Worten) nicht mehr in einem kompilierten Dokument vorzufinden sind, was auf eine Fähigkeit von \TeX{} zurückführbar ist. Die Möglichkeit in bestimmten Fällen eine Dateiendung auszulassen, führt beim Einbinden von anderen \texttt{.tex} Dateien in einem \TeX{} Dokument zu fehlerhaften/fehlenden Ressourcenangaben.\ \verb|\include{clock}| zu \verb|\include{Uhr}| zu übersetzen (wie bspw.\ Google Translate am 06.10.2025) würde nun nicht mehr zu \verb|\include{clock.tex}| aufgelöst werden, sondern zu \verb|\include{Uhr.tex}| (bei welchem nicht davon auszugehen ist, dass diese Datei zur Kompilierzeit im System zwingend vorliegt).\\\noindent 
 % reviewed: 2
 
-Daher muss nach einer Lösung gesucht werden, welche diese technischen und sprachlichen Hürden überwinden kann. Neben solchen rein technischen Details, darf eine menschliche Perspektive nicht missachtet bleiben und so dürfen keine Übersetzungsprozesse dazu führen, dass in einem Dokument versteckte (und dadurch nicht lesbare) Inhalte entstehen. Solche sind zunächst aus verschiedenen Layouting-Problemen herleitbar (z.B.\ Skalierung von Schriftgrößen auf Webseiten, siehe Anhang~\ref{anhang:webFontScaling}) und abhängig von einzelnen Sprachen unterschiedlich (da Wörter einzelner Sprachen eine minimale Pixelfläche benötigen, um angezeigt zu werden).% Meint: TikZ und irgendwelche hübschen Bilder; verschiedene Sprachen sind unterschiedlich groß (benötigen unterschiedlich viel Fläche)
-
-
-%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%
-
-%
-
-
-% Daneben sollten allerdings auch keine unlesbaren Sektionen innerhalb der jeweiligen Dokumente entstehen, die aus von Layouting-Problemen resultieren, welche sich für die Übersetzung in einige Sprachen zeigen (jedoch in einigen Fällen unvermeidbar sind).\\ 
-% \noindent
-% Wünschenswert ist neben vorigen Aspekten auch Möglichkeiten für den Endnutzer zu erlauben, sollte dieser spezielle Übersetzungen oder Kontexte für einige Wörter wünschen, welche jedoch nicht aus dem Dokument selbst hervorgehen. % Schaffe ich es in dieser Arbeit das Wort "inhärent" NICHT zu verwenden?
-% Außerdem sollte ein möglichst hoher Support für sowohl verschiedene menschliche Sprachen, aber auch verschiedene \LaTeX{}-Pakete gegeben sein, wobei Letzteres nur ein Bonus ist, sollten Systeme wie Ti\textit{k}Z, bzw.\ \texttt{pgfplots} oder Bib\TeX{} innerhalb \LaTeX{} (zusammen mit \TeX{}) nutzbar bleiben.% Da sich durch diese sämtliche Verhalten anderer Pakete reproduzieren ließen.
+Daher muss nach einer Lösung gesucht werden, welche diese technischen und sprachlichen Hürden überwinden kann. Neben solchen rein technischen Details, darf die Perspektive des Lesers (wörtlich) nicht missachtet bleiben und keine Übersetzungsprozesse dürfen zu versteckten Inhalten im Dokument führen. Diese Verbergung resultiert aus verschiedenensten Layouting-Problemen, ähnlich wie bei der Skalierung von Boxen auf Webseiten (Anhang~\ref{anhang:webFontScaling}) und ist abhängig von einzelnen Sprachen dazu in der Lage unbemerkt verdeckte textliche Inhalte zu provozieren.\footnote{Zwei adjazente Textfelder müssen sich zwangsläufig überlagern, wenn eines unabdingbar größer werden muss, da z.B.\ die Textgröße nicht verkleinert werden kann und das Wachstum eines Textfeldes nur in das Gebiet eines Anderen stattfinden kann. Dies wäre z.B.\ mit Hilfe von Inhaltsangaben auf Lebensmitteln vorstellbar. Sollten diese Wörter übersetzt werden und dadurch mehr Textfläche nach rechts benötigen, würden sie in den tabellarischen Bereich der eigentlichen quantitativen Angaben des z.B.\ Brennwertes, der Makro- sowie der Mikronährstoffe, hereinragen, wodurch das Risiko besteht, dass diese verdeckt werden.}% Meint: TikZ und irgendwelche hübschen Bilder; verschiedene Sprachen sind unterschiedlich groß (benötigen unterschiedlich viel Fläche)
+Wünschenswert ist neben vorigen Aspekten auch Möglichkeiten für den Endnutzer zu erlauben, sollte dieser spezielle Übersetzungen oder Kontexte für einige Wörter wünschen, welche jedoch nicht aus dem Dokument selbst hervorgehen. % Schaffe ich es in dieser Arbeit das Wort "inhärent" NICHT zu verwenden?
+Außerdem sollte ein möglichst hoher Support für sowohl verschiedene menschliche Sprachen, aber auch verschiedene \LaTeX{}-Pakete gegeben sein, wobei Letzteres nur ein Bonus ist, sollten Systeme wie Ti\textit{k}Z, bzw.\ \texttt{pgfplots} oder Bib\TeX{} innerhalb \LaTeX{} (zusammen mit \TeX{}) nutzbar bleiben.% Da sich durch diese sämtliche Verhalten anderer Pakete reproduzieren ließen.
+% reviewed: 0
