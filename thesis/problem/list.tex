@@ -4,7 +4,7 @@
 \section{Problemfälle}
 Eine einzige, feste \TeX{}-Syntax existiert theoretisch gesehen nicht, wie ein~\hyperref[par:catcode]{späterer Paragraph} aufzeigen wird.% So gehen in-document refs ganz gut.
 Die Fähigkeit jegliche erdenkliche Zeichenkette (gegeben:\ diese ist auf einem Rechner darstellbar, siehe:~\cite{unicode}) sorgt zunächst für eine unendliche Menge an testbaren Problemen. Da es unmöglich ist eine unendliche Menge an Testfällen abzudecken, herrscht zunächst eine Begrenzung auf die reine \LaTeX{} (bzw.\ \TeX{}~Syntax nach~\cite{texbook}) und die bereits rein innerhalb dieser schnellig auffallenden Fehler, welche durch fälschlich übersetzte Zeichenketten entstehen könnten.\\\noindent
-Für spätere Testzwecke wurden die einzelnen Problemfälle in einzelne Kategorien eingeteilt, welche nach der Häufigkeit begründet sind, mit welcher sie in einem Dokument auftreten könnten. Hierbei sind simple Probleme auf solche bezogen, welche in der reinen Erstellung und Verfassung von Dokumenten entstehen könnten und komplexe Probleme konzentrieren sich darauf, dass gezielter \LaTeX{} und \TeX{}~Befehle und Pakete genutzt werden, um durch diese weniger offensichtliche syntaktische Fehlerquellen zu erproben. Bereits diese Arten an Fehlerquellen zeigen Fälle auf, in welchen Regelbrüche gegenüber der \LaTeX{}~Syntax ein Kompilieren eines Dokumentes verhindern würden. Spezielle Probleme befassen sich danach mit gezielt dahingegen erarbeitete Testfälle, welche für manuell erstellte Dokumente eher unüblich wären, technisch gesehen jedoch möglich sind und der Betrachtung nicht entzogen werden können. Weitere Schwierigkeiten werden dahingegen aufgezeigt, welche sprachlichen Hürden bei der menschensprachlichen Übersetzung aufzeigen könnten. Da diese Betrachtung nicht im Vordergrund stehen soll, jedoch für spätere Tests interessant werden könnte, werden diese vorerst an das Ende dieses Abschnittes gestellt.
+Für spätere Testzwecke wurden die einzelnen Problemfälle in einzelne Kategorien eingeteilt, welche nach der Häufigkeit begründet sind, mit welcher sie in einem Dokument auftreten könnten. Hierbei sind simple Probleme auf solche bezogen, welche in der reinen Erstellung und Verfassung von Dokumenten entstehen könnten und komplexe Probleme konzentrieren sich darauf, dass gezielter \LaTeX{} und \TeX{}~Befehle und Pakete genutzt werden, um durch diese weniger offensichtliche syntaktische Fehlerquellen zu erproben. Bereits diese Arten an Fehlerquellen zeigen Fälle auf, in welchen Regelbrüche gegenüber der \LaTeX{}~Syntax ein Kompilieren eines Dokumentes verhindern würden. Spezielle Probleme befassen sich danach mit gezielt dahingegen erarbeitete Testfälle, welche für manuell erstellte Dokumente eher unüblich wären, technisch gesehen jedoch möglich sind und der Betrachtung nicht entzogen werden können. Weitere Schwierigkeiten werden dahingegen aufgezeigt, welche sprachlichen Hürden bei der menschensprachlichen Übersetzung aufzeigen könnten. Da diese Betrachtung nicht im Vordergrund stehen soll, jedoch für spätere Tests interessant werden könnte, sind diese an das Ende dieses Abschnittes gestellt.
 % reviewed: 1
 
 %%%%%
@@ -20,21 +20,22 @@ Für spätere Testzwecke wurden die einzelnen Problemfälle in einzelne Kategori
 
 % Dinge, welche sehr schnell in TeX-relevant werden und sich einfach lösen lassen
 \subsection{Simple Probleme}
-\paragraph*{Unerwartete Zeichen}% Eigentlich nur einfache \TeX{}-Syntax... die simpelsten Fälle, an welchen reine Übersetzungsprogramme scheitern müssten... Nicht alle Wörter stehen frei (durch Whitespace getrennt)
+\paragraph*{Textliche Formatierung}% Eigentlich nur einfache \TeX{}-Syntax... die simpelsten Fälle, an welchen reine Übersetzungsprogramme scheitern müssten... Nicht alle Wörter stehen frei (durch Whitespace getrennt)
 \subparagraph*{Beispiel}
-\subparagraph*{Beschreibung}
+\verb|\textit{p}robably| wird zu \verb|\textit{p}wahrscheinlich| übersetzt (Google Translate, Stand: 07.10.2025).
+\subparagraph*{Beschreibung und Begründung}
 % Einzelne Wörter, welche die TeX-Syntax brechen
-Zeichenketten sind Repräsentationen von Wörtern, welche ihrerseits Buchstaben (bspw.\ lateinische, griechische, kyrillische Alphabete), Glyphen oder Bilder beinhalten (bspw.\ antikes ägyptisch, chinesisch/Hanzi, japanisch/Kanji). 
-
-Die meisten Übersetzungs-Tools würden demnach nicht erwarten, dass solche Zeichenketten Zeichen beinhalten, welche das folgende Wort zu einem Befehl (für eine Programmiersprache) machen. Zwar würde z.B.\ Google Translate für die Zeichenkette \texttt{Hello} korrekterweise das Deutsche \texttt{Hallo} liefern, aber bereits die Präambel von \TeX{}-Dokumenten zeigt, wie \verb|\title{}|, \verb|\author{}| und \verb|\date{}| respektiv zu \verb|\Titel{}|, \verb|\Autorin{}| und \verb|\Datum{}| übersetzt werden würden (Stand: 01.10.2025). Benanntes Tool zeigt sich zudem inkonsistent. Beispielsweise wird \verb|\section{saw}| zu \verb|\Abschnitt{Säge}| übersetzt und \verb|\section{Introduction}| zu \verb|\section{Einführung}| übersetzt.\\\noindent
+Zeichenketten sind Repräsentationen von Wörtern, welche ihrerseits Buchstaben (bspw.\ lateinische, griechische, kyrillische Alphabete), Glyphen oder Bilder beinhalten (bspw.\ antikes ägyptisch, chinesisch/Hanzi, japanisch/Kanji). Keine Sprache der Menschheit trägt \enquote{Sonderzeichen} (meint zum Beispiel:\ mathematische Symbole, Punkte, Striche,\ \ldots) innerhalb ihres Lexikons. Diese Art von Zeichen kann zwar nur in schriftlicher Form auftreten, produziert jedoch Zeichenketten, welche für Programme nicht als Teil der menschlichen Sprache interpretierbar sind. Einige Befehle in der \TeX{}~Syntax lassen mehrere Wege der Nutzung zu, wodurch einzelne Zeichenketten entweder durch Whitespace freistehen können, oder von Klammern umgeben sind.
+%So ist innerhalb der beispielhaften Zeichenkette vermutlich \verb|\title{| als ein Wort aufgefasst und danach \enquote{My Title} als freistehende Worte, wodurch diese übersetzt werden. Anders ist dies, wenn kein unerwartetes Zeichen (i.e.\ ein von Whitespace Abweichendes) einer Zeichenfolge aus reinen Buchstaben folgt. 
+%Google Translate würde beispielsweise für die Zeichenkette \texttt{Hello} korrekterweise das Deutsche \texttt{Hallo} liefern, aber bereits die Präambel von \TeX{}-Dokumenten zeigt, wie \verb|\title{}|, \verb|\author{}| und \verb|\date{}| respektiv zu \verb|\Titel{}|, \verb|\Autorin{}| und \verb|\Datum{}| übersetzt werden würden (Stand: 01.10.2025). Benanntes Tool zeigt sich zudem inkonsistent. Beispielsweise wird \verb|\section{saw}| zu \verb|\Abschnitt{Säge}| übersetzt und \verb|\section{Introduction}| zu \verb|\section{Einführung}| übersetzt.\\\noindent
 % reviewed: 1
-\subparagraph*{Abstrakte Formulierung}
+\subparagraph*{Formen}% Formen bedeutet: Welche Befehle könnten dieses Problem auslösen?
+Diese Art von Fehler könnte für jegliche Art von \TeX{}-Befehl auftreten, welcher nicht durch 
 
 
 
 
-
-\paragraph*{Vermisste Zeichen}% "Vermisst" meint eigentlich nur, dass man nicht davon ausgehen soll, dass Wörter _nie_ freistehen _könnten_.
+\paragraph*{Whitespace}% "Vermisst" meint eigentlich nur, dass man nicht davon ausgehen soll, dass Wörter _nie_ freistehen _könnten_.
 \subparagraph*{Beispiel}
 \subparagraph*{Beschreibung}
 % Wenn eines von mehreren Wörtern die TeX-Syntax (kaputt macht)
