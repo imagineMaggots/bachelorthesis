@@ -21,8 +21,9 @@ aber zusätzliches Vorwissen verlangen. Dieses Vorwissen lässt sich bei diesen 
 \enquote{Speziellere Probleme} umfassen Probleme, welche sich nicht ohne Vorkenntnis des tatsächlichen Dokumentes beheben lassen. Nach diesen wird zudem noch auf ein paar rein sprachliche Schwierigkeiten eingegangen, welche unter Anderem zu solchen speziellen Problemen führen könnten.
 
 \subsubsection{Beschreibung}
-Jeder Problemfall wird zunächst durch ein Beispiel demonstriert\footnote{welche aus einem Test mit Hilfe von Google Translate in Firefox durchgeführt wurden (Oktober 2025)}, danach wörtlich in einer Beschreibung erläutert und wird abschließend abstrahiert und versucht auf konkrete \TeX{} Primitiven zurückgeführt zu werden. Die fortgeschritteneren Probleme bedürfen teilweise mehreren Beispielen zur Beschreibung, lassen sich jedoch auf ähnliche Äußerungen zurückführen. \pdfmarkupcomment[markup=squiggly, color=red]{Die Beispiele werden in der Form \texttt{ausführbarer Code} wird zu \texttt{ausführbarer Code} übersetzt, aber \texttt{ausführbarer Code} zu \texttt{fehlerhafter Code}\footnote{\enquote{Code} bezieht sich in beiden Fällen auf \TeX{}-Quelltexte} (1-dimensionale Darstellung). Einige Beispiele benötigen mitunter eine 2-dimensionale Darstellung, da sie mehrere Zeilen Quellcode umfassen und werden tabellarisch nebeneinander gestellt}{Evtl.\ werden alle Beispiele in tabellarische Form überführt aus. Finde ich persönlich sehr ansehlich}.
+Jeder Problemfall wird zunächst durch ein Beispiel demonstriert\footnote{welche aus einem Test mit Hilfe von Google Translate in Firefox durchgeführt wurden (Oktober 2025)}, danach wörtlich in einer Beschreibung erläutert und wird abschließend abstrahiert und versucht auf konkrete \TeX{} Primitiven zurückgeführt zu werden. Die fortgeschritteneren Probleme bedürfen teilweise mehreren Beispielen zur Beschreibung, lassen sich jedoch auf ähnliche Äußerungen zurückführen. Die Beispiele werden in der Form \texttt{ausführbarer Code} wird zu \texttt{ausführbarer Code} übersetzt, aber \texttt{ausführbarer Code} zu \texttt{fehlerhafter Code}\footnote{\enquote{Code} bezieht sich in beiden Fällen auf \TeX{}-Quelltexte} (1-dimensionale Darstellung). Einige Beispiele benötigen mitunter eine 2-dimensionale Darstellung, da sie mehrere Zeilen Quellcode umfassen und werden tabellarisch nebeneinander gestellt~\pdfcomment[color=red, icon=Paragraph]{Evtl.\ werden alle Beispiele in tabellarische Form überführt aus. Finde ich persönlich sehr ansehlich}.
 
+% Namensgebung aus ~/tests/readme.md wahrscheinlich geeigneter
 \subsection{Simple Probleme}\phantomsection\label{problems:simple}
 % 0d zu 1d
 \subsubsection{Unerwartete Zeichen}\phantomsection\label{problems:unexpectedCharacters}
@@ -41,10 +42,6 @@ Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \ve
 Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpectedCharacters]{zuvor} beschriebenen Zeichenketten erkennen, sondern lassen sich auch anderweitig in Quelltexten wiederfinden.
 
 
-
-Tes
-
-
 % Vertikales Spacing / Zweite Dimension
 \subsubsection{Vertikales Spacing}\phantomsection\label{problems:verticalSpacing}
 \paragraph*{Beispiel}
@@ -54,8 +51,9 @@ Tes
         \toprule
             Original & Übersetzung\\
         \midrule
-            Beispiel 1\lstinputlisting[language=tex]{problem/test.tex} & \lstinputlisting[language=tex]{problem/test.tex}\\[2em]
-            Beispiel 2\lstinputlisting[language=tex]{problem/test.tex} & \lstinputlisting[language=tex]{problem/test.tex}\\
+        % Siehe ~/tests/readme.md für namensgebung und "Wo ist die Datei?"
+            Beispiel 1\lstinputlisting[language=tex]{../tests/simple/2d/correct_original.tex} & \lstinputlisting[language=tex]{../tests/simple/2d/correct.tex}\\[2em]
+            Beispiel 2\lstinputlisting[language=tex]{../tests/simple/2d/wrong_original.tex} & \lstinputlisting[language=tex]{../tests/simple/2d/wrong.tex}\\
         \bottomrule
     \end{tabularx}
     \caption{Beispiel für eine Zeile, welche übersetzt werden darf}\label{tab:problems:verticalSpacing}

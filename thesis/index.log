@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  8 OCT 2025 15:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  8 OCT 2025 15:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1372,7 +1372,7 @@ Package hyperref Info: bookmark level for unknown lpcsec defaults to 0 on input
 
 
 ]
-Overfull \hbox (35.9038pt too wide) in paragraph at lines 38--39
+Overfull \hbox (35.9038pt too wide) in paragraph at lines 39--40
  []\OT1/cmss/bx/n/10.95 Beispiel [][]\OT1/cmtt/m/n/10.95 \begin{myenvironment}[
 fontsize=red] []\OT1/cmss/m/n/10.95 wird zu [][]\OT1/cmtt/m/n/10.95 \begin{myen
 vironment}[fontsize=red] []\OT1/cmss/m/n/10.95 u[]bersetzt,
@@ -1388,10 +1388,13 @@ vironment}[fontsize=red] []\OT1/cmss/m/n/10.95 u[]bersetzt,
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty)
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty)
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty)
-(problem/test.tex) (problem/test.tex) (problem/test.tex) (problem/test.tex)
-(problem/test.tex) (problem/test.tex) (problem/test.tex) (problem/test.tex)
-(problem/test.tex) (problem/test.tex) (problem/test.tex) (problem/test.tex)
-[4] [5]) [6] [7
+(../tests/simple/2d/correct_original.tex) (../tests/simple/2d/correct.tex)
+(../tests/simple/2d/wrong_original.tex) (../tests/simple/2d/wrong.tex)
+(../tests/simple/2d/correct_original.tex) (../tests/simple/2d/correct.tex)
+(../tests/simple/2d/wrong_original.tex) (../tests/simple/2d/wrong.tex)
+(../tests/simple/2d/correct_original.tex) (../tests/simple/2d/correct.tex)
+(../tests/simple/2d/wrong_original.tex) (../tests/simple/2d/wrong.tex) [4]
+[5]) [6] [7
 
 
 ] (index.bbl) [8]
@@ -1404,7 +1407,7 @@ vironment}[fontsize=red] []\OT1/cmss/m/n/10.95 u[]bersetzt,
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample1.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample1.pdf, id=338, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample1.pdf, id=334, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample1.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample1.pdf>
 Package pdftex.def Info: appendices/fontscalingexample1.pdf  used on input line
@@ -1415,7 +1418,7 @@ Missing character: There is no ; in font nullfont!
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample2.pdf, id=341, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample2.pdf, id=337, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample2.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample2.pdf>
 Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
@@ -1427,7 +1430,7 @@ Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
 >]
-runsystem(latexminted cleantemp  --timestamp 20251008150417 6A992D5529F459A44FE
+runsystem(latexminted cleantemp  --timestamp 20251008153811 6A992D5529F459A44FE
 E58C733255E86)...disabled (restricted).
 
  (index.aux (introduction/short.aux) (problem/issues.aux)
@@ -1440,47 +1443,30 @@ L3 programming layer <2024-01-04>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `index.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `index.out':
-(rerunfilecheck)             Before: 38800BEB0F10973F6478F389E88CC445;3761
-(rerunfilecheck)             After:  F6EAFC5F111FD398E50C6A6C1CA2103D;1853.
+Package rerunfilecheck Info: File `index.out' has not changed.
+(rerunfilecheck)             Checksum: F6EAFC5F111FD398E50C6A6C1CA2103D;1853.
  ) 
 Here is how much of TeX's memory you used:
- 46528 strings out of 474485
- 1071536 string characters out of 5744206
- 1983542 words of memory out of 5000000
- 67927 multiletter control sequences out of 15000+600000
+ 46582 strings out of 474485
+ 1072800 string characters out of 5744206
+ 2009542 words of memory out of 5000000
+ 67980 multiletter control sequences out of 15000+600000
  571091 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,13n,130p,1435b,2749s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{figure.caption.61} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section*.59} has been referenced but does not exist
-, replaced by a fixed one
-
-<C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmss10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmss12.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmss8.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Sxyx/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/Sxyx/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Sxyx/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on index.pdf (13 pages, 647220 bytes).
+ 89i,14n,130p,1435b,2724s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmss10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmss12.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmss8.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Sxyx/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Sxyx/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/Sxyx/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Sxy
+x/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on index.pdf (13 pages, 648827 bytes).
 PDF statistics:
- 444 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
+ 438 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
  236 words of extra memory for PDF output out of 10000 (max. 10000000)
 
