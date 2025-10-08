@@ -13,3 +13,7 @@
 ### sub-branching
 - i don't really see the necessity for sub-branching right now, but if needed treat the branch you're starting from like 'main'
 - then apply all other rules
+
+## thesis workflow
+- each "chapter" (section) of the thesis will receive a unique branch
+- these will merge with main in a quasi-periodic manner (i.e. every one or two days, based on my own judgement)
