@@ -74,7 +74,7 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand von einzelnen Zeilen oder Zei
         \midrule
         % Siehe ~/tests/readme.md für namensgebung und "Wo ist die Datei?"; hoffentlich sieht sich der Herr Prof. Dr. rer. nat. habil. nicht den Quellcode an dieser Stelle an.
             Datei $x$ \lstinputlisting[language=TeX]{../tests/simple/3d/x_original.tex} & \lstinputlisting[language=tex]{../tests/simple/3d/x.tex}\\[2em]
-            Datei $y$ \lstinputlisting[language=TeX]{../tests/simple/3d/y_original.tex} & \lstinputlisting[language=tex]{../tests/simple/3d/y_original.tex}\\
+            Datei $y$ \lstinputlisting[language=TeX]{../tests/simple/3d/y_original.tex} & \lstinputlisting[language=tex]{../tests/simple/3d/y_original.tex}\\% Begründung, warum hier zwei mal nur ein und dieselbe Datei verwendet wird, ist dieser Datei zu entnehmen
         \bottomrule
     \end{tabularx}
     \caption{Beispiel für eine übersehende Datei}\label{tab:problems:dim3}
@@ -86,47 +86,61 @@ führt zwar dazu, dass Datei $x$ übersetzt wird, aber Datei $y$ nicht.
 Teile der \TeX-Syntax müssen nicht zwingend in einer Datei vorliegen, sondern könnten auch in verschiedenen Dateien integriert sein. Die Klassifizierung simpler Probleme gelangt in \TeX{} hier bereits in der dritten Dimension an, weswegen sich fortan bereits mit \enquote{fortgeschrittenen} Problemen beschäftigt werden muss (welche sich Teils über mehrere \enquote{Dimensionen} erstrecken).
 
 \subsection{Fortgeschrittenere Probleme}\phantomsection\label{problems:advanced}
-\subsubsection{Kommentare}
+\subsubsection{Kommentare}\phantomsection\label{problems:advanced:comments}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 %- zunächst als Unterklasse von~\ref{problems:unexpectedCharacters} zu erwarten
 %- kann jedoch auch~\ref{problems:verticalSpacing} umfassen
 \paragraph*{Abstrahierung}
-Hier treffen simple Fehler aus den ersten drei Kategorien (in~\ref{problems:dim0},~\ref{problems:dim1} und~\ref{problems:dim2} geschildert) aufeinander. In die dritte Dimension, also in andere Dateien, wird jedoch nicht traversiert, da auskommentierte Datei-Einbindungen nicht erfasst werden sollten. 
+Hier treffen simple Fehler aus den ersten drei Kategorien (in~\ref{problems:dim0},~\ref{problems:dim1} und~\ref{problems:dim2} geschildert) aufeinander. In die dritte Dimension, also in andere Dateien, wird jedoch (\hyperref[problems:special:comments]{vorerst}) nicht traversiert, da auskommentierte Datei-Einbindungen nicht erfasst werden dürften. 
 
 
-\subsubsection{Tabellen}\phantomsection\label{problems:tables}
+\subsubsection{Tabellen}\phantomsection\label{problems:advanced:tables}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 \paragraph*{Abstrahierung}
 
-\subsubsection{Literaturverzeichnis}\phantomsection\label{problems:bibtex}
+\subsubsection{Literaturverzeichnis}\phantomsection\label{problems:advanced:bibtex}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 \paragraph*{Abstrahierung}
 
 
-\subsubsection{TikZ und Layouting}\phantomsection\label{problems:layouting}
+\subsubsection{TikZ und Layouting}\phantomsection\label{problems:advanced:layouting}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 \paragraph*{Abstrahierung}
 
-\subsubsection{Category Codes}\phantomsection\label{problems:catcode}
+\subsubsection{Category Codes}\phantomsection\label{problems:advanced:catcode}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 \paragraph*{Abstrahierung}
 
 
 \subsection{Spezielle Probleme}\phantomsection\label{problems:special}
-\subsubsection{Glossare und Nomenklatur}\phantomsection\label{problems:glossaries}
+\subsubsection{Glossare und Nomenklatur}\phantomsection\label{problems:special:glossaries}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 \paragraph*{Abstrahierung}
 
-\subsubsection{Dilemmatische Makros}\phantomsection\label{problems:macrodilemma}
+\subsubsection{Dilemmatische Makros}\phantomsection\label{problems:special:macrodilemma}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 \paragraph*{Abstrahierung}
+
+\subsubsection{Quelltexte}\phantomsection\label{problems:special:sourcecode}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
+\paragraph*{Abstrahierung}
+Quelltexte anderer Quellsprachen (Programmiersprachen) können ihrerseits auf andere Dateien verweisen, oder andere Syntaktik tragen. Das Erkennen dieser ist theoretisch gesehen leicht, jedoch praktisch gesehen schnellig zu übersehen. 
+
+\subsubsection{Kommentare}\phantomsection\label{problems:special:comments}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
+Wohingegen sich~\ref{problems:advanced:comments} nicht mit anderen, in Kommentaren referenzierten, Dateien beschäftigt, soll sich hier auf solche Fälle konzentriert werde.
+\paragraph*{Abstrahierung}
+Ausgehend von~\ref{problems:advanced:comment} wird nun erwartet, dass eine Referenzierung von Dateien erwartet wird, welche sich in Kommentaren verbergen. Dies kann jedoch~\ref{problems:special:sourcecode} beinhalten.
+
 
 \subsection{Weitere Schwierigkeiten}\phantomsection\label{problems:additional}
 \paragraph*{Beispiele}
