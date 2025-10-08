@@ -226,16 +226,7 @@ Package csquotes Info: ... configuration file loaded successfully.
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
 File: csquotes.cfg 
 )
-
-! Package csquotes Error: Quote style not defined.
-
-See the csquotes package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2497 \ProcessOptions*
-                       
-? 
+Package csquotes Info: Redefining alias 'english' -> 'english/british'.
 )
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.s
 ty
@@ -1202,7 +1193,7 @@ Package rerunfilecheck Info: File `index.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  36467 strings out of 474485
- 838598 string characters out of 5744206
+ 838599 string characters out of 5744206
  1936542 words of memory out of 5000000
  58116 multiletter control sequences out of 15000+600000
  570611 words of font info for 80 fonts, out of 8000000 for 9000
