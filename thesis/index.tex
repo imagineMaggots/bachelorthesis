@@ -8,7 +8,10 @@
 \usepackage{pdfpages} 
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage[babel,german=quotes]{csquotes} % "" nur auf deutsche Art und Weise
+
+\usepackage[english,ngerman]{babel}
+\usepackage[german=guillemets]{csquotes}
+
 \usepackage{tikz}
 \usetikzlibrary{calc,positioning}
 \usepackage{pgfplots}
@@ -85,7 +88,7 @@ placeholder
 \hypersetup{hidelinks,pdfborder={0 0 1},allbordercolors=magenta}% Hat länger gedauert, als mir lieb ist. sagt TeX: innerhalb dieser Gruppe sollen links nicht farbig sein. würde zuerst auch implizieren, dass keine Rahmen in der PDF angezeigt werden sollen. Wie löst man das? Indem man manuell sagt: Wir haben einen Rahmen um Hyperrefs mit Offset X = 0, Offset Y = 0 und Stärke in Pixeln: 1 (standard)
 
 \include{introduction/short}
-\include{problem/list}
+\include{problem/issues}
 %\include{technologies/tek}
 
 \endgroup

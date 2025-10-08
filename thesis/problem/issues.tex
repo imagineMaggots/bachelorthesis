@@ -1,0 +1,35 @@
+% Welche Arten von Fehlern können entstehen? (Was fällt einem auf, wenn man Dokumente schreibt und sich denkt: mmmmhh würde google translate das richtig übersetzen)
+\section{Problemfälle}
+Eine einzige, feste \TeX{}-Syntax existiert theoretisch gesehen nicht, wie ein~\hyperref[problems:advanced:catcode]{späterer Paragraph} aufzeigen wird.% So gehen in-document refs ganz gut.
+Die Fähigkeit jegliche erdenkliche Zeichenkette (gegeben:\ diese ist auf einem Rechner darstellbar, siehe:~\cite{unicode}) sorgt zunächst für eine unendliche Menge an testbaren Problemen. Da es unmöglich ist eine unendliche Menge an Testfällen abzudecken, wird zunächst nur die vorgesehene \LaTeX{} (bzw.\ \TeX{}~Syntax nach~\cite{texbook}) betrachtet und die bereits rein innerhalb dieser schnellig auffallenden Fehler aufgezeigt, welche durch fälschlich übersetzte Zeichenketten entstehen könnten.\\\noindent
+% reviewed: 1
+% 
+\subsection{Struktur}\phantomsection\label{problems:structure}% Warum Kategoriesieren?
+\subsubsection{Klassifizierung}
+
+Für spätere Testzwecke wurden die verschiedenen Problemfälle in einzelne Kategorien getrennt. Eine solche Kategorisierung ist technisch gesehen nicht zwingend, soll allerdings zur Verbesserung einer späteren Übersicht dienen. Die Einteilung konzentriert sich vorrangig auf die Komplexität des Problemes und in einer Reihenfolge, in welcher sie auch bei der Nutzung von \TeX{} für ein beliebiges Dokument auftreten könnten. 
+%
+% Definition: Direkte Probleme
+Hierbei seien \textit{direkte Probleme} zunächst eher simple und technisch leicht zu behebende Probleme, welche sich durch ein einheitliches Vorgehen beheben lassen könnten.% Könnten muss an dieser Stelle so folgen
+Zudem beschränkt man sich hier nur auf den benötigten Zugriff auf eine einzelne Datei.
+%
+% Definition: Indirekte Probleme und Zusammenfassung zu "simplen Problemen"
+\textit{Indirekte Probleme} formen potentielle Schwierigkeiten, da sie einen Zugriff auf weitere Dateien benötigen, da sie von einer Ausgangsdatei referenziert werden. Technisch gesehen sind sie jedoch auch durch einheitliche Paradigma zu bewältigen. Daher werden sie im Kapitel~\ref{problems:simple} zusammengefasst und fortan als \enquote{simple Probleme} bezeichnet.
+%
+% Definition: Fortgeschrittene Probleme
+\enquote{Fortgeschrittene Probleme} beziehen sich auf Probleme, welche sich paradigmatisch lösen lassen, % man kann einen Quellcode schreiben; paradigmatisch = Mustern folgend
+aber zusätzliches Vorwissen verlangen. Dieses Vorwissen lässt sich bei diesen Problemfällen jedoch ermitteln, da der Entstehungsweg dieses Wissens nachvollziehbar ist.% Meint: Wir gucken uns an, wo und wann zu übersetzende Wörter hinter Makros, in Paketen, anderen >>Programmen<< versteckt wird.
+\enquote{Speziellere Probleme} umfassen Probleme, welche sich nicht ohne Vorkenntnis des tatsächlichen Dokumentes beheben lassen. Nach diesen wird zudem noch auf ein paar rein sprachliche Schwierigkeiten eingegangen, welche unter Anderem zu solchen speziellen Problemen führen könnten.
+
+\subsubsection{Beschreibung}
+
+Jeder Problemfall wird zunächst durch ein Beispiel demonstriert, danach wörtlich erläutert und wird abschließend abstrahiert anhand konkreter \TeX{} Primitiven zusammengefasst. 
+
+\subsection{Simple Probleme}\phantomsection\label{problems:simple}
+
+\subsection{Fortgeschrittenere Probleme}\phantomsection\label{problems:advanced}
+
+
+Placeholder\ldots\label{problems:advanced:catcode}
+
+\subsection{Spezielle Probleme}\phantomsection\label{problems:advanced}

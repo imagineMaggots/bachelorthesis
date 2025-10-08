@@ -1,12 +1,15 @@
+\babel@toc {ngerman}{}\relax 
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Hintergrund}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Anforderungen}{2}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Problemfälle}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Simple Probleme}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Komplexere Probleme}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Spezielle Probleme}{10}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Weitere Schwierigkeiten}{14}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{16}{section.3}%
-\contentsline {section}{Literaturverzeichnis}{17}{section*.28}%
-\contentsline {section}{\numberline {A}Anhänge}{18}{section.chX.1}%
-\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{18}{subsection.chX.1.1}%
+\contentsline {subsection}{\numberline {2.1}Struktur}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Klassifizierung}{3}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Beschreibung}{3}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Simple Probleme}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Fortgeschrittenere Probleme}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Spezielle Probleme}{3}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{4}{section.3}%
+\contentsline {section}{Literatur}{5}{section*.11}%
+\contentsline {section}{\numberline {A}Anhänge}{6}{section.chX.1}%
+\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{6}{subsection.chX.1.1}%
