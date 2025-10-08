@@ -21,44 +21,97 @@ aber zusätzliches Vorwissen verlangen. Dieses Vorwissen lässt sich bei diesen 
 \enquote{Speziellere Probleme} umfassen Probleme, welche sich nicht ohne Vorkenntnis des tatsächlichen Dokumentes beheben lassen. Nach diesen wird zudem noch auf ein paar rein sprachliche Schwierigkeiten eingegangen, welche unter Anderem zu solchen speziellen Problemen führen könnten.
 
 \subsubsection{Beschreibung}
-Jeder Problemfall wird zunächst durch ein Beispiel demonstriert, danach wörtlich in einer Beschreibung erläutert und wird abschließend abstrahiert und versucht auf konkrete \TeX{} Primitiven zurückgeführt zu werden. 
+Jeder Problemfall wird zunächst durch ein Beispiel demonstriert\footnote{welche aus einem Test mit Hilfe von Google Translate in Firefox durchgeführt wurden (Oktober 2025)}, danach wörtlich in einer Beschreibung erläutert und wird abschließend abstrahiert und versucht auf konkrete \TeX{} Primitiven zurückgeführt zu werden. Die fortgeschritteneren Probleme bedürfen teilweise mehreren Beispielen zur Beschreibung, lassen sich jedoch auf ähnliche Äußerungen zurückführen. \pdfmarkupcomment[markup=squiggly, color=red]{Die Beispiele werden in der Form \texttt{ausführbarer Code} wird zu \texttt{ausführbarer Code} übersetzt, aber \texttt{ausführbarer Code} zu \texttt{fehlerhafter Code}\footnote{\enquote{Code} bezieht sich in beiden Fällen auf \TeX{}-Quelltexte} (1-dimensionale Darstellung). Einige Beispiele benötigen mitunter eine 2-dimensionale Darstellung, da sie mehrere Zeilen Quellcode umfassen und werden tabellarisch nebeneinander gestellt}{Evtl.\ werden alle Beispiele in tabellarische Form überführt aus. Finde ich persönlich sehr ansehlich}.
 
 \subsection{Simple Probleme}\phantomsection\label{problems:simple}
-% Horizontales Spacing
+% 0d zu 1d
 \subsubsection{Unerwartete Zeichen}\phantomsection\label{problems:unexpectedCharacters}
-\paragraph{Beispiel}
-\paragraph{Beschreibung}
-\paragraph{Abstrahierung}
+\paragraph*{Beispiel}
+\verb|\label{problem:encounter:solve}| wird zu \verb|\label{Problem:Begegnung:Lösung}| übersetzt, aber \verb|\section{example}| zu \verb|\Abschnitt{Beispiel}|.
+\paragraph*{Beschreibung}
+\paragraph*{Abstrahierung}
+Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \verb|[|, \verb|]|, \verb|$|, \verb|$$| oder \verb|\%| erkennen und müssten daher ausgeschlossen werden.
 
-\subsubsection{Vermisste Zeichen}\phantomsection\label{problems:missingCharacters}
-\paragraph{Beispiel}
-\paragraph{Beschreibung}
-\paragraph{Abstrahierung}
+% 0d zur ersten Dimension
+\subsubsection{Fehlinterpretierte Wörter}\phantomsection\label{problems:misunderstoodWords}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt
+\paragraph*{Beispiel}
+\verb|\begin{myenvironment}[fontsize=red]| wird zu \verb|\begin{myenvironment}[fontsize=red]| übersetzt, aber \verb|\begin{myenvironment}[ fontsize = red ]| zu \verb|\begin{myenvironment}[ fontsize = rot ]|.
+\paragraph*{Beschreibung}
+\paragraph*{Abstrahierung}
+Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpectedCharacters]{zuvor} beschriebenen Zeichenketten erkennen, sondern lassen sich auch anderweitig in Quelltexten wiederfinden.
 
-% Vertikales Spacing
+
+
+Tes
+
+
+% Vertikales Spacing / Zweite Dimension
 \subsubsection{Vertikales Spacing}\phantomsection\label{problems:verticalSpacing}
-\paragraph{Beispiel}
-\paragraph{Beschreibung}
-\paragraph{Abstrahierung}
+\paragraph*{Beispiel}
+\begin{table}[h!]
+    \centering
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+            Original & Übersetzung\\
+        \midrule
+            Beispiel 1\lstinputlisting[language=tex]{problem/test.tex} & \lstinputlisting[language=tex]{problem/test.tex}\\[2em]
+            Beispiel 2\lstinputlisting[language=tex]{problem/test.tex} & \lstinputlisting[language=tex]{problem/test.tex}\\
+        \bottomrule
+    \end{tabularx}
+    \caption{Beispiel für eine Zeile, welche übersetzt werden darf}\label{tab:problems:verticalSpacing}
+\end{table}
+\paragraph*{Beschreibung}
+\paragraph*{Abstrahierung}
 
+
+% Dreidimensionales Spacing
 \subsubsection{Mehrere Dateien}\phantomsection\label{problems:multifile}
-\paragraph{Beispiel}
-\paragraph{Beschreibung}
-\paragraph{Abstrahierung}
+\paragraph*{Beispiel}
+\paragraph*{Beschreibung}
+\paragraph*{Abstrahierung}
 
 \subsection{Fortgeschrittenere Probleme}\phantomsection\label{problems:advanced}
 \subsubsection{Kommentare}
-\paragraph{Beispiel}
-\paragraph{Beschreibung}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
 - zunächst als Unterklasse von~\ref{problems:unexpectedCharacters} zu erwarten
 - kann jedoch auch~\ref{problems:verticalSpacing} umfassen
-\paragraph{Abstrahierung}
+\paragraph*{Abstrahierung}
+
+\subsubsection{Tabellen}\phantomsection\label{problems:tables}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
+\paragraph*{Abstrahierung}
 
 \subsubsection{Literaturverzeichnis}\phantomsection\label{problems:bibtex}
-\paragraph{Beispiel}
-\paragraph{Beschreibung}
-\paragraph{Abstrahierung}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
+\paragraph*{Abstrahierung}
 
-Placeholder\ldots\label{problems:advanced:catcode}
 
-\subsection{Spezielle Probleme}\phantomsection\label{problems:advanced}
+\subsubsection{TikZ und Layouting}\phantomsection\label{problems:layouting}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
+\paragraph*{Abstrahierung}
+
+\subsubsection{Category Codes}\phantomsection\label{problems:catcode}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
+\paragraph*{Abstrahierung}
+
+
+\subsection{Spezielle Probleme}\phantomsection\label{problems:special}
+\subsubsection{Glossare und Nomenklatur}\phantomsection\label{problems:glossaries}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
+\paragraph*{Abstrahierung}
+
+\subsubsection{Dilemmatische Makros}\phantomsection\label{problems:macrodilemma}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
+\paragraph*{Abstrahierung}
+
+\subsection{Weitere Schwierigkeiten}\phantomsection\label{problems:additional}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
+\paragraph*{Abstrahierung}

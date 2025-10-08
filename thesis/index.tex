@@ -4,10 +4,46 @@
 \usepackage[left=2cm,right=2cm]{geometry}
 %\usepackage[document]{ragged2e} % Damit alles: Links aligned (der linkeste Punkt eines jeden Buchstaben ist auf einer Linie für alle zeilen) und so viel Platz nach rechts ausnutzt, wie möglich (nein, macht TeX nicht standardmäßig); muss man nicht für das gesamte Dokument machen (wie hier), geht auch per \raggedright oder \RaggedRight für/vor Paragraphen; gibt auch Umgebungen für rechtsbündigen Text https://de.overleaf.com/learn/latex/Text_alignment
 \usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs,array}
+\usepackage[author={Hendrik Theede}]{pdfcomment}
+\usepackage{tabularx}
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+
+\usepackage{minted}
 \usepackage{graphicx}
 \usepackage{pdfpages} 
 \usepackage{caption}
 \usepackage{subcaption}
+
+
+
 
 \usepackage[english,ngerman]{babel}
 \usepackage[english=british]{csquotes}
@@ -65,7 +101,6 @@
 }
 
 \begin{document}
-
 
 \makeatletter % um \@author und co zu nutzen
 \input{titlepage}
