@@ -26,7 +26,7 @@ Jeder Problemfall wird zunächst durch ein Beispiel demonstriert\footnote{welche
 % Namensgebung aus ~/tests/readme.md wahrscheinlich geeigneter
 \subsection{Simple Probleme}\phantomsection\label{problems:simple}
 % 0d zu 1d
-\subsubsection{Unerwartete Zeichen}\phantomsection\label{problems:unexpectedCharacters}
+\subsubsection{Unerwartete Zeichen}\phantomsection\label{problems:dim0}
 \paragraph*{Beispiel}
 \verb|\label{problem:encounter:solve}| wird zu \verb|\label{Problem:Begegnung:Lösung}| übersetzt, aber \verb|\section{example}| zu \verb|\Abschnitt{Beispiel}|.
 \paragraph*{Beschreibung}
@@ -34,7 +34,7 @@ Jeder Problemfall wird zunächst durch ein Beispiel demonstriert\footnote{welche
 Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \verb|[|, \verb|]|, \verb|$|, \verb|$$| oder \verb|\%| erkennen und müssten daher ausgeschlossen werden. Man kann sich diese Art von Fehlern wie 0-dimensionale Fehler vorstellen, wobei die nullte Dimension hierbei bei einem einzelnen Wort beginnt (welche als Punkte zu verstehen sind).
 
 % 0d zur ersten Dimension
-\subsubsection{Fehlinterpretierte Wörter}\phantomsection\label{problems:misunderstoodWords}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt
+\subsubsection{Fehlinterpretierte Wörter}\phantomsection\label{problems:dim1}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt
 \paragraph*{Beispiel}
 \verb|\begin{myenvironment}[fontsize=red]| wird zu \verb|\begin{myenvironment}[fontsize=red]| übersetzt, aber \verb|\begin{myenvironment}[ fontsize = red ]| zu \verb|\begin{myenvironment}[ fontsize = rot ]|.
 \paragraph*{Beschreibung}
@@ -43,7 +43,7 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpe
 
 
 % Vertikales Spacing / Zweite Dimension
-\subsubsection{Übersichtliche Quelltexte}\phantomsection\label{problems:verticalSpacing}
+\subsubsection{Übersichtliche Quelltexte}\phantomsection\label{problems:dim2}
 \paragraph*{Beispiel}
 \begin{table}[h!]
     \centering
@@ -56,7 +56,7 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpe
             Beispiel 2\lstinputlisting[language=tex]{../tests/simple/2d/wrong_original.tex} & \lstinputlisting[language=tex]{../tests/simple/2d/wrong.tex}\\
         \bottomrule
     \end{tabularx}
-    \caption{Beispiel für eine Zeile, welche übersetzt werden darf}\label{tab:problems:verticalSpacing}
+    \caption{Beispiel für eine Zeile, welche übersetzt werden darf}\label{tab:problems:dim2}
 \end{table}
 \paragraph*{Beschreibung}
 % Zwar ist es praktisch, wenn Quelltexte durch zusätzlichen Whitespace nicht nur auf horizontaler, sondern auch auf vertikaler Ebene übersichtlicher werden, allerdings führt dies bei einer zeilenweisen Übersetzung dazu, dass der Kontext aus voriger Zeile evtl. verloren geht.
@@ -64,7 +64,7 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpe
 Teile der \TeX-Syntax lassen sich nicht nur anhand von einzelnen Zeilen oder Zeichenketten erkennen, sondern könnten sich auch auch in verschiedenen Zeilen wiederfinden lassen. Diese Art von Fehlern kann 2-dimensional betrachtet werden, wodurch Fehler auch zwischen Zeilen entstehen können.
 
 % Dreidimensionales Spacing
-\subsubsection{Mehrere Dateien}\phantomsection\label{problems:multifile}
+\subsubsection{Mehrere Dateien}\phantomsection\label{problems:dim3}
 \paragraph*{Beispiel}
 \begin{table}[h!]
     \centering
@@ -77,7 +77,7 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand von einzelnen Zeilen oder Zei
             Datei $y$ \lstinputlisting[language=TeX]{../tests/simple/3d/y_original.tex} & \lstinputlisting[language=tex]{../tests/simple/3d/y_original.tex}\\
         \bottomrule
     \end{tabularx}
-    \caption{Beispiel für eine Zeile, welche übersetzt werden darf}\label{tab:problems:verticalSpacing}
+    \caption{Beispiel für eine übersehende Datei}\label{tab:problems:dim3}
 \end{table}
 \paragraph*{Beschreibung}
 Die Übersetzung von Datei $x$, welche Datei $y$ via \texttt{input} oder \texttt{include} % Unterschied: input darf vernested werden, include nicht. wir gehen von einem größeren Werk aus, welches aus x Kapiteln besteht, welche integriert werden sollen. die einzelnen Kapitel werden danach nur in Abschnitte zerlegt, welche durch inputs eingebunden werden sollen
@@ -92,7 +92,7 @@ Teile der \TeX-Syntax müssen nicht zwingend in einer Datei vorliegen, sondern k
 %- zunächst als Unterklasse von~\ref{problems:unexpectedCharacters} zu erwarten
 %- kann jedoch auch~\ref{problems:verticalSpacing} umfassen
 \paragraph*{Abstrahierung}
-
+Hier treffen simple Fehler aus den ersten drei Kategorien (in~\ref{problems:dim0},~\ref{problems:dim1} und~\ref{problems:dim2} geschildert) aufeinander. In die dritte Dimension, also in andere Dateien, wird jedoch nicht traversiert, da auskommentierte Datei-Einbindungen nicht erfasst werden sollten. 
 
 
 \subsubsection{Tabellen}\phantomsection\label{problems:tables}
