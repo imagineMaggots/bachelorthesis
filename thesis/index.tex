@@ -1,11 +1,53 @@
 \documentclass[11pt,toc]{article}
 \renewcommand{\familydefault}{\sfdefault}
 \setcounter{secnumdepth}{6}
-\usepackage[left=2cm,right=2cm, top = 2cm]{geometry}
+\usepackage[left=2cm,right=2cm]{geometry}
 %\usepackage[document]{ragged2e} % Damit alles: Links aligned (der linkeste Punkt eines jeden Buchstaben ist auf einer Linie für alle zeilen) und so viel Platz nach rechts ausnutzt, wie möglich (nein, macht TeX nicht standardmäßig); muss man nicht für das gesamte Dokument machen (wie hier), geht auch per \raggedright oder \RaggedRight für/vor Paragraphen; gibt auch Umgebungen für rechtsbündigen Text https://de.overleaf.com/learn/latex/Text_alignment
 \usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs,array}
+\usepackage[author={Hendrik Theede}]{pdfcomment}
+\usepackage{tabularx}
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+
+\usepackage{minted}
 \usepackage{graphicx}
-\usepackage[babel,german=quotes]{csquotes} % "" nur auf deutsche Art und Weise
+\usepackage{pdfpages} 
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+
+
+\usepackage[english,ngerman]{babel}
+\usepackage[english=british]{csquotes}
+
 \usepackage{tikz}
 \usetikzlibrary{calc,positioning}
 \usepackage{pgfplots}
@@ -36,6 +78,9 @@
 %%% "Deutsche Sprache"-relevant
 \renewcommand*\contentsname{\hypertarget{toc}{Inhaltsverzeichnis}} % cannot contain \par (and thus: newlines)
 \renewcommand*\refname{Literaturverzeichnis} % can contain \par (and thus: newlines)
+\renewcommand*\figurename{Abbildung}
+
+
 
 % Muss ans Ende, weil sonst übernimmt ein Biber aus der Bibliothek
 \usepackage{hyperref}					% TeX!	
@@ -56,7 +101,6 @@
 }
 
 \begin{document}
-
 
 \makeatletter % um \@author und co zu nutzen
 \input{titlepage}
@@ -79,8 +123,8 @@ placeholder
 \hypersetup{hidelinks,pdfborder={0 0 1},allbordercolors=magenta}% Hat länger gedauert, als mir lieb ist. sagt TeX: innerhalb dieser Gruppe sollen links nicht farbig sein. würde zuerst auch implizieren, dass keine Rahmen in der PDF angezeigt werden sollen. Wie löst man das? Indem man manuell sagt: Wir haben einen Rahmen um Hyperrefs mit Offset X = 0, Offset Y = 0 und Stärke in Pixeln: 1 (standard)
 
 \include{introduction/short}
-\include{problem/list}
-\include{technologies/tek}
+\include{problem/issues}
+%\include{technologies/tek}
 
 \endgroup
 
@@ -105,5 +149,10 @@ Ich versichere, dass die eingereichte elektronische Fassung mit den gedruckten E
 
 
 \bibliography{index}
+
+\begingroup
+\hypersetup{hidelinks,pdfborder={0 0 1},allbordercolors=magenta}
 \include{appendices/appendix}
+\endgroup
+
 \end{document}

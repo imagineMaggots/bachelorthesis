@@ -1,40 +1,87 @@
 %%% Needs edits: Quelltexte, Catcode und "Weitere Schwierigkeiten" (und insgesamt alles eigentlich)
 
-% Welche Arten von Fehlern können entstehen? (Was fällt einem auf, wenn man Dokumente schreibt und sich denkt: mmmm würde google translate das richtig übersetzen)
+% Welche Arten von Fehlern können entstehen? (Was fällt einem auf, wenn man Dokumente schreibt und sich denkt: mmmmhh würde google translate das richtig übersetzen)
 \section{Problemfälle}
 Eine einzige, feste \TeX{}-Syntax existiert theoretisch gesehen nicht, wie ein~\hyperref[par:catcode]{späterer Paragraph} aufzeigen wird.% So gehen in-document refs ganz gut.
 Die Fähigkeit jegliche erdenkliche Zeichenkette (gegeben:\ diese ist auf einem Rechner darstellbar, siehe:~\cite{unicode}) sorgt zunächst für eine unendliche Menge an testbaren Problemen. Da es unmöglich ist eine unendliche Menge an Testfällen abzudecken, herrscht zunächst eine Begrenzung auf die reine \LaTeX{} (bzw.\ \TeX{}~Syntax nach~\cite{texbook}) und die bereits rein innerhalb dieser schnellig auffallenden Fehler, welche durch fälschlich übersetzte Zeichenketten entstehen könnten.\\\noindent
-Für spätere Testzwecke wurden die einzelnen Problemfälle in einzelne Kategorien eingeteilt, welche nach der Häufigkeit begründet sind, mit welcher sie in einem Dokument auftreten könnten. Hierbei sind simple Probleme auf solche bezogen, welche in der reinen Erstellung und Verfassung von Dokumenten entstehen könnten und komplexe Probleme konzentrieren sich darauf, dass gezielter \LaTeX{} und \TeX{}~Befehle und Pakete genutzt werden, um durch diese weniger offensichtliche syntaktische Fehlerquellen zu erproben. Bereits diese Arten an Fehlerquellen zeigen Fälle auf, in welchen Regelbrüche gegenüber der \LaTeX{}~Syntax ein Kompilieren eines Dokumentes verhindern würden. Spezielle Probleme befassen sich danach mit gezielt dahingegen erarbeitete Testfälle, welche für manuell erstellte Dokumente eher unüblich wären, technisch gesehen jedoch möglich sind und der Betrachtung nicht entzogen werden können. Weitere Schwierigkeiten werden dahingegen aufgezeigt, welche sprachlichen Hürden bei der menschensprachlichen Übersetzung aufzeigen könnten. Da diese Betrachtung nicht im Vordergrund stehen soll, jedoch für spätere Tests interessant werden könnte, werden diese vorerst an das Ende dieses Abschnittes gestellt.
+Für spätere Testzwecke wurden die einzelnen Problemfälle in einzelne Kategorien eingeteilt, welche nach der Häufigkeit begründet sind, mit welcher sie in einem Dokument auftreten könnten. Hierbei sind simple Probleme auf solche bezogen, welche in der reinen Erstellung und Verfassung von Dokumenten entstehen könnten und komplexe Probleme konzentrieren sich darauf, dass gezielter \LaTeX{} und \TeX{}~Befehle und Pakete genutzt werden, um durch diese weniger offensichtliche syntaktische Fehlerquellen zu erproben. Bereits diese Arten an Fehlerquellen zeigen Fälle auf, in welchen Regelbrüche gegenüber der \LaTeX{}~Syntax ein Kompilieren eines Dokumentes verhindern würden. Spezielle Probleme befassen sich danach mit gezielt dahingegen erarbeitete Testfälle, welche für manuell erstellte Dokumente eher unüblich wären, technisch gesehen jedoch möglich sind und der Betrachtung nicht entzogen werden können. Weitere Schwierigkeiten werden dahingegen aufgezeigt, welche sprachlichen Hürden bei der menschensprachlichen Übersetzung aufzeigen könnten. Da diese Betrachtung nicht im Vordergrund stehen soll, jedoch für spätere Tests interessant werden könnte, sind diese an das Ende dieses Abschnittes gestellt.
 % reviewed: 1
 
-% Erwartung: Wer das nicht rafft ist doof.
+%%%%%
+% Struktur:
+%   Problem > 
+%       Wie sieht es vor und nach falscher Übersetzung aus?
+%       Warum könnte es auftreten?
+%       Wie formuliert man es abstrakter? Geht richtung RegEx
+%%%%%
+
+
+
+
+% Dinge, welche sehr schnell in TeX-relevant werden und sich einfach lösen lassen
 \subsection{Simple Probleme}
+\paragraph*{Textliche Formatierung}% Eigentlich nur einfache \TeX{}-Syntax... die simpelsten Fälle, an welchen reine Übersetzungsprogramme scheitern müssten... Nicht alle Wörter stehen frei (durch Whitespace getrennt)
+\subparagraph*{Beispiel}
+\verb|\textit{p}robably| wird zu \verb|\textit{p}wahrscheinlich| übersetzt (Google Translate, Stand: 07.10.2025).
+\subparagraph*{Beschreibung und Begründung}
 % Einzelne Wörter, welche die TeX-Syntax brechen
-Wörter werden durch Zeichenketten dargestellt, welche ihrerseits Buchstaben (bspw.\ lateinische, griechische, kyrillische Alphabete), Glyphen/Bilder (bspw.\ antikes ägyptisch, chinesisch/Hanzi, japanisch/kanji) beinhalten. Jedoch gehen die meisten Übersetzungs-Tools nicht davon aus, dass solche Zeichenketten Zeichen beinhalten, welche das folgende Wort zu einem Befehl (für eine Programmiersprache) machen. Zwar würde z.B.\ Google Translate für die Zeichenkette \texttt{Hello} korrekterweise das Deutsche \texttt{Hallo} liefern, aber bereits die Präambel von \TeX{}-Dokumenten zeigt, wie \verb|\title{}|, \verb|\author{}| und \verb|\date{}| respektiv zu \verb|\Titel{}|, \verb|\Autorin{}| und \verb|\Datum{}| übersetzt werden würden (Stand: 01.10.2025). Benanntes Tool zeigt sich zudem inkonsistent. Beispielsweise wird \verb|\section{saw}| zu \verb|\Abschnitt{Säge}| übersetzt und \verb|\section{Introduction}| zu \verb|\section{Einführung}| übersetzt.\\\noindent
+Zeichenketten sind Repräsentationen von Wörtern, welche ihrerseits Buchstaben (bspw.\ lateinische, griechische, kyrillische Alphabete), Glyphen oder Bilder beinhalten (bspw.\ antikes ägyptisch, chinesisch/Hanzi, japanisch/Kanji). Keine Sprache der Menschheit trägt \enquote{Sonderzeichen} (meint zum Beispiel:\ mathematische Symbole, Punkte, Striche,\ \ldots) innerhalb ihres Lexikons. Diese Art von Zeichen kann zwar nur in schriftlicher Form auftreten, produziert jedoch Zeichenketten, welche für Programme nicht als Teil der menschlichen Sprache interpretierbar sind. Einige Befehle in der \TeX{}~Syntax lassen mehrere Wege der Nutzung zu, wodurch einzelne Zeichenketten entweder durch Whitespace freistehen können, oder von Klammern umgeben sind.
+%So ist innerhalb der beispielhaften Zeichenkette vermutlich \verb|\title{| als ein Wort aufgefasst und danach \enquote{My Title} als freistehende Worte, wodurch diese übersetzt werden. Anders ist dies, wenn kein unerwartetes Zeichen (i.e.\ ein von Whitespace Abweichendes) einer Zeichenfolge aus reinen Buchstaben folgt. 
+%Google Translate würde beispielsweise für die Zeichenkette \texttt{Hello} korrekterweise das Deutsche \texttt{Hallo} liefern, aber bereits die Präambel von \TeX{}-Dokumenten zeigt, wie \verb|\title{}|, \verb|\author{}| und \verb|\date{}| respektiv zu \verb|\Titel{}|, \verb|\Autorin{}| und \verb|\Datum{}| übersetzt werden würden (Stand: 01.10.2025). Benanntes Tool zeigt sich zudem inkonsistent. Beispielsweise wird \verb|\section{saw}| zu \verb|\Abschnitt{Säge}| übersetzt und \verb|\section{Introduction}| zu \verb|\section{Einführung}| übersetzt.\\\noindent
 % reviewed: 1
+\subparagraph*{Formen}% Formen bedeutet: Welche Befehle könnten dieses Problem auslösen?
+Diese Art von Fehler könnte für jegliche Art von \TeX{}-Befehl auftreten, welcher nicht durch 
 
 
+
+
+\paragraph*{Whitespace}% "Vermisst" meint eigentlich nur, dass man nicht davon ausgehen soll, dass Wörter _nie_ freistehen _könnten_.
+\subparagraph*{Beispiel}
+\subparagraph*{Beschreibung}
 % Wenn eines von mehreren Wörtern die TeX-Syntax (kaputt macht)
-Einzelne Lexeme menschlicher Sprache werden durch Freifläche (Whitespace) voneinander getrennt. Dies würde die Hoffnung aufwerfen, dass jegliche \TeX{}-Syntax anhand von Sonderzeichen (bspw.\ \verb|\|,\verb|{|,\verb|}|,\ldots) erkennbar wäre. Dies ist allerdings nicht der Fall, da sich z.B.\ Farben via \verb|\definecolor{super light red}{rgb}{1,.5,.5}| definieren lassen könnten. Diese Zeichenkette hält das freistehende englisches Wort \enquote{light}, bei welchem es fraglich ist, inwiefern es zu übersetzen ist. Hierbei entstehen zwei Optionen, welche beide die \TeX{}-Syntax einhalten. Einerseits kann an jeder Stelle im Dokument das freistehende Wort zu \enquote{Licht} übersetzt werden oder an keiner. Dies wäre daran abzuwägen, ob das Wort in Kombination mit dem zuvorigem \enquote{super} und nachfolgendem \enquote{red} auftritt. Es könnte per se auch der Fall eintreten, dass die Wortfolge im menschlichen Sprachegebrauch innerhalb des Dokumentes erfolgt. (\enquote{His jacket wasn't just red. It was this kind of \enqoute{super light} red, which you'd typically only see when looking raw mutton}). Nach diesen syntaktisch richtigen Optionen, bleiben nur noch Syntaxbrechende. Sollte also an einer Stelle, an welcher die definierte Farbe \texttt{super light red} gemeint ist, das Wort \enquote{light} übersetzt werden, so würde die Farbe auf ihren initialen Standardwert von $0$ für alle Farbkanäle (also: schwarz) gesetzt sein. Sollte ein Dokument einen schwarzen Hintergrund besitzen, wären diese textlichen Inhalte nicht mehr lesbar.\\\noindent
+Einzelne Lexeme menschlicher Sprache werden durch Freifläche (Whitespace) voneinander getrennt. Dies würde die Hoffnung aufwerfen, dass jegliche \TeX{}-Syntax anhand von Sonderzeichen (bspw.\ \verb|\|,\verb|{|,\verb|}|,\ldots) erkennbar wäre. Dies ist allerdings nicht der Fall, da sich z.B.\ Farben via \verb|\definecolor{super light red}{rgb}{1,.5,.5}| definieren lassen könnten. Diese Zeichenkette hält das freistehende englisches Wort \enquote{light}, bei welchem es fraglich ist, inwiefern es zu übersetzen ist. Hierbei entstehen zwei Optionen, welche beide die \TeX{}-Syntax einhalten. Einerseits kann an jeder Stelle im Dokument das freistehende Wort zu \enquote{Licht} übersetzt werden oder an keiner. Dies wäre daran abzuwägen, ob das Wort in Kombination mit dem zuvorigem \enquote{super} und nachfolgendem \enquote{red} auftritt. Es könnte per se auch der Fall eintreten, dass die Wortfolge im menschlichen Sprachegebrauch innerhalb des Dokumentes erfolgt. (\enquote{His jacket wasn't just red. It was this kind of \textit{super light} red, which you'd typically only see when looking raw mutton}). Nach diesen syntaktisch richtigen Optionen, bleiben nur noch Syntaxbrechende. Sollte also an einer Stelle, an welcher die definierte Farbe \texttt{super light red} gemeint ist, das Wort \enquote{light} übersetzt werden, so würde die Farbe auf ihren initialen Standardwert von $0$ für alle Farbkanäle (also: schwarz) gesetzt sein. Sollte ein Dokument einen schwarzen Hintergrund besitzen, wären diese textlichen Inhalte nicht mehr lesbar.\\\noindent
 % reviewed: 0
 
 %% alt: \paragraph*{Whitespace}\label{par:zeichenketten} sind eine herkömmliche Art verschiedene Wörter einer Sprache voneinander zu trennen (bspw.\ in den lateinischen oder kyrillischen Sprachen). Neben anfänglichen Schwierigkeiten, welche sich innerhalb von einzelnen Zeichenketten aufzeigen könnten, ist es genauso denkbar, dass einzelne Optionen in \TeX{} oder \LaTeX{} innerhalb von eckigen oder geschwungenen Klammern nicht übersetzt werden dürften, ohne die Syntax zu brechen oder übersetzt werden müssten, damit ein gesamtes Dokument übersetzt wird. Denkbar sind hier direkt für das Erstere Farbdefinitionen, wie zum Beispiel \verb|\definecolor{super light red}{rgb}{1,.5,.5}|. Sollte man versuchen~\ref{par:zeichenketten}/Zeichenketten dadurch zu lösen, dass man einfach die Präambel in der Übersetzung ausschließt (also alles vor \verb|\begin{document}|), so würde ein späteres Nutzen dieser Farbe \texttt{super light red} dafür sorgen, dass das Wort \textit{light} alleine steht, und somit für nicht weit durchdachte Ansätze als ein zu übersetzendes Wort gelten würde. 
 
+\subparagraph*{Abstrakte Formulierung}
 
-%%%%% Current review iteration progress... adjust placement when necessary
-Bereits~\hyperref[einleitung:inclusion]{in den einleitenden Worten} wurde klar, dass das Übersetzen von bestimmten Zeichenketten zu schwerwiegenden Brüchen in der \TeX{}-Syntax führen könnte. Vor allem für die Einbindung anderer Dateien spielt dies eine herausragende Rolle, da jegliche Datei (via \texttt{include} oder \texttt{input} hinzugefügt) maßgebend für das entstehende Dokument werden könnte.
+
+\paragraph*{Fehlende Dateien}% Könnte als Resultat von Vorigem gedeutet werden, meint jedoch die Inhalte der TeX-Dateien selbst 
+\subparagraph*{Beispiel}
+\subparagraph*{Beschreibung}
+Bereits~\hyperref[einleitung:tex]{in den einleitenden Worten} wurde klar, dass das Übersetzen von bestimmten Zeichenketten zu schwerwiegenden Brüchen in der \TeX{}-Syntax führen könnte. Vor allem für die Einbindung anderer Dateien spielt dies eine herausragende Rolle, da jegliche Datei (via \texttt{include} oder \texttt{input} hinzugefügt) maßgebend für das entstehende Dokument werden könnte.
 
 
 %alt: \paragraph*{Einbinden von anderen Dateien\label{par:anderedateien}} ist eine denkbare Art größere \TeX{}-Dokumente in übersichtlichere kleinere Dateien zu strukturieren. Neben der Möglichkeit \TeX{}-Dokumente selbst via \texttt{include} und \texttt{input} in ein übergreifendes Dokument einzufügen, ist es jedoch auch möglich verschiedene andere, bildliche Formate (bspw.\ PNG, PDF, \ldots) im Dokument zu integrieren. Insbesondere bei PDF kann es sehr interessant werden, ob und inwieweit textliche Inhalte erfasst und übersetzt werden, jedoch sind PDF ihrerseits wieder eine von \LaTeX{} und \TeX{} abweichende Datei-/Dokumentenform und daher nicht weiter kritisch. Schade wäre es, wenn solche eingebundenen \TeX{}-Dateien und deren textlichen Inhalte übersehen werden würden, andererseits unerwartet jedoch hervorragend, sollten sogar textliche Inhalte von PDF erkannt (und übersetzt) werden. Einer Erkennung von textlichen Inhalten auf einem Bild wird nicht weiter nachgesehen, da hierbei davon ausszugehen sein sollte, dass die Übersetzung von textuellen Inhalten in Bildern eine andere, gesonderte Disziplin in der Bildverarbeitung ist.% Beispiele?
+\subparagraph*{Abstrakte Formulierung}
+
+
 
 % Denkt man nicht direkt dran, ist jedoch auch wichtig
 \newpage
 \subsection{Komplexere Probleme}
-Neben den zuvor geschilderten sehr einfachen Problemen, welche sich auch unabhängig von \TeX{} (und \LaTeX{}) zeigen könnten (denn z.B.\ ein Übersetzen von Hashtags im Social Media sollte keine neue Idee sein) und gelöst sein müssen (da ansonsten sehr einfache und rudimentäre Werkzeuge für eine Dokumentenerstellung verloren gehen, da man sich ohne diese simplem Formatierungsoptionen wieder auf einfache Textdateien berufen könnte).% Bitte die Klammer nochmal reviewen
+% Neben den zuvor geschilderten sehr einfachen Problemen, welche sich auch unabhängig von \TeX{} (und \LaTeX{}) zeigen könnten (denn z.B.\ ein Übersetzen von Hashtags im Social Media sollte keine neue Idee sein) und gelöst sein müssen (da ansonsten sehr einfache und rudimentäre Werkzeuge für eine Dokumentenerstellung verloren gehen, da man sich ohne diese simplem Formatierungsoptionen wieder auf einfache Textdateien berufen könnte).% Bitte die Klammer nochmal reviewen
+
+
+
+\paragraph*{Das Makro-Dilemma}% Wie kann man mit Makros schnell mal etwas verstecken? Wie kann es unklar werden welche Sprache übersetzt werden soll? 
+\subparagraph*{Beispiel}
+\subparagraph*{Beschreibung}
 
 \paragraph*{Makros} sind eine Möglichkeit mehrere \TeX{}-Befehle zusammenzufassen. Vor allem in \LaTeX{} sind eine Vielzahl dieser bereits vordefiniert, jedoch handelt es sich bei diesen meist um Wörter der englischen Sprache (\enquote{meist}: manche dieser englischen Wörter treten auch in anderen Sprachen auf, bspw.\ \textit{paragraph}$\leftrightarrow$\enquote{Paragraph}). Sollte es einem \TeX{}-User leichter fallen in der z.B.\ französischen Sprache zu arbeiten, so könnte dieser beispielsweise neue, französische Makros mit \\\verb|\newcommand{\anglais}{This is some \textit{formatted} \texttt{english} \TeX{}-t}|\\erzeugen. Das vorige Beispiel zeigt zudem auf, wie Texte innerhalb von \TeX{}-Makros \enquote{verschwinden} können und wirft die Frage auf, wann und wie solche Texte übersetzt werden sollten. Am sinnvollsten erscheint zunächst nur Zeichenketten zu übersetzen, welche sich mit der prominentesten Sprache des gesamten Dokumentes decken, welche allerdings nicht ohne weiteres bekannt ist. Selbst wenn in dem gesamten Dokument größtenteils englische Wörter vorliegen, ist eigentlich nur interessant, in welcher Sprache die reinen Strings (welche auf der PDF lesbar erscheinen) geschrieben sind. Selbst diese Information alleine ist theoretisch gesehen noch keine Grundlage für eine Aussage darüber, welche Sprache in solche einem Fall übersetzt werden müsste, da man hier Kenntnis des eigentlichen, entgültigen Dokumentes bräuchte, denn es könnte auch von Interesse sein, innerhalb eines größtenteils z.B.\ deutschsprachigen Dokumentes nur vereinzelte, englische Sätze zu übersetzen. Hierauf wird in Abschnitt~\ref{subsec:weitereschwierigkeiten} näher eingegangen, da sich dieses Problem zunächst recht einfach durch eine Auswahlmöglichkeit der Ausgangssprache (= die zu Übersetzende) lösen ließe.\\% und da man davon aussgeht, dass einzelne Dokumente üblicherweise, überwiegend in ein- und derselben Sprache verfasst werden und eher seltener Sprachwechsel vorkommen.
 \noindent
 Gleiches ist zu berücksichtigen, sollte das Kommando \verb|\renewcommand| verwendet werden, wobei dieses allerdings noch ein wenig mehr zulässt. Hiermit ist man auch dazu in der Lage existierende Befehle der \LaTeX{}-Syntax zu ändern, wodurch ein \verb|\Abschnitt{Einleitung}| ebenfalls valide \LaTeX{}-Syntax werden könnte, welche ein \TeX{}-Compiler als \verb|\section{Einleitung}| richtig interpretieren könnte, aber ein übersetzendes Programm könnte dieses womoglich in \verb|\section{example}| überführen. Dies scheint zunächst kein Problem zu sein, jedoch hätte zwischen einem \verb|\renewcommand{\section}{\Abschnitt}| genauso ein \verb|\newcommand{\section}{\frac{1+\sqrt{5}}{2}}| stattfinden können, wodurch \verb|\section{example}| nicht in einem Abschnitt mit Titel \enquote{example}, sondern in $\frac{1+\sqrt{5}}{2}${example} resultieren würde.
+
+\subparagraph*{Abstrakte Formulierung}
+
+
+
+
+
+\paragraph*{In welcher Umgebung befinden wir uns?}% Wie kann man mit Makros schnell mal etwas verstecken? Wie kann es unklar werden welche Sprache übersetzt werden soll? 
+\subparagraph*{Beispiel}
+\subparagraph*{Beschreibung}
 
 \paragraph*{Umgebungen} sind, wie der Name es vermuten lässt, einzelne Bereiche im Dokument, welche gesondert behandelt werden und für welche sich jegliche Einstellungen, wie z.B.\ Textfarbe, Textgröße, Schriftart, Font und vieles Weitere nur für eine solche Umgebung anpassen lassen. Einerseits kann man über geschwungene Klammern \verb|{}| eine Umgebung einmalig betreten oder verlassen, möchte jedoch auch die Möglichkeit erhalten diese erneut zu verwenden und ihr verschiedene Parameter zu übergeben. Eine Definition einer Umgebung in der Präambel lässt dies zu, % Es ist so schwer keine selbstzweifelnden Kommentare hier zu schreiben, wenn man sich selbst hasst.
 wodurch sich neben den in~\ref{par:whitespace} aufgezeigten Problemen nicht nur für etwaige Farboptionen und -einstellungen Strings aufzeigen, welche nicht übersetzt werden dürfen, sondern auch eigens (vom \TeX{}-User) Ausgedachte, wie das an \citep{latex:overleaf:environments} angelehnte Beispiel:
@@ -55,6 +102,59 @@ wodurch sich neben den in~\ref{par:whitespace} aufgezeigten Problemen nicht nur 
 \end{Verbatim}
 Diese Umgebungen selbst sind zunächst nur von Interesse, wenn sie \textit{default} Werte beinhalten, wie obiges \texttt{this is an example}, bei welchem es wünschenswert wäre, wenn ein Programm, welches \TeX{} übersetzt, diese erfässt. Auffällig wird an dieser Stelle bereits, dass noch sehr viel mehr mit Umgebungen möglich ist, worauf in~\ref{par:definitionen} näher eingegangen werden soll.
 
+\subparagraph*{Abstrakte Formulierung}
+
+
+
+
+
+
+
+\paragraph*{Mathematische Verwirrung}% Wie sieht es bei rapiden Wechseln zwischen mathematischen Formeln und Textfläche aus? Hier kommen noch Teile der speziellen Probleme mit hinzu; Namentlich: Hohe Vernestungsgrade und "Zwischen verschiedenen Umgebungen"
+\subparagraph*{Beispiel}
+\subparagraph*{Beschreibung}
+
+\paragraph*{Umgebungen} sind, wie der Name es vermuten lässt, einzelne Bereiche im Dokument, welche gesondert behandelt werden und für welche sich jegliche Einstellungen, wie z.B.\ Textfarbe, Textgröße, Schriftart, Font und vieles Weitere nur für eine solche Umgebung anpassen lassen. Einerseits kann man über geschwungene Klammern \verb|{}| eine Umgebung einmalig betreten oder verlassen, möchte jedoch auch die Möglichkeit erhalten diese erneut zu verwenden und ihr verschiedene Parameter zu übergeben. Eine Definition einer Umgebung in der Präambel lässt dies zu, % Es ist so schwer keine selbstzweifelnden Kommentare hier zu schreiben, wenn man sich selbst hasst.
+wodurch sich neben den in~\ref{par:whitespace} aufgezeigten Problemen nicht nur für etwaige Farboptionen und -einstellungen Strings aufzeigen, welche nicht übersetzt werden dürfen, sondern auch eigens (vom \TeX{}-User) Ausgedachte, wie das an \citep{latex:overleaf:environments} angelehnte Beispiel:
+\begin{Verbatim}
+    \newenvironment{boxed}[2][this is an example]
+    {
+        \begin{center}
+        Argument 1 (\#1)=#1\\[1ex]
+        \begin{tabular}{|p|}
+        \hline\\
+        Argument 2 (\#2)=#2\\[2ex]
+    }
+    { 
+        \\\\\hline
+        \end{tabular} 
+        \end{center}
+    }
+\end{Verbatim}
+Diese Umgebungen selbst sind zunächst nur von Interesse, wenn sie \textit{default} Werte beinhalten, wie obiges \texttt{this is an example}, bei welchem es wünschenswert wäre, wenn ein Programm, welches \TeX{} übersetzt, diese erfässt. Auffällig wird an dieser Stelle bereits, dass noch sehr viel mehr mit Umgebungen möglich ist, worauf in~\ref{par:definitionen} näher eingegangen werden soll.
+
+\subparagraph*{Abstrakte Formulierung}
+
+
+
+
+\paragraph*{Tabellen}% Wurde bereits in der Einleitung kurz aufgegriffen. <-- Beispiel aus Einleitung habe ich als leere Dose neben mir stehen.
+\subparagraph*{Beispiel}
+\subparagraph*{Beschreibung}
+
+\subparagraph*{Abstrakte Formulierung}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% Ab hier noch Chaos
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Wo man eher weniger dran denkt
+\newpage
+\subsection{Spezielle Probleme}
 % Eigentlich PGF, aber Frage mich gerade auch: könnten u.U. Links übersetzt werden? Und auch die Optionen von hyperref sollten mal ggb. einer Übersetzung geprüft werden!!!
 \paragraph*{Pakete} bieten eine \TeX{}-Schnittstelle für die gesamte Welt! Zumindest rein theoretisch natürlich. Technisch gesehen bieten \textit{packages} die Möglichkeit zuvor beschriebene Umgebungen und Makros in einer eigenen \texttt{.sty} zu bündeln, welche ihrerseits (vorrangig via) CTAN (jedoch auch auf jeglichem anderem Wege) zu anderen \TeX{}-Usern übertragen werden könnte. Verschiedene Pakete könnten hierbei eine Vielzahl individueller Probleme aufwerfen, zunächst ist jedoch mehr ein Fokus auf solche zu setzen, welche die Arbeit anderer Programme involvieren. Sie in einem Dokument einzubinden ist recht leicht und funktioniert nur mit einer begrenzten Anzahl an Methoden (\texttt{requirepackage} und \texttt{usepackage}) und muss ihrerseits, genauso wie~\ref{par:anderedateien}, stets zur Kompilierzeit im System vorhanden sein. 
 
@@ -101,9 +201,7 @@ Weitergehend sind die eigentlichen Inhalte von mathematischen Umgebungen für ei
 % Oh weh, des hier könnte schwierig werden!!!!!!!!!!!!!!!!!!!!!!!!!
 \subparagraph*{Eigene}Pakete innerhalb \LaTeX{} zu erstellen ist natürlich auch möglich, wobei danach zu differenzieren ist, ob man ein \textit{Klasse} oder ein \textit{Paket} schreiben möchte. Der Unterschied wird danach festgelegt, ob sich die Befehle innerhalb der jeweiligen \texttt{.cls} oder \texttt{.sty} mit jeder Art (Klasse, das Dokument aus logischer Sichtweise hinsichtlich Aufbau/Struktur) verwenden lassen. Ist dies der Fall spricht man von einem Paket \texttt{.sty}, andernfalls von einer Dokumentenklasse \texttt{.cls}~\citep{latex:documentation:clsguide}. Es handelt sich ihrerseits jedoch auch wieder um reine Textdateien, in welchen man zuvorig geschilderte komplexe (und folgende speziellere) Probleme verschwinden lassen könnte. An sich handelt es sich bei diesem Problem also um eine sehr spezifische Erweiterung des letzten simplen/einfachen Problemes in~\ref{par:anderedateien}.
 
-% Wo man eher weniger dran denkt
-\newpage
-\subsection{Spezielle Probleme}
+
 \paragraph*{Höhere Vernestungsgrade}% hier passt \relax mit rein, so als Beispiel, hab da ja ein zwei Tabellen rumliegen
 können in \TeX{} auf verschiedenste Arten und Weisen entstehen, daher zunächst eine kurze Erinnerung, was der Begriff in der Informatik und Mathematik meint. Recht einfach wird die Problemstellung der Vernestung an einem Beispiel verdeutlichbar: Ist $((((((((1+1)-1)-2)*3)/4)\% 5)/6)*7)$ leicht auszuwerten? Eine hohe Vernestung bedeutet mehrerlei Klammern innerhalb von (einer) Klammer$($n$)$ vorzufinden. Inwiefern kann dies in der Informatik auftreten? Betrachtet man bestimmte syntaktische Elemente als klammerähnlich (wie z.B.\ ein \texttt{for (condition) \{befehl~()\}} in C, wobei es sich um tatsächliche Klammern hält), zeigt sich schnell eine Unlesbarkeit in Quelltexten auf, sollte man den Grad dieser Verklammerung erhöhen. Wäre z.B.\ 
 \begin{verbatim}
@@ -135,7 +233,7 @@ können in \TeX{} auf verschiedenste Arten und Weisen entstehen, daher zunächst
 \end{verbatim}
 ein leicht lesbares, verständliches und demnach wartbares C-Code-Fragment? (Nein, könnte jedoch syntaktisch richtig sein). Dies ergibt mathematisch/logisch die Aussage: $return=1\land c\land b\land a\land m\land l\land k\land z\land y\land x$. Auch wenn solche hohen Vernestungsgrade nicht erstrebenswert sind, sollte die wohlmögliche Existenz dieser nicht missachtet sein. Dies wirft die Frage auf, wo solche Vernestungen schnellmals auch unbemerkt entstehen könnten.
 
-\subparagraph{In Tabellen} ist eine Vernestung zunächst nicht auszuschließen. So kann es schnellmalig der Fall sein, dass man innerhalb einer Zelle einen numerischen Wert mathematisch abbilden möchte, jedoch eine physische Einheit textlich formatiert sehen will (ohne sich hierbei dem \texttt{siunitx} Paket zu bedienen). % Veranschaulicht in Anhang XY
+\subparagraph*{In Tabellen} ist eine Vernestung zunächst nicht auszuschließen. So kann es schnellmalig der Fall sein, dass man innerhalb einer Zelle einen numerischen Wert mathematisch abbilden möchte, jedoch eine physische Einheit textlich formatiert sehen will (ohne sich hierbei dem \texttt{siunitx} Paket zu bedienen). % Veranschaulicht in Anhang XY
 Nun sollte man zumindest davon ausgehen, dass sich Tabellen, wie man sie in wissenschaftlichen Veröffentlichungen vorfinden kann, zunächst in einer Form wie beispielsweise: 
 \begin{Verbatim}[breaklines=true, breakanywhere=true]
     \begin{table}[h!tb]
@@ -164,7 +262,7 @@ Nun sollte man zumindest davon ausgehen, dass sich Tabellen, wie man sie in wiss
 So ist es auch denkbar, dass man eine Tabelle erstellen möchte, in welcher eine Spalte einen erwarteten Funktionsverlauf einer Größe gegenüber z.B.\ der Zeit darstellt, eine zweite Spalte real bemessene Werte zu verschiedenen Zeitpunkten, eine Dritte in welcher die Werte über den erwarteten Verlauf gelegt werden und eine Letzte, in welcher nun Mittelwerte, Varianz und weitere Bemerkungen festgehalten werden. (Sollte zuvorige Beschreibung etwas irritierend sein, dann dient~ref{app:functiontable} als Veranschaulichung). % Anhang fehlt noch. #####
 
 
-\subparagraph{Zwischen verschiedenen Umgebungen\label{subpar:envswitch}} kann (quasi-) beliebig hin- und hergewechselt werden. Dies ist zunächst keine neue und wichtige Information, spielt aber insbesondere auf die Darstellung von mathematischen Inhalten ein. So ist es nicht unbedingt erforderlich, dass nach dem Betreten einer mathematischen Umgebung (via z.B.\ \verb|$|, \verb|$$|, \verb|\(|, \verb|\[|, sowie \verb|\begin{equation*}|, \verb|\begin{align*}|, \verb|\begin{gather*}| mit und ohne \texttt{*},~\ldots) diese zwangsweise direkt wieder verlassen werden muss, bevor man wieder textliche Inhalte produzieren und beliebig formatieren kann. Die gewöhnlichen Kommandos zum Erzeugen von breit gedruckten, kursiven oder anderweitigen Texten (\textbf{textbf}, \textit{textit}, \textrm{textrm}, \textsc{textsc}, \textsf{textsf}, \texttt{texttt},~\ldots) reichen hierzu zunächst\ldots lassen es ihrerseits jedoch zu, dass man wieder in eine mathematische Umgebung wechselt. Ein valides \TeX{}-Beispiel: % Hier: rapides wechseln zwischen Math und Text Mode
+\subparagraph*{Zwischen verschiedenen Umgebungen\label{subpar:envswitch}} kann (quasi-) beliebig hin- und hergewechselt werden. Dies ist zunächst keine neue und wichtige Information, spielt aber insbesondere auf die Darstellung von mathematischen Inhalten ein. So ist es nicht unbedingt erforderlich, dass nach dem Betreten einer mathematischen Umgebung (via z.B.\ \verb|$|, \verb|$$|, \verb|\(|, \verb|\[|, sowie \verb|\begin{equation*}|, \verb|\begin{align*}|, \verb|\begin{gather*}| mit und ohne \texttt{*},~\ldots) diese zwangsweise direkt wieder verlassen werden muss, bevor man wieder textliche Inhalte produzieren und beliebig formatieren kann. Die gewöhnlichen Kommandos zum Erzeugen von breit gedruckten, kursiven oder anderweitigen Texten (\textbf{textbf}, \textit{textit}, \textrm{textrm}, \textsc{textsc}, \textsf{textsf}, \texttt{texttt},~\ldots) reichen hierzu zunächst\ldots lassen es ihrerseits jedoch zu, dass man wieder in eine mathematische Umgebung wechselt. Ein valides \TeX{}-Beispiel: % Hier: rapides wechseln zwischen Math und Text Mode
 \begin{Verbatim}[breaklines=true, breakanywhere=true]
     \begin{align*}
         4x &= 2 \\
@@ -248,6 +346,22 @@ So lassen sich einzelnen Zeichen völlig neue Bedeutungen für die \TeX{}-Engine
     \section{begin}
 \end{Verbatim} 
 werden könnte. Hierbei stellt sich jedoch die Frage, inwiefern dies sinnvoll ist und eine Erleichterung in der Erstellung von Dokumenten bietet.
+
+
+
+
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% Oben ist Chaos, aber das ist wichtig. Untiges ist an sich nur nice to have.
+%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
 
 \subsection{Weitere Schwierigkeiten}\label{subsec:weitereschwierigkeiten}
 Beabsichtigt ist dieser Abschnitt nicht in der Reihe von Problemen aufgefasst, sondern als Schwierigkeit$($en$)$ formuliert, da man sich hier von den Problemen abwenden würde, welche in der \TeX{}-Syntax auftreten und bei sprachliche Hürden angelangt, welche sich für und zwischen verschiedenen Sprachen zeigen könnten.
