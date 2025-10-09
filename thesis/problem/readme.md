@@ -23,6 +23,7 @@
         margin-top: 2em;
         margin-bottom: 50px;
         padding: 50px;
+        padding-top: 0px;
     }
 
     .examples{
@@ -33,29 +34,27 @@
     .example{
         margin-top: 2em;
         margin-bottom: 50px;
-        padding: 50px;
+        padding-bottom: 50px;
     }
 </style>
 
 <table>
     <tr>
         <td style="width:20vw; font-size: 1.5em">by complexity/occurence</td>
-        <td style="width:28vw; font-size: 1.5em; text-align:center">shorthand</td>
-        <td style="width:28vw; font-size: 1.5em; text-align:right">example or description</td>
+        <td style="width:16vw; font-size: 1.5em; text-align:center">shorthand</td>
+        <td style="width:42vw; font-size: 1.5em; text-align:right">example or description</td>
     </tr>
     <tr>
         <td class="descriptor">simple/common</td>
         <td class="problems">
-            <div class="problem">additional characters (errors in dimension 0, which is in a word)</div>
-            <div class="problem">confusing word seperation (errors in dimension 1, which is in a line)</div>
-            <div class="problem">vertical seperation of strings (errors in dimension 2, which is in multiple lines (sentences))</div>
-            <div class="problem">seperation of strings in the third dimension (multiple files)</div>
+            <div class="problem">additional characters</div>
+            <div class="problem">missing seperators</div>
+            <div class="problem">horizontal seperation of strings</div>
         </td>
         <td class="examples">
             <div class="example">$not\translated$</div>
             <div class="example">[this wurde nicht translated]</div>
             <div class="example">each line of a document could be regular text or e.g. \hypersetup{urlcolor=blau}</div>
-            <div class="example">multi-file TeX support</div>
         </td>
     </tr>
     <tr>

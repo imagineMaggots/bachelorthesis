@@ -1,5 +1,3 @@
-## will contain a description for most common TeX auxilliaries! (obv not done yet)
-
 ## warning
 es ist gerade eine .upa dazugekommen, als ich einen PDF-Kommentar mit Markup hinzufügte!!!
 
