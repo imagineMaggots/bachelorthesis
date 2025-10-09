@@ -54,14 +54,14 @@ Eine Klassifizierung der Problemfälle findet daher situativ statt und unterteil
 % Namensgebung aus ~/tests/readme.md wahrscheinlich geeigneter
 \subsection{Translativ}\phantomsection\label{problems:simple}
 % 0d zu 1d
-\subsubsection{Unbekannte Wörter}\phantomsection\label{problems:dim0}
+\subsubsection{Unbekannte Wörter}\phantomsection\label{problems:dim0}% Wort müsste übersetzt werden, aber wird es nicht. Ich bin dumm. Ich komm mir blöd vor. Ich sollte sterben. Dumme Menschen haben kein Leben verdient. Im Sinne der Wissenschaft.
 \verb|\label{problem:encounter:solve}| wird zu \verb|\label{Problem:Begegnung:Lösung}| übersetzt,\\aber \verb|\section{example}| zu \verb|\Abschnitt{Beispiel}|.
 \paragraph*{Beschreibung}
 \paragraph*{Abstrahierung}
 Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \verb|[|, \verb|]|, \verb|$|, \verb|$$| oder \verb|\%| erkennen und müssten daher ausgeschlossen werden. Man kann sich diese Art von Fehlern wie 0-dimensionale Fehler vorstellen, wobei die nullte Dimension hierbei bei einem einzelnen Wort beginnt (welche als Punkte zu verstehen sind).
 
 % 0d zur ersten Dimension
-\subsubsection{Auszulassende Wörter}\phantomsection\label{problems:dim1}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt
+\subsubsection{Auszulassende Wörter}\phantomsection\label{problems:dim1}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt; Wort dürfte nicht übersetzt werden
 \verb|\begin{myenvironment}[fontsize=red]| wird zu \verb|\begin{myenvironment}[fontsize=red]| übersetzt,\\aber \verb|\begin{myenvironment}[ fontsize = red ]| zu \verb|\begin{myenvironment}[ fontsize = rot ]|.
 \paragraph*{Beschreibung}
 \paragraph*{Abstrahierung}
@@ -238,7 +238,7 @@ Hier treffen simple Fehler aus den ersten drei Kategorien (in~\ref{problems:dim0
 Ausgehend von~\ref{problems:advanced:comment} wird nun erwartet, dass eine Referenzierung von Dateien erwartet wird, welche sich in Kommentaren verbergen. Dies kann jedoch~\ref{problems:special:sourcecode} beinhalten.
 
 
-\subsubsection{Dilemmatische Makros}\phantomsection\label{problems:special:macrodilemma}
+\subsubsection{Dilemmatische Makros}\phantomsection\label{problems:special:macrodilemma}% dilemmatasitische Makros... Kombi aus dilemmatisch und fantastisch?
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 \paragraph*{Abstrahierung}
