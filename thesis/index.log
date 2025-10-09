@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  9 OCT 2025 19:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  9 OCT 2025 19:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1414,18 +1414,22 @@ r-ts1.enc}] [7] (../examples/advanced/literature/example_original.tex)
 (../examples/advanced/literature/example_original.tex)
 (../examples/advanced/literature/example.tex)
 (../examples/advanced/literature/example_original.bib)
-(../examples/advanced/literature/example.bib) [8] [9] [10]
-Overfull \hbox (10.98485pt too wide) in paragraph at lines 262--263
+(../examples/advanced/literature/example.bib) [8]
+Overfull \hbox (10.98485pt too wide) in paragraph at lines 231--232
  []\OT1/cmss/bx/n/10.95 Beschreibungen \OT1/cmss/m/n/10.95 Wo-hin-ge-gen sich [
-]2.3.3[] nicht mit an-de-ren, in Kom-men-ta-ren re-fe-ren-zier-ten, Da-tei-en b
+]2.4.1[] nicht mit an-de-ren, in Kom-men-ta-ren re-fe-ren-zier-ten, Da-tei-en b
 esch[]aftigt,
  []
 
 
-LaTeX Warning: Reference `problems:advanced:comment' on page 11 undefined on in
-put line 264.
+LaTeX Warning: Hyper reference `problems:special:comments' on page 9 undefined 
+on input line 233.
 
-) [11] [12
+
+LaTeX Warning: Reference `problems:advanced:comment' on page 9 undefined on inp
+ut line 234.
+
+[9] [10]) [11] [12
 
 
 ] (index.bbl) [13]
@@ -1438,7 +1442,7 @@ put line 264.
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample1.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample1.pdf, id=471, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample1.pdf, id=462, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample1.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample1.pdf>
 Package pdftex.def Info: appendices/fontscalingexample1.pdf  used on input line
@@ -1449,7 +1453,7 @@ Missing character: There is no ; in font nullfont!
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample2.pdf, id=474, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample2.pdf, id=465, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample2.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample2.pdf>
 Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
@@ -1461,7 +1465,7 @@ Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
 >]
-runsystem(latexminted cleantemp  --timestamp 20251009191443 6A992D5529F459A44FE
+runsystem(latexminted cleantemp  --timestamp 20251009192400 6A992D5529F459A44FE
 E58C733255E86)...disabled (restricted).
 
  (index.aux (introduction/short.aux) (problem/issues.aux)
@@ -1475,13 +1479,13 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: 3F75F6E91A14C8046F712CA417917D90;2213.
+(rerunfilecheck)             Checksum: F4F3F8A1770745263ADB1EF2642227CD;2193.
  ) 
 Here is how much of TeX's memory you used:
- 46830 strings out of 474485
- 1079207 string characters out of 5744206
+ 46821 strings out of 474485
+ 1079090 string characters out of 5744206
  2079542 words of memory out of 5000000
- 68075 multiletter control sequences out of 15000+600000
+ 68074 multiletter control sequences out of 15000+600000
  571388 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,14n,130p,1435b,2720s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1500,9 +1504,9 @@ b><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/cm/cmtt9.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/cm-super/sftt0900.pfb>
-Output written on index.pdf (18 pages, 727694 bytes).
+Output written on index.pdf (18 pages, 726393 bytes).
 PDF statistics:
- 608 PDF objects out of 1000 (max. 8388607)
- 215 named destinations out of 1000 (max. 500000)
+ 598 PDF objects out of 1000 (max. 8388607)
+ 207 named destinations out of 1000 (max. 500000)
  268 words of extra memory for PDF output out of 10000 (max. 10000000)
 
