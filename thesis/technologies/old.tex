@@ -1,0 +1,64 @@
+
+\section{Technologischer Stand und denkbare Lösungswege} % Zu kürzen
+
+% Welche zugrundeliegenden Übersetzungstools gibt es? Nicht: Wie funktionieren diese, sondern: Welche gibt es, die man nutzen könnte, für spätere Workflows!!!
+\subsection{Generische, fundamentale Technologien} % impliziert "fundamental" hier einen Tech-Stack? also, dass alle folgenden gelisteten Technologien auf dem hierigen ChatGPT basieren? Wäre nämlich inhaltlich falsch, 
+Google Translate wurde während der Erläuterung im vorherigen Kapitel herangezogen, da sich mit dieser Ressource recht einfach typische Fehler bei unbedachter Übersetzung von \LaTeX{} Dokumenten aufzeigen lassen. Solche Software erwartet als einen Input immer ein Lexem (Wort) einer menschlichen Sprache, welche (aktuell) keine \enquote{Sonderzeichen}, bzw.\ Symbole beinhalten (gemeint sind z.B.\ \verb|#,\,§,=,+,-,...|). Ein Mensch kann solche+ Zeichen im Lesefluss ignorieren, ein Programm (bzw.\ ein Computer) kann dies ohne (ein) Weiteres jedoch nicht.% Passt im Kontext Programm recht gut in dieser Formulierung. 
+
+% Bitte nochmal reviewen ja? Ich sehe hier Use-Case... das Wort bitte nicht... i hate bwler 
+Jedoch basieren heutige Technologien zur Sprachübersetzung nicht mehr auf Programmen, welche einen festen Input mit syntaktischen Vorgaben erwarten, sondern auf weitaus mächtigerer Software, welche je nach erforderlichem Use-Case eine andere Art an Input erwartet. Als Endnutzer würde man sich zunächst jegliche Optionen offen halten wollen, wodurch man recht schnell bei den Technologien größerer und bekannter Anbieter angelangt, welche Anwendungs- und Nutzerschnittstellen für ihre Sprachmodelle anbieten. Von den Dingen, welche aus marktwissenschaftlicher Argumentation heraus direkt weniger vielversprechend sein \textit{müssten} (da diese Anbieter andere Software zur Dokumentenerstellung produzieren, welche sie verständlicherweise gegenüber einen kostenfreien Technologie wie \TeX{} in den Vordergrund stellen möchten), wird zunächst noch nicht abgesehen, sondern jegliche denkbare Technologie hinsichtlich ihrer potentiellen Möglichkeiten betrachtet. 
+
+\paragraph*{ChatGPT}\label{par:chatgpt}
+Der von OpenAI präsentierte statistische Ansatz zur Entwicklung einer künstlichen Intelligenz ist ein im ersten Moment naheliegender Ansatz, da man sich hier erhoffen könnte, dass diese Technologie mit Hilfe eines passenden \enquote{Prompting} auf längere Zeit gesehen sowohl qualitativ hochwertige Übersetzungen erzielt, als auch geschickt jede \TeX{}-Syntax geschuldete Hürde umgeht. Allerdings scheitert dieser Ansatz% zum Glück
+bereits konzeptionell, denn der \TeX{}-Compiler (jeder) selbst wird dazu in der Lage bleiben \textit{nur} reine Zeichenketten von Befehlen, Makros und Ähnlichem zu unterscheiden, da diese ansonsten nicht wie gewünscht in einem Dokument als solche Zeichenkette vorzufinden wären. Da dieses Programm selbst auch deterministisch arbeitet (und arbeiten muss), benötigt man an dieser Stelle noch keine Einbindung einer potentiellen Fehleranfälligkeit.
+
+%%% Kurze Bemerkung zur Fragestellung jeweils:
+%%% Wie sieht die API aus? Kann man überhaupt Kontext (z.B. TeX, in TeX geschrieben, ...) mitgeben? Falls nein: gar nicht weiter verfolgen.
+%%% Gibt es solch umfangreiche Glossare wie in DeepL? Bzw. wie tuen sich die Anbieter mit menschensprachlichen Kontexten? (Angaben der Anbieter; sollten die einwandfrei mit TeX umgehen, dann gezielte sprachliche Fehlerquellen prüfen... des wird dann aber sehr aufwendig und erfordert unweigerlich dann eine BLEU)
+%%% Kann man die Kontexte: "Das ist ein LaTeX"-Dokument und "Es geht um Thema XY" gesondert mitgeben, damit dieser Unterschied klar wird?
+%%% Falls alles ja ergibt (was ich bezweifle): Gezieltes Testen auf die gelisteten Problemfälle! (Aber nur dann)
+\paragraph*{DeepL}\label{par:DeepL}
+\paragraph*{Microsoft Translate}\label{par:Microsoft Translate}
+\paragraph*{Google Cloud Translate}\label{par:Google Cloud Translate}
+
+% Wie könnte man das Problem lösen? Eingehen auf denkbare Workflows...
+\subsection{Denkbare Workflows}
+Setzt man sich vor die zunächst etwas einfacherere und bisher noch offene Problemstellung, wie man überhaupt alle textlichen Inhalte eines \LaTeX{} Dokumentes \texttt{computationally} erfasst,% gehört deutsch-syntaktisch dahin, english speakers would place an adverb after the verb itself
+sind verschiedene Wege denkbar. Ausgehend von einem \TeX{} \enquote{Main}-Code könnte man diesen (a) übersetzen und dem zusehen, dass die \TeX{}-Syntax erhalten bleibt% schwer wegen CatCode %% VOR DEM KOMPILIEREN %%% Einzig logische bzgl der Aufgabenstellung
+(b1) einen \TeX{}-Compiler dahingegen verändern, dass dieser zu übersetzende Strings zusätzlich in eine eigene Datei ausgibt, auf deren Grundlage übersetzt werden kann 
+(b2) den \TeX{}-Kompilier-Prozess so zu ändern, dass während diesem jegliche textliche String-Token an ein übersetzendes Tool gesendet werden oder
+(c) in ein anderes Format zur Beschreibung von Dokumenten überführen, wie bspw.\ (HTML, XML, PDF,~\ldots)%%% NACH DEM KOMPILIEREN
+und ausgehend von diesem übersetzen. 
+
+% Ändern eines Compilers...
+\paragraph*{Workflows, von welchen abzusehen ist}% Argumentiert gegen b2
+In erster Linie wäre es durchaus denkbar, dass man den Fakt ausnutzt, dass ein \TeX{}-Compiler jegliche rein/wirklich textlichen Strings (welche in kompilierter PDF als diese angezeigt werden) selbstständig und während der Kompilierung an eine API eine der zuvor gelisteten Übersetzungs-Tools sendet und danach wieder im Dokument integriert. Dies mag für Workflows funktionieren, in welchen \TeX{}-Dokumente nur selten kompiliert werden, jedoch bieten heutige Mittel die Möglichkeit eines Live-Rendering, bei welchem sehr schnell und öfters kompiliert wird (da ein Endnutzer schnellstmöglich dessen Änderungen im Dokument sehen möchte). Dies impliziert, dass bei jeder Kompilierung der \TeX{}-Datei auf eine entsprechende und kostenpflichtige API zugegriffen werden würde, wodurch schnellig und nicht direkt bemerkte Kosten anfallen könnten, wenn man nicht bedenkt, dass man auch nur die wirklich veränderten Teile (seit letzter Übersetzung) an ein Übersetzungstool senden müsste. Hierbei wird jedoch fraglich, inwiefern der gesamte Kontext des Dokumentes erhalten bleibt, bzw.\ wie man diesen live bestimmt. Was geschieht, wenn größere Textblöcke gelöscht werden und dadurch Kontext für spätere Textblöcke verloren geht? (Im Sinne:\ Wir sprechen von Zeile 1 bis x von Cybersecurity und löschen Zeilen 1 bis y, wobei y<x. Soll und muss dann der Kontext Cybersecurity erhalten bleiben? Woher kann und soll ein live-agierendes Programm dies wissen, wenn es immer nur Zugriff auf die in diesem Moment vorliegenden Texte hat, in welchen \textit{nun} kein Cybersecurity-Kontext mehr vorliegt\ldots und demnach nicht mehr in diesem Kontext richtige Übersetzungen gewählt werden können.)%!!!!!!!!!
+Wann und wie kann man also, rein von der Menge des editierten/gelöschten Textes absehen, wann und wie sich der Kontext eines Dokumentes ändert? Die Logik innerhalb eines Dokumentes könnte sich bereit dass vollständig ändern, sollte man nur ein (sehr frühes) \enquote{nicht} löschen, wodurch die Logik fortan inversiert wäre.
+
+
+%%% Nicht Teil der Aufgabenstellung, aber gut zu behalten für Ausblick (Was könnte man noch zstl. machen) Ich brauch mehr Zeit
+\paragraph*{Nach TeX} entstehende PDF könnten theortisch gesehen auch als Grundlage innerhalb eines automatischen Workflows denkbar sein. Denkbar sind Technologien, welche z.B.\ eine PDF in HTML oder XML zerlegen und diese als Grundlage nutzen, um eine automatische Übersetzung, für welche bekannte Browser eine Unterstützung bieten, zu nutzen. Diese Übersetzten HTML danach wieder in PDF zu übertragen ist noch leichter, da dies die herkömmlichen Browser ohnehin können. Und wem das Kompilieren auf diesem Weg zu lange dauert, darf sich in der Zwischenzeit dem Dokument in HTML/XML bedienen, welches ein Browser anzeigen kann. Sollten hiernach noch kleinere Änderungen von Nöten sein, so müsste nur noch eine entstandene, übersetzte PDF nur noch in den erwähnten Überlappungen innerhalb Ti\textit{k}Z aufgrunde von unabdingbaren sprachlichen Verhältnissen angepasst werden, was dann einmalig in HTML erfolgen müsste. Hierbei könnten dann jedoch auch menschliche Spracheditoren den entstandenen Dokumenten einer Kontroll-/ Korrekturlesung unterziehen, sollte sich solche Menschen finden lassen. Dies erscheint in erster Betrachtung nachvollziehbar und logisch, sieht man jedoch genauer hin, so werden Schwierigkeiten bei dieser Herangehensweise offensichtlich, da man hier wohl kaum von einer gänzlich automatischen Übersetzung von \LaTeX{}-Dokumenten sprechen kann. Aus abstraktem Blickwinkel sind hier zwei Workflows denkbar. Zum einen könnte man \TeX{} und Ti\textit{k}Z gesondert voneinander betrachten, indem man sämtliche Ti\textit{k}Z-Graphiken einzeln in idealerweise skalierbare Vektorgraphiken kompiliert und innerhalb einer nach HTML exportierten \TeX{}-Datei als solche einbindet. Sämtliche textliche Strings sollten dann in dieser SVG vorzufinden sein, genauso wie es der Fall in XML ist (wodurch man sich hier auf bestimmte, und anhand eckiger Klammern identifizierbaren Tags, berufen kann, siehe: \url{https://svgwg.org/svg2-draft/text.html#TextElement}).% GOD FUCKING DAMNIT WIE SIEHT DENN SVG JETZT AUS????? IST DAS SPEZIFIZIERT? Einerseits: Ich hoffe ja: dann implementierung einfach, Andererseits: Ich hoffe nein, dann muss ich es nicht implementieren... JA ICH HABE BOCK AUF CODING UND WÜNSCHTE MIR EIGENTLICH NUR ENDLICH MAL DIE ZEIT FÜR EIN RICHTIGES, RICHTIGES, RICHTIGES CODING-Projekt... warum überhaupt compsci studieren alter. da macht man alles, außer zu programmieren, wobei programmieren das Einzige ist, was einem dabei hilft zu verstehen, wieso die Dinge im Studium beim Programmieren überhaupt jemals relevant geworden sind.
+%... das wirkt auf den ersten Blick wie etwas, was bereits bei einem Kompilieren von TeX+TikZ zu HTML auftreten könnte und daher ein Feature eines Compilers sein könnte
+% ich möcht auch mal was anderes machen als uni uni uni uni uni uni uni uni uni uni uni uni uni uni ABER WIE DENN BITTESCHÖN
+
+
+
+
+
+
+
+% Hier beginnen die genauen! Fehler zu zeigen, jeweils an den Softwares
+%% Test-Database: Arxiv. Siehe: einer der vielen coolen Links :) vllt lernst du es endlich mal Quellen ordentlich abzuspeichern... >:)
+\subsection{Existierende Ansätze}
+
+\paragraph*{Paper Ohri und Schmah}
+\paragraph*{PlasTeX} und dann DeepL
+\paragraph*{TransLaTex}
+% outlier
+\paragraph*{MathTranslate}
+
+
+\paragraph*{Die \TeX{}-Compiler Familie} und rein innerhalb \TeX{}-basierte Ansätze sind durchaus denkbar, erfordern jedoch einen höheren menschlichen Aufwand. Auf diese Art und Weise wäre eine Trennung von \TeX{} und menschensprachlichen Texten direkt und ohne weiteres Nachdenken gegeben, sodass hierbei zwar Verluste hinsichtlich der Kompilationszeiten entstehen könnten, jedoch die gegebene Aufgabe technisch gesehen erfüllen könnten. Bemerkt sei hierbei, dass solch ein Ansatz natürlich bei Live-Editoren, wie beispielsweise Overleaf weniger geeignet wären, da diese für ihr Live-Rendering von PDFs bei jeder Veränderung des \TeX{}-Dokumentes 
+\subparagraph*{Das translate package} und dessen Glossare anpassen
+\subparagraph*{Einen Compiler} anpassen wäre möglich, sodass dieser alle Textstrings (hierbei: abhängig vom Token-Typ, welchen der \TeX{}-Parser liefert) in z.B.\ YAML überführt, welche ihrerseits als Input für eine KI genutzt werden könnte, sodass mit Recht wenig Kontext weiß, welche Token sie übersetzen soll und in welchem Kontext sie stehen. Jedoch braucht dies nicht unbedingt tiefersitzend in einem spezifischen Compiler verankert integriert werden, sondern ließe sich auch, wie vorangegangene Ansätze des Abschnittes es zeigten, auch gesondert lösen. Daher sollte zunächst die Frage geklärt werden, inwiefern es sinnvoll ist große, komplexe und dadurch nur mit hohem Zeitaufwand nachzuvollziehnde Technologien als nicht-offizieller Mitentwickler zu verändern, sodass bei jedem offiziellen, neuen Release dieser Software inoffizielle Änderungen \enquote{mitgeschliffen} werden müssten, oder ob es nicht vorzuziehen wäre, dass man ein gesondertes Problem getrennt löst, sollte dies, wie hier, möglich sein.% -> hier aber überleiten zu: dafür brauchen wir nicht ein Programm in einem Compiler, sondern können auch ein kleineres, unabhängiges und leichter zu verstehendes und damit leichter wartbares Programm erstellen
+
