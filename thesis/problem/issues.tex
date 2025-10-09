@@ -48,25 +48,25 @@ aber zusätzliches Vorwissen verlangen. Dieses Vorwissen lässt sich bei diesen 
 Jeder Problemfall wird zunächst durch ein Beispiel demonstriert\footnote{welche aus einem Test mit Hilfe von Google Translate in Firefox durchgeführt wurden (Oktober 2025)}, danach wörtlich in einer Beschreibung erläutert und wird abschließend abstrahiert und versucht auf konkrete \TeX{} Primitiven zurückgeführt zu werden. Die fortgeschritteneren Probleme bedürfen teilweise mehreren Beispielen zur Beschreibung, lassen sich jedoch auf ähnliche Äußerungen zurückführen. Einführende Beispiele werden in der Form \texttt{ausführbarer Code} wird zu \texttt{ausführbarer Code} übersetzt, aber \texttt{ausführbarer Code} zu \texttt{fehlerhafter Code}\footnote{\enquote{Code} bezieht sich in beiden Fällen auf \TeX{}-Quelltexte} (1-dimensional). Einige Beispiele benötigen mitunter eine 2-dimensionale Darstellung, da sie mehrere Zeilen Quellcode umfassen und werden tabellarisch nebeneinander gestellt~\pdfcomment[color=red, icon=Paragraph]{Evtl.\ werden alle Beispiele in tabellarische Form überführt, welche ich persönlich anschaulicher finde, jedoch mehr Platz rauben würde}. Einige Probleme auf höherer Abstraktionsebene lassen sich allerdings nur schwierig veranschaulichen, wodurch Beispiele sich teils wieder auf Schilderungen von Situationen berufen, um diese Übersicht übersichtlich zu halten.% valider Grund
 
 % Namensgebung aus ~/tests/readme.md wahrscheinlich geeigneter
-\subsection{Translativ}\phantomsection\label{problems:simple}
+\subsection{Simple Probleme}\phantomsection\label{problems:simple}
 % 0d zu 1d
-\subsubsection{Unbekannte Wörter}\phantomsection\label{problems:dim0}
+\subsubsection{Unerwartete Zeichen}\phantomsection\label{problems:dim0}
 \verb|\label{problem:encounter:solve}| wird zu \verb|\label{Problem:Begegnung:Lösung}| übersetzt,\\aber \verb|\section{example}| zu \verb|\Abschnitt{Beispiel}|.
 \paragraph*{Beschreibung}
 \paragraph*{Abstrahierung}
 Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \verb|[|, \verb|]|, \verb|$|, \verb|$$| oder \verb|\%| erkennen und müssten daher ausgeschlossen werden. Man kann sich diese Art von Fehlern wie 0-dimensionale Fehler vorstellen, wobei die nullte Dimension hierbei bei einem einzelnen Wort beginnt (welche als Punkte zu verstehen sind).
 
 % 0d zur ersten Dimension
-\subsubsection{Auszulassende Wörter}\phantomsection\label{problems:dim1}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt
+\subsubsection{Fehlinterpretierte Wörter}\phantomsection\label{problems:dim1}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt
 \verb|\begin{myenvironment}[fontsize=red]| wird zu \verb|\begin{myenvironment}[fontsize=red]| übersetzt,\\aber \verb|\begin{myenvironment}[ fontsize = red ]| zu \verb|\begin{myenvironment}[ fontsize = rot ]|.
 \paragraph*{Beschreibung}
 \paragraph*{Abstrahierung}
-Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:dim0]{zuvor} beschriebenen Zeichenketten erkennen, sondern lassen sich auch in Zeilen wiederfinden. Diese Art von Fehlern bahnt den Weg zu einer Dimension, wodurch nicht nur innerhalb eines Wortes (Punktes), sondern auch zwischen verschiedenen Punkten Fehler entstehen könnten (also innerhalb einer Zeile).
+Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpectedCharacters]{zuvor} beschriebenen Zeichenketten erkennen, sondern lassen sich auch in Zeilen wiederfinden. Diese Art von Fehlern bahnt den Weg zu einer Dimension, wodurch nicht nur innerhalb eines Wortes (Punktes), sondern auch zwischen verschiedenen Punkten Fehler entstehen könnten (also innerhalb einer Zeile).
 
 \newpage
 
 % Vertikales Spacing / Zweite Dimension
-\subsubsection{Neuartige Satzstrukturen}\phantomsection\label{problems:dim2}
+\subsubsection{Übersichtliche Quelltexte}\phantomsection\label{problems:dim2}
 \begin{table}[h!]
     \centering
     \begin{tabularx}{\textwidth}{X X}
@@ -90,7 +90,7 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand von einzelnen Zeilen oder Zei
 \newpage
 
 % Dreidimensionales Spacing
-\subsubsection{Größere Sprachstrukturen}\phantomsection\label{problems:dim3}
+\subsubsection{Mehrere Dateien}\phantomsection\label{problems:dim3}
 \paragraph*{Beispiel}
 \begin{table}[h!]
     \centering
@@ -114,7 +114,7 @@ führt zwar dazu, dass Datei $x$ übersetzt wird, aber Datei $y$ nicht.
 \paragraph*{Abstrahierung}% Hier war abstrahieren leichter als beschreiben
 Teile der \TeX-Syntax müssen nicht zwingend in einer Datei vorliegen, sondern könnten auch in verschiedenen Dateien integriert sein. Die Klassifizierung simpler Probleme gelangt in \TeX{} hier bereits in der dritten Dimension an, weswegen sich fortan bereits mit \enquote{fortgeschrittenen} Problemen beschäftigt werden muss (welche sich Teils über mehrere \enquote{Dimensionen} erstrecken). Eine vierte Dimension existiert physikalisch nicht, ist jedoch mathematisch formulierbar\footnote{physikalisch: die vierte Dimension ist die Zeit, wenn man eine nicht-euklidische 3-dimensionale Bewegung verlangt (Teleportation)} und äußert sich in diesem Kontext auf eine Erhöhung von Laufzeitkomplexitäten.
 
-\subsection{Technisch}\phantomsection\label{problems:advanced}
+\subsection{Fortgeschrittenere Probleme}\phantomsection\label{problems:advanced}
 %%% Hier ein wenig weg von der eigentlichen Struktur, jedoch für die konkreten Beispiele wieder gleich
 \subsubsection{Hilfsdateien}% multi-file handling
 \paragraph{Struktur dieses Abschnittes}
@@ -144,6 +144,13 @@ Ein Verweis auf einen vorherigen Paragraphen kann nur klickbar verlinkt werden, 
 \paragraph*{Beispiel}
 \paragraph*{Erläuterung}
 
+
+
+
+\subparagraph*{Glossare und Nomenklaturen}
+\paragraph*{Beispiel}
+\paragraph*{Erläuterung}
+
 \paragraph{Abstrahiertes Problem}
 Falls auf Hilfsdateien zugegriffen wird, ist das mehrfache Kompilieren eines \LaTeX{} Dokumentes unvermeidbar. Gegeben $n_{h}$ womoglich existierenden Hilfsdateien, welche alle ihrerseits zu übersetzende Inhalte beinhalten können, folgt eine minimale Laufzeit $\mathcal{O}(n_h)$. 
 %Ein einmaliges Kompilieren eines \LaTeX{} Dokumentes ist unmöglich, falls ein Zugriff auf Hilfsdateien nötig ist.
@@ -167,7 +174,8 @@ Falls auf Hilfsdateien zugegriffen wird, ist das mehrfache Kompilieren eines \La
 
 
 %%% Meint: Hier müssen wir die eigentlichen Literaturverweise kennen, um einen Kontext zu kennen.
-\subsubsection{Unerreichbare Informationen}
+\subsubsection{Unbegreifbares Wissen}
+
 \paragraph*{Beispiele}
 \begin{table}[h!]
     \centering
@@ -195,6 +203,13 @@ Ein Dokument erwähnt ein Werk, in welchem es um die C-Programmierung geht. Rein
 Einfache Cloud-Architektur. Ein Client möchte auf ein beliebiges Wissen einer Webseite (bzw.\ dem Server und den beanspruchten Speicherplätzen in einem (beliebigen) Rechenzentrum\footnote{Hierbei ist nicht von Festspeicher zu reden. Aus Sicherheitsgründen sei davon auszugehen, dass sich die physischen Adressen des wissensrepräsentierenden Speichers regelmäßig und unvorhersehbar ändern} zugreifen).
 
 
+\subsubsection{Kommentare und Quelltexte}\phantomsection\label{problems:advanced:comments}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
+%- zunächst als Unterklasse von~\ref{problems:unexpectedCharacters} zu erwarten
+%- kann jedoch auch~\ref{problems:verticalSpacing} umfassen
+\paragraph*{Abstrahierung}
+Hier treffen simple Fehler aus den ersten drei Kategorien (in~\ref{problems:dim0},~\ref{problems:dim1} und~\ref{problems:dim2} geschildert) aufeinander. In die dritte Dimension, also in andere Dateien, wird jedoch (\hyperref[problems:special:comments]{vorerst}) nicht traversiert, da auskommentierte Datei-Einbindungen nicht erfasst werden dürften. 
 
 
 \subsubsection{Figuren und Tabellen}\phantomsection\label{problems:advanced:tables}
@@ -217,15 +232,8 @@ Bib\TeX{} erlaubt es an vielerlei Stelle eigene Strings in einer kompilierten \T
 \paragraph*{Abstrahierung}
 
 
-\subsection{Technisch/Spezifisch}\phantomsection\label{problems:special}
-\subsubsection{Kommentare}\phantomsection\label{problems:advanced:comments}
-\paragraph*{Beispiele}
-\paragraph*{Beschreibungen}
-%- zunächst als Unterklasse von~\ref{problems:unexpectedCharacters} zu erwarten
-%- kann jedoch auch~\ref{problems:verticalSpacing} umfassen
-\paragraph*{Abstrahierung}
-Hier treffen simple Fehler aus den ersten drei Kategorien (in~\ref{problems:dim0},~\ref{problems:dim1} und~\ref{problems:dim2} geschildert) aufeinander. In die dritte Dimension, also in andere Dateien, wird jedoch (\hyperref[problems:special:comments]{vorerst}) nicht traversiert, da auskommentierte Datei-Einbindungen nicht erfasst werden dürften. 
-
+\subsection{Spezielle Probleme}\phantomsection\label{problems:special}
+Mitunter NP-schwer.
 
 \subsubsection{Glossare und Nomenklatur}\phantomsection\label{problems:special:glossaries}
 \paragraph*{Beispiele}
