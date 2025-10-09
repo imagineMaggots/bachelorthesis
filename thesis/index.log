@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  9 OCT 2025 20:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  9 OCT 2025 20:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1310,7 +1310,7 @@ your preamble.
  on input line 103.
 
 (titlepage.tex
-<pictures/UNIHRO_LOGO_2025.pdf, id=190, 703.62875pt x 144.54pt>
+<pictures/UNIHRO_LOGO_2025.pdf, id=178, 703.62875pt x 144.54pt>
 File: pictures/UNIHRO_LOGO_2025.pdf Graphic file (type pdf)
 <use pictures/UNIHRO_LOGO_2025.pdf>
 Package pdftex.def Info: pictures/UNIHRO_LOGO_2025.pdf  used on input line 12.
@@ -1359,22 +1359,15 @@ Overfull \hbox (6.561pt too wide) in paragraph at lines 23--125
 \openout2 = `problem/issues.aux'.
 
  (problem/issues.tex
-Underfull \hbox (badness 10000) in paragraph at lines 27--31
 
- []
+LaTeX Warning: Hyper reference `problems:unexpectedCharacters' on page 3 undefi
+ned on input line 68.
 
-Package hyperref Info: bookmark level for unknown lpcsec defaults to 0 on input
- line 48.
 [3
 
 
 
 ]
-
-LaTeX Warning: Hyper reference `problems:unexpectedCharacters' on page 4 undefi
-ned on input line 64.
-
-[4]
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty)
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty)
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty)
@@ -1391,7 +1384,7 @@ ned on input line 64.
 ) (../examples/simple/2d/wrong_original.tex) (../examples/simple/2d/wrong.tex)
 (../examples/simple/2d/correct_original.tex) (../examples/simple/2d/correct.tex
 ) (../examples/simple/2d/wrong_original.tex) (../examples/simple/2d/wrong.tex)
-[5] (../examples/simple/3d/x_original.tex) (../examples/simple/3d/x.tex)
+[4] (../examples/simple/3d/x_original.tex) (../examples/simple/3d/x.tex)
 (../examples/simple/3d/y_original.tex
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd))
 (../examples/simple/3d/y_original.tex) (../examples/simple/3d/x_original.tex)
@@ -1399,14 +1392,17 @@ ned on input line 64.
 (../examples/simple/3d/y_original.tex) (../examples/simple/3d/x_original.tex)
 (../examples/simple/3d/x.tex) (../examples/simple/3d/y_original.tex)
 (../examples/simple/3d/y_original.tex)
-Overfull \hbox (43.0992pt too wide) in paragraph at lines 121--122
- \OT1/cmss/bx/n/10.95 2.3.1.1 Struk-tur die-ses Ab-schnit-tes[] \OT1/cmss/m/n/1
+Overfull \hbox (43.0992pt too wide) in paragraph at lines 125--126
+ \OT1/cmss/bx/n/10.95 2.2.1.1 Struk-tur die-ses Ab-schnit-tes[] \OT1/cmss/m/n/1
 0.95 Ei-ne Da-tei nutzt ein Li-te-ra-tur-ver-zeich-nis (BibT[]X), pdfT[]X ([][]
 \OT1/cmtt/m/n/10.95 \pdfcomment{}[]\OT1/cmss/m/n/10.95 ),
  []
 
-[6{C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-supe
-r-ts1.enc}] [7] (../examples/advanced/literature/example_original.tex)
+[5{C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-supe
+r-ts1.enc}]
+Package hyperref Info: bookmark level for unknown lpcsec defaults to 0 on input
+ line 135.
+ [6] (../examples/advanced/literature/example_original.tex)
 (../examples/advanced/literature/example.tex)
 (../examples/advanced/literature/example_original.bib)
 (../examples/advanced/literature/example.bib)
@@ -1417,32 +1413,32 @@ r-ts1.enc}] [7] (../examples/advanced/literature/example_original.tex)
 (../examples/advanced/literature/example_original.tex)
 (../examples/advanced/literature/example.tex)
 (../examples/advanced/literature/example_original.bib)
-(../examples/advanced/literature/example.bib) [8]
-Overfull \hbox (10.98485pt too wide) in paragraph at lines 231--232
+(../examples/advanced/literature/example.bib) [7]
+Overfull \hbox (10.98485pt too wide) in paragraph at lines 235--236
  []\OT1/cmss/bx/n/10.95 Beschreibungen \OT1/cmss/m/n/10.95 Wo-hin-ge-gen sich [
-]2.4.1[] nicht mit an-de-ren, in Kom-men-ta-ren re-fe-ren-zier-ten, Da-tei-en b
+]2.3.1[] nicht mit an-de-ren, in Kom-men-ta-ren re-fe-ren-zier-ten, Da-tei-en b
 esch[]aftigt,
  []
 
 
-LaTeX Warning: Hyper reference `problems:special:comments' on page 9 undefined 
-on input line 233.
+LaTeX Warning: Hyper reference `problems:special:comments' on page 8 undefined 
+on input line 237.
 
 
-LaTeX Warning: Reference `problems:advanced:comment' on page 9 undefined on inp
-ut line 234.
+LaTeX Warning: Reference `problems:advanced:comment' on page 8 undefined on inp
+ut line 238.
 
-[9] [10]) [11]
+[8] [9]) [10]
 \openout2 = `technologies/tek.aux'.
 
- (technologies/tek.tex) [12
+ (technologies/tek.tex) [11
 
 
 
 ]
 \openout2 = `solution/desc.aux'.
 
- (solution/desc.tex) [13
+ (solution/desc.tex) [12
 
 
 
@@ -1450,24 +1446,24 @@ ut line 234.
 \openout2 = `conclusion/ending.aux'.
 
 
-(conclusion/ending.tex) [14
+(conclusion/ending.tex) [13
 
 
 
-] [15
+] [14
 
 
-] (index.bbl) [16]
+] (index.bbl) [15]
 \openout2 = `appendices/appendix.aux'.
 
  (appendices/appendix.tex
-(appendices/fontscaling.tex [17
+(appendices/fontscaling.tex [16
 
 ]
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample1.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample1.pdf, id=575, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample1.pdf, id=539, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample1.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample1.pdf>
 Package pdftex.def Info: appendices/fontscalingexample1.pdf  used on input line
@@ -1478,19 +1474,19 @@ Missing character: There is no ; in font nullfont!
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample2.pdf, id=578, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample2.pdf, id=542, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample2.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample2.pdf>
 Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
  57.
 (pdftex.def)             Requested size: 80.07498pt x 113.12413pt.
-)) [18 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2
+)) [17 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2
 .pdf
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
 >]
-runsystem(latexminted cleantemp  --timestamp 20251009203829 6A992D5529F459A44FE
+runsystem(latexminted cleantemp  --timestamp 20251009205601 6A992D5529F459A44FE
 E58C733255E86)...disabled (restricted).
 
  (index.aux (introduction/short.aux) (problem/issues.aux)
@@ -1505,16 +1501,16 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: 1FA73003EEF03C8433D4271707B2EE2F;3178.
+(rerunfilecheck)             Checksum: 76651E3E6ABAE3D5F1C45BC8D5B6CDB2;2952.
  ) 
 Here is how much of TeX's memory you used:
- 46938 strings out of 474485
- 1082228 string characters out of 5744206
+ 46926 strings out of 474485
+ 1082047 string characters out of 5744206
  2079542 words of memory out of 5000000
- 68144 multiletter control sequences out of 15000+600000
+ 68140 multiletter control sequences out of 15000+600000
  571388 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,14n,130p,1435b,2720s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,14n,130p,1435b,2655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 mmi10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/cm/cmmi8.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publi
@@ -1530,9 +1526,9 @@ b><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/cm/cmtt9.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/cm-super/sftt0900.pfb>
-Output written on index.pdf (22 pages, 742875 bytes).
+Output written on index.pdf (21 pages, 732729 bytes).
 PDF statistics:
- 717 PDF objects out of 1000 (max. 8388607)
- 227 named destinations out of 1000 (max. 500000)
- 396 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 680 PDF objects out of 1000 (max. 8388607)
+ 219 named destinations out of 1000 (max. 500000)
+ 372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

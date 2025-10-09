@@ -2,50 +2,47 @@
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Hintergrund}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Anforderungen}{2}{subsection.1.2}%
-\contentsline {section}{\numberline {2}Problemfälle}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Struktur}{3}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Klassifizierung}{3}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Beschreibung}{3}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Translative}{4}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Unbekannte Wörter}{4}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Auszulassende Wörter}{4}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Neuartige Satzarten}{5}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Größere Sprachstrukturen}{6}{subsubsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.3}Technische Probleme}{6}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Hilfsdateien}{6}{subsubsection.2.3.1}%
-\contentsline {paragraph}{\numberline {2.3.1.1}Struktur dieses Abschnittes}{6}{paragraph.2.3.1.1}%
-\contentsline {paragraph}{\numberline {2.3.1.2}Beispielliste}{7}{paragraph.2.3.1.2}%
-\contentsline {subparagraph}{\numberline {2.3.1.2.1}Backrefs}{7}{subparagraph.2.3.1.2.1}%
-\contentsline {paragraph}{\numberline {2.3.1.3}Abstrahiertes Problem}{8}{paragraph.2.3.1.3}%
-\contentsline {subsubsection}{\numberline {2.3.2}Unerreichbare Informationen}{8}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Figuren und Tabellen}{9}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}Literaturverzeichnisse}{9}{subsubsection.2.3.4}%
-\contentsline {subsubsection}{\numberline {2.3.5}Category Codes}{9}{subsubsection.2.3.5}%
-\contentsline {subsection}{\numberline {2.4}Spezifischer Technologien}{9}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Kommentare}{9}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Dilemmatische Makros}{10}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}TikZ und Layouting}{10}{subsubsection.2.4.3}%
-\contentsline {subsubsection}{\numberline {2.4.4}Quellmehrsprachigkeit}{10}{subsubsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.5}Sprachliche Schwierigkeiten}{10}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Glossare und Nomenklaturen}{10}{subsubsection.2.5.1}%
-\contentsline {subsubsection}{\numberline {2.5.2}Weitere}{11}{subsubsection.2.5.2}%
-\contentsline {section}{\numberline {3}Technologien}{12}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Übersicht}{12}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Auflistung}{12}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Eingrenzung}{12}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Auswertung}{12}{subsubsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}Einschätzung}{12}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Fazit}{12}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Offene Problematiken}{13}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Verfolgte Ideen}{13}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Gelöste Probleme}{13}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Lessons Learned}{13}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Fazit}{13}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Fazit}{14}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Zusammenfassung}{14}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Ausblick}{14}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Weiteres}{14}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Eigenständigkeitserklärung}{15}{section.6}%
-\contentsline {section}{Literatur}{16}{section*.83}%
-\contentsline {section}{\numberline {A}Anhänge}{17}{section.chX.1}%
-\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{17}{subsection.chX.1.1}%
+\contentsline {section}{\numberline {2}Probleme}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Translativ}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Unbekannte Wörter}{3}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Auszulassende Wörter}{3}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Neuartige Satzarten}{4}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Größere Sprachstrukturen}{5}{subsubsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.2}Technisch}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Hilfsdateien}{5}{subsubsection.2.2.1}%
+\contentsline {paragraph}{\numberline {2.2.1.1}Struktur dieses Abschnittes}{5}{paragraph.2.2.1.1}%
+\contentsline {paragraph}{\numberline {2.2.1.2}Beispielliste}{6}{paragraph.2.2.1.2}%
+\contentsline {subparagraph}{\numberline {2.2.1.2.1}Backrefs}{6}{subparagraph.2.2.1.2.1}%
+\contentsline {paragraph}{\numberline {2.2.1.3}Abstrahiertes Problem}{7}{paragraph.2.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.2.2}Unerreichbare Informationen}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Figuren und Tabellen}{8}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Literaturverzeichnisse}{8}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Category Codes}{8}{subsubsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.3}Spezifischer Technologien}{8}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Kommentare}{8}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Dilemmatische Makros}{9}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}TikZ und Layouting}{9}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Quellmehrsprachigkeit}{9}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Sprachliche Schwierigkeiten}{9}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Glossare und Nomenklaturen}{9}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Weitere}{10}{subsubsection.2.4.2}%
+\contentsline {section}{\numberline {3}Technologien}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Übersicht}{11}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Auflistung}{11}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Eingrenzung}{11}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Auswertung}{11}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Einschätzung}{11}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Fazit}{11}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Offene Problematiken}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Verfolgte Ideen}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Gelöste Probleme}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Lessons Learned}{12}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Fazit}{12}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Fazit}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Zusammenfassung}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Ausblick}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Weiteres}{13}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Eigenständigkeitserklärung}{14}{section.6}%
+\contentsline {section}{Literatur}{15}{section*.81}%
+\contentsline {section}{\numberline {A}Anhänge}{16}{section.chX.1}%
+\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{16}{subsection.chX.1.1}%
