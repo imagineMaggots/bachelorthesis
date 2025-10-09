@@ -1,3 +1,27 @@
+%%%%% Kurzer Reminder für die wichtigsten Tücken (aber auch 'benefits' (EN für: Vorteil)) der deutschen Sprache für nativ dieser Sprache Mächtigen, welche nicht in wissenschaftliche Arbeiten fließen sollten. 
+%%%%% 
+%%%%% Meist recht offensichtlich.
+%%%%%
+%%%%% Konjunktiv 2: Impliziert meist eine Form von "Subjekt hätte etwas tun müssen" oder "Subjekt wird etwas tun" (oder schlimmer noch passiv: "mit Subject wird etwas geschehen", hier braucht es sogar das Partizip 2). Intuitiv wird klar, dass etwas nicht stattfand. Eine Quelle von möglicher Redundanz. Modalverben stehen oft in Verbindung mit solchen Implikationen ("dürfte ich etwas", "müsste ich etwas", "könnte ich etwas"... meist: ja, theoretisch gesehen "kann" man alles. Daher nicht schreiben: "man müsste/könnte/sollte etwas [so und so] machen", sondern: "A existiert, wodurch sich B ergibt). Siehe: Konditionalsätze
+%%%%% Konzessivsätze: Leicht am Konjunktiv 2 zu erkennen. "Entgegen Behauptung X, ist die Realität Y". Die Realität gehört an den Anfang und aus dieser sollte genug Information hervorgehen, dass Behauptung X nicht ausformuliert werden muss.
+%%%%% 
+%%%%% Implikationen: Erklärung bedürfte eigentlich einem (mir noch unbekanntem) wissenschaftlichen Teilgebiet der "Aussagentheorie". Entspringt der Modularität deutscher Substantive ("Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz" als Beispiel. Wir beschäftigen uns mit der Rindfleischetikettierung, welche überwacht werden soll. Das "s" nach "Rindfleischetikettierung" entstammt einem implizierten Genitiv (Überwachung der Rindfleischetikettierung = Rindfleischetikettierungsüberwachung), genauso wie das "s" nach "[...]überwachung[...]" (Aufgabenübertragung (bei) der Überwachung). Letztendliches "s" vor "[...]gesetz" ist am einfachsten, da sich Gesetze immer auf etwas beziehen. "Ein Gesetz einer Sache" kann zu "Gesetz der Sache" vereinfacht werden, aus welcher der Genitiv wieder hervorgeht).  
+
+%%%%% Konditionalsätze: 
+%%%%% "Aus These X, folgt Hypothese". "Daher folgt die nächste Hypothese". (Hypothese = These, welche auf einer anderen These aufbaut. Grundlage der Mathematik)
+%%%%% Formal entweder eine Bedingung in einem Nebensatz (if-else statement) oder Schlussfolgerung in einem Hauptsatz (Folgesatz, vergleichbar: Zuweisungen). 
+%%%%% - Arten: Real und Irreal = Erfüllbare und nicht erfüllbare Bedingungen. 
+%%%%% - meint: Solange ich atme, bin ich. (Wenn ich für immer aufhören würde zu atmen, wäre erste Bedingung nicht mehr erfüllt. Ich bin ein Mensch, daher stimmt die Aussage.)
+%%%%% - meint: Gäbe es keine Luft, wäre ich nicht. (Annahme: Die Luft bleibt uns vorerst noch einatembar erhalten)
+%%%%% - meint: Hätte es nie Luft gegeben, hätte es mich nie geben können. (Wir schließen den Kreis zu Konjunktiv 2 und bemerken das Plusquamperfekt).
+
+%%%%% Plusquamperfekt: Als ich (etwas) tat, war (etwas anderes) bereits passiert. Oder Konditionalsatz mit Konjunktiv 2: Wäre (etwas) nie geschehen, hätte (Resultat) nie erscheinen können. Passiert umgangssprachlich oft "hätte ich (das und das [besser]) gemacht, hätte ich (das und das) bereits erreicht" bspw.: "Hätte ich keinen zweiten Versuch für eine Abschlussarbeit benötigt, hätte ich bereits den Studiengang beenden können. (Hier bemerkt man direkt: "beenden können" kann zu "beendet" gekürzt werden. Partizip II ist meist umgangssprachlich, da textlich nicht von Nöten).
+
+
+%%%%%%%%%%%%% Versuche die deutsche wissenschaftliche Sprache verständlich zu halten:
+%%%%%%%%%%%%% - Infinitiv so oft wie möglich (durch Substantivierung oder Erweiterung).
+%%%%%%%%%%%%% - Reale Konditionalsätze nutzen
+
 % Welche Arten von Fehlern können entstehen? (Was fällt einem auf, wenn man Dokumente schreibt und sich denkt: mmmmhh würde google translate das richtig übersetzen)
 \section{Problemfälle}
 Eine einzige, feste \TeX{}-Syntax existiert theoretisch gesehen nicht, wie ein~\hyperref[problems:advanced:catcode]{späterer Paragraph} aufzeigen wird.% So gehen in-document refs ganz gut.
@@ -27,24 +51,22 @@ Jeder Problemfall wird zunächst durch ein Beispiel demonstriert\footnote{welche
 \subsection{Simple Probleme}\phantomsection\label{problems:simple}
 % 0d zu 1d
 \subsubsection{Unerwartete Zeichen}\phantomsection\label{problems:dim0}
-\paragraph*{Beispiel}
-\verb|\label{problem:encounter:solve}| wird zu \verb|\label{Problem:Begegnung:Lösung}| übersetzt, aber \verb|\section{example}| zu \verb|\Abschnitt{Beispiel}|.
+\verb|\label{problem:encounter:solve}| wird zu \verb|\label{Problem:Begegnung:Lösung}| übersetzt,\\aber \verb|\section{example}| zu \verb|\Abschnitt{Beispiel}|.
 \paragraph*{Beschreibung}
 \paragraph*{Abstrahierung}
 Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \verb|[|, \verb|]|, \verb|$|, \verb|$$| oder \verb|\%| erkennen und müssten daher ausgeschlossen werden. Man kann sich diese Art von Fehlern wie 0-dimensionale Fehler vorstellen, wobei die nullte Dimension hierbei bei einem einzelnen Wort beginnt (welche als Punkte zu verstehen sind).
 
 % 0d zur ersten Dimension
 \subsubsection{Fehlinterpretierte Wörter}\phantomsection\label{problems:dim1}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt
-\paragraph*{Beispiel}
-\verb|\begin{myenvironment}[fontsize=red]| wird zu \verb|\begin{myenvironment}[fontsize=red]| übersetzt, aber \verb|\begin{myenvironment}[ fontsize = red ]| zu \verb|\begin{myenvironment}[ fontsize = rot ]|.
+\verb|\begin{myenvironment}[fontsize=red]| wird zu \verb|\begin{myenvironment}[fontsize=red]| übersetzt,\\aber \verb|\begin{myenvironment}[ fontsize = red ]| zu \verb|\begin{myenvironment}[ fontsize = rot ]|.
 \paragraph*{Beschreibung}
 \paragraph*{Abstrahierung}
 Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpectedCharacters]{zuvor} beschriebenen Zeichenketten erkennen, sondern lassen sich auch in Zeilen wiederfinden. Diese Art von Fehlern bahnt den Weg zu einer Dimension, wodurch nicht nur innerhalb eines Wortes (Punktes), sondern auch zwischen verschiedenen Punkten Fehler entstehen könnten (also innerhalb einer Zeile).
 
+\newpage
 
 % Vertikales Spacing / Zweite Dimension
 \subsubsection{Übersichtliche Quelltexte}\phantomsection\label{problems:dim2}
-\paragraph*{Beispiel}
 \begin{table}[h!]
     \centering
     \begin{tabularx}{\textwidth}{X X}
@@ -56,12 +78,16 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpe
             Beispiel 2\lstinputlisting[language=tex]{../tests/simple/2d/wrong_original.tex} & \lstinputlisting[language=tex]{../tests/simple/2d/wrong.tex}\\
         \bottomrule
     \end{tabularx}
-    \caption{Beispiel für eine Zeile, welche übersetzt werden darf}\label{tab:problems:dim2}
+    \caption{Beispiel für eine Zeile, welche übersetzt werden darf}\phantomsection\label{tab:problems:dim2}
 \end{table}
+
+
 \paragraph*{Beschreibung}
 % Zwar ist es praktisch, wenn Quelltexte durch zusätzlichen Whitespace nicht nur auf horizontaler, sondern auch auf vertikaler Ebene übersichtlicher werden, allerdings führt dies bei einer zeilenweisen Übersetzung dazu, dass der Kontext aus voriger Zeile evtl. verloren geht.
 \paragraph*{Abstrahierung}
 Teile der \TeX-Syntax lassen sich nicht nur anhand von einzelnen Zeilen oder Zeichenketten erkennen, sondern könnten sich auch auch in verschiedenen Zeilen wiederfinden lassen. Diese Art von Fehlern kann 2-dimensional betrachtet werden, wodurch Fehler auch zwischen Zeilen entstehen können.
+
+\newpage
 
 % Dreidimensionales Spacing
 \subsubsection{Mehrere Dateien}\phantomsection\label{problems:dim3}
@@ -73,20 +99,111 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand von einzelnen Zeilen oder Zei
             Original & Übersetzung\\
         \midrule
         % Siehe ~/tests/readme.md für namensgebung und "Wo ist die Datei?"; hoffentlich sieht sich der Herr Prof. Dr. rer. nat. habil. nicht den Quellcode an dieser Stelle an.
-            Datei $x$ \lstinputlisting[language=TeX]{../tests/simple/3d/x_original.tex} & \lstinputlisting[language=tex]{../tests/simple/3d/x.tex}\\[2em]
-            Datei $y$ \lstinputlisting[language=TeX]{../tests/simple/3d/y_original.tex} & \lstinputlisting[language=tex]{../tests/simple/3d/y_original.tex}\\% Begründung, warum hier zwei mal nur ein und dieselbe Datei verwendet wird, ist dieser Datei zu entnehmen
+            Datei $x$ & \\ 
+            \lstinputlisting[language=TeX]{../tests/simple/3d/x_original.tex} & \lstinputlisting[language=tex]{../tests/simple/3d/x.tex}\\[2em]
+            Datei $y$ & \\ 
+            \lstinputlisting[language=TeX]{../tests/simple/3d/y_original.tex} & \lstinputlisting[language=tex]{../tests/simple/3d/y_original.tex}\\% Begründung, warum hier zwei mal nur ein und dieselbe Datei verwendet wird, ist dieser Datei zu entnehmen
+            % edited "y_original.tex" ~12 h later: "has" has been replaced with "have". mistake was made, because i was thinking of one (or any) text, but forgot that i was referring to two versions syntactically. 
         \bottomrule
     \end{tabularx}
-    \caption{Beispiel für eine übersehene Datei}\label{tab:problems:dim3}
+    \caption{Beispiel für eine übersehene Datei}\phantomsection\label{tab:problems:dim3}
 \end{table}
 \paragraph*{Beschreibung}
 Die Übersetzung von Datei $x$, welche Datei $y$ via \texttt{input} oder \texttt{include} % Unterschied: input darf vernested werden, include nicht. wir gehen von einem größeren Werk aus, welches aus x Kapiteln besteht, welche integriert werden sollen. die einzelnen Kapitel werden danach nur in Abschnitte zerlegt, welche durch inputs eingebunden werden sollen
 führt zwar dazu, dass Datei $x$ übersetzt wird, aber Datei $y$ nicht.
 \paragraph*{Abstrahierung}% Hier war abstrahieren leichter als beschreiben
-Teile der \TeX-Syntax müssen nicht zwingend in einer Datei vorliegen, sondern könnten auch in verschiedenen Dateien integriert sein. Die Klassifizierung simpler Probleme gelangt in \TeX{} hier bereits in der dritten Dimension an, weswegen sich fortan bereits mit \enquote{fortgeschrittenen} Problemen beschäftigt werden muss (welche sich Teils über mehrere \enquote{Dimensionen} erstrecken).
+Teile der \TeX-Syntax müssen nicht zwingend in einer Datei vorliegen, sondern könnten auch in verschiedenen Dateien integriert sein. Die Klassifizierung simpler Probleme gelangt in \TeX{} hier bereits in der dritten Dimension an, weswegen sich fortan bereits mit \enquote{fortgeschrittenen} Problemen beschäftigt werden muss (welche sich Teils über mehrere \enquote{Dimensionen} erstrecken). Eine vierte Dimension existiert physikalisch nicht, ist jedoch mathematisch formulierbar\footnote{physikalisch: die vierte Dimension ist die Zeit, wenn man eine nicht-euklidische 3-dimensionale Bewegung verlangt (Teleportation)} und äußert sich in diesem Kontext auf eine Erhöhung von Laufzeitkomplexitäten.
 
 \subsection{Fortgeschrittenere Probleme}\phantomsection\label{problems:advanced}
-\subsubsection{Kommentare}\phantomsection\label{problems:advanced:comments}
+%%% Hier ein wenig weg von der eigentlichen Struktur, jedoch für die konkreten Beispiele wieder gleich
+\subsubsection{Hilfsdateien}% multi-file handling
+\paragraph{Struktur dieses Abschnittes}
+Eine Datei nutzt ein Literaturverzeichnis (Bib\TeX{}), pdf\TeX{} (\verb|\pdfcomment{}|), \verb|\footnote|, ein Inhaltsverzeichnis, ein Glossar, 
+
+\paragraph{Beispielliste}
+\subparagraph*{Inhaltsverzeichnisse, Abbildungsverzeichnisse, Tabellenlisten}
+\paragraph*{Beispiel}
+\paragraph*{Erläuterung}
+Ändern wir den Titel eines Paragraphen oder Abschnittes, dann erfasst dies der \TeX{} Compiler beim ersten Durchlauf. Jedoch der String im Inhaltsverzeichnis kann nur verändert werden, sobald diese Information zu Beginn des nächsten Kompilierungsprozesses in der entsprechenden Hilfsdatei vorliegt (\texttt{.toc}).
+
+\subparagraph{Backrefs}
+\paragraph*{Beispiel}
+Bedarf evtl.\ einer bildlichen Veranschaulichung. Meint: Inhaltsverzeichnis, Tabelle,\ldots vor einer \textit{backwards reference} verschiebt die echte Position der (Phantom-) Sektion. Daher muss zunächst bestimmt werden, wo im Dokument eine Referenz auf ein existierendes Label stattfindet, welches vorherig bereits vergeben wurde\pdfcomment{Ein Erneuern eines Labels via renewcommand ergibt keinen Sinn, da dieses forward references verfälschen würde.}.
+\paragraph*{Erläuterung}
+Ein Verweis auf einen vorherigen Paragraphen kann nur klickbar verlinkt werden, wenn die Information, an welcher Stelle er sich im Dokument befindet, bereits klar ist. Da nach der Referenz weitere Abschnitte folgen können, welche vorherige Elemente mit variabler Größe verändern könnten, muss zunächst die Größe dieser bestimmt sein und gegenüber dieser kann dann der 
+
+\subparagraph*{Literaturverzeichnisse}
+\paragraph*{Beispiel}
+\paragraph*{Erläuterung}
+
+\subparagraph*{PDF Funktionen}
+\paragraph*{Beispiel}
+\paragraph*{Erläuterung}
+
+\subparagraph*{\enquote{footnotes}}
+\paragraph*{Beispiel}
+\paragraph*{Erläuterung}
+
+
+
+
+\subparagraph*{Glossare und Nomenklaturen}
+\paragraph*{Beispiel}
+\paragraph*{Erläuterung}
+
+\paragraph{Abstrahiertes Problem}
+Falls auf Hilfsdateien zugegriffen wird, ist das mehrfache Kompilieren eines \LaTeX{} Dokumentes unvermeidbar. Gegeben $n_{h}$ womoglich existierenden Hilfsdateien, welche alle ihrerseits zu übersetzende Inhalte beinhalten können, folgt eine minimale Laufzeit $\mathcal{O}(n_h)$. 
+%Ein einmaliges Kompilieren eines \LaTeX{} Dokumentes ist unmöglich, falls ein Zugriff auf Hilfsdateien nötig ist.
+
+
+%%%%%%%%%% Für später relevant, für Makros und beliebige Nutzereingaben etc......:!:!:!!::!!::!
+%Die Möglichkeiten andere Dateien in einem \LaTeX{} Dokument einzubeziehen, könnten nähern sich einer Unendlichkeit.% Warum? ist schwer zu beantworten, daher sollte man sich zunächst vor Augen führen, für welche Zwecke man auf andere Dokumente innerhalb eines Dokumentes verweisen möchte. // Warum eine Unendlichkeit? Es gibt unendlich viele Unendlichkeiten. Beweis bitte von Prof. Cap
+%Ein Beschäftigen mit dieser führt zu nichts\footnote{invers},%, sodass zunächst die Frage gestellt werden müsste, wie diese entstehen können, indem alle denkbaren Arten, wie sich zwei oder mehrere Dateien gegenseitig referenzieren/benötigen könnten, aufgelistet wird. 
+%weshalb ein Betrachten möglicher versteckter interner Abhängigkeiten zwischen verschiedenen \LaTeX{} Dokumenten unabdingbar ist.% [...], hence describing the possible internal dependencies of \LaTeX{} documents is necessary. // um von der Formulierung "weshalb mögliche interne Abhängigkeiten zwischen verschiedenen Dateien erläutert werden müssen" wegzukommen, sah ich mich gezwungen in die englische Sprache auszuweichen (da es mir dabei half zu erkennen, wie ich einen direkten Konjunktiv II vermeiden kann).
+%%% Inwiefern wirkt sich das auf die gegebene Problematik aus
+%Nur einen Teil eines Dokumentes zu übersehen, provoziert kontextuellen Verlust für Übersetzungen (Abschnitt~\ref{problems:dim3}). 
+%\begin{enumerate}
+%%    \item Permutationen (insgesamt 4, da wir nur zwischen $1$ und $n \textit{(beliebig vielen)}$ zu wechseln wünschen (2*2 Optionen / Urnen=1;Kugeln=2;Farben=2;zurücklegen)): 
+%    \item Ein Dokument kann ein Anderes in sich tragen. 
+%    \item Ein Dokument kann n Andere in sich tragen
+%    \item n Dokumente können ein Anderes in sich tragen
+%    \item n Dokumente können n Andere in sich tragen geht aus den beiden vorigen statements hervor und ist redundant (weil wir kennen bereits 1 dokument, welches n Andere tragen kann).
+%\end{enumerate}
+% Realität es gibt nicht unendlich viele Dokumente, da physikalisch nicht möglich (Archimedis). 
+%Hier stoßen wir 
+
+
+%%% Meint: Hier müssen wir die eigentlichen Literaturverweise kennen, um einen Kontext zu kennen.
+\subsubsection{Unbegreifbares Wissen}
+
+\paragraph*{Beispiele}
+\begin{table}[h!]
+    \centering
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+            Original & Übersetzung\\
+        \midrule
+        % Siehe ~/tests/readme.md für namensgebung und "Wo ist die Datei?"; hoffentlich sieht sich der Herr Prof. Dr. rer. nat. habil. nicht den Quellcode an dieser Stelle an.
+            Dokument & \\
+            \lstinputlisting[language=TeX]{../tests/advanced/literature/example_original.tex} & \lstinputlisting[language=tex]{../tests/advanced/literature/example.tex}\\[2em]
+            Bibliothek & \\
+            \lstinputlisting[language=tex]{../tests/advanced/literature/example_original.bib} & \lstinputlisting[language=tex]{../tests/advanced/literature/example.bib}\\
+            %%% Bemerkung: Übersetzung noch nicht erstellt.
+        \bottomrule
+    \end{tabularx}
+    \caption{Beispiel für einen verpassten literarischen Kontext}\label{tab:problems:nonexisting}% mit reference 
+\end{table}
+
+\paragraph*{Beschreibungen}
+Ein Dokument erwähnt ein Werk, in welchem es um die C-Programmierung geht. Rein aus den im System vorliegenden Dateien ist kein Kontext für das Wort \enquote{String} erkennbar, sodass ein Zugriff auf eine externe Ressource unabdingbar ist.
+
+% Bemerkung: Nur die Suche (google.com) nach "salomon c programmierung" führt bspw. Gemini zu einer vermuteten Verwechslung mit dem Begriff "System" (Stand: 09.10.2025, 12:29).
+% ISBN führt zur gleichen Minute direkt zum Institut (Angewandte Mikroelektronik und Datentechnik)... wobei Thalia denkt, dass ich "1984" online kaufen möchte...
+\paragraph*{Abstrahierung}
+Einfache Cloud-Architektur. Ein Client möchte auf ein beliebiges Wissen einer Webseite (bzw.\ dem Server und den beanspruchten Speicherplätzen in einem (beliebigen) Rechenzentrum\footnote{Hierbei ist nicht von Festspeicher zu reden. Aus Sicherheitsgründen sei davon auszugehen, dass sich die physischen Adressen des wissensrepräsentierenden Speichers regelmäßig und unvorhersehbar ändern} zugreifen).
+
+
+\subsubsection{Kommentare und Quelltexte}\phantomsection\label{problems:advanced:comments}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 %- zunächst als Unterklasse von~\ref{problems:unexpectedCharacters} zu erwarten
@@ -95,7 +212,7 @@ Teile der \TeX-Syntax müssen nicht zwingend in einer Datei vorliegen, sondern k
 Hier treffen simple Fehler aus den ersten drei Kategorien (in~\ref{problems:dim0},~\ref{problems:dim1} und~\ref{problems:dim2} geschildert) aufeinander. In die dritte Dimension, also in andere Dateien, wird jedoch (\hyperref[problems:special:comments]{vorerst}) nicht traversiert, da auskommentierte Datei-Einbindungen nicht erfasst werden dürften. 
 
 
-\subsubsection{Tabellen}\phantomsection\label{problems:advanced:tables}
+\subsubsection{Figuren und Tabellen}\phantomsection\label{problems:advanced:tables}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 \paragraph*{Abstrahierung}
@@ -107,10 +224,7 @@ Bib\TeX{} erlaubt es an vielerlei Stelle eigene Strings in einer kompilierten \T
 \paragraph*{Abstrahierung}
 
 
-\subsubsection{TikZ und Layouting}\phantomsection\label{problems:advanced:layouting}
-\paragraph*{Beispiele}
-\paragraph*{Beschreibungen}
-\paragraph*{Abstrahierung}
+
 
 \subsubsection{Category Codes}\phantomsection\label{problems:advanced:catcode}
 \paragraph*{Beispiele}
@@ -119,6 +233,8 @@ Bib\TeX{} erlaubt es an vielerlei Stelle eigene Strings in einer kompilierten \T
 
 
 \subsection{Spezielle Probleme}\phantomsection\label{problems:special}
+Mitunter NP-schwer.
+
 \subsubsection{Glossare und Nomenklatur}\phantomsection\label{problems:special:glossaries}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
@@ -129,7 +245,12 @@ Bib\TeX{} erlaubt es an vielerlei Stelle eigene Strings in einer kompilierten \T
 \paragraph*{Beschreibungen}
 \paragraph*{Abstrahierung}
 
-\subsubsection{Quelltexte}\phantomsection\label{problems:special:sourcecode}
+\subsubsection{TikZ und Layouting}\phantomsection\label{problems:advanced:layouting}
+\paragraph*{Beispiele}
+\paragraph*{Beschreibungen}
+\paragraph*{Abstrahierung}
+
+\subsubsection{Andere Quellsprachen}\phantomsection\label{problems:special:sourcecode}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 \paragraph*{Abstrahierung}

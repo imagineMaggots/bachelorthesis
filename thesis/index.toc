@@ -9,21 +9,26 @@
 \contentsline {subsection}{\numberline {2.2}Simple Probleme}{4}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Unerwartete Zeichen}{4}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Fehlinterpretierte Wörter}{4}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Übersichtliche Quelltexte}{4}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Mehrere Dateien}{4}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.3}Übersichtliche Quelltexte}{5}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Mehrere Dateien}{6}{subsubsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.3}Fortgeschrittenere Probleme}{6}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Kommentare}{6}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Tabellen}{6}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Literaturverzeichnis}{6}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}TikZ und Layouting}{6}{subsubsection.2.3.4}%
-\contentsline {subsubsection}{\numberline {2.3.5}Category Codes}{6}{subsubsection.2.3.5}%
-\contentsline {subsection}{\numberline {2.4}Spezielle Probleme}{7}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Glossare und Nomenklatur}{7}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Dilemmatische Makros}{7}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}Quelltexte}{7}{subsubsection.2.4.3}%
-\contentsline {subsubsection}{\numberline {2.4.4}Kommentare}{7}{subsubsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.5}Weitere Schwierigkeiten}{8}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{9}{section.3}%
-\contentsline {section}{Literatur}{10}{section*.70}%
-\contentsline {section}{\numberline {A}Anhänge}{11}{section.chX.1}%
-\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{11}{subsection.chX.1.1}%
+\contentsline {subsubsection}{\numberline {2.3.1}Hilfsdateien}{6}{subsubsection.2.3.1}%
+\contentsline {paragraph}{\numberline {2.3.1.1}Struktur dieses Abschnittes}{6}{paragraph.2.3.1.1}%
+\contentsline {paragraph}{\numberline {2.3.1.2}Beispielliste}{7}{paragraph.2.3.1.2}%
+\contentsline {paragraph}{\numberline {2.3.1.3}Abstrahiertes Problem}{8}{paragraph.2.3.1.3}%
+\contentsline {subsubsection}{\numberline {2.3.2}Unbegreifbares Wissen}{8}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Kommentare und Quelltexte}{9}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Figuren und Tabellen}{9}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.5}Literaturverzeichnisse}{9}{subsubsection.2.3.5}%
+\contentsline {subsubsection}{\numberline {2.3.6}Category Codes}{9}{subsubsection.2.3.6}%
+\contentsline {subsection}{\numberline {2.4}Spezielle Probleme}{10}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Glossare und Nomenklatur}{10}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Dilemmatische Makros}{10}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}TikZ und Layouting}{10}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Andere Quellsprachen}{10}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}Kommentare}{11}{subsubsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.5}Weitere Schwierigkeiten}{11}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{12}{section.3}%
+\contentsline {section}{Literatur}{13}{section*.93}%
+\contentsline {section}{\numberline {A}Anhänge}{14}{section.chX.1}%
+\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{14}{subsection.chX.1.1}%
