@@ -1,3 +1,7 @@
+### soll bedeuten
+ich bleibe hier brav auf einem branch und verfolge meine Dateien lokal auf meinem Rechner, weil ich ansonsten in git wenig Übersicht behalte.
+
+### wirres zeug
 wenn ich von main einen branch (bspw. hope) erzeuge, diesen verändere und dann mit main merge: alles gut
 wenn ich auf meinem Rechner nur in hope oder main Änderungen vornehme: alles gut
 wenn ich auf meinem Rechner in hope Änderungen vornehme und für main pull requests erstelle: alles gut
