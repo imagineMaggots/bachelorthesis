@@ -6,22 +6,30 @@
 \contentsline {subsection}{\numberline {2.1}Struktur}{3}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Klassifizierung}{3}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Beschreibung}{3}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Simple Probleme}{4}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Unerwartete Zeichen}{4}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Fehlinterpretierte Wörter}{4}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Vertikales Spacing}{4}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Mehrere Dateien}{5}{subsubsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.3}Fortgeschrittenere Probleme}{5}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Kommentare}{5}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Tabellen}{5}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Literaturverzeichnis}{5}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}TikZ und Layouting}{6}{subsubsection.2.3.4}%
-\contentsline {subsubsection}{\numberline {2.3.5}Category Codes}{6}{subsubsection.2.3.5}%
-\contentsline {subsection}{\numberline {2.4}Spezielle Probleme}{6}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Glossare und Nomenklatur}{6}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Dilemmatische Makros}{6}{subsubsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.5}Weitere Schwierigkeiten}{6}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{7}{section.3}%
-\contentsline {section}{Literatur}{8}{section*.60}%
-\contentsline {section}{\numberline {A}Anhänge}{9}{section.chX.1}%
-\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{9}{subsection.chX.1.1}%
+\contentsline {subsection}{\numberline {2.2}Translativ}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Unbekannte Wörter}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Auszulassende Wörter}{4}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Neuartige Satzstrukturen}{5}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Größere Sprachstrukturen}{6}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}Technisch}{6}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Hilfsdateien}{6}{subsubsection.2.3.1}%
+\contentsline {paragraph}{\numberline {2.3.1.1}Struktur dieses Abschnittes}{6}{paragraph.2.3.1.1}%
+\contentsline {paragraph}{\numberline {2.3.1.2}Beispielliste}{6}{paragraph.2.3.1.2}%
+\contentsline {subparagraph}{\numberline {2.3.1.2.1}Backrefs}{7}{subparagraph.2.3.1.2.1}%
+\contentsline {paragraph}{\numberline {2.3.1.3}Abstrahiertes Problem}{7}{paragraph.2.3.1.3}%
+\contentsline {subsubsection}{\numberline {2.3.2}Unerreichbare Informationen}{8}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Figuren und Tabellen}{8}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Literaturverzeichnisse}{8}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.5}Category Codes}{9}{subsubsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.4}Technisch/Spezifisch}{9}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Kommentare}{9}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Glossare und Nomenklatur}{9}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Dilemmatische Makros}{9}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}TikZ und Layouting}{9}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}Andere Quellsprachen}{10}{subsubsection.2.4.5}%
+\contentsline {subsubsection}{\numberline {2.4.6}Kommentare}{10}{subsubsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.5}Weitere Schwierigkeiten}{10}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Eigenständigkeitserklärung}{11}{section.3}%
+\contentsline {section}{Literatur}{12}{section*.88}%
+\contentsline {section}{\numberline {A}Anhänge}{13}{section.chX.1}%
+\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{13}{subsection.chX.1.1}%

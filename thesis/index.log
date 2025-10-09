@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  8 OCT 2025 15:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  9 OCT 2025 19:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1310,7 +1310,7 @@ your preamble.
  on input line 103.
 
 (titlepage.tex
-<pictures/UNIHRO_LOGO_2025.pdf, id=110, 703.62875pt x 144.54pt>
+<pictures/UNIHRO_LOGO_2025.pdf, id=126, 703.62875pt x 144.54pt>
 File: pictures/UNIHRO_LOGO_2025.pdf Graphic file (type pdf)
 <use pictures/UNIHRO_LOGO_2025.pdf>
 Package pdftex.def Info: pictures/UNIHRO_LOGO_2025.pdf  used on input line 12.
@@ -1357,27 +1357,25 @@ Overfull \hbox (6.561pt too wide) in paragraph at lines 20--125
 
  (problem/issues.tex
 
-LaTeX Warning: Hyper reference `problems:advanced:catcode' on page 3 undefined 
-on input line 3.
+Package natbib Warning: Citation `unicode' on page 3 undefined on input line 28
+.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--7
+Package natbib Warning: Citation `texbook' on page 3 undefined on input line 28
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--31
 
  []
 
 Package hyperref Info: bookmark level for unknown lpcsec defaults to 0 on input
- line 24.
+ line 48.
 [3
 
 
 
-]
-Overfull \hbox (35.9038pt too wide) in paragraph at lines 39--40
- []\OT1/cmss/bx/n/10.95 Beispiel [][]\OT1/cmtt/m/n/10.95 \begin{myenvironment}[
-fontsize=red] []\OT1/cmss/m/n/10.95 wird zu [][]\OT1/cmtt/m/n/10.95 \begin{myen
-vironment}[fontsize=red] []\OT1/cmss/m/n/10.95 u[]bersetzt,
- []
-
+] [4]
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty)
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty)
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty)
@@ -1388,26 +1386,375 @@ vironment}[fontsize=red] []\OT1/cmss/m/n/10.95 u[]bersetzt,
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty)
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty)
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty)
-(../tests/simple/2d/correct_original.tex) (../tests/simple/2d/correct.tex)
-(../tests/simple/2d/wrong_original.tex) (../tests/simple/2d/wrong.tex)
-(../tests/simple/2d/correct_original.tex) (../tests/simple/2d/correct.tex)
-(../tests/simple/2d/wrong_original.tex) (../tests/simple/2d/wrong.tex)
-(../tests/simple/2d/correct_original.tex) (../tests/simple/2d/correct.tex)
-(../tests/simple/2d/wrong_original.tex) (../tests/simple/2d/wrong.tex) [4]
-[5]) [6] [7
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+
+! Package Listings Error: File `../examples/simple/2d/correct_original(.tex)' n
+ot found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+
+! Package Listings Error: File `../examples/simple/2d/correct(.tex)' not found.
 
 
-] (index.bbl) [8]
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+
+! Package Listings Error: File `../examples/simple/2d/wrong_original(.tex)' not
+ found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+
+! Package Listings Error: File `../examples/simple/2d/wrong(.tex)' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.80     \end{tabularx}
+                       
+? 
+[5] Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+
+! Package Listings Error: File `../examples/simple/3d/x_original(.tex)' not fou
+nd.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+
+! Package Listings Error: File `../examples/simple/3d/x(.tex)' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+
+! Package Listings Error: File `../examples/simple/3d/y_original(.tex)' not fou
+nd.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+
+! Package Listings Error: File `../examples/simple/3d/y_original(.tex)' not fou
+nd.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.108     \end{tabularx}
+                        
+? 
+
+Overfull \hbox (43.0992pt too wide) in paragraph at lines 121--122
+ \OT1/cmss/bx/n/10.95 2.3.1.1 Struk-tur die-ses Ab-schnit-tes[] \OT1/cmss/m/n/1
+0.95 Ei-ne Da-tei nutzt ein Li-te-ra-tur-ver-zeich-nis (BibT[]X), pdfT[]X ([][]
+\OT1/cmtt/m/n/10.95 \pdfcomment{}[]\OT1/cmss/m/n/10.95 ),
+ []
+
+[6] Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+
+! Package Listings Error: File `../examples/advanced/literature/example_origina
+l(.tex)' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+
+! Package Listings Error: File `../examples/advanced/literature/example(.tex)' 
+not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+
+! Package Listings Error: File `../examples/advanced/literature/example_origina
+l(.bib)' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: bib)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+
+! Package Listings Error: File `../examples/advanced/literature/example(.bib)' 
+not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: bib)
+
+Enter file name: 
+! Undefined control sequence.
+\\lst@inputlisting ...empty }\egroup \lst@doendpe 
+                                                  \@newlistfalse \ignorespaces 
+l.185     \end{tabularx}
+                        
+? 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7] [8] [9]
+Overfull \hbox (10.98485pt too wide) in paragraph at lines 254--255
+ []\OT1/cmss/bx/n/10.95 Beschreibungen \OT1/cmss/m/n/10.95 Wo-hin-ge-gen sich [
+]2.4.1[] nicht mit an-de-ren, in Kom-men-ta-ren re-fe-ren-zier-ten, Da-tei-en b
+esch[]aftigt,
+ []
+
+
+LaTeX Warning: Reference `problems:advanced:comment' on page 10 undefined on in
+put line 256.
+
+) [10] [11
+
+
+] (index.bbl) [12]
 \openout2 = `appendices/appendix.aux'.
 
  (appendices/appendix.tex
-(appendices/fontscaling.tex [9
+(appendices/fontscaling.tex [13
 
 ]
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample1.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample1.pdf, id=334, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample1.pdf, id=396, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample1.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample1.pdf>
 Package pdftex.def Info: appendices/fontscalingexample1.pdf  used on input line
@@ -1418,22 +1765,29 @@ Missing character: There is no ; in font nullfont!
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample2.pdf, id=337, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample2.pdf, id=399, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample2.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample2.pdf>
 Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
  57.
 (pdftex.def)             Requested size: 80.07498pt x 113.12413pt.
-)) [10 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2
+)) [14 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2
 .pdf
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
 >]
-runsystem(latexminted cleantemp  --timestamp 20251008153811 6A992D5529F459A44FE
+
+Package natbib Warning: There were undefined citations.
+
+runsystem(latexminted cleantemp  --timestamp 20251009190240 6A992D5529F459A44FE
 E58C733255E86)...disabled (restricted).
 
- (index.aux (introduction/short.aux) (problem/issues.aux)
+(index.aux (introduction/short.aux) (problem/issues.aux)
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
 (appendices/appendix.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1444,29 +1798,32 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: F6EAFC5F111FD398E50C6A6C1CA2103D;1853.
+(rerunfilecheck)             Checksum: 6455885B03600874A314B1FEA9482AA6;2175.
  ) 
 Here is how much of TeX's memory you used:
- 46582 strings out of 474485
- 1072800 string characters out of 5744206
- 2009542 words of memory out of 5000000
- 67980 multiletter control sequences out of 15000+600000
- 571091 words of font info for 82 fonts, out of 8000000 for 9000
+ 45445 strings out of 474485
+ 1058991 string characters out of 5744206
+ 1938542 words of memory out of 5000000
+ 66850 multiletter control sequences out of 15000+600000
+ 570924 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,14n,130p,1435b,2724s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,13n,130p,1435b,927s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmss10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmss12.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmss8.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Sxyx/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Sxyx/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/Sxyx/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Sxy
-x/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on index.pdf (13 pages, 648827 bytes).
+mmi10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmss10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Sxyx/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Sxyx/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Sxyx/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Sxyx/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Us
+ers/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mtt10.pfb>
+Output written on index.pdf (17 pages, 675726 bytes).
 PDF statistics:
- 438 PDF objects out of 1000 (max. 8388607)
- 125 named destinations out of 1000 (max. 500000)
- 236 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 512 PDF objects out of 1000 (max. 8388607)
+ 149 named destinations out of 1000 (max. 500000)
+ 268 words of extra memory for PDF output out of 10000 (max. 10000000)
 
