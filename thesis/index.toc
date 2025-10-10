@@ -17,12 +17,12 @@
 \contentsline {subsubsection}{\numberline {2.2.2}Unerreichbare Informationen}{9}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Figuren und Tabellen}{9}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}Literaturverzeichnisse}{9}{subsubsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.5}Category Codes}{11}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.5}Category Codes}{10}{subsubsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.3}Spezifischer Technologien}{11}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Kommentare}{11}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Dilemmatische Makros}{11}{subsubsection.2.3.2}%
 \contentsline {subsubsection}{\numberline {2.3.3}TikZ und Layouting}{11}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}Quellmehrsprachigkeit}{12}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.4}Quellmehrsprachigkeit}{11}{subsubsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.4}Sprachliche Schwierigkeiten}{12}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}Glossare und Nomenklaturen}{12}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}Weitere}{12}{subsubsection.2.4.2}%
