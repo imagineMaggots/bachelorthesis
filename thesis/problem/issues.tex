@@ -11,7 +11,7 @@ welche als \enquote{Schwierigkeiten} und nicht als zu lösende Probleme dargeste
 
 \subsection{Translativ}\phantomsection\label{problems:simple}
 
-% 0d
+% Hiermit sagen wir: Punkte/Elemente der nullten Dimension sind veränderbar.
 \subsubsection{Sonderzeichen}\phantomsection\label{problems:dim0}
 % Klasse Problem, da Unterklasse mit Funktionen, die genutzt werden können, wenn man ein Problem hat. Die einzig benötigte ist problem::encounter::solve(problem::stack::pop()) // Wir lösen das oben auf dem Stapel an Problemen liegende Problem zuerst
 \begin{table}[h!]
@@ -41,7 +41,7 @@ Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \ve
 
 
 
-% 0d zur ersten Dimension
+% Hiermit sagen wir: Kanten/Elemente der ersten Dimension sind veränderbar.
 \subsubsection{Leerzeichen}\phantomsection\label{problems:dim1}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt; Wort dürfte nicht übersetzt werden
 \begin{table}[h!]
     \centering
@@ -89,7 +89,7 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpe
 
 
 
-% Vertikales Spacing / Zweite Dimension
+% Hiermit sagen wir: Flächen/Elemente der zweiten Dimension sind veränderbar.
 \subsubsection{Zeilenbrüche}\phantomsection\label{problems:dim2}
 \begin{table}[h!]
     \centering
@@ -115,7 +115,10 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand von einzelnen Zeilen oder Zei
 
 \newpage
 
-% Dreidimensionales Spacing
+
+
+
+% Hiermit sagen wir: Körper/Elemente der dritten Dimension sind veränderbar.
 \subsubsection{Dokumentenbrüche}\phantomsection\label{problems:dim3}
 \paragraph*{Beispiel}
 \begin{table}[h!]
@@ -139,9 +142,39 @@ führt zwar dazu, dass Datei $x$ übersetzt wird, aber Datei $y$ nicht.
 \paragraph*{Abstrahierung}% Hier war abstrahieren leichter als beschreiben
 Teile der \TeX-Syntax müssen nicht zwingend in einer Datei vorliegen, sondern könnten auch in verschiedenen Dateien integriert sein. Die Klassifizierung simpler Probleme gelangt in \TeX{} hier bereits in der dritten Dimension an, weswegen sich fortan bereits mit \enquote{fortgeschrittenen} Problemen beschäftigt werden muss (welche sich Teils über mehrere \enquote{Dimensionen} erstrecken). Eine vierte Dimension existiert physikalisch nicht, ist jedoch mathematisch formulierbar\footnote{physikalisch: die vierte Dimension ist die Zeit, wenn man eine nicht-euklidische 3-dimensionale Bewegung verlangt (Teleportation)} und äußert sich in diesem Kontext auf eine Erhöhung von Laufzeitkomplexitäten.
 
+
+
+
+
+% Hier kommt die Zeit dazu.
 \subsection{Technisch}\phantomsection\label{problems:advanced}
 %%% Hier ein wenig weg von der eigentlichen Struktur, jedoch für die konkreten Beispiele wieder gleich
+\subsubsection{Besonderheiten dieses Abschnittes}
+Vorige Kapitel bahnte sich nach und nach von zunächst Wörtern (Punkten) zu mehereren Wörtern (Kanten) zu Sätzen (Graphen) und final zu größeren Gebilden (Körper, um das Wort \enquote{Hypergraph} zu vermeiden). Hier hören räumliche Verständnisse der Welt auf, wodurch folgende Probleme durch zeitliche Abhängigkeiten verschiedener Ereignisse aufgezeigt werden. Auf dieser Ebene ist es sehr praktisch, dass nur wenige Situationen eintreten können. Entweder erfolgt zu Beginn eines Dokumentes eine Änderung, welche Einfluss auf einen späteren Teil hat (vorgreifend); an einem Punkt im Dokument eine Änderung, welche Einfluss auf diese Stelle im Dokument hat (akut); oder eine Änderung im Dokument, welche Einfluss auf einen bereits existierenden Teil des Dokumentes hat (rückwirkend).% Dieser Abschnitt muss überarbeitet werden.
+
+\subsubsection*{Arten von Änderungen innerhalb eines Dokumentes und Auswirkungen dieser auf das Dokument}% Titel muss überarbeitet werden
+Der verwirrenden Formulierung vorigen Abschnittes etwas Entzwirrung zu leisten, eine kurze Schilderung des Gemeinten. Das Hauptproblem besteht darin, dass Befehle, welche Strukturen in einem Dokument verändern, die ihrerseits vor dem Befehl im Quelltext erscheinen, dazu führen, dass diese Strukturen vergrößert werden. \TeX{} selbst löst dies über verschiedenste Hilfsdateien, als auch erneute Kompilierprozesse. Geht man allerdings davon aus, dass übersetzende Programme nur einfach (im Sinne: ein Mal) ablaufen sollen, so würden etwaige Anpassungen in Hilfsdateien übersehen werden (die mitunter Strings enthalten, welche kontextuelle oder sprachliche Inhalte tragen). 
+
+\paragraph*{Rückwirkende Änderungen}
+Bei jedem Hinzufügen eines z.B.\ neuen Kapitels, einer neuen Tabelle, einer neuen Abbildung (und dergleichen) kann und sollten jeweilige Verzeichnisse bearbeitet worden sein. Jedoch ist aus logischer Perspektive eine Änderung eines bereits existierenden Teils eines Dokumentes nicht mehr möglich, wenn dieser Teil des Dokumentes bereits geschrieben wurde. Deshalb muss das Dokument erneut und von vorne bearbeitet werden, damit diese Änderung vorgenommen werden kann. Die Frage die sich stellt: Soll gewartet werden, bis alle rückwirkenden Änderungen erfasst wurden oder soll jede rückwirkende Änderung ihrerseits sofort vorgenommen werden? Eine Antwort findet sich darin, ob eine rückwirkende Änderung ihrerseits solche produzieren kann. Falls sie dazu in der Lage wäre, würde dies unendliche Schleifen bilden können, insofern entstehende rückwirkende Änderungen eine Auswirkung auf Teile des Dokumentes vor dieser rückwirkenden Änderung haben könnten.
+
+
+\paragraph*{Akute Änderungen}
+\subparagraph*{Beschreibung}
+Können bedenklich werden.
+
+
+\paragraph*{Vorgreifende Änderungen}
+\subparagraph*{Beschreibung}
+Sollte die Situation entstehen, dass ein Befehl in einem Dokument eine Veränderung in einem späteren Teil des Dokumentes verursacht, ist dies zunächst unbedenklich.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% In Review. Richtige Inhalte, inadäquate Sortierung.
+%%%%%%%%%%%%%%%%%%%%%%
+
+
 \subsubsection{Hilfsdateien}% multi-file handling
+
 \paragraph{Struktur dieses Abschnittes}
 Eine Datei nutzt ein Literaturverzeichnis (Bib\TeX{}), pdf\TeX{} (\verb|\pdfcomment{}|), \verb|\footnote|, ein Inhaltsverzeichnis, ein Glossar, 
 
@@ -244,6 +277,13 @@ Bib\TeX{} erlaubt es an vielerlei Stelle eigene Strings in einer kompilierten \T
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
 \paragraph*{Abstrahierung}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% In Review. Richtige Inhalte, inadäquate Sortierung.
+%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 
 \subsection{Spezifischer Technologien}\phantomsection\label{problems:special}
