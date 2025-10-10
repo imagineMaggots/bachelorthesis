@@ -157,8 +157,10 @@ Der verwirrenden Formulierung vorigen Abschnittes etwas Entzwirrung zu leisten, 
 
 \paragraph*{Rückwirkende Änderungen}
 Bei jedem Hinzufügen eines z.B.\ neuen Kapitels, einer neuen Tabelle, einer neuen Abbildung (und dergleichen) kann und sollten jeweilige Verzeichnisse bearbeitet worden sein. Jedoch ist aus logischer Perspektive eine Änderung eines bereits existierenden Teils eines Dokumentes nicht mehr möglich, wenn dieser Teil des Dokumentes bereits geschrieben wurde. Deshalb muss das Dokument erneut und von vorne bearbeitet werden, damit diese Änderung vorgenommen werden kann. % Die Frage die sich stellt: Soll gewartet werden, bis alle rückwirkenden Änderungen erfasst wurden oder soll jede rückwirkende Änderung ihrerseits sofort vorgenommen werden? Eine Antwort findet sich darin, ob eine rückwirkende Änderung ihrerseits solche produzieren kann. Falls sie dazu in der Lage wäre, würde dies unendliche Schleifen bilden können, insofern entstehende rückwirkende Änderungen eine Auswirkung auf Teile des Dokumentes vor dieser rückwirkenden Änderung haben könnten.
-\TeX{} löst dieses Problem durch diverse Hilfsdateien. Fehlende Informationen unterbrechen den Kompilierprozess nicht, sondern werden in diesen Dateien vermerkt. Dadurch kann der folgende Kompilierprozess diese Informationen nutzen und folglich entsteht ein Dokument.%
+\TeX{} löst dieses Problem durch diverse Hilfsdateien. Fehlende Informationen unterbrechen den Kompilierprozess nicht, sondern werden in diesen Dateien vermerkt. Dadurch kann der folgende Kompilierprozess diese Informationen nutzen und folglich entsteht ein Dokument, in welchem alle erfordelichen Anpassungen bereits vergenommen wurden, sodass das exakte beschriebene Dokument erzeugt werden kann (inklusive jeglicher e.g.\ Links im Inhaltsverzeichnis, rückreferenzierenden Links, Links im Abbildungs- und Tabellenverzeichnis).
 
+\subparagraph*{Anschaulichere Beispiele}
+% kp, was ich überhaupt sagen will. eigentlich nur: wir müssen nochmal kompilieren, da der (übersetzte oder der kontextgebende) String nicht hätte bekannt sein können
 
 \paragraph*{Akute Änderungen}
 \subparagraph*{Beschreibung}
