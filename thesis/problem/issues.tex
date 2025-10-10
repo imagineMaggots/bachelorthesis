@@ -19,14 +19,14 @@
 
 
 %%%%%%%%%%%%% Versuche die deutsche wissenschaftliche Sprache verständlich zu halten:
-%%%%%%%%%%%%% - Infinitiv so oft wie möglich (durch Substantivierung oder Erweiterung).
-%%%%%%%%%%%%% - Reale Konditionalsätze nutzen
+%%%%%%%%%%%%% - Infinitiv so oft wie möglich (durch Substantivierung oder Erweiterung), damit Texte leichter zu verstehen sind. // Formen von "ist" (abgelitten aus: "esse"), also eine Angabe von Existenz ist immer zu erwarten.
+%%%%%%%%%%%%% - Reale Konditionalsätze nutzen. Wir präsentieren Fakten.
 
 % Welche Arten von Fehlern können entstehen? (Was fällt einem auf, wenn man Dokumente schreibt und sich denkt: mmmmhh würde google translate das richtig übersetzen)
-\section{Probleme}
-Uneindeutigkeiten, welche sich bis in die \TeX{}-Primitiven zurückführen lassen, sind für einen Leser oft schwer nachzuvollziehen.
-Strukturelle Einteilung von Problemen, welche sich aufzeigen könnten, kann dies vermeiden.
-Eine Klassifizierung der Problemfälle findet daher situativ statt und unterteilt sich in spezifische Probleme der Übersetzung (translativ), Technik (technisch), speziellen Technik (spezifisch technische) und Sprache (sprachlich schwierig). Zudem sei bemerkt, dass insbesondere sprachliche Schwierigkeiten dillematische Zustände hervorrufen können.
+\section{Problemfälle}
+Uneindeutigkeiten\label{probleme:uneindeutigkeiten} in der Sprache sind für einen Leser oft schwer nachzuvollziehen. In \TeX{} muss allerdings zu mindestens einem Zeitpunkt die Information über das Aussehen des entgültigen Dokumentes in einer modellartigen Form vorliegen. Diese Information kann in \LaTeX{} verborgen sein oder aber bei einem Übersetzen verloren gehen.
+Die Probleme unterteilen sich in verschiedene Fälle und werden hinsichtlich des Kontextes dieses Informationsverlustes in translative (beim Übersetzen), technische (\LaTeX{}), spezifische technische (in Kombination mit \TeX{} nutzbare Programme) und sprachliche Probleme. Sprachliche Probleme verursachen teilweise dillematische Probleme,%~\hyperref[probleme:uneindeutigkeiten]{beschriebene Gründe} nicht immer lösbar und sind daher als \enquote{Schwierigkeit} formuliert.
+welche als \enquote{Schwierigkeiten} und nicht als zu lösende Probleme dargestellt werden. Einzelne aufgeführte Beispiele zur Veranschaulichung beschriebener Probleme sind mit Hilfe von nicht spezifischer Software erzeugt (Google Translate), um zu zeigen, dass jeweilige Situation in \textit{einer} Software zur Übersetzung von menschensprachlichen Inhalten entstehen \textit{könnten}.
 
 %Eine einzige, feste \TeX{}-Syntax existiert theoretisch gesehen nicht, wie ein~\hyperref[problems:advanced:catcode]{späterer Paragraph} aufzeigen wird.% So gehen in-document refs ganz gut.
 %Die Fähigkeit jegliche erdenkliche Zeichenkette (gegeben:\ diese ist auf einem Rechner darstellbar, siehe:~\cite{unicode}) sorgt zunächst für eine unendliche Menge an testbaren Problemen. Da es unmöglich ist eine unendliche Menge an Testfällen abzudecken, wird zunächst nur die vorgesehene \LaTeX{} (bzw.\ \TeX{}~Syntax nach~\cite{texbook}) betrachtet und die bereits rein innerhalb dieser schnellig auffallenden Fehler aufgezeigt, welche durch fälschlich übersetzte Zeichenketten entstehen könnten.\\\noindent
@@ -54,14 +54,18 @@ Eine Klassifizierung der Problemfälle findet daher situativ statt und unterteil
 % Namensgebung aus ~/tests/readme.md wahrscheinlich geeigneter
 \subsection{Translativ}\phantomsection\label{problems:simple}
 % 0d zu 1d
-\subsubsection{Unbekannte Wörter}\phantomsection\label{problems:dim0}% Wort müsste übersetzt werden, aber wird es nicht. Ich bin dumm. Ich komm mir blöd vor. Ich sollte sterben. Dumme Menschen haben kein Leben verdient. Im Sinne der Wissenschaft.
+\subsubsection{Sonderzeichen}\phantomsection\label{problems:dim0}% Wort müsste übersetzt werden, aber wird es nicht. Ich bin dumm. Ich komm mir blöd vor. Ich sollte sterben. Dumme Menschen haben kein Leben verdient. Im Sinne der Wissenschaft.
+% Klasse Problem, da Unterklasse mit Funktionen, die genutzt werden können, wenn man ein Problem hat. Die einzig benötigte ist problem::encounter::solve(problem::stack::pop()) // Wir lösen das oben auf dem Stapel an Problemen liegende Problem zuerst
 \verb|\label{problem:encounter:solve}| wird zu \verb|\label{Problem:Begegnung:Lösung}| übersetzt,\\aber \verb|\section{example}| zu \verb|\Abschnitt{Beispiel}|.
-\paragraph*{Beschreibung}
-\paragraph*{Abstrahierung}
-Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \verb|[|, \verb|]|, \verb|$|, \verb|$$| oder \verb|\%| erkennen und müssten daher ausgeschlossen werden. Man kann sich diese Art von Fehlern wie 0-dimensionale Fehler vorstellen, wobei die nullte Dimension hierbei bei einem einzelnen Wort beginnt (welche als Punkte zu verstehen sind).
+\paragraph*{Beschreibung und Begründung}
+Der für einen \TeX{} Compiler relevante Befehl \verb|\label| bleibt unverändert, allerdings \texttt{section} wird fälschlicherweise als \texttt{Abschnitt} übersetzt.  
+Warum \texttt{label} nicht erfasst werden sollte, wenn die folgenden drei Wörter übersetzt wurden, wirft Fragen auf. Zu sehen ist ein String, welcher menschliche Sprache mit Sonderzeichen vermischt. Da insbesondere Klammern in (vielen) sprachlichen Kontexten hilfreich sind, werden deren Inhalte selbst zunächst nach zusammenhängenden Worten durchsucht, welche ihrerseits durch \verb|:| getrennt sind, oder als Klammern betrachtet werden können. Ein Entfernen der Klammern lässt lässt in erstem Beispiel \verb|\label problem encounter solve| und in zweitem Beispiel \verb|\section example| stehen. Zu sehen ist hier also bereits, dass Google Translate bei einer, wenn man es so interpretieren möchte, Vernestung zweiten Grades scheitert, jedoch einfache Vernestungen noch erkennt\footnote{\textit{Vernestung}: Klammern in Klammern, wie in der Mathematik}.
+
+\paragraph*{Takeaway}
+Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \verb|[|, \verb|]|, \verb|$|, \verb|$$| oder \verb|\%| erkennen und müssten daher ausgeschlossen werden. Anders als in mathematischen Formeln zeigen sich Sonderzeichen jedoch nicht paarweise auf, sodass sie nicht paarweise ignoriert werden können. Man kann sich diese Art von Fehlern wie 0-dimensionale Fehler vorstellen, wobei die nullte Dimension hierbei bei einem einzelnen Wort beginnt (welche als Punkte zu verstehen sind).
 
 % 0d zur ersten Dimension
-\subsubsection{Auszulassende Wörter}\phantomsection\label{problems:dim1}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt; Wort dürfte nicht übersetzt werden
+\subsubsection{Leerzeichen}\phantomsection\label{problems:dim1}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt; Wort dürfte nicht übersetzt werden
 \verb|\begin{myenvironment}[fontsize=red]| wird zu \verb|\begin{myenvironment}[fontsize=red]| übersetzt,\\aber \verb|\begin{myenvironment}[ fontsize = red ]| zu \verb|\begin{myenvironment}[ fontsize = rot ]|.
 \paragraph*{Beschreibung}
 \paragraph*{Abstrahierung}
@@ -70,7 +74,7 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpe
 \newpage
 
 % Vertikales Spacing / Zweite Dimension
-\subsubsection{Neuartige Satzarten}\phantomsection\label{problems:dim2}
+\subsubsection{Zeilenbrüche}\phantomsection\label{problems:dim2}
 \begin{table}[h!]
     \centering
     \begin{tabularx}{\textwidth}{X X}
@@ -94,7 +98,7 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand von einzelnen Zeilen oder Zei
 \newpage
 
 % Dreidimensionales Spacing
-\subsubsection{Größere Sprachstrukturen}\phantomsection\label{problems:dim3}
+\subsubsection{Dokumentenbrüche}\phantomsection\label{problems:dim3}
 \paragraph*{Beispiel}
 \begin{table}[h!]
     \centering
