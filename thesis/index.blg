@@ -7,48 +7,56 @@ Reallocating 'name_of_file' (item size: 1) to 23 items.
 A level-1 auxiliary file: introduction/short.aux
 Reallocating 'name_of_file' (item size: 1) to 19 items.
 A level-1 auxiliary file: problem/issues.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: technologies/tek.aux
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+A level-1 auxiliary file: solution/desc.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: conclusion/ending.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: appendices/appendix.aux
+I found no \citation commands---while reading file index.aux
 Database file #1: index.bib
-You've used 2 entries,
+You've used 0 entries,
             2909 wiz_defined-function locations,
-            650 strings with 5009 characters,
-and the built_in function-call counts, 5538 in all, are:
-= -- 890
-> -- 48
+            643 strings with 4847 characters,
+and the built_in function-call counts, 32 in all, are:
+= -- 0
+> -- 0
 < -- 0
-+ -- 409
-- -- 14
-* -- 436
-:= -- 1178
-add.period$ -- 2
-call.type$ -- 2
-change.case$ -- 27
-chr.to.int$ -- 2
-cite$ -- 2
-duplicate$ -- 27
-empty$ -- 56
-format.name$ -- 18
-if$ -- 977
++ -- 0
+- -- 0
+* -- 0
+:= -- 18
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 2
-newline$ -- 9
-num.names$ -- 20
-pop$ -- 17
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
 preamble$ -- 1
-purify$ -- 30
+purify$ -- 0
 quote$ -- 0
-skip$ -- 21
+skip$ -- 1
 stack$ -- 0
-substring$ -- 1241
-swap$ -- 2
-text.length$ -- 28
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
+type$ -- 0
 warning$ -- 0
-while$ -- 42
+while$ -- 0
 width$ -- 0
-write$ -- 26
+write$ -- 2
+(There was 1 error message)

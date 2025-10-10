@@ -1,39 +1,95 @@
-\documentclass[11pt,toc]{article}
+%	Größen in TeX:
+%		mm, cm, ... uninteressant
+%		1 em = Schriftgröße, ursprünglich
+%		1 ex = Schriftgröße, skaliert auf die Box in welcher sich die Schrift befindet
+%		1 pt = ein Pixel nur kann man nicht von echten Pixeln wie auf einem Bildschirm sprechen
+%		\textwidth, \paperwidth, ...
+
+\documentclass[11pt,toc,multi=tcblisting]{article}
 \renewcommand{\familydefault}{\sfdefault}
 \setcounter{secnumdepth}{6}
+
 \usepackage[left=2cm,right=2cm]{geometry}
 %\usepackage[document]{ragged2e} % Damit alles: Links aligned (der linkeste Punkt eines jeden Buchstaben ist auf einer Linie für alle zeilen) und so viel Platz nach rechts ausnutzt, wie möglich (nein, macht TeX nicht standardmäßig); muss man nicht für das gesamte Dokument machen (wie hier), geht auch per \raggedright oder \RaggedRight für/vor Paragraphen; gibt auch Umgebungen für rechtsbündigen Text https://de.overleaf.com/learn/latex/Text_alignment
 \usepackage[dvipsnames]{xcolor}
 \usepackage{booktabs,array}
 \usepackage[author={Hendrik Theede}]{pdfcomment}
 \usepackage{tabularx}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{inconsolata}
+\usepackage[htt]{hyphenat}
 \usepackage{listings}
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
-
-\lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
+% Note: lstset does not allow unnecessary linebreaks
+\lstdefinestyle{texstyle}{
+	% Colors
+	backgroundcolor=\color{black!20!red!80},
+    commentstyle=\color{SeaGreen},
+    keywordstyle=\color{Magenta},
+    numberstyle=\tiny\color{Cyan},
+    stringstyle=\color{Fuchsia},
+    basicstyle=\ttfamily\footnotesize\color{White},
+	% Linebreaks and Whitespace
+    breakatwhitespace=false,    
+	showspaces=false,                
     showstringspaces=false,
-    showtabs=false,            
-    tabsize=2
+    showtabs=false,
+	frame=single,
+	aboveskip=13pt,
+	breaklines=true,% Sagt: Bei benötigtem Zeilenumbruch gehen wir in eine neue Zeile
+	% Indentation
+	tabsize=2,
+	breakindent=10pt,
+    framesep=2mm,
+    framerule=0mm,
+    abovecaptionskip=5mm,
+    aboveskip=\baselineskip,
+    belowskip=\baselineskip,
+	lineskip=.5em,
+	postbreak=\raisebox{1ex}[2ex][0sp]{\tiny\tiny >>}, % \rule[Offset (Y)]{Breite}{Höhe}, hiermit nochmal rumspielen. 
+	% Captions
+    captionpos=b,                    
+    keepspaces=true,    
+	% Linenumbers
+    numbers=left,      % where to place numbers
+    numbersep=5pt,     % distance to the (here) left   
+    % Encodings
+	inputencoding=utf8,
+	extendedchars=true,
+	literate=
+		{ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
 }
+\lstset{style=texstyle}
 
-\lstset{style=mystyle}
 
+
+%%%%%%% Vorsicht, evtl Redundanzen im Code!!!
+%%% Benötigt noch intensivere Dokumentation
+%%% Siehe Package auf CTAN
+\usepackage[many]{tcolorbox}
+\tcbuselibrary{skins,breakable,listings}
+%https://tex.stackexchange.com/questions/530859/add-option-to-point-to-code-file-in-tcblisting-environment 
+\newcounter{texlst}
+\newtcbinputlisting[use counter=texlst]{\commoncode}[3][]{%
+        enhanced,
+		noparskip,
+		breakable,
+		colback=red!40,
+		opacitybacktitle=.8,%
+        fonttitle=\bfseries,
+        title after break={\centering\footnotesize\itshape\strut\lstlistingname~\thelstlisting~--~continued},%
+        listing only,
+		listing options={style=texstyle, xleftmargin=-1mm},
+		after upper={\centering\strut\TeX{} Code~\thetcbcounter:~#2},
+        frame hidden,
+		arc=5pt,
+		outer arc=13pt,
+		boxrule=2pt,
+        listing file = {#3}, #1
+}
 
 
 \usepackage{minted}
