@@ -1,12 +1,3 @@
 \begin{thebibliography}{xx}
 
-\harvarditem{Knuth}{1986}{texbook}
-Knuth, D.~E.  \harvardyearleft 1986\harvardyearright , {\em The TeXbook, ISBN:
-  9780201134476}, Addison-Wesley Professional.
-
-\harvarditem{{Unicode Consortium}}{2025}{unicode}
-{Unicode Consortium}  \harvardyearleft 2025\harvardyearright , `Unicode: The
-  world standard for text and emoji', \url{https://home.unicode.org/} (last
-  Access: 06.10.2025).
-
 \end{thebibliography}
