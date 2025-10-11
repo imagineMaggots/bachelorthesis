@@ -9,16 +9,17 @@
 \contentsline {subsubsection}{\numberline {2.1.3}Zeilenbrüche}{6}{subsubsection.2.1.3}%
 \contentsline {subsubsection}{\numberline {2.1.4}Dokumentenbrüche}{7}{subsubsection.2.1.4}%
 \contentsline {subsection}{\numberline {2.2}Technisch}{8}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Referenzen}{8}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Laufzeiten}{8}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Unerreichbare Informationen}{8}{subsubsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.3}Spezifischer Technologien}{9}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Kommentare}{9}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.1}Interne Referenzen}{8}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Externe Referenzen}{8}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Laufzeiten}{8}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Unerreichbare Informationen}{8}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}Spezifischer Technologien}{10}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Kommentare}{10}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Dilemmatische Makros}{10}{subsubsection.2.3.2}%
 \contentsline {subsubsection}{\numberline {2.3.3}TikZ und Layouting}{10}{subsubsection.2.3.3}%
 \contentsline {subsubsection}{\numberline {2.3.4}Quellmehrsprachigkeit}{10}{subsubsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.4}Sprachliche Schwierigkeiten}{10}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Glossare und Nomenklaturen}{10}{subsubsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4}Sprachliche Schwierigkeiten}{11}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Glossare und Nomenklaturen}{11}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}Weitere}{11}{subsubsection.2.4.2}%
 \contentsline {section}{\numberline {3}Technologien}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Übersicht}{12}{subsection.3.1}%
@@ -37,6 +38,6 @@
 \contentsline {subsection}{\numberline {5.2}Ausblick}{14}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Weiteres}{14}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Eigenständigkeitserklärung}{15}{section.6}%
-\contentsline {section}{Literatur}{16}{section*.61}%
+\contentsline {section}{Literatur}{16}{section*.62}%
 \contentsline {section}{\numberline {A}Anhänge}{17}{section.chX.1}%
 \contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{17}{subsection.chX.1.1}%

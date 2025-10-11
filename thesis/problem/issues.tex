@@ -148,11 +148,18 @@ Teile der \TeX-Syntax müssen nicht zwingend in einer Datei vorliegen, sondern k
 
 % Hier kommt die Zeit dazu.
 \subsection{Technisch}\phantomsection\label{problems:advanced}
-\subsubsection{Referenzen}
-\paragraph*{Beispiel}% Liegt in 2.2.3 konkreter vor. Diese Abschnitte lassen sich zusammenfassen, da sie das Gleiche meinen.
-Mittels \texttt{cite} wird auf ein Werk verwiesen, in welchem ein Kontext für eine Übersetzung gesetzt wird (bspw.\ kann eine Referenz auf den Euklid einen mathematischen Kontext setzen). Jedoch produziert nur die Kenntnis, das eine Referenz auftritt und das Wort (z.B.) \enquote{ungerade} die Übersetzung:\ \enquote{crooked}, statt \enquote{odd}.
-\paragraph*{Beschreibung}
+\paragraph*{Verdeutlichung bzgl.\ \enquote{Referenzen}}
 Bereits das Vorstellen von Problemen, welche eine Entstehung (ein Kompilieren) eines \LaTeX{} Dokumentes verhindern könnten, führt bis in die dritte Dimension. Da eine physikalische Vorstellung hier nicht weitergeführt werden kann, wird auf eine zeitliche Schilderung umgeschwenkt. Sie eignet sich an dieser Stelle, wenn man als \enquote{Zeit} den Entstehungspunkt der folgenden Probleme innerhalb des \LaTeX{} Dokumentes betrachtet. Ähnlich wie solche Vorfälle, die ein erneutes Kompilieren provozieren, zeigen sich Hürden, welche zwar ihrerseits keine neue Übersetzung provozieren müssen, jedoch eine \textit{andere} Übersetzung (wörtlich) erzeugen \textit{müssten} (falls diese Fälle den Kontext eines Teiles des Dokumentes ändern).% Hyperrefs und Zitationen
+
+\subsubsection{Interne Referenzen}
+\paragraph*{Abstraktes Beispiel}% Liegt in 2.2.3 konkreter vor. Diese Abschnitte lassen sich zusammenfassen, da sie das Gleiche meinen.
+Mittels \texttt{ref} oder \texttt{hyperref} (oder ähnlichem) wird auf einen Teil des Dokumentes verwiesen, in welchem ein Kontext für eine Übersetzung gesetzt wird (bspw.\ kann eine Referenz auf den Euklid einen mathematischen Kontext setzen). Jedoch produziert nur die Kenntnis, das eine Referenz auftritt und das Wort (z.B.) \enquote{ungerade} die Übersetzung:\ \enquote{crooked}, statt \enquote{odd}.
+
+\paragraph*{Nähere Erläuterung}
+Funktionen in \TeX{}, wie bspw.\ das Referenzieren (via \verb|~\ref{key}|) machen es möglich andere Teile des Dokumentes zu erwähnen und dadurch einen Kontext innerhalb eines Satzes oder Paragraphen zu implizieren. Diese Information liegt jedoch nicht direkt beim \enquote{lesen} des Quelltextes vor, sondern erst nach der Auflösung dieser internen Referenz.
+
+\subsubsection{Externe Referenzen}
+Mittels \texttt{cite} oder Ähnlichem wird auf ein anderes Werk verwiesen, welches nicht das aktuelle Dokument ist, jedoch einen neuen Kontext für die Übersetzung schafft.
 
 
 \subsubsection{Laufzeiten}
