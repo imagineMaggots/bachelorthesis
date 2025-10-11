@@ -148,70 +148,82 @@ Teile der \TeX-Syntax müssen nicht zwingend in einer Datei vorliegen, sondern k
 
 % Hier kommt die Zeit dazu.
 \subsection{Technisch}\phantomsection\label{problems:advanced}
+Bereits das Vorstellen von Problemen, welche eine Entstehung (ein Kompilieren) eines \LaTeX{} Dokumentes verhindern könnten, führt bis in die dritte Dimension. Da eine physikalische Vorstellung hier nicht weitergeführt werden kann, wird auf eine zeitliche Schilderung umgeschwenkt. Sie eignet sich an dieser Stelle, wenn man als \enquote{Zeit} den Entstehungspunkt der folgenden Probleme innerhalb des \LaTeX{} Dokumentes betrachtet. Ähnlich wie solche Vorfälle, die ein erneutes Kompilieren provozieren, zeigen sich Hürden, welche zwar ihrerseits keine neue Übersetzung provozieren müssen, jedoch eine \textit{andere} Übersetzung (wörtlich) erzeugen \textit{müssten} (falls diese Fälle den Kontext eines Teiles des Dokumentes ändern).% Hyperrefs und Zitationen
+
+Zudem müssen einige Instanzen bedacht werden, in welchen zwar nicht eine Übersetzung selbst stattfinden muss, aber Texte in einem Dokument verändert werden müssen, nachdem diese bereits kompiliert wurden, bzw.\ in einer PDF vorliegen, welche ihrerseits angepasst werden müsste, was sich nur mit einem erneuten Kompilieren ändern lässt (da logische Änderungen innerhalb des Dokumentes auftraten).% Zeitformen bitte nochmals prüfen... Meint übrigens: Inhaltsverzeichnisse, Abbildungsverzeichnisse (wenn deren Captions übersetzt werden, wie sie es werden sollten), ...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% In Review. Sonderhafte Inhalte, bemerkenswerte? Sortierung.
+%%%%%%%%%%%%%%%%%%%%%%
 %%% Hier ein wenig weg von der eigentlichen Struktur, jedoch für die konkreten Beispiele wieder gleich
-\subsubsection{Besonderheiten dieses Abschnittes}
-Vorige Kapitel bahnte sich nach und nach von zunächst Wörtern (Punkten) zu mehereren Wörtern (Kanten) zu Sätzen (Graphen) und final zu größeren Gebilden (Körper, um das Wort \enquote{Hypergraph} zu vermeiden). Hier hören räumliche Verständnisse der Welt auf, wodurch folgende Probleme durch zeitliche Abhängigkeiten verschiedener Ereignisse aufgezeigt werden. Auf dieser Ebene ist es sehr praktisch, dass nur wenige Situationen eintreten können. Entweder erfolgt zu Beginn eines Dokumentes eine Änderung, welche Einfluss auf einen späteren Teil hat (vorgreifend); an einem Punkt im Dokument eine Änderung, welche Einfluss auf diese Stelle im Dokument hat (akut); oder eine Änderung im Dokument, welche Einfluss auf einen bereits existierenden Teil des Dokumentes hat (rückwirkend).% Dieser Abschnitt muss überarbeitet werden.
+% \subsubsection{Besonderheiten dieses Abschnittes}
+% Vorige Kapitel bahnte sich nach und nach von zunächst Wörtern (Punkten) zu mehereren Wörtern (Kanten) zu Sätzen (Graphen) und final zu größeren Gebilden (Körper, um das Wort \enquote{Hypergraph} zu vermeiden). Hier hören räumliche Verständnisse der Welt auf, wodurch folgende Probleme durch zeitliche Abhängigkeiten verschiedener Ereignisse aufgezeigt werden. Auf dieser Ebene ist es sehr praktisch, dass nur wenige Situationen eintreten können. Entweder erfolgt zu Beginn eines Dokumentes eine Änderung, welche Einfluss auf einen späteren Teil hat (vorgreifend); an einem Punkt im Dokument eine Änderung, welche Einfluss auf diese Stelle im Dokument hat (akut); oder eine Änderung im Dokument, welche Einfluss auf einen bereits existierenden Teil des Dokumentes hat (rückwirkend).% Dieser Abschnitt muss überarbeitet werden.
 
-\subsubsection*{Arten von Änderungen innerhalb eines Dokumentes und Auswirkungen dieser auf das Dokument}% Titel muss überarbeitet werden
-Der verwirrenden Formulierung vorigen Abschnittes etwas Entzwirrung zu leisten, eine kurze Schilderung des Gemeinten. Das Hauptproblem besteht darin, dass Befehle, welche Strukturen in einem Dokument verändern, die ihrerseits vor dem Befehl im Quelltext erscheinen, dazu führen, dass diese Strukturen vergrößert werden. \TeX{} selbst löst dies über verschiedenste Hilfsdateien, als auch erneute Kompilierprozesse. Geht man allerdings davon aus, dass übersetzende Programme nur einfach (im Sinne: ein Mal) ablaufen sollen, so würden etwaige Anpassungen in Hilfsdateien übersehen werden (die mitunter Strings enthalten, welche kontextuelle oder sprachliche Inhalte tragen). 
 
-\paragraph*{Rückwirkende Änderungen}
-Bei jedem Hinzufügen eines z.B.\ neuen Kapitels, einer neuen Tabelle, einer neuen Abbildung (und dergleichen) kann und sollten jeweilige Verzeichnisse bearbeitet worden sein. Jedoch ist aus logischer Perspektive eine Änderung eines bereits existierenden Teils eines Dokumentes nicht mehr möglich, wenn dieser Teil des Dokumentes bereits geschrieben wurde. Deshalb muss das Dokument erneut und von vorne bearbeitet werden, damit diese Änderung vorgenommen werden kann. % Die Frage die sich stellt: Soll gewartet werden, bis alle rückwirkenden Änderungen erfasst wurden oder soll jede rückwirkende Änderung ihrerseits sofort vorgenommen werden? Eine Antwort findet sich darin, ob eine rückwirkende Änderung ihrerseits solche produzieren kann. Falls sie dazu in der Lage wäre, würde dies unendliche Schleifen bilden können, insofern entstehende rückwirkende Änderungen eine Auswirkung auf Teile des Dokumentes vor dieser rückwirkenden Änderung haben könnten.
-\TeX{} löst dieses Problem durch diverse Hilfsdateien. Fehlende Informationen unterbrechen den Kompilierprozess nicht, sondern werden in diesen Dateien vermerkt. Dadurch kann der folgende Kompilierprozess diese Informationen nutzen und folglich entsteht ein Dokument, in welchem alle erfordelichen Anpassungen bereits vergenommen wurden, sodass das exakte beschriebene Dokument erzeugt werden kann (inklusive jeglicher e.g.\ Links im Inhaltsverzeichnis, rückreferenzierenden Links, Links im Abbildungs- und Tabellenverzeichnis).
+% \subsubsection*{Arten von Änderungen innerhalb eines Dokumentes und Auswirkungen dieser auf das Dokument}% Titel muss überarbeitet werden
+% Der verwirrenden Formulierung vorigen Abschnittes etwas Entzwirrung zu leisten, eine kurze Schilderung des Gemeinten. Das Hauptproblem besteht darin, dass Befehle, welche Strukturen in einem Dokument verändern, die ihrerseits vor dem Befehl im Quelltext erscheinen, dazu führen, dass diese Strukturen vergrößert werden. \TeX{} selbst löst dies über verschiedenste Hilfsdateien, als auch erneute Kompilierprozesse. Geht man allerdings davon aus, dass übersetzende Programme nur einfach (im Sinne: ein Mal) ablaufen sollen, so würden etwaige Anpassungen in Hilfsdateien übersehen werden (die mitunter Strings enthalten, welche kontextuelle oder sprachliche Inhalte tragen). 
 
-\subparagraph*{Anschaulichere Beispiele}
+%\paragraph*{Rückwirkende Änderungen}
+%Bei jedem Hinzufügen eines z.B.\ neuen Kapitels, einer neuen Tabelle, einer neuen Abbildung (und dergleichen) kann und sollten jeweilige Verzeichnisse bearbeitet worden sein. Jedoch ist aus logischer Perspektive eine Änderung eines bereits existierenden Teils eines Dokumentes nicht mehr möglich, wenn dieser Teil des Dokumentes bereits geschrieben wurde. Deshalb muss das Dokument erneut und von vorne bearbeitet werden, damit diese Änderung vorgenommen werden kann. % Die Frage die sich stellt: Soll gewartet werden, bis alle rückwirkenden Änderungen erfasst wurden oder soll jede rückwirkende Änderung ihrerseits sofort vorgenommen werden? Eine Antwort findet sich darin, ob eine rückwirkende Änderung ihrerseits solche produzieren kann. Falls sie dazu in der Lage wäre, würde dies unendliche Schleifen bilden können, insofern entstehende rückwirkende Änderungen eine Auswirkung auf Teile des Dokumentes vor dieser rückwirkenden Änderung haben könnten.
+%\TeX{} löst dieses Problem durch diverse Hilfsdateien. Fehlende Informationen unterbrechen den Kompilierprozess nicht, sondern werden in diesen Dateien vermerkt. Dadurch kann der folgende Kompilierprozess diese Informationen nutzen und folglich entsteht ein Dokument, in welchem alle erfordelichen Anpassungen bereits vergenommen wurden, sodass das exakte beschriebene Dokument erzeugt werden kann (inklusive jeglicher e.g.\ Links im Inhaltsverzeichnis, rückreferenzierenden Links, Links im Abbildungs- und Tabellenverzeichnis).
+
+%\subparagraph*{Anschaulichere Beispiele}
 % kp, was ich überhaupt sagen will. eigentlich nur: wir müssen nochmal kompilieren, da der (übersetzte oder der kontextgebende) String nicht hätte bekannt sein können
 
-\paragraph*{Akute Änderungen}
-\subparagraph*{Beschreibung}
-Können bedenklich werden.
+%\paragraph*{Akute Änderungen}
+%\subparagraph*{Beschreibung}
+%Können bedenklich werden.
 
 
-\paragraph*{Vorgreifende Änderungen}
-\subparagraph*{Beschreibung}
-Sollte die Situation entstehen, dass ein Befehl in einem Dokument eine Veränderung in einem späteren Teil des Dokumentes verursacht, ist dies zunächst unbedenklich.
+%\paragraph*{Vorgreifende Änderungen}
+%\subparagraph*{Beschreibung}
+%Sollte die Situation entstehen, dass ein Befehl in einem Dokument eine Veränderung in einem späteren Teil des Dokumentes verursacht, ist dies zunächst unbedenklich.
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% In Review. Sonderhafte Inhalte, bemerkenswerte? Sortierung.
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%% In Review. Richtige Inhalte, inadäquate Sortierung.
 %%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsubsection{Hilfsdateien}% multi-file handling
+%\subsubsection{Hilfsdateien}% multi-file handling
 
-\paragraph{Struktur dieses Abschnittes}
-Eine Datei nutzt ein Literaturverzeichnis (Bib\TeX{}), pdf\TeX{} (\verb|\pdfcomment{}|), \verb|\footnote|, ein Inhaltsverzeichnis, ein Glossar, 
+%\paragraph{Struktur dieses Abschnittes}
+%Eine Datei nutzt ein Literaturverzeichnis (Bib\TeX{}), pdf\TeX{} (\verb|\pdfcomment{}|), \verb|\footnote|, ein Inhaltsverzeichnis, ein Glossar, 
 
-\paragraph{Beispielliste}
-\subparagraph*{Inhaltsverzeichnisse, Abbildungsverzeichnisse, Tabellenlisten}
-\paragraph*{Beispiel}
-\paragraph*{Erläuterung}
-Ändern wir den Titel eines Paragraphen oder Abschnittes, dann erfasst dies der \TeX{} Compiler beim ersten Durchlauf. Jedoch der String im Inhaltsverzeichnis kann nur verändert werden, sobald diese Information zu Beginn des nächsten Kompilierungsprozesses in der entsprechenden Hilfsdatei vorliegt (\texttt{.toc}).
+%\paragraph{Beispielliste}
+%\subparagraph*{Inhaltsverzeichnisse, Abbildungsverzeichnisse, Tabellenlisten}
+%\paragraph*{Beispiel}
+%\paragraph*{Erläuterung}
+%Ändern wir den Titel eines Paragraphen oder Abschnittes, dann erfasst dies der \TeX{} Compiler beim ersten Durchlauf. Jedoch der String im Inhaltsverzeichnis kann nur verändert werden, sobald diese Information zu Beginn des nächsten Kompilierungsprozesses in der entsprechenden Hilfsdatei vorliegt (\texttt{.toc}).
 
-\subparagraph{Backrefs}
-\paragraph*{Beispiel}
-Bedarf evtl.\ einer bildlichen Veranschaulichung. Meint: Inhaltsverzeichnis, Tabelle,\ldots vor einer \textit{backwards reference} verschiebt die echte Position der (Phantom-) Sektion. Daher muss zunächst bestimmt werden, wo im Dokument eine Referenz auf ein existierendes Label stattfindet, welches vorherig bereits vergeben wurde\pdfcomment{Ein Erneuern eines Labels via renewcommand ergibt keinen Sinn, da dieses forward references verfälschen würde.}.
-\paragraph*{Erläuterung}
-Ein Verweis auf einen vorherigen Paragraphen kann nur klickbar verlinkt werden, wenn die Information, an welcher Stelle er sich im Dokument befindet, bereits klar ist. Da nach der Referenz weitere Abschnitte folgen können, welche vorherige Elemente mit variabler Größe verändern könnten, muss zunächst die Größe dieser bestimmt sein und gegenüber dieser kann dann der 
+%\subparagraph{Backrefs}
+%\paragraph*{Beispiel}
+%Bedarf evtl.\ einer bildlichen Veranschaulichung. Meint: Inhaltsverzeichnis, Tabelle,\ldots vor einer \textit{backwards reference} verschiebt die echte Position der (Phantom-) Sektion. Daher muss zunächst bestimmt werden, wo im Dokument eine Referenz auf ein existierendes Label stattfindet, welches vorherig bereits vergeben wurde\pdfcomment{Ein Erneuern eines Labels via renewcommand ergibt keinen Sinn, da dieses forward references verfälschen würde.}.
+%\paragraph*{Erläuterung}
+%Ein Verweis auf einen vorherigen Paragraphen kann nur klickbar verlinkt werden, wenn die Information, an welcher Stelle er sich im Dokument befindet, bereits klar ist. Da nach der Referenz weitere Abschnitte folgen können, welche vorherige Elemente mit variabler Größe verändern könnten, muss zunächst die Größe dieser bestimmt sein und gegenüber dieser kann dann der 
 
-\subparagraph*{Literaturverzeichnisse}
-\paragraph*{Beispiel}
-\paragraph*{Erläuterung}
+%\subparagraph*{Literaturverzeichnisse}
+%\paragraph*{Beispiel}
+%\paragraph*{Erläuterung}
 
-\subparagraph*{PDF Funktionen}
-\paragraph*{Beispiel}
-\paragraph*{Erläuterung}
+%\subparagraph*{PDF Funktionen}
+%\paragraph*{Beispiel}
+%\paragraph*{Erläuterung}
 
-\subparagraph*{\enquote{footnotes}}
-\paragraph*{Beispiel}
-\paragraph*{Erläuterung}
-
-
+%\subparagraph*{\enquote{footnotes}}
+%\paragraph*{Beispiel}
+%\paragraph*{Erläuterung}
 
 
 
 
-\paragraph{Abstrahiertes Problem}
-Falls auf Hilfsdateien zugegriffen wird, ist das mehrfache Kompilieren eines \LaTeX{} Dokumentes unvermeidbar. Gegeben $n_{h}$ womoglich existierenden Hilfsdateien, welche alle ihrerseits zu übersetzende Inhalte beinhalten können, folgt eine minimale Laufzeit $\mathcal{O}(n_h)$. 
+
+
+%\paragraph{Abstrahiertes Problem}
+%Falls auf Hilfsdateien zugegriffen wird, ist das mehrfache Kompilieren eines \LaTeX{} Dokumentes unvermeidbar. Gegeben $n_{h}$ womoglich existierenden Hilfsdateien, welche alle ihrerseits zu übersetzende Inhalte beinhalten können, folgt eine minimale Laufzeit $\mathcal{O}(n_h)$. 
 %Ein einmaliges Kompilieren eines \LaTeX{} Dokumentes ist unmöglich, falls ein Zugriff auf Hilfsdateien nötig ist.
 
 
@@ -264,33 +276,41 @@ Einfache Cloud-Architektur. Ein Client möchte auf ein beliebiges Wissen einer W
 
 
 
-\subsubsection{Figuren und Tabellen}\phantomsection\label{problems:advanced:tables}
-\paragraph*{Beispiele}
-\paragraph*{Beschreibungen}
-\paragraph*{Abstrahierung}
+%\subsubsection{Figuren und Tabellen}\phantomsection\label{problems:advanced:tables}
+%\paragraph*{Beispiele}
+%\paragraph*{Beschreibungen}
+%\paragraph*{Abstrahierung}
 
-\subsubsection{Literaturverzeichnisse}\phantomsection\label{problems:advanced:bibtex}
-\paragraph*{Beispiele}
-\paragraph*{Beschreibungen}
-Bib\TeX{} erlaubt es an vielerlei Stelle eigene Strings in einer kompilierten \TeX{}-Datei zu verbergen.
-\paragraph*{Abstrahierung}
-
-
-\subsubsection{Category Codes}\phantomsection\label{problems:advanced:catcode}
-\paragraph*{Beispiele}
-\paragraph*{Beschreibungen}
-\paragraph*{Abstrahierung}
+%\subsubsection{Literaturverzeichnisse}\phantomsection\label{problems:advanced:bibtex}
+%\paragraph*{Beispiele}
+%\paragraph*{Beschreibungen}
+%Bib\TeX{} erlaubt es an vielerlei Stelle eigene Strings in einer kompilierten \TeX{}-Datei zu verbergen.
+%\paragraph*{Abstrahierung}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsubsection{Category Codes}\phantomsection\label{problems:advanced:catcode}
+%\paragraph*{Beispiele}
+%\paragraph*{Beschreibungen}
+%\paragraph*{Abstrahierung}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%% In Review. Richtige Inhalte, inadäquate Sortierung.
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 
-\subsection{Spezifischer Technologien}\phantomsection\label{problems:special}
-Mitunter NP-schwer.
+\subsection{Spezifischer Technologien}\phantomsection\label{problems:special}% Verändern die Übersetzung nicht direkt / Können diese nicht direkt verändern, jedoch Unleserlichkeiten (unschön anzusehen) oder Unlesbarkeiten (nicht zu sehen) im kompilierten Dokument erzeugen
+% Mitunter NP-schwer (zur behebung dieser muss man meist heuristiken eingehen. was ist eine heuristik? an sich gar nichts, meint nur, dass wir fehler zulassen (bzw. eine fehlerwahrscheinlichkeit)).
+Hier wenden wir uns von Problemen einer Übersetzung ab und widmen uns denen eines Lesers. Alle textlichen Inhalte eines Dokumentes zu übersetzen, als auch eine kontextuelle Fachsprache zu bewahren scheint aus abstrakterer Perspektive ausreichen, kann allerdings zu Situationen führen, in welchen Informationen verloren gehen, da diese vom Endnutzer nicht mehr gesehen werden können.% Meint: Wirklich gesehen, da in der PDF hinter etwas Anderem verborgen 
+% Passiert wann? Fläche, welche die Texte benötigen werden nach der Übersetzung grßer
+% Dazu: Wie viel Fläche braucht die Sprache mit geringster Flächer (für alle grammatikalisch richtigen Wortkombinationen?)
+% Dazu: Wie viel Fläche braucht die Sprache mit größter Flächer (für alle grammatikalisch richtigen Wortkombinationen?)
+%%% Wie zu bestimmen: folgt.
+
+
+
 \subsubsection{Kommentare}\phantomsection\label{problems:advanced:comments}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
