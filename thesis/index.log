@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  13 OCT 2025 17:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  13 OCT 2025 19:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1294,12 +1294,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [toc,multi].
 
-(index.aux (introduction/short.aux) (problem/issues.aux
-
-LaTeX Warning: Label `tab:problems:dim2' multiply defined.
-
-) (technologies/tek.aux) (solution/desc.aux) (conclusion/ending.aux)
-(appendices/appendix.aux))
+(index.aux (introduction/short.aux) (problem/issues.aux) (technologies/tek.aux)
+(solution/desc.aux) (conclusion/ending.aux) (appendices/appendix.aux))
 \openout1 = `index.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 161.
@@ -1598,7 +1594,7 @@ your preamble.
  on input line 161.
 
 (titlepage.tex
-<pictures/UNIHRO_LOGO_2025.pdf, id=134, 703.62875pt x 144.54pt>
+<pictures/UNIHRO_LOGO_2025.pdf, id=166, 703.62875pt x 144.54pt>
 File: pictures/UNIHRO_LOGO_2025.pdf Graphic file (type pdf)
 <use pictures/UNIHRO_LOGO_2025.pdf>
 Package pdftex.def Info: pictures/UNIHRO_LOGO_2025.pdf  used on input line 12.
@@ -1612,11 +1608,11 @@ AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./pict
 ures/UNIHRO_LOGO_2025.pdf>]
 Package marginnote Info: Using workaround for absolute page number on input lin
 e 171.
- [1] (index.toc)
+ [1] (index.toc [2])
 \tf@toc=\write7
 \openout7 = `index.toc'.
 
- [2]
+ [3]
 \openout2 = `introduction/short.aux'.
 
 
@@ -1631,6 +1627,9 @@ Package hyperref Info: bookmark level for unknown lpcsec defaults to 0 on input
 
 {C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t1-
 0.enc}]
+Package marginnote Info: Using workaround for absolute page number on input lin
+e 19.
+
 Underfull \hbox (badness 10000) in paragraph at lines 22--24
 
  []
@@ -1649,12 +1648,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--24
 (../examples/technical/0d/correct_original.tex)
 (../examples/technical/0d/correct.tex)
 (../examples/technical/0d/wrong_original.tex)
-(../examples/technical/0d/wrong.tex) [3
+(../examples/technical/0d/wrong.tex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3
 
 
 
-]
-(../examples/technical/1d/correct_original.tex)
+] (../examples/technical/1d/correct_original.tex)
 (../examples/technical/1d/correct.tex)
 (../examples/technical/1d/wrong_original.tex)
 (../examples/technical/1d/wrong.tex)
@@ -1665,12 +1667,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--24
 (../examples/technical/1d/correct_original.tex)
 (../examples/technical/1d/correct.tex)
 (../examples/technical/1d/wrong_original.tex)
-(../examples/technical/1d/wrong.tex) [4]
+(../examples/technical/1d/wrong.tex)
 
-LaTeX Warning: Hyper reference `problems:unexpectedCharacters' on page 5 undefi
-ned on input line 65.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5] (../examples/technical/2d/correct_original.tex)
+
+LaTeX Warning: Hyper reference `problems:unexpectedCharacters' on page 4 undefi
+ned on input line 71.
+
+[4] (../examples/technical/2d/correct_original.tex)
 (../examples/technical/2d/correct.tex)
 (../examples/technical/2d/wrong_original.tex)
 (../examples/technical/2d/wrong.tex)
@@ -1681,8 +1686,11 @@ ned on input line 65.
 (../examples/technical/2d/correct_original.tex)
 (../examples/technical/2d/correct.tex)
 (../examples/technical/2d/wrong_original.tex)
-(../examples/technical/2d/wrong.tex) [6]
-(../examples/technical/3d/correct_original.tex)
+(../examples/technical/2d/wrong.tex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5] (../examples/technical/3d/correct_original.tex)
 (../examples/technical/3d/correct.tex)
 (../examples/technical/3d/wrong_original.tex
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\ts1zi4.fd))
@@ -1696,31 +1704,31 @@ ned on input line 65.
 (../examples/technical/3d/wrong_original.tex)
 (../examples/technical/3d/wrong.tex)
 
-LaTeX Warning: Hyper reference `technologies:demands' on page 7 undefined on in
-put line 157.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--161
+LaTeX Warning: Hyper reference `technologies:demands' on page 6 undefined on in
+put line 141.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--145
 
  []
 
-[7{C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t
-s1.enc}] [8]
+[6] [7{C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/
+i4-ts1.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 146--148
 
-LaTeX Warning: Reference `problems:advanced:comments' on page 9 undefined on in
-put line 303.
+ []
 
+[8]
 
 LaTeX Warning: Hyper reference `problems:special:comments' on page 9 undefined 
-on input line 305.
+on input line 291.
 
 
 LaTeX Warning: Reference `problems:advanced:comment' on page 9 undefined on inp
-ut line 306.
-
-
-LaTeX Warning: Reference `problems:special:sourcecode' on page 9 undefined on i
-nput line 306.
+ut line 292.
 
 [9]) [10]
 \openout2 = `technologies/tek.aux'.
@@ -1772,7 +1780,7 @@ LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample1.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample1.pdf, id=472, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample1.pdf, id=515, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample1.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample1.pdf>
 Package pdftex.def Info: appendices/fontscalingexample1.pdf  used on input line
@@ -1783,7 +1791,7 @@ Missing character: There is no ; in font nullfont!
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample2.pdf, id=475, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample2.pdf, id=518, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample2.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample2.pdf>
 Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
@@ -1795,7 +1803,7 @@ Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
 >]
-runsystem(latexminted cleantemp  --timestamp 20251013170806 6A992D5529F459A44FE
+runsystem(latexminted cleantemp  --timestamp 20251013190434 6A992D5529F459A44FE
 E58C733255E86)...disabled (restricted).
 
  (index.aux (introduction/short.aux) (problem/issues.aux)
@@ -1813,54 +1821,40 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-Package rerunfilecheck Warning: File `index.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `index.out':
-(rerunfilecheck)             Before: B5299901133C8C49B9D5A20F7982D0AA;2060
-(rerunfilecheck)             After:  3A73F0299F46548572242A084B036ECB;2691.
+Package rerunfilecheck Info: File `index.out' has not changed.
+(rerunfilecheck)             Checksum: 4A29CEAB63CD394F56A2383BA85EDCBB;2691.
  ) 
 Here is how much of TeX's memory you used:
- 51030 strings out of 474485
- 1208118 string characters out of 5744206
- 2061542 words of memory out of 5000000
- 72185 multiletter control sequences out of 15000+600000
+ 51037 strings out of 474485
+ 1208277 string characters out of 5744206
+ 2105542 words of memory out of 5000000
+ 72200 multiletter control sequences out of 15000+600000
  579286 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,17n,117p,1803b,2478s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{figure.caption.35} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.34} has been referenced but does not
- exist, replaced by a fixed one
-
-<C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inc
-onsolata-zi4r.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Sxyx/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Sxyx/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/cm-super/sfsi1095.pfb><C:/Users/Sxyx/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/cm-super/sfss0800.pfb><C:/Users/Sxyx/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss0900.pfb><C:/Users/S
-xyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss1000.pfb><C:/
-Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss1095.p
-fb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfs
-s1440.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-su
-per/sfsx1095.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/cm-super/sfsx1200.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/cm-super/sfsx1440.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/cm-super/sfsx2074.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/cm-super/sfsx2488.pfb>
-Output written on index.pdf (20 pages, 796787 bytes).
+ 101i,17n,117p,1803b,2470s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/I
+nconsolata-zi4r.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Sxyx/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Sxyx/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/cm-super/sfsi1095.pfb><C:/Users/Sxyx/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss0800.pfb><C:/Users/Sxyx/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss0900.pfb><C:/Users
+/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss1000.pfb><C
+:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss1095
+.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/s
+fss1440.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-
+super/sfsx1095.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/cm-super/sfsx1200.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/cm-super/sfsx1440.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/cm-super/sfsx2074.pfb><C:/Users/Sxyx/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/cm-super/sfsx2488.pfb>
+Output written on index.pdf (21 pages, 804080 bytes).
 PDF statistics:
- 623 PDF objects out of 1000 (max. 8388607)
- 193 named destinations out of 1000 (max. 500000)
- 284 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 663 PDF objects out of 1000 (max. 8388607)
+ 185 named destinations out of 1000 (max. 500000)
+ 348 words of extra memory for PDF output out of 10000 (max. 10000000)
 
