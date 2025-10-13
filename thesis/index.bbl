@@ -1,3 +1,30 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{Knuth}{1986}{texbook}
+Knuth, D.~E.  \harvardyearleft 1986\harvardyearright , {\em The TeXbook, ISBN:
+  9780201134476}, Addison-Wesley Professional.
+
+\harvarditem[Korzh et~al.]{Korzh, Tarasov, Iudin, Karimov, Skripkin, Kuzmin,
+  Kuznetsov, Rogov \harvardand\
+  Oseledets}{2025}{cornellComputerScienceComputerVisionPatternRecognition:korzhDmitrii2025:speechToLaTeXnewModelsAndDatasetsForConvertingSpokenEquationsAndSentences}
+Korzh, D., Tarasov, D., Iudin, A., Karimov, E., Skripkin, M., Kuzmin, N.,
+  Kuznetsov, A., Rogov, O.~Y. \harvardand\ Oseledets, I.  \harvardyearleft
+  2025\harvardyearright , `Speech-to-latex: New models and datasets for
+  converting spoken equations and sentences',
+  \url{https://doi.org/10.48550/arXiv.2508.03542} (last Access: 06.10.2025).
+
+\harvarditem{Lamport}{1994}{latexCompanion:leslieLamport}
+Lamport, L.  \harvardyearleft 1994\harvardyearright , {\em LaTeX: A Document
+  Preparation System, 2nd Edition, ISBN: 9780201529838}, Addison-Wesley
+  Professional.
+\newblock available at:\
+  \url{https://www.latex-project.org/help/books/tlc3-digital-chapter-samples.pdf}
+  (last Access: 04.10.2025).
+
+\harvarditem[Rastgoo et~al.]{Rastgoo, Kiani \harvardand\
+  Escalera}{2025}{expertSystemsWithApplications:rastgooRazie2021:signLanguageRecognitionADeepSurvey}
+Rastgoo, R., Kiani, K. \harvardand\ Escalera, S.  \harvardyearleft
+  2025\harvardyearright , `Sign language recognition: A deep survey',
+  \url{https://doi.org/10.1016/j.eswa.2020.113794} (last Access: 06.10.2025).
+
 \end{thebibliography}

@@ -16,47 +16,45 @@ A level-1 auxiliary file: conclusion/ending.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: appendices/appendix.aux
-I found no \citation commands---while reading file index.aux
 Database file #1: index.bib
-You've used 0 entries,
+You've used 4 entries,
             2909 wiz_defined-function locations,
-            643 strings with 4847 characters,
-and the built_in function-call counts, 32 in all, are:
-= -- 0
-> -- 0
+            665 strings with 6142 characters,
+and the built_in function-call counts, 21097 in all, are:
+= -- 3450
+> -- 314
 < -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 18
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
++ -- 1711
+- -- 98
+* -- 1844
+:= -- 4206
+add.period$ -- 5
+call.type$ -- 4
+change.case$ -- 54
+chr.to.int$ -- 4
+cite$ -- 4
+duplicate$ -- 54
+empty$ -- 111
+format.name$ -- 108
+if$ -- 3773
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 4
+newline$ -- 16
+num.names$ -- 42
+pop$ -- 31
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 60
 quote$ -- 0
-skip$ -- 1
+skip$ -- 43
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 4943
+swap$ -- 4
+text.length$ -- 56
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 12
 warning$ -- 0
-while$ -- 0
+while$ -- 84
 width$ -- 0
-write$ -- 2
-(There was 1 error message)
+write$ -- 56

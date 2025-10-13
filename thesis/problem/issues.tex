@@ -1,19 +1,25 @@
 %%%%%%%%%%%%% Versuche die deutsche wissenschaftliche Sprache verständlich zu halten:
 %%%%%%%%%%%%% - Infinitiv so oft wie möglich (durch Substantivierung oder Erweiterung), damit Texte leichter zu verstehen sind.
 %%%%%%%%%%%%% - Reale Konditionalsätze nutzen.
+%%%%%%%%%%%%% - Auch ein wenig den Leser abzuholen und nicht nur stumpf und maschinell die beiden oberen Regeln einzuhalten :) 
+
 
 \section{Problemfälle}
-Uneindeutigkeiten\label{probleme:uneindeutigkeiten} in der Sprache sind für einen Leser oft schwer nachzuvollziehen. In \TeX{} muss allerdings zu mindestens einem Zeitpunkt die Information über das Aussehen des entgültigen Dokumentes in einer modellartigen Form vorliegen. Diese Information kann in \LaTeX{} verborgen sein oder aber bei einem Übersetzen verloren gehen.
-Die Probleme unterteilen sich in verschiedene Fälle und werden hinsichtlich des Kontextes dieses Informationsverlustes in translative (beim Übersetzen), technische (\LaTeX{}), spezifische technische (in Kombination mit \TeX{} nutzbare Programme) und sprachliche Probleme. Sprachliche Probleme verursachen teilweise dillematische Probleme,%~\hyperref[probleme:uneindeutigkeiten]{beschriebene Gründe} nicht immer lösbar und sind daher als \enquote{Schwierigkeit} formuliert.
-welche als \enquote{Schwierigkeiten} und nicht als zu lösende Probleme dargestellt werden. Einzelne aufgeführte Beispiele zur Veranschaulichung beschriebener Probleme sind mit Hilfe von nicht spezifischer Software erzeugt (Google Translate), um zu zeigen, dass jeweilige Situation in \textit{einer} Software zur Übersetzung von menschensprachlichen Inhalten entstehen \textit{könnten}.
+Sprachliche Uneindeutigkeiten können in vielen Sprachen auftreten und dadurch Missverständnisse produzieren (bspw.\ sarkastische Kommentare oder Mehrdeutigkeiten einzelner Worte). Besonders kritisch sind solche Uneindeutigkeiten jedoch für übersetzende Programme, welche Dokumente in eine andere, menschliche Sprache überführen zu suchen, da hier bereits einzelne missinterpretierte Wörter die \TeX{} Syntax brechen könnten, wodurch nur noch ein unzureichender Teil der Beschreibung des Dokumentes bestehen bleibt, aus welcher kein echtes Dokument entstehen kann\pdfcomment{Abschnitt: technische Semantik. Tue mich schwer mit der Namensgebung der Kapitel.}. Das Einhalten der \TeX{} Syntax alleine genügt jedoch nicht, um erwähnte Mehrdeutigkeiten von einzelnen Wörtern zu verhindern, da sie abhängig ihres Kontexts eine andere Übersetzung verlangen\pdfcomment{Abschnitt: Sprachliche Semantik}.% Diese Art von PDF-Kommentar ist sichtbar. Geht in Firefox. Dann gehe ich davon aus, dass es in einer kostenpflichtigen software (acrobat) ebenfalls umgesetzt ist. 
+Weiterhin können innerhalb von verschiedenen, in Kombination mit \TeX{} genutzten Systeme einzelne \enquote{Fehler} entstehen. Ansätze zur Behebung dieser sind jedoch in manchen Fällen bereits konzeptionell unmöglich. Hieran anknüpfend existieren einige sehr spezifische sprachliche\pdfcomment{meint:\ sowohl \TeX{} und co., also auch menschliche Sprache}.\\% par
+\noindent
+Aus kurzer Nachverfolgung und Einschätzung dieser Probleme werden anschließend konkrete Anforderungen gestellt. Eine Erläuterung dieser Art macht es allerdings unabdingbar eine Software zu nutzen, welche auf das übersetzen spezialisiert ist und nicht von sich aus \LaTeX{} oder \TeX{}-konforme Dokumente erwartet. Daher werden Beispiele anhand von Google's Web-Service \enquote{Translate} aufgeführt.% parsec; review: 1
 
 
 
-\subsection{Translativ}\phantomsection\label{problems:simple}
 
+% Bleibt die Bedeutung für die TeX-Engine bestehen?
+\subsection{Technische Semantik}\phantomsection\label{problems:technological}
 % Hiermit sagen wir: Punkte/Elemente der nullten Dimension sind veränderbar.
 \subsubsection{Sonderzeichen}\phantomsection\label{problems:dim0}
-% Klasse Problem, da Unterklasse mit Funktionen, die genutzt werden können, wenn man ein Problem hat. Die einzig benötigte ist problem::encounter::solve(problem::stack::pop()) // Wir lösen das oben auf dem Stapel an Problemen liegende Problem zuerst
+Manche menschliche Sprachen beinhalten gelegentlich Zeichen, welche keine direkte Bedeutung tragen und kein Teil auch nur eines Wortes der Sprache sind. Denkbare Beispiele hierfür sind Klammern, die (üblicherweise) für ein impliziert Erwähntes, allerdings nicht vorzeiglich verwendetes Wort genutzt werden.% Meint: Eigentlich sollte man das Wort dort nicht oder nicht unbegründet verwenden, jedoch passt es gerade im Redefluss, um den Kontext schneller rüberzubringen (und mit schneller ist immer "besser" verbunden)
+Stilistische Mittel für Texte sind prinzipiell nicht an spezifische Zeichen gebunden und ein Programm kann immer davon ausgehen, dass ein \enquote{Tippfehler} entstehen kann. Beispiel~\ref{tab:problems:dim0} zeigt allerdings, wie vereinzelte Zeichenketten produzieren können, welche fälschlich (in diesem Kontext:\ unerwünscht) übersetzt werden.
+
 \begin{table}[h!]
     \centering
     \begin{tabularx}{\textwidth}{X X}
@@ -22,27 +28,27 @@ welche als \enquote{Schwierigkeiten} und nicht als zu lösende Probleme dargeste
         \midrule
         % Siehe ~/tests/readme.md für namensgebung und "Wo ist die Datei?"
             Korrekt & \\[-13px] % relative Angabe ggb. echtem Zeilenumbruch (1em) // relativ in dem Sinne: wir gehen von der Position des erwarteten Zeilenumbruches aus und verschieben nach unten oder oben (+ bzw - in der Höhe)
-            \commoncode{Test}{../examples/simple/0d/correct_original.tex} & \commoncode{Test}{../examples/simple/0d/correct.tex}\\[1em]
+            \commoncode{Test}{../examples/technical/0d/correct_original.tex} & \commoncode{Test}{../examples/technical/0d/correct.tex}\\[1em]
             Unerwünscht & \\[-13px]
-            \commoncode{Test}{../examples/simple/0d/wrong_original.tex} & \commoncode{Test}{../examples/simple/0d/wrong.tex}\\[-1em]
+            \commoncode{Test}{../examples/technical/0d/wrong_original.tex} & \commoncode{Test}{../examples/technical/0d/wrong.tex}\\[-1em]
         \bottomrule
     \end{tabularx}
-    \caption{Fehler in einem Token}\phantomsection\label{tab:problems:dim0}
+    \caption{Der für einen \TeX{} Compiler relevante Befehl \texttt{label} bleibt unverändert, allerdings \texttt{section} wird f\"alschlicherweise als \texttt{Abschnitt} \"ubersetzt}\label{tab:problems:dim0}
 \end{table}
 
-
-\paragraph*{Beschreibung und Begründung}
-Der für einen \TeX{} Compiler relevante Befehl \verb|\label| bleibt unverändert, allerdings \texttt{section} wird fälschlicherweise als \texttt{Abschnitt} übersetzt.  
-Warum \texttt{label} nicht erfasst werden sollte, wenn die folgenden drei Wörter übersetzt wurden, wirft Fragen auf. Zu sehen ist ein String, welcher menschliche Sprache mit Sonderzeichen vermischt. Da insbesondere Klammern in (vielen) sprachlichen Kontexten hilfreich sind, werden deren Inhalte selbst zunächst nach zusammenhängenden Worten durchsucht, welche ihrerseits durch \verb|:| getrennt sind, oder als Klammern betrachtet werden können. Ein Entfernen der Klammern lässt lässt in erstem Beispiel \verb|\label problem encounter solve| und in zweitem Beispiel \verb|\section example| stehen. Zu sehen ist hier also bereits, dass Google Translate bei einer, wenn man es so interpretieren möchte, Vernestung zweiten Grades scheitert, jedoch einfache Vernestungen noch erkennt\footnote{\textit{Vernestung}: Klammern in Klammern, wie in der Mathematik}.
+\paragraph*{Vermutung}
+Fraglich ist, warum \texttt{label} nicht erfasst werden sollte, obwohl die folgenden drei Wörter übersetzt werden. Ein String, welcher menschliche Sprache mit Sonderzeichen vermischt, kann dahingehend interpretiert werden, dass diese Sonderzeichen \textit{wie} Klammern verwendet werden. Seinerseits könnte \verb|:| also nicht als bekanntes \enquote{geteilt} aufgefasst werden, sondern als Klammern. Ersetzt man diese Klammern mit Leerzeichen resultiert aus dem ersten Beispiel \verb|\label problem encounter solve| und in zweitem Beispiel \verb|\section example|. Zu sehen ist hier also bereits, dass Google Translate bei einer, wenn man es so interpretieren möchte, \enquote{Vernestung} zweiten Grades scheitert, jedoch einfache Vernestungen noch erkennt\footnote{\enquote{Vernestung} meint die Verschachtelung von Klammern}.
 
 \paragraph*{Takeaway}
-Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \verb|[|, \verb|]|, \verb|$|, \verb|$$| oder \verb|\%| erkennen und müssten daher ausgeschlossen werden. Anders als in mathematischen Formeln zeigen sich Sonderzeichen jedoch nicht paarweise auf, sodass sie nicht paarweise ignoriert werden können. Man kann sich diese Art von Fehlern wie 0-dimensionale Fehler vorstellen, wobei die nullte Dimension hierbei bei einem einzelnen Wort beginnt (welche als Punkte zu verstehen sind).
-
+Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \verb|[|, \verb|]|, \verb|$|, \verb|$$| oder \verb|\%| erkennen und müssten daher ausgeschlossen werden. Anders als in mathematischen Formeln zeigen sich Sonderzeichen jedoch nicht paarweise auf, sodass sie nicht paarweise ignoriert werden können. Man kann sich diese Art von Fehlern wie 0-dimensionale Fehler vorstellen, wobei die nullte Dimension hierbei bei einem einzelnen Wort beginnt (welche als Punkte verstanden werden).% von mir zumindest
 
 
 
 % Hiermit sagen wir: Kanten/Elemente der ersten Dimension sind veränderbar.
 \subsubsection{Leerzeichen}\phantomsection\label{problems:dim1}% Meint: Wort wurde nicht als Syntaktisch relevant erkannt; Wort dürfte nicht übersetzt werden
+Dem vorangegangenem Beispiel (zunächst) widersprechend, offenbart ein Auslassen von Zeichen (und dadurch ein Trennen von Worten) eine Vielzahl anderer möglicher Fehler, welche sich glücklicherweise schnell einheitlich beschreiben lassen.% oh fuck non onon on n on onn on. .... habs unironisch gedacht und geschrieben gerade. .-d d..d . .d .a. .d. . wtffff
+Hierunter fallen meist freistehende Worter, welche als Parameter für verschiedene \LaTeX{} Umgebungen dienen. Die Übersetzung solcher Parameter kann schnell zu Fehlern in einem \TeX{}-Compiler führen.
+
 \begin{table}[h!]
     \centering
     \begin{tabularx}{\textwidth}{X X}
@@ -51,36 +57,21 @@ Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \ve
         \midrule
         % Siehe ~/tests/readme.md für namensgebung und "Wo ist die Datei?"
             Korrekt & \\[-13px]
-            \commoncode{Test}{../examples/simple/1d/correct_original.tex} & \commoncode{Test}{../examples/simple/1d/correct.tex}\\[1em]
+            \commoncode{Test}{../examples/technical/1d/correct_original.tex} & \commoncode{Test}{../examples/technical/1d/correct.tex}\\[1em]
             Unerwünscht & \\[-13px]
-            \commoncode{Test}{../examples/simple/1d/wrong_original.tex} & \commoncode{Test}{../examples/simple/1d/wrong.tex}\\[-1em]
+            \commoncode{Test}{../examples/technical/1d/wrong_original.tex} & \commoncode{Test}{../examples/technical/1d/wrong.tex}\\[-1em]
         \bottomrule
     \end{tabularx}
     \caption{Fehler in einem einzeiligen Dokument}\phantomsection\label{tab:problems:dim1}
 \end{table}
-\paragraph*{Beschreibung und Begründung}% Warum das ein Problem ist
-Die Optionen innerhalb eckiger Klammern lassen auch Whitespace zu. Dies kann jedoch für die Nutzung einiger Funktionen in z.B.\ wichtigen Paketen wie \texttt{hyperref} dazu führen, dass falsche Wörter übersetzt werden, die ein Kompilieren des Dokumentes verhindern.
+\paragraph*{Verdeutlichung}% Warum das ein Problem ist
+Die Optionen innerhalb eckiger Klammern lassen Whitespace zu. Dies kann jedoch für die Nutzung einiger Funktionen in z.B.\ wichtigen Paketen wie \texttt{hyperref} dazu führen, dass falsche Wörter übersetzt werden, die ein Kompilieren des Dokumentes verhindern.
 
-\paragraph*{Abstrahierung}
+\paragraph*{Takeaway}% ich nutze "take-away" statt "lessons-learned", da "lessons-learned" bwl-talk ist.........!
 Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpectedCharacters]{zuvor} beschriebenen Zeichenketten erkennen, sondern lassen sich auch in Zeilen wiederfinden. Diese Art von Fehlern bahnt den Weg zu einer Dimension, wodurch nicht nur innerhalb eines Wortes (Punktes), sondern auch zwischen verschiedenen Punkten Fehler entstehen könnten (also innerhalb einer Zeile).
 
 
-
-
-
-
-
-
-
-
 \newpage
-
-
-
-
-
-
-
 
 
 
@@ -91,6 +82,8 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpe
 
 % Hiermit sagen wir: Flächen/Elemente der zweiten Dimension sind veränderbar.
 \subsubsection{Zeilenbrüche}\phantomsection\label{problems:dim2}
+Abstrahiert man nun über einzelne Zeilen hinweg, so wird die folgende Art von Fehlerquelle direkt offensichtlich, sodass sie keiner detaillierten Schilderung mehr bedarf. Sollte man versuchen ein Dokument Zeile nach Zeile zu übersetzen und den Kontext der vorigen Zeile zu ignorieren, so werden schnellig Zeilen übersetzt (obwohl:\ diese Zeilen nicht übersetzt werden durften, da sie Befehle für \TeX{} beinhalten (siehe:~\ref{tab:problems:dim2})).
+
 \begin{table}[h!]
     \centering
     \begin{tabularx}{\textwidth}{X X}
@@ -98,20 +91,16 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpe
             Original & Übersetzung\\
         \midrule
         % Siehe ~/tests/readme.md für namensgebung und "Wo ist die Datei?"
-            Korrekt & \\[-13px]
-            \commoncode{Test}{../examples/simple/2d/correct_original.tex} & \commoncode{Test}{../examples/simple/2d/correct.tex}\\[1em]
-            Unerwünscht & \\[-13px]
-            \commoncode{Test}{../examples/simple/2d/wrong_original.tex} & \commoncode{Test}{../examples/simple/2d/wrong.tex}\\[-1em]
+            Korrekt & \\[-13px]%
+            \commoncode{Test}{../examples/technical/2d/correct_original.tex} & \commoncode{Test}{../examples/technical/2d/correct.tex}\\[1em]%
+            Unerwünscht & \\[-13px]%
+            \commoncode{Test}{../examples/technical/2d/wrong_original.tex} & \commoncode{Test}{../examples/technical/2d/wrong.tex}\\[-1em]%
         \bottomrule
     \end{tabularx}
-    \caption{Fehler in einem einzeiligen Dokument}\phantomsection\label{tab:problems:dim2}
+    \caption{Das Übersetzen der \texttt{hyperref} Optionen würde den Kompilier-Prozess scheitern lassen}\label{tab:problems:dim2}
 \end{table}
 
 
-\paragraph*{Beschreibung}
-% Zwar ist es praktisch, wenn Quelltexte durch zusätzlichen Whitespace nicht nur auf horizontaler, sondern auch auf vertikaler Ebene übersichtlicher werden, allerdings führt dies bei einer zeilenweisen Übersetzung dazu, dass der Kontext aus voriger Zeile evtl. verloren geht.
-\paragraph*{Abstrahierung}
-Teile der \TeX-Syntax lassen sich nicht nur anhand von einzelnen Zeilen oder Zeichenketten erkennen, sondern könnten sich auch auch in verschiedenen Zeilen wiederfinden lassen. Diese Art von Fehlern kann 2-dimensional betrachtet werden, wodurch Fehler auch zwischen Zeilen entstehen können.
 
 \newpage
 
@@ -120,99 +109,97 @@ Teile der \TeX-Syntax lassen sich nicht nur anhand von einzelnen Zeilen oder Zei
 
 % Hiermit sagen wir: Körper/Elemente der dritten Dimension sind veränderbar.
 \subsubsection{Dokumentenbrüche}\phantomsection\label{problems:dim3}
-\paragraph*{Beispiel}
+Noch abstrakter wird hier die dritte Dimension erreicht, indem Teile von \TeX{} nicht in einer einzelnen Datei vorliegen müssen, sondern auch in anderen Dateien vorliegen könnten. Diese Tasache wirft eine Vielzahl neuer (und teilweise system-abhängiger) Probleme auf. Hier wurd sich zunächst jedoch nur auf die Fähigkeiten der unveränderten \TeX{}-Engine konzentriert und deren vorgesehene Primitiven (für diesen Zweck).
+
 \begin{table}[h!]
     \centering
     \begin{tabularx}{\textwidth}{X X}
         \toprule
             Original & Übersetzung\\
         \midrule
+
         % Siehe ~/tests/readme.md für namensgebung und "Wo ist die Datei?"
-            Korrekt & \\[-13px]
-            \commoncode{Test}{../examples/simple/3d/correct_original.tex} & \commoncode{Test}{../examples/simple/3d/correct.tex}\\[1em]
-            Unerwünscht & \\[-13px]
-            \commoncode{Test}{../examples/simple/3d/wrong_original.tex} & \commoncode{Test}{../examples/simple/3d/wrong.tex}\\[-1em]
+            Unerwünscht & \\[-13px]%
+            \commoncode{Test}{../examples/technical/3d/correct_original.tex} & \commoncode{Test}{../examples/technical/3d/correct.tex}\\[1em]%
+
+            Übersehen & \\[-13px]%
+            \commoncode{Test}{../examples/technical/3d/wrong_original.tex} & \commoncode{Test}{../examples/technical/3d/wrong.tex}\\[-1em]%
         \bottomrule
     \end{tabularx}
-    \caption{Fehler in einem einzeiligen Dokument}\phantomsection\label{tab:problems:dim2}
+    \caption{Übersetzung in einem \texttt{include} führt zum nicht-Übersetzen einer Datei. Ein zunächst nicht sonderlich \enquote{interessant} wirkendes Beispiel}\label{tab:problems:dim3}
 \end{table}
-\paragraph*{Beschreibung}
-Die Übersetzung von Datei $x$, welche Datei $y$ via \texttt{input} oder \texttt{include} % Unterschied: input darf vernested werden, include nicht. wir gehen von einem größeren Werk aus, welches aus x Kapiteln besteht, welche integriert werden sollen. die einzelnen Kapitel werden danach nur in Abschnitte zerlegt, welche durch inputs eingebunden werden sollen
-führt zwar dazu, dass Datei $x$ übersetzt wird, aber Datei $y$ nicht.
-\paragraph*{Abstrahierung}% Hier war abstrahieren leichter als beschreiben
-Teile der \TeX-Syntax müssen nicht zwingend in einer Datei vorliegen, sondern könnten auch in verschiedenen Dateien integriert sein. Die Klassifizierung simpler Probleme gelangt in \TeX{} hier bereits in der dritten Dimension an, weswegen sich fortan bereits mit \enquote{fortgeschrittenen} Problemen beschäftigt werden muss (welche sich Teils über mehrere \enquote{Dimensionen} erstrecken). Eine vierte Dimension existiert physikalisch nicht, ist jedoch mathematisch formulierbar\footnote{physikalisch: die vierte Dimension ist die Zeit, wenn man eine nicht-euklidische 3-dimensionale Bewegung verlangt (Teleportation)} und äußert sich in diesem Kontext auf eine Erhöhung von Laufzeitkomplexitäten.
 
 
-
-
-
-% Hier kommt die Zeit dazu.
-\subsection{Technisch}\phantomsection\label{problems:advanced}
-%%% Hier ein wenig weg von der eigentlichen Struktur, jedoch für die konkreten Beispiele wieder gleich
-\subsubsection{Besonderheiten dieses Abschnittes}
-Vorige Kapitel bahnte sich nach und nach von zunächst Wörtern (Punkten) zu mehereren Wörtern (Kanten) zu Sätzen (Graphen) und final zu größeren Gebilden (Körper, um das Wort \enquote{Hypergraph} zu vermeiden). Hier hören räumliche Verständnisse der Welt auf, wodurch folgende Probleme durch zeitliche Abhängigkeiten verschiedener Ereignisse aufgezeigt werden. Auf dieser Ebene ist es sehr praktisch, dass nur wenige Situationen eintreten können. Entweder erfolgt zu Beginn eines Dokumentes eine Änderung, welche Einfluss auf einen späteren Teil hat (vorgreifend); an einem Punkt im Dokument eine Änderung, welche Einfluss auf diese Stelle im Dokument hat (akut); oder eine Änderung im Dokument, welche Einfluss auf einen bereits existierenden Teil des Dokumentes hat (rückwirkend).% Dieser Abschnitt muss überarbeitet werden.
-
-\subsubsection*{Arten von Änderungen innerhalb eines Dokumentes und Auswirkungen dieser auf das Dokument}% Titel muss überarbeitet werden
-Der verwirrenden Formulierung vorigen Abschnittes etwas Entzwirrung zu leisten, eine kurze Schilderung des Gemeinten. Das Hauptproblem besteht darin, dass Befehle, welche Strukturen in einem Dokument verändern, die ihrerseits vor dem Befehl im Quelltext erscheinen, dazu führen, dass diese Strukturen vergrößert werden. \TeX{} selbst löst dies über verschiedenste Hilfsdateien, als auch erneute Kompilierprozesse. Geht man allerdings davon aus, dass übersetzende Programme nur einfach (im Sinne: ein Mal) ablaufen sollen, so würden etwaige Anpassungen in Hilfsdateien übersehen werden (die mitunter Strings enthalten, welche kontextuelle oder sprachliche Inhalte tragen). 
-
-\paragraph*{Rückwirkende Änderungen}
-Bei jedem Hinzufügen eines z.B.\ neuen Kapitels, einer neuen Tabelle, einer neuen Abbildung (und dergleichen) kann und sollten jeweilige Verzeichnisse bearbeitet worden sein. Jedoch ist aus logischer Perspektive eine Änderung eines bereits existierenden Teils eines Dokumentes nicht mehr möglich, wenn dieser Teil des Dokumentes bereits geschrieben wurde. Deshalb muss das Dokument erneut und von vorne bearbeitet werden, damit diese Änderung vorgenommen werden kann. % Die Frage die sich stellt: Soll gewartet werden, bis alle rückwirkenden Änderungen erfasst wurden oder soll jede rückwirkende Änderung ihrerseits sofort vorgenommen werden? Eine Antwort findet sich darin, ob eine rückwirkende Änderung ihrerseits solche produzieren kann. Falls sie dazu in der Lage wäre, würde dies unendliche Schleifen bilden können, insofern entstehende rückwirkende Änderungen eine Auswirkung auf Teile des Dokumentes vor dieser rückwirkenden Änderung haben könnten.
-\TeX{} löst dieses Problem durch diverse Hilfsdateien. Fehlende Informationen unterbrechen den Kompilierprozess nicht, sondern werden in diesen Dateien vermerkt. Dadurch kann der folgende Kompilierprozess diese Informationen nutzen und folglich entsteht ein Dokument.% kp was ich gerade fasel, muss einfach weiterarbeiten. . . . . . . . . .
-% Hendrik. Das wird nichts. gib auf. dein Studium hat dir dein Leben geraubt. bring dich um. 
-
-
-\paragraph*{Akute Änderungen}
-\subparagraph*{Beschreibung}
-Können bedenklich werden.
-
-
-\paragraph*{Vorgreifende Änderungen}
-\subparagraph*{Beschreibung}
-Sollte die Situation entstehen, dass ein Befehl in einem Dokument eine Veränderung in einem späteren Teil des Dokumentes verursacht, ist dies zunächst unbedenklich.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%% In Review. Richtige Inhalte, inadäquate Sortierung.
-%%%%%%%%%%%%%%%%%%%%%%
-
-
-\subsubsection{Hilfsdateien}% multi-file handling
-
-\paragraph{Struktur dieses Abschnittes}
-Eine Datei nutzt ein Literaturverzeichnis (Bib\TeX{}), pdf\TeX{} (\verb|\pdfcomment{}|), \verb|\footnote|, ein Inhaltsverzeichnis, ein Glossar, 
-
-\paragraph{Beispielliste}
-\subparagraph*{Inhaltsverzeichnisse, Abbildungsverzeichnisse, Tabellenlisten}
-\paragraph*{Beispiel}
-\paragraph*{Erläuterung}
-Ändern wir den Titel eines Paragraphen oder Abschnittes, dann erfasst dies der \TeX{} Compiler beim ersten Durchlauf. Jedoch der String im Inhaltsverzeichnis kann nur verändert werden, sobald diese Information zu Beginn des nächsten Kompilierungsprozesses in der entsprechenden Hilfsdatei vorliegt (\texttt{.toc}).
-
-\subparagraph{Backrefs}
-\paragraph*{Beispiel}
-Bedarf evtl.\ einer bildlichen Veranschaulichung. Meint: Inhaltsverzeichnis, Tabelle,\ldots vor einer \textit{backwards reference} verschiebt die echte Position der (Phantom-) Sektion. Daher muss zunächst bestimmt werden, wo im Dokument eine Referenz auf ein existierendes Label stattfindet, welches vorherig bereits vergeben wurde\pdfcomment{Ein Erneuern eines Labels via renewcommand ergibt keinen Sinn, da dieses forward references verfälschen würde.}.
-\paragraph*{Erläuterung}
-Ein Verweis auf einen vorherigen Paragraphen kann nur klickbar verlinkt werden, wenn die Information, an welcher Stelle er sich im Dokument befindet, bereits klar ist. Da nach der Referenz weitere Abschnitte folgen können, welche vorherige Elemente mit variabler Größe verändern könnten, muss zunächst die Größe dieser bestimmt sein und gegenüber dieser kann dann der 
-
-\subparagraph*{Literaturverzeichnisse}
-\paragraph*{Beispiel}
-\paragraph*{Erläuterung}
-
-\subparagraph*{PDF Funktionen}
-\paragraph*{Beispiel}
-\paragraph*{Erläuterung}
-
-\subparagraph*{\enquote{footnotes}}
-\paragraph*{Beispiel}
-\paragraph*{Erläuterung}
+%%%%% AB HIERRRRRRRRRRRRR GEHHHHHHTSS WEITER. BEDENKE ABSENDEFRIST BIS MIDNIGHT!
 
 
 
+% Bleibt die kontextuelle Richtigkeit bestehen? Wird beispielsweise aus einer Referenz ein anderer Kontext übermittelbar, welcher eine andere Übersetzung provoziert?
+\subsection{Sprachliche Semantik}\phantomsection\label{problems:linguistical}
+\subsubsection{Ausgangssituation}
+Probleme des vorherigen Teils~\ref{problems:technological} zu verhindern, stellt sowohl ein Kompilieren/Entstehen eines übersetzten Dokumentes sicher, als auch ein Erkennen alelr Inhalte von diesem. Dies ist jedoch als minimale~\hyperref[technologies:demands]{Anforderung} zu sehen sein. Die Fähigkeit alle Inhalte eines \LaTeX{} Dokumentes lesen zu können alleinig, zeigt sich jedoch als unausreichend, da das Übersetzen zwischen menschlichen Sprachen kontextuell in verschiedenen Lexemem (Wörtern) enden sollte.%\footnote{Das Übersetzen aus und in Gebärdensprachen ist vorerst nicht im Fokus. Denkbarer Ansatz wäre hier allerdings Dokumente mit Bildern zu erwarten, bei welchen man davon ausgeht, dass diese mit bekannten Methoden der Mustererkennung erkannt und in Wörter (wie sie in den lateinischen Sprachen verwendet werden) überführt werden können und dann maschinell ausgewertet werden können. Hierzu gibt es zahlreiche Technologien~\citep{expertSystemsWithApplications:rastgooRazie2021:signLanguageRecognitionADeepSurvey}, jedoch beschäftigt dies ein Übersetzen aus einer menschlichen Sprache nach \LaTeX{} und weicht damit von der gegebenen Aufgabenstellung ab. (Obwohl auch hierfür Ansätze existieren:~\cite{cornellComputerScienceComputerVisionPatternRecognition:korzhDmitrii2025:speechToLaTeXnewModelsAndDatasetsForConvertingSpokenEquationsAndSentences})}.
+% Hier die eigentliche Annahme
+Dieser Kontext kann einem Quellcode aus mehr als nur Wörtern entnommen werden. Das Bestimmen des Kontextes erfordert Kenntnis über \textit{bestimmte Elemente} eines Dokumentes, welche nicht vorhersehbar sind und charakterisiert werden könnten. Elemente dieser Art können sich verschieden äußern und sind nicht zwangsweise standardisiert, sodass das Einhalten von eventuell etablierten Paradigma (hinsichtlich einiger instituellen Kontexte) geprüft werden muss. 
+
+Vorangegangenes zeigt dementsprechend erneut eine üppige Menge an erwartbaren Problemen. Damit Grenzen der Realität erhalten bleiben, % siehe Commit: 2025-10-13
+müssen sich denkbare Anwendungsfälle von \LaTeX{} auf\ (z.B.) wissenschaftliche Arbeiten oder Veröffentlichungen konzentrieren und die dafür benötigten Darstellungsmöglichkeiten in den Vordergrund rücken (bspw.\ Zitationen, Tabellen, Formeln, Graphiken,\ldots).% Graphiken hier mit Beschreibung zu erwarten. Wird diese erfasst? Was wenn es sich um einfache Plots handelt, jedoch die Formel in der Caption nicht der Formel, welche eigentlich geplottet wird, gleicht? An welcher stelle wird der Kontext erfasst? Wie beim Lesen von oben nach unten oder _rein_ aus der Caption?
+Exemplarisch werdem daher Beispiele aufgezeigt, deren Phrasen einen Kontext tragen, der nicht aus der sprachlichen Satzstellung allein hervorgeht. 
+% Kontexte nicht aus der sprachlichen Satzstellung alleine hervorgehen.\\% Hier zu unterscheiden von: Wie könnten einzelne Wörter Fehler in TeX produzieren, schon behandelt.
 
 
 
-\paragraph{Abstrahiertes Problem}
-Falls auf Hilfsdateien zugegriffen wird, ist das mehrfache Kompilieren eines \LaTeX{} Dokumentes unvermeidbar. Gegeben $n_{h}$ womoglich existierenden Hilfsdateien, welche alle ihrerseits zu übersetzende Inhalte beinhalten können, folgt eine minimale Laufzeit $\mathcal{O}(n_h)$. 
-%Ein einmaliges Kompilieren eines \LaTeX{} Dokumentes ist unmöglich, falls ein Zugriff auf Hilfsdateien nötig ist.
+% Examplarische Beispiele: Wenn unendlich viele Beispiele theoretisch gesehen möglich wären, aber "unendlich viel" nicht in die Abschlussarbeit passt. 
+\subsubsection{Exemplarische Beispiele}
+\paragraph*{Autoren/Titel}% Hier wird noch davon ausgegangen: Alle Info's liegen in dem Dokument vor, eher weniger Bezug auf etwas Technisches. 
+%
+% Kann der Ansatz eigenständig recherchieren ist die Frage?
+%
+% Fokus auf einen (1) Autoren. Vielleicht ist (1) ja bekannt. Hey wie cool.
+%
+Das Erwähnen des wortwörtlichen Namens oder Titels eines Dokumentes/Werkes wäre innerhalb dieses normalerweise nicht zu erwarten, aber aus diesem lassen sich unter Umständen mehr Informationen über den Kontext gewinnen (und:\ beide sind normalerweise in der Präambel eines Dokumentes vorhanden). Handelt es sich um einen bekannten Autoren könnte der Name einen Kontext liefern (welcher jedoch im Vorwege nur als eine Heuristik angesehen werden kann, da der Autor authentifiziert werden muss) oder der Titel trägt den Namen von einer bekannten Methode aus einem wissenschaftlichen Gebiet oder nennt ein solches Gebiet. Denkbare Beispiele umfassen:\ 
+\enquote{$[\ldots]$\ of Communication}, \enquote{Bayesian $[\ldots]$}, \enquote{$[\ldots]$\ inference\ $[\ldots]$}
+(entnommen aus einigen \textit{subject areas} von ACM:\ Transactions on Probabilistic Machine Learning).
+Vergisst aber ein übersetzendes Programm diese Wörter des Titels an einer kritischen Stelle im Text, so würden fälschliche Übersetzungen entstehen.
 
+%
+% Kann der Ansatz eigenständig recherchieren ist die Frage?
+%
+% Fokus auf einen (1) Autoren. Vielleicht vermerkt er eine Referenz auf ein vorheriges Kapitel im Dokument? Kann er wörtlich mit Kapitel 2.1.x oder per \hyperref[chapter2:section1:paragraphx]
+%
+%
+\paragraph*{Dokumenten-interne Verweise}% Bezug auf Paragraphen im Werk mit \ref und Hyperref. Wieder technischeres Problem. Inhalte alle da, 
+Hyperreferenzen \enquote{erlauben} zunächst (scheinbar) recht wenig, implizieren jedoch eine Giganz an Möglichkeiten. Es wäre zu erwarten, dass jegliche Information, welche für die Übersetzung eines Satzes erforferlich ist, textlich vorliegt. \TeX{} erlaubt es allerdings auf solch einen Kontext zu referenzieren (via:\ \texttt{ref} oder \texttt{hyperref}) und ihn dadurch zu \textit{implizieren}, statt zu nennen.
+
+
+\paragraph*{Externe Referenzen}% beinhält: wild reingeknallte links. nicht best practise, aber entstandener Software auf der ersten Seite einen Link zu einem git anzugeben (Fußnote) ist ganz nett für Spätere. Hier: Ohne BibTeX!)
+%
+% Kann der Ansatz eigenständig recherchieren ist die Frage? 
+% 
+% Fokus ist nicht auf dem einen Autoren, der ein Werk schreibt, sondern ein beliebiges Werk, welches sich auf die Arbeiten anderer bezieht
+%
+In \LaTeX{} kann auf verschiedene Arten und Weisen auf anderweitige Quellen verwiesen sein. 
+
+
+%
+% Kann der Ansatz das Dokument verstehen ist die Frage?
+%
+% 
+%
+\paragraph*{Formeln, Tabellen}
+
+
+
+\paragraph*{Graphiken}% Eig nicht so recht lösbar, nur annäherbar. Hierauf wird näher im "spezifische Technologien" Part eingegangen. Bedarf evtl. Hilfe des Users (ein wenig kästchen umherschieben, bis es "so gut wie möglich" alles lesbar ist)
+
+
+
+
+
+
+
+\begin{comment}
 
 %%%%%%%%%% Für später relevant, für Makros und beliebige Nutzereingaben etc......:!:!:!!::!!::!
 %Die Möglichkeiten andere Dateien in einem \LaTeX{} Dokument einzubeziehen, könnten nähern sich einer Unendlichkeit.% Warum? ist schwer zu beantworten, daher sollte man sich zunächst vor Augen führen, für welche Zwecke man auf andere Dokumente innerhalb eines Dokumentes verweisen möchte. // Warum eine Unendlichkeit? Es gibt unendlich viele Unendlichkeiten. Beweis bitte von Prof. Cap
@@ -263,33 +250,41 @@ Einfache Cloud-Architektur. Ein Client möchte auf ein beliebiges Wissen einer W
 
 
 
-\subsubsection{Figuren und Tabellen}\phantomsection\label{problems:advanced:tables}
-\paragraph*{Beispiele}
-\paragraph*{Beschreibungen}
-\paragraph*{Abstrahierung}
+%\subsubsection{Figuren und Tabellen}\phantomsection\label{problems:advanced:tables}
+%\paragraph*{Beispiele}
+%\paragraph*{Beschreibungen}
+%\paragraph*{Abstrahierung}
 
-\subsubsection{Literaturverzeichnisse}\phantomsection\label{problems:advanced:bibtex}
-\paragraph*{Beispiele}
-\paragraph*{Beschreibungen}
-Bib\TeX{} erlaubt es an vielerlei Stelle eigene Strings in einer kompilierten \TeX{}-Datei zu verbergen.
-\paragraph*{Abstrahierung}
-
-
-\subsubsection{Category Codes}\phantomsection\label{problems:advanced:catcode}
-\paragraph*{Beispiele}
-\paragraph*{Beschreibungen}
-\paragraph*{Abstrahierung}
+%\subsubsection{Literaturverzeichnisse}\phantomsection\label{problems:advanced:bibtex}
+%\paragraph*{Beispiele}
+%\paragraph*{Beschreibungen}
+%Bib\TeX{} erlaubt es an vielerlei Stelle eigene Strings in einer kompilierten \TeX{}-Datei zu verbergen.
+%\paragraph*{Abstrahierung}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsubsection{Category Codes}\phantomsection\label{problems:advanced:catcode}
+%\paragraph*{Beispiele}
+%\paragraph*{Beschreibungen}
+%\paragraph*{Abstrahierung}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%% In Review. Richtige Inhalte, inadäquate Sortierung.
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{comment}
+
+\subsection{Spezifischer Technologien}\phantomsection\label{problems:special}% Verändern die Übersetzung nicht direkt / Können diese nicht direkt verändern, jedoch Unleserlichkeiten (unschön anzusehen) oder Unlesbarkeiten (nicht zu sehen) im kompilierten Dokument erzeugen
+% Mitunter NP-schwer (zur behebung dieser muss man meist heuristiken eingehen. was ist eine heuristik? an sich gar nichts, meint nur, dass wir fehler zulassen (bzw. eine fehlerwahrscheinlichkeit)).
+Hier wenden wir uns von Problemen einer Übersetzung ab und widmen uns denen eines Lesers. Alle textlichen Inhalte eines Dokumentes zu übersetzen, als auch eine kontextuelle Fachsprache zu bewahren scheint aus abstrakterer Perspektive ausreichen, kann allerdings zu Situationen führen, in welchen Informationen verloren gehen, da diese vom Endnutzer nicht mehr gesehen werden können.% Meint: Wirklich gesehen, da in der PDF hinter etwas Anderem verborgen 
+% Passiert wann? Fläche, welche die Texte benötigen werden nach der Übersetzung grßer
+% Dazu: Wie viel Fläche braucht die Sprache mit geringster Flächer (für alle grammatikalisch richtigen Wortkombinationen?)
+% Dazu: Wie viel Fläche braucht die Sprache mit größter Flächer (für alle grammatikalisch richtigen Wortkombinationen?)
+%%% Wie zu bestimmen: folgt.
 
 
 
-
-\subsection{Spezifischer Technologien}\phantomsection\label{problems:special}
-Mitunter NP-schwer.
 \subsubsection{Kommentare}\phantomsection\label{problems:advanced:comments}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
@@ -297,7 +292,7 @@ Mitunter NP-schwer.
 %- kann jedoch auch~\ref{problems:verticalSpacing} umfassen
 Wohingegen sich~\ref{problems:advanced:comments} nicht mit anderen, in Kommentaren referenzierten, Dateien beschäftigt, soll sich hier auf solche Fälle konzentriert werde.
 \paragraph*{Abstrahierung}
-Hier treffen simple Fehler aus den ersten drei Kategorien (in~\ref{problems:dim0},~\ref{problems:dim1} und~\ref{problems:dim2} geschildert) aufeinander. In die dritte Dimension, also in andere Dateien, wird jedoch (\hyperref[problems:special:comments]{vorerst}) nicht traversiert, da auskommentierte Datei-Einbindungen nicht erfasst werden dürften. 
+Hier treffen technische Fehler aus den ersten drei Kategorien (in~\ref{problems:dim0},~\ref{problems:dim1} und~\ref{problems:dim2} geschildert) aufeinander. In die dritte Dimension, also in andere Dateien, wird jedoch (\hyperref[problems:special:comments]{vorerst}) nicht traversiert, da auskommentierte Datei-Einbindungen nicht erfasst werden dürften. 
 Ausgehend von~\ref{problems:advanced:comment} wird nun erwartet, dass eine Referenzierung von Dateien erwartet wird, welche sich in Kommentaren verbergen. Dies kann jedoch~\ref{problems:special:sourcecode} beinhalten.
 
 
@@ -325,7 +320,10 @@ Quelltexte anderer Quellsprachen (Programmiersprachen) können ihrerseits auf an
 
 
 
-\subsection{Sprachliche Schwierigkeiten}\phantomsection\label{problems:additional}
+\subsection{Weitere Schwierigkeiten}\phantomsection\label{problems:additional}
+\paragraph*{Kommentare}
+
+
 \subsubsection{Glossare und Nomenklaturen}
 \paragraph*{Beispiele}
 \paragraph*{Beschreibungen}
