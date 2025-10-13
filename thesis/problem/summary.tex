@@ -1,0 +1,41 @@
+% Zusammenfassung der Inhalte und Ziele der jeweiligen Kapitel
+\section{Problemfälle}% 
+Schildert alle denkbaren Probleme, auf die ein Übersetzungsprogramm stoßen könnte, wenn es nicht weiß, dass ein \LaTeX{} Dokument vorliegt.
+\subsection{Technische Semantik}% Die allgemeine Ausgangslage ist ein unbekanntes Dokument, von einem beliebigen Autoren und Schilderung erfolgt unabhängig von den eigentlichen Inhalten des Dokumentes (im Sinne: "leeres" Dokument, unbedeutend, aber LaTeX).
+Listet die Probleme, welche Unverständnis für \LaTeX{} produzieren (hier:\ übergreifend, meint:\ die Organisation dahinter).
+Hier noch kein Fokus auf menschensprachliche Inhalte, denn die sprachliche Semantik würde vollständig verloren gehen, sollte ein Dokument nicht produzierbar werden.
+
+\subsubsection{Ausgangssituation (Was macht diese Art von Fehler anders als die danach?)}
+\subsubsection{Exemplarische Beispiele}
+\begin{itemize}
+    \item Sonderzeichen 0d
+    \item Leerzeichen 1d
+    \item Zeilenbrüche 2d
+    \item Dokumentenbrüche 3d
+\end{itemize}
+
+\subsection{Sprachliche Semantik}% Die allgemeine Ausgangslage ist ein Dokument, welches Inhalte trägt, aus welchen Rückschlüsse auf die Inhalte möglich sind (bspw. Autoren, Titel, Referenzen, ...). Dokument lässt Rückschlüsse auf die eigentlichen Inhalte zu, aber diese gehen aus dem Quellcode nicht hervor.
+Listet die Probleme, welche kontextuell falsche Übersetzungen provozieren. An einigen Stellen eignet sich evtl.\ Google Translate aus technischen Gründen nicht mehr zur Demonstration.
+Fokus auf Vorgaben, wie Quellverweise, welche den Kontext des Satzes abhängig von diesen Referenzen ändern und dadurch andere Wörter produzieren sollten.
+Kontext-Quellen:
+\subsubsection{Ausgangssituation (Was macht diese Art von Fehler anders als die danach?)}
+\subsubsection{Exemplarische Beispiele}
+\begin{itemize}
+    \item Titel/Autoren,
+    \item Dokumenten-interne Verweise/Referenzen
+    \item Externe Referenzen
+    \item Formeln/Tabellen
+    \item Graphiken
+    \item \ldots
+\end{itemize}
+
+\subsection{Spezifischer Technologien}
+Listet die Probleme, welche spezielle Techniken berücksichtigen müssten.\\
+Meint:\ Mehrfach-Kompilation erforderlich? Wurde bspw.\ ein Kapiteltitel (o.Ä.) übersetzt (table of contents o.Ä)?\\
+Meint:\ Fokus auf entstehende Layouting-Probleme durch den unterschiedlichen Platzbedarf geschriebener Sprachen.\\
+Meint auch:\ Übersetzen von Quellcodes anderer Programmiersprachen.\\
+Meint auch:\ Dilemmas, die durch Makros entstehen könnten.\\
+Meint hier endlich:\ Catcode.\\
+
+\subsection{Weitere Schwierigkeiten}
+Alltagsbeispiele. Abkürzungen. 

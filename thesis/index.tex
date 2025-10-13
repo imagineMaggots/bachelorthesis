@@ -39,24 +39,25 @@
     showstringspaces=false,
     showtabs=false,
 	frame=single,
+	xleftmargin=13pt,
 	aboveskip=13pt,
 	%
 	% Indentation
 	tabsize=2,
-	breakindent=10pt,
+	breakindent=13pt,
     framesep=2mm,
     framerule=0mm,
     abovecaptionskip=5mm,
     aboveskip=\baselineskip,
     belowskip=\baselineskip,
-	lineskip=.13ex,
-	postbreak=\raisebox{0ex}[0ex][0ex]{\tiny\tiny>>}, % \rule[Offset (Y)]{Breite}{Höhe}, hiermit nochmal rumspielen. 
+	lineskip=1ex,
+	postbreak=\raisebox{0ex}[0ex][0ex]{\tiny\tiny$\hookrightarrow$}, % \rule[Offset (Y)]{Breite}{Höhe}, hiermit nochmal rumspielen. 
 	% Captions
     captionpos=b,                    
     keepspaces=true,    
 	% Linenumbers
     numbers=left,      % where to place numbers
-    numbersep=1pt,     % distance to the (here) left   
+    numbersep=0pt,     % distance to the (here) left   
     % Encodings
 	inputencoding=utf8,
 	extendedchars=true,
@@ -86,9 +87,9 @@
 		listing options={style=texstyle, xleftmargin=-1mm},
 		after upper={\centering\strut\TeX{} Code~\thetcbcounter:~#2},
         frame hidden,
-		arc=5pt,
+		arc=13pt,
 		outer arc=13pt,
-		boxrule=5pt,
+		boxrule=2pt,
         listing file = {#3}, #1
 }
 
