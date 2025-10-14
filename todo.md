@@ -1,6 +1,5 @@
 ## List of tasks
 ### repetitive / iteration
-- meeting with prof (?)
 - expand to-do list as much as needed
 - finish tasks
 
@@ -19,6 +18,8 @@
 
 #### Idea 1: more details
 - if this gets to large, place in seperate file
+- if file gets to large, place in folder and use more files
+- if folder gets to large, divide and conquor -> seperation of concerns -> reduce redundancies -> new ideas
 - continue further
 
 #### Idea 2: more details
@@ -31,7 +32,8 @@
 #### Idea 3: more details
 - if this gets to large, place in seperate file
 - continue further
+- see idea 1
 
-## Done; Never-Ending Protocol; nice-to-have
+## Done; Never-Ending Protocol; nice-to-have, but not necessary
 - create a protocol template
 - create an examplary to-do-list
