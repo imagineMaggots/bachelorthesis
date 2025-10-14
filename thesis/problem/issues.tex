@@ -14,7 +14,7 @@ Aus kurzer Nachverfolgung und Einschätzung dieser Probleme werden anschließend
 
 
 % Bleibt die Bedeutung für die TeX-Engine bestehen?
-\subsection{Technische Semantik}\phantomsection\label{problems:technological}
+\subsection{Technische Bedeutung}\phantomsection\label{problems:technological}
 % Hiermit sagen wir: Punkte/Elemente der nullten Dimension sind veränderbar.
 \subsubsection{Sonderzeichen}\phantomsection\label{problems:dim0}
 Manche menschliche Sprachen beinhalten gelegentlich Zeichen, welche keine direkte Bedeutung tragen und kein Teil auch nur eines Wortes der Sprache sind. Denkbare Beispiele hierfür sind Klammern, die (üblicherweise) für ein impliziert Erwähntes, allerdings nicht vorzeiglich verwendetes Wort genutzt werden.% Meint: Eigentlich sollte man das Wort dort nicht oder nicht unbegründet verwenden, jedoch passt es gerade im Redefluss, um den Kontext schneller rüberzubringen (und mit schneller ist immer "besser" verbunden)
@@ -38,6 +38,8 @@ Stilistische Mittel für Texte sind prinzipiell nicht an spezifische Zeichen geb
 
 \paragraph*{Vermutung}
 Fraglich ist, warum \texttt{label} nicht erfasst werden sollte, obwohl die folgenden drei Wörter übersetzt werden. Ein String, welcher menschliche Sprache mit Sonderzeichen vermischt, kann dahingehend interpretiert werden, dass diese Sonderzeichen \textit{wie} Klammern verwendet werden. Seinerseits könnte \verb|:| also nicht als bekanntes \enquote{geteilt} aufgefasst werden, sondern als Klammern. Ersetzt man diese Klammern mit Leerzeichen resultiert aus dem ersten Beispiel \verb|\label problem encounter solve| und in zweitem Beispiel \verb|\section example|. Zu sehen ist hier also bereits, dass Google Translate bei einer, wenn man es so interpretieren möchte, \enquote{Vernestung} zweiten Grades scheitert, jedoch einfache Vernestungen noch erkennt\footnote{\enquote{Vernestung} meint die Verschachtelung von Klammern}.
+
+\newpage
 
 \paragraph*{Takeaway}
 Teile der \TeX{}-Syntax lassen sich anhand von \verb|\|, \verb|{|, \verb|}|, \verb|[|, \verb|]|, \verb|$|, \verb|$$| oder \verb|\%| erkennen und müssten daher ausgeschlossen werden. Anders als in mathematischen Formeln zeigen sich Sonderzeichen jedoch nicht paarweise auf, sodass sie nicht paarweise ignoriert werden können. Man kann sich diese Art von Fehlern wie 0-dimensionale Fehler vorstellen, wobei die nullte Dimension hierbei bei einem einzelnen Wort beginnt (welche als Punkte verstanden werden).% von mir zumindest
@@ -67,16 +69,17 @@ Hierunter fallen meist freistehende Worter, welche als Parameter für verschiede
 \paragraph*{Verdeutlichung}% Warum das ein Problem ist
 Die Optionen innerhalb eckiger Klammern lassen Whitespace zu. Dies kann jedoch für die Nutzung einiger Funktionen in z.B.\ wichtigen Paketen wie \texttt{hyperref} dazu führen, dass falsche Wörter übersetzt werden, die ein Kompilieren des Dokumentes verhindern.
 
+\newpage
 \paragraph*{Takeaway}% ich nutze "take-away" statt "lessons-learned", da "lessons-learned" bwl-talk ist.........!
 Teile der \TeX-Syntax lassen sich nicht nur anhand der~\hyperref[problems:unexpectedCharacters]{zuvor} beschriebenen Zeichenketten erkennen, sondern lassen sich auch in Zeilen wiederfinden. Diese Art von Fehlern bahnt den Weg zu einer Dimension, wodurch nicht nur innerhalb eines Wortes (Punktes), sondern auch zwischen verschiedenen Punkten Fehler entstehen könnten (also innerhalb einer Zeile).
 
 
+
+
+
+
+
 \newpage
-
-
-
-
-
 
 
 
@@ -105,8 +108,6 @@ Abstrahiert man nun über einzelne Zeilen hinweg, so wird die folgende Art von F
 \newpage
 
 
-
-
 % Hiermit sagen wir: Körper/Elemente der dritten Dimension sind veränderbar.
 \subsubsection{Dokumentenbrüche}\phantomsection\label{problems:dim3}
 Noch abstrakter wird hier die dritte Dimension erreicht, indem Teile von \TeX{} nicht in einer einzelnen Datei vorliegen müssen, sondern auch in anderen Dateien vorliegen könnten. Diese Tasache wirft eine Vielzahl neuer (und teilweise system-abhängiger) Probleme auf. Hier wurd sich zunächst jedoch nur auf die Fähigkeiten der unveränderten \TeX{}-Engine konzentriert und deren vorgesehene Primitiven (für diesen Zweck).
@@ -133,7 +134,7 @@ Noch abstrakter wird hier die dritte Dimension erreicht, indem Teile von \TeX{} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% AB HIERRRRRRRRRRRRR GEHHHHHHTSS WEITER. BEDENKE ABSENDEFRIST BIS MIDNIGHT!
-
+\newpage
 
 
 % Bleibt die kontextuelle Richtigkeit bestehen? Wird beispielsweise aus einer Referenz ein anderer Kontext übermittelbar, welcher eine andere Übersetzung provoziert?
