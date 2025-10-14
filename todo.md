@@ -1,23 +1,37 @@
-## ToDos
-### Organization
+## List of tasks
+### repetitive / iteration
 - meeting with prof (?)
-- expand to-do list
+- expand to-do list as much as needed
+- finish tasks
 
-### Problems
+### current projects
+- thesis
+- project
 
-### Ideas
-- 1
-- 2 
-- 3
+### deadlines (with regards to those projects)
+- thesis (2nd of december 2025)
+- project (none, because: thesis)
 
-#### Idea 1
-- if this gets to large, put in seperate file
+### new ideas
+- 1 (project): brief description
+- 2 (thesis): this file
+- 3 (project): brief description
 
-#### Idea 2
-- if this gets to large, put in seperate file
+#### Idea 1: more details
+- if this gets to large, place in seperate file
+- continue further
 
-#### Idea 3
-- if this gets to large, put in seperate file
+#### Idea 2: more details
+- life has lead me to a point, that required me to think about "how do i write a proper to-do-list"
+- this is incomprehensible, even to myself
+- could bring some structure into whatever i have been doing the past four-five months
+- will probably talk with a prof about this
+- five bullet points should be the limit, before reserving a new file i suppose
 
-## Done's, can be as long as you want, but keep as brief as possible/comprehendeble
+#### Idea 3: more details
+- if this gets to large, place in seperate file
+- continue further
+
+## Done; Never-Ending Protocol; nice-to-have
 - create a protocol template
+- create an examplary to-do-list
