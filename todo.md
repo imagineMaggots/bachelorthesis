@@ -1,9 +1,10 @@
 ## ToDos for this project
-### recent progress
+### recent progress (in)
 - introduction
-- problems
+- examplary problems
+- current technological standards
 
-### To Do
+### To Do till next meeting
 - edit headings (see meeting from 14th of october 2025)
 - edit introduction (see meeting from 14th of october 2025)
 - edit list of exemplary problems (see meeting from 14th of october 2025)
@@ -12,5 +13,15 @@
 - none as of now
 
 ### summary of progress so far
-- Introduction has been layed out, but needs updates.
-- List of examplary problems has been partially layed out.
+- structure of document
+    - introduction, examples (of problems), current technological standards, contribution, conclusion
+- introduction
+    - Introduction has been layed out, but needs updates.
+- problem (examples)
+    - List of examplary problems has been partially layed out.
+- current technological standards
+    - structure has been proposed
+- own contribution
+    - structure has been (kinda) approved (unintentionally)
+    - needs updates
+- conclusion

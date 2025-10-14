@@ -1,5 +1,5 @@
 ## ToDo's for this project
-### recent progress
+### recent progress (like 1 week-ish)
 - contains sections of work worked on
 
 ### To Do
