@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  13 OCT 2025 19:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  14 OCT 2025 08:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1294,8 +1294,9 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [toc,multi].
 
-(index.aux (introduction/short.aux) (problem/issues.aux) (technologies/tek.aux)
-(solution/desc.aux) (conclusion/ending.aux) (appendices/appendix.aux))
+(index.aux (introduction/short.aux) (problem/issues.aux)
+(technologies/summary.aux) (solution/desc.aux) (conclusion/ending.aux)
+(appendices/appendix.aux))
 \openout1 = `index.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 161.
@@ -1671,11 +1672,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[4]
 
-LaTeX Warning: Hyper reference `problems:unexpectedCharacters' on page 4 undefi
-ned on input line 71.
+LaTeX Warning: Hyper reference `problems:unexpectedCharacters' on page 5 undefi
+ned on input line 74.
 
-[4] (../examples/technical/2d/correct_original.tex)
+[5] (../examples/technical/2d/correct_original.tex)
 (../examples/technical/2d/correct.tex)
 (../examples/technical/2d/wrong_original.tex)
 (../examples/technical/2d/wrong.tex)
@@ -1686,11 +1688,8 @@ ned on input line 71.
 (../examples/technical/2d/correct_original.tex)
 (../examples/technical/2d/correct.tex)
 (../examples/technical/2d/wrong_original.tex)
-(../examples/technical/2d/wrong.tex)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5] (../examples/technical/3d/correct_original.tex)
+(../examples/technical/2d/wrong.tex) [6]
+(../examples/technical/3d/correct_original.tex)
 (../examples/technical/3d/correct.tex)
 (../examples/technical/3d/wrong_original.tex
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\ts1zi4.fd))
@@ -1702,38 +1701,20 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 (../examples/technical/3d/correct_original.tex)
 (../examples/technical/3d/correct.tex)
 (../examples/technical/3d/wrong_original.tex)
-(../examples/technical/3d/wrong.tex)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Hyper reference `technologies:demands' on page 6 undefined on in
-put line 141.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--145
-
- []
-
-[6] [7{C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/
-i4-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
-
- []
-
-[8]
+(../examples/technical/3d/wrong.tex) [7{C:/Users/Sxyx/AppData/Local/Programs/Mi
+KTeX/fonts/enc/dvips/inconsolata/i4-ts1.enc}] [8]
 
 LaTeX Warning: Hyper reference `problems:special:comments' on page 9 undefined 
-on input line 291.
+on input line 296.
 
 
 LaTeX Warning: Reference `problems:advanced:comment' on page 9 undefined on inp
-ut line 292.
+ut line 297.
 
 [9]) [10]
-\openout2 = `technologies/tek.aux'.
+\openout2 = `technologies/summary.aux'.
 
- (technologies/tek.tex) [11
+ (technologies/summary.tex) [11
 
 
 
@@ -1756,14 +1737,14 @@ ut line 292.
 
 
 ] (index.bbl
-Underfull \hbox (badness 1533) in paragraph at lines 17--23
+Underfull \hbox (badness 1533) in paragraph at lines 8--14
 []\T1/cmss/m/n/10.95 Lamport, L. (1994), \T1/cmss/m/it/10.95 La-TeX: A Do-cu-me
 nt Pre-pa-ra-ti-on Sys-tem, 2nd Edi-ti-on, ISBN: 9780201529838\T1/cmss/m/n/10.9
 5 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--23
+Underfull \hbox (badness 10000) in paragraph at lines 8--14
 \T1/cmss/m/n/10.95 Addison-Wesley Pro-fes-sio-nal.  availa-ble at: [][]$\T1/zi4
 /l/it/10.95 https : / / www . latex-[]project . org / help / books /
  []
@@ -1780,7 +1761,7 @@ LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample1.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample1.pdf, id=515, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample1.pdf, id=510, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample1.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample1.pdf>
 Package pdftex.def Info: appendices/fontscalingexample1.pdf  used on input line
@@ -1791,7 +1772,7 @@ Missing character: There is no ; in font nullfont!
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample2.pdf, id=518, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample2.pdf, id=513, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample2.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample2.pdf>
 Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
@@ -1803,11 +1784,11 @@ Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
 >]
-runsystem(latexminted cleantemp  --timestamp 20251013190434 6A992D5529F459A44FE
+runsystem(latexminted cleantemp  --timestamp 20251014082817 6A992D5529F459A44FE
 E58C733255E86)...disabled (restricted).
 
  (index.aux (introduction/short.aux) (problem/issues.aux)
-(technologies/tek.aux) (solution/desc.aux) (conclusion/ending.aux)
+(technologies/summary.aux) (solution/desc.aux) (conclusion/ending.aux)
 (appendices/appendix.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1820,20 +1801,17 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: 4A29CEAB63CD394F56A2383BA85EDCBB;2691.
+(rerunfilecheck)             Checksum: 20A0DCAF35B883FB5023DDABC670A8A8;2700.
  ) 
 Here is how much of TeX's memory you used:
- 51037 strings out of 474485
- 1208277 string characters out of 5744206
- 2105542 words of memory out of 5000000
- 72200 multiletter control sequences out of 15000+600000
+ 51030 strings out of 474485
+ 1207357 string characters out of 5744206
+ 2059542 words of memory out of 5000000
+ 72189 multiletter control sequences out of 15000+600000
  579286 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,17n,117p,1803b,2470s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,17n,117p,1449b,2470s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/I
 nconsolata-zi4r.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmmi10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/
@@ -1852,9 +1830,9 @@ lic/cm-super/sfsx1200.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/cm-super/sfsx1440.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/cm-super/sfsx2074.pfb><C:/Users/Sxyx/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/cm-super/sfsx2488.pfb>
-Output written on index.pdf (21 pages, 804080 bytes).
+Output written on index.pdf (21 pages, 797882 bytes).
 PDF statistics:
- 663 PDF objects out of 1000 (max. 8388607)
- 185 named destinations out of 1000 (max. 500000)
+ 659 PDF objects out of 1000 (max. 8388607)
+ 189 named destinations out of 1000 (max. 500000)
  348 words of extra memory for PDF output out of 10000 (max. 10000000)
 

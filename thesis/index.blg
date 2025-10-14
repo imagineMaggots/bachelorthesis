@@ -7,8 +7,8 @@ Reallocating 'name_of_file' (item size: 1) to 23 items.
 A level-1 auxiliary file: introduction/short.aux
 Reallocating 'name_of_file' (item size: 1) to 19 items.
 A level-1 auxiliary file: problem/issues.aux
-Reallocating 'name_of_file' (item size: 1) to 21 items.
-A level-1 auxiliary file: technologies/tek.aux
+Reallocating 'name_of_file' (item size: 1) to 25 items.
+A level-1 auxiliary file: technologies/summary.aux
 Reallocating 'name_of_file' (item size: 1) to 18 items.
 A level-1 auxiliary file: solution/desc.aux
 Reallocating 'name_of_file' (item size: 1) to 22 items.
@@ -17,44 +17,44 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: appendices/appendix.aux
 Database file #1: index.bib
-You've used 4 entries,
+You've used 2 entries,
             2909 wiz_defined-function locations,
-            665 strings with 6142 characters,
-and the built_in function-call counts, 21097 in all, are:
-= -- 3450
-> -- 314
+            654 strings with 5201 characters,
+and the built_in function-call counts, 3817 in all, are:
+= -- 574
+> -- 48
 < -- 0
-+ -- 1711
-- -- 98
-* -- 1844
-:= -- 4206
-add.period$ -- 5
-call.type$ -- 4
-change.case$ -- 54
-chr.to.int$ -- 4
-cite$ -- 4
-duplicate$ -- 54
-empty$ -- 111
-format.name$ -- 108
-if$ -- 3773
++ -- 251
+- -- 14
+* -- 278
+:= -- 866
+add.period$ -- 3
+call.type$ -- 2
+change.case$ -- 26
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 32
+empty$ -- 59
+format.name$ -- 18
+if$ -- 665
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 4
-newline$ -- 16
-num.names$ -- 42
-pop$ -- 31
+newline$ -- 10
+num.names$ -- 20
+pop$ -- 17
 preamble$ -- 1
-purify$ -- 60
+purify$ -- 30
 quote$ -- 0
-skip$ -- 43
+skip$ -- 19
 stack$ -- 0
-substring$ -- 4943
-swap$ -- 4
-text.length$ -- 56
+substring$ -- 767
+swap$ -- 2
+text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 12
+type$ -- 4
 warning$ -- 0
-while$ -- 84
+while$ -- 42
 width$ -- 0
-write$ -- 56
+write$ -- 28
