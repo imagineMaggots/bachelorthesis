@@ -1,0 +1,5 @@
+- Re-evaluate "recent progress" daily
+- Update: "To Do until the next meeting"
+- Work on: "To Do list" in general, with regards to "summary of progress made so far" (or whatever i called it)
+- Determine: Issues. Are there some issues that i just can't seem to resolve over a longer span of time?
+- Add to "summary of progress over all" if possible!

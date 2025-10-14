@@ -1,39 +1,27 @@
-## List of tasks
-### repetitive / iteration
-- expand to-do list as much as needed
-- finish tasks
+## ToDos for this project
+### recent progress (in)
+- introduction
+- examplary problems
+- current technological standards
 
-### current projects
-- thesis
-- project
+### To Do till next meeting
+- edit headings (see meeting from 14th of october 2025)
+- edit introduction (see meeting from 14th of october 2025)
+- edit list of exemplary problems (see meeting from 14th of october 2025)
 
-### deadlines (with regards to those projects)
-- thesis (2nd of december 2025)
-- project (none, because: thesis)
+### Issues
+- none as of now
 
-### new ideas
-- 1 (project): brief description
-- 2 (thesis): this file
-- 3 (project): brief description
-
-#### Idea 1: more details
-- if this gets to large, place in seperate file
-- if file gets to large, place in folder and use more files
-- if folder gets to large, divide and conquor -> seperation of concerns -> reduce redundancies -> new ideas
-- continue further
-
-#### Idea 2: more details
-- life has lead me to a point, that required me to think about "how do i write a proper to-do-list"
-- this is incomprehensible, even to myself
-- could bring some structure into whatever i have been doing the past four-five months
-- will probably talk with a prof about this
-- five bullet points should be the limit, before reserving a new file i suppose
-
-#### Idea 3: more details
-- if this gets to large, place in seperate file
-- continue further
-- see idea 1
-
-## Done; Never-Ending Protocol; nice-to-have, but not necessary
-- create a protocol template
-- create an examplary to-do-list
+### summary of progress so far
+- structure of document
+    - introduction, examples (of problems), current technological standards, contribution, conclusion
+- introduction
+    - Introduction has been layed out, but needs updates.
+- problem (examples)
+    - List of examplary problems has been partially layed out.
+- current technological standards
+    - structure has been proposed
+- own contribution
+    - structure has been (kinda) approved (unintentionally)
+    - needs updates
+- conclusion
