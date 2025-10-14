@@ -1,42 +1,16 @@
-## ToDos
-### Organization
-- meeting with prof (?)
-- expand to-do list
+## ToDos for this project
+### recent progress
+- introduction
+- problems
 
-### Problems
+### To Do
+- edit headings (see meeting from 14th of october 2025)
+- edit introduction (see meeting from 14th of october 2025)
+- edit list of exemplary problems (see meeting from 14th of october 2025)
 
-### Ideas
-- 1
-- 2 
-- 3
+### Issues
+- none as of now
 
-#### Idea 1
-- if this gets to large, put in seperate file
-
-<<<<<<< Updated upstream
-#### Idea 2
-- if this gets to large, put in seperate file
-=======
-#### Idea 1: more details
-- if this gets to large, place in seperate file
-- if file gets to large, place in folder and use more files
-- if folder gets to large, divide and conquor -> seperation of concerns -> reduce redundancies -> new ideas
-- continue further
->>>>>>> Stashed changes
-
-#### Idea 3
-- if this gets to large, put in seperate file
-
-<<<<<<< Updated upstream
-## Done's, can be as long as you want, but keep as brief as possible/comprehendeble
-- create a protocol template
-=======
-#### Idea 3: more details
-- if this gets to large, place in seperate file
-- continue further
-- see idea 1
-
-## Done; Never-Ending Protocol; nice-to-have
-- create a protocol template
-- create an examplary to-do-list
->>>>>>> Stashed changes
+### summary of progress so far
+- Introduction has been layed out, but needs updates.
+- List of examplary problems has been partially layed out.

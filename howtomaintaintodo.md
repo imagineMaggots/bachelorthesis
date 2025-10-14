@@ -1,0 +1,5 @@
+- Re-evaluate "recent progress"
+- Update: To Do list
+- Work on: To Do list
+- Determine: Issues. Are there some issues that i just can't seem to resolve over a longer span of time?
+- Add to "summary of progress over all" if possible!
