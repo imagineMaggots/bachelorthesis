@@ -2,9 +2,11 @@
 ### recent progress (like 1 week-ish)
 - contains sections of work worked on
 
-### To Do
-- see
-- above
+### To Do (real)
+- one smaller list of my actual current goals (to do's)
+
+### To Do (expanded)
+- a bigger list, based on these current goals, with further sub-tasks (might include unnecessities)
 
 ### Issues
 - are there any?

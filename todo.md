@@ -1,37 +1,37 @@
-## ToDos for this project
-### recent progress (in)
-- introduction
-- examplary problems
-- current technological standards
+Main To-Do-List for this thesis.
+- introduce the reader into topic 
+    - start with basic examples of the given problem
+    - mention related/similar problems, but differentiate from the currently studied one ("differentiate" as in: to detect differences)
+    - consider you peers: this part has to make clear wether the contents are relevant to their respective work or not
+    - see: ![~/thesis/introduction](thesis/introduction/todo.md)
+- think of the problems that could arise when dealing with your given problem, in this case: the translation of LaTeX-formatted documents 
+    - start with easy to understand problems, similar to the ones in the introduction
+    - work on more complicated ones, leading up to very niche ones (while making sure every example is unique)
+    - sort/fit each kind of problem/example into a structure that makes sense in the table of contents
+    - see: ![~/examples](examples/todo.md) and ![~/thesis/problems](thesis/problems/todo.md)
+- determine the current technologies, which could tackle these problems
+    - list these in a logical order
+    - determine this order by thinking of workflows
+    - each workflow will go different routes going from .tex to .pdf
+    - argue against inherently flawed workflows, which thus won't be tested
+    - see: ![~/thesis/technologies](thesis/technologies/todo.md)
+- test these workflows
+    - find a common ground in all those workflows (in this case: input remains the same)
+    - what are the outputs?
+    - are there any listed problems unsolved?
+    - see: ![~/tests](tests/todo.md) and ![~/thesis/tests](thesis/tests/todo.md)
+- solve unsolved problems or consider your own contribution
+    - is there anything left unsolved?
+    - are there problems that are theoretically unsolvable, but can be circumnavigated via a clever heuristic?
+    - see: ![~/thesis/solution](thesis/contribution/todo.md)
+- reflect on the work done
+    - what similar/related work could enhance the current technology or has an entirely different approach to a different problem, that _could_ also work, when abstracting from the specific technology and thinking about the problems more generally (mathematically)
+    - consider the ethics of any work replacing a human job (i.e. automating things)
+    - conclude however you want. honestly at that point even a clever one-liner is fine.
+    - clean-up git-repository (thesis is more important than the git you're working in)
+    - see: ![~/thesis/conclusion](thesis/conclusion/todo.md)
 
-### To Do till next meeting
-- edit general structure (see meeting from 14th of october 2025)
-- edit introduction (see meeting from 14th of october 2025)
-    - see examples in "introduction"
-    - work on int. 
-- edit list of exemplary problems (see meeting from 14th of october 2025)
-    - start with edits of titles
-    - consider format of examples
-    - expand examples
-- change structure of examples (tabular )
-- edit structure of "current technological standards" and "own contribution"
-
-### Issues
-- none as of now
-
-### summary of progress so far
-- structure of document
-    - introduction, examples (of problems), current technological standards, contribution, conclusion
-- introduction
-    - Introduction has been layed out, but needs updates.
-    - has "unnecessaties" (meaning: information, that isn't needed)
-    - is "overcomplicating" (meaning: provided examples do not "catch" a broader audience)
-    - too long (textually), but too brief (contextually)
-- problem (examples)
-    - List of examplary problems has been partially layed out.
-- current technological standards
-    - structure has been proposed
-- own contribution
-    - structure has been (kinda) approved (unintentionally)
-    - needs updates
-- conclusion
+Some reminders (needing constant review):
+- tell apart (if possible) comments and to-do's
+- comments do not belong in the work
+- to-do's form the work, but the work itself should not reflect the to-do list, but rather the "sacred" document ("sacred" is not meant religiously, but rather operatively, as in: seperation of thoughts into pre-determined structure as a way of seperation of concerns)
