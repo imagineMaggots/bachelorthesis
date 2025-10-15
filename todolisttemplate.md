@@ -2,9 +2,11 @@
 ### recent progress (like 1 week-ish)
 - contains sections of work worked on
 
-### To Do
-- see
-- above
+### To Do (real)
+- what i actually set out to do
+
+### To Do (expanded)
+- what the tasks turned into
 
 ### Issues
 - are there any?

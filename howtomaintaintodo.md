@@ -1,5 +1,5 @@
 - Re-evaluate "recent progress" daily
-- Update: "To Do until the next meeting"
+- Consider "Real To Do" in contrast to "Expanded Tasks" (The latter might contain sub-tasks which do not correlate with the original To Do / Goals anymore)
 - Work on: "To Do list" in general, with regards to "summary of progress made so far" (or whatever i called it)
 - Determine: Issues. Are there some issues that i just can't seem to resolve over a longer span of time?
 - Add to "summary of progress over all" if possible!

@@ -4,16 +4,32 @@
 - examplary problems
 - current technological standards
 
-### To Do till next meeting
+### real to do
 - edit general structure (see meeting from 14th of october 2025)
 - edit introduction (see meeting from 14th of october 2025)
     - see examples in "introduction"
-    - work on int. 
+    - polish
 - edit list of exemplary problems (see meeting from 14th of october 2025)
-    - start with edits of titles
+    - edit of titles
     - consider format of examples
     - expand examples
-- change structure of examples (tabular )
+- change structure of examples (tabular)
+- edit structure of "current technological standards" and "own contribution"
+
+### expanded tasks
+- edit general structure (see meeting from 14th of october 2025)
+- edit introduction (see meeting from 14th of october 2025)
+    - see examples in "introduction"
+    - work on 
+- edit list of exemplary problems (see meeting from 14th of october 2025)
+    - start with edits of titles
+        - proposed change: "Problemfälle/Technische Bedeutung" into "Problemfälle/Befehls-Verfälschung" // Kapiteltitel hoffentlich nicht zu kompliziert
+        - proposed change: "Problemfälle/Sprachliche Semantik" into "Problemfälle/Nicht-verbale Kontexte" // meint: Kontext geht aus Formeln, Tabellen... implizit hervor
+        - proposed change: "Problemfälle/Spezifischer Technologien" into "Problemfälle/Graphische (Layouting)" // Klammern unschön
+        - proposed change: "Problemfälle/Weitere Schwierigkeiten" into "Problemfälle/Sprachliche" // an sich geht aus "Weitere Schwierigkeiten" genug hervor...
+    - consider format of examples
+    - expand examples
+- change structure of examples (tabular)
 - edit structure of "current technological standards" and "own contribution"
 
 ### Issues
