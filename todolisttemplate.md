@@ -3,10 +3,10 @@
 - contains sections of work worked on
 
 ### To Do (real)
-- what i actually set out to do
+- one smaller list of my actual current goals (to do's)
 
 ### To Do (expanded)
-- what the tasks turned into
+- a bigger list, based on these current goals, with further sub-tasks (might include unnecessities)
 
 ### Issues
 - are there any?
