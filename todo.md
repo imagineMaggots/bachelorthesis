@@ -35,3 +35,5 @@ Some reminders (needing constant review):
 - tell apart (if possible) comments and to-do's
 - comments do not belong in the work
 - to-do's form the work, but the work itself should not reflect the to-do list, but rather the "sacred" document ("sacred" is not meant religiously, but rather operatively, as in: seperation of thoughts into pre-determined structure as a way of seperation of concerns)
+- proper to-do lists ARE check-lists... even to-do lists take time (to be developed)
+- append the question, that each paragraph is supposed to answer. (summaries might work for some people, but not for me)

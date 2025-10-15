@@ -1,4 +1,11 @@
 Derived from "main" to-do list.
 - start with basic examples of the given problem
+    - edit first sentence (happens every time, do not worry)
+    - get rid of unrealistic, over-specific ones
+    - use the easiest to understand ones for anyone not familiar with TeX or LaTeX
 - mention related/similar problems, but differentiate from the currently studied one ("differentiate" as in: to detect differences)
+    - mention that there exist similar problems you're explicitly not covering
+    - mention that your not dealing with translating .tex to .tex, nor .tex to something similar
+    - mention that _especially_ translating .pdf to .pdf is not part of the problem (as this is very interesting on its own; maybe even for the prof... add some citations for people dealing with that recently... he'll probably be interested in stuff like that)
 - consider you peers: this part has to make clear wether the contents are relevant to their respective work or not
+    - should be made clear after the previous
