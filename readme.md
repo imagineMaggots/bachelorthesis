@@ -7,4 +7,4 @@
 | temp | temporary files in review |
 | tests | all tested files in section 3 (technologies) |
 | thesis | LaTeX document description of this thesis |
-| . | questions, answers, ~rules~ and a to-do list |
+| . | ~rules~, this and a to-do list |
