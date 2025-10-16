@@ -1,3 +1,24 @@
+% Zu sortierende Beispiele, erkennbare Trennung:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% An sich für später geeignete Beispiele. Auslagern! %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Bereits einfachste Funktionen dieses Systems können Übersetzungen einfacher Zeichenketten verhindern. Ein Übersetzen (via Google Translate) von \verb|hello wor\textit{ld}| liefert nicht \verb|Hallo We\textit{lt}|, sondern \verb|hallo wor\textit{ld}|. Abgesehen von der Frage, wo die kursive Hervorhebung im eigentlichen String erfolgen sollte, würden Leser eines kompilierten Dokumentes das Wort \enquote{Welt} erkennen.% par
+%Die beschriebene Zeichenkette wird von \TeX{} als \enquote{hello wor\textit{ld}} dargestellt, in welcher das Wort \enquote{world} für einen menschlichen Leser als das englische Wort für \enquote{Welt} eindeutig erkennbar ist. Fehlt die Kenntnis über eine der Sprachen (DE,EN) oder ein natürliches Sprachverständnis verliert die Wortkette einen Teil ihrer Bedeutung.% par
+%Besonders fatal wird dies, wenn das Auslassen von auch nur einem Wort keine Rückschlüsse mehr auf einen größeren Kontext mehr zulässt.\ \verb|$\mathbb{P}$robability density function| wäre ein denkbarer stilistischer Weg bereits in z.B.\ einem Folientitel bereits eine Notation für eine Wahrscheinlichkeitsdichtefunktion einzuführen. Hierbei würde der Verlust des Wortes \enquote{probability} den stochastischen Kontext aufheben. Der Verlust des Wortes \enquote{density} würde einen Kontext innerhalb der Stochastik verändern und ohne das Wort \enquote{function} ist fraglich, wovon die Rede ist. Vor allem in größeren Dokumenten könnten hierdurch Logikbrüche entstehen.% Wahrscheinlichkeitsdichte? Wie dicht Wahrscheinlichkeiten aneinander sind ergibt wenig Sinn. Integration über einen bestimmten Bereich der Wahrscheinlichkeitsdichtefunktion resultiert in einer Wahrscheinlichkeit. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% reviewed: 3
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% An sich für später geeignete Beispiele. Auslagern! %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Genauso wie das Fehlen einzelner Wörter die sprachliche Bedeutung für einen Menschen brechen kann, treten ähnliche Probleme auch in \TeX{} auf. Einzelne \LaTeX{} Makros \textit zu übersetzen kann einen semantischen Verlust für einen \TeX{} Compiler mit sich führen. Als einfaches Beispiel zeigt sich hier die Möglichkeit in bestimmten Fällen eine Dateiendung auszulassen, sollte man ein \LaTeX{} Dokument in mehrere \TeX{} Dateien trennen wollen.\ \verb|\include{clock}| zu \verb|\include{Uhr}| zu übersetzen (wie bspw.\ Google Translate am 06.10.2025) würde nun nicht mehr als \verb|\include{clock.tex}| interpretiert werden, sondern als \verb|\include{Uhr.tex}| (dessen Existenz nicht garantierbar ist).\\\noindent 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%% Versuche die deutsche wissenschaftliche Sprache verständlich zu halten:
 %%%%%%%%%%%%% - Infinitiv so oft wie möglich (durch Substantivierung oder Erweiterung), damit Texte leichter zu verstehen sind.
 %%%%%%%%%%%%% - Reale Konditionalsätze nutzen.
@@ -24,11 +45,12 @@ Stilistische Mittel für Texte sind prinzipiell nicht an spezifische Zeichen geb
     \centering
     \begin{tabularx}{\textwidth}{X X}
         \toprule
-            Original & Übersetzung\\
+            English & Deutsch\\
         \midrule
         % Siehe ~/tests/readme.md für namensgebung und "Wo ist die Datei?"
-            Korrekt & \\[-13px] % relative Angabe ggb. echtem Zeilenumbruch (1em) // relativ in dem Sinne: wir gehen von der Position des erwarteten Zeilenumbruches aus und verschieben nach unten oder oben (+ bzw - in der Höhe)
-            \commoncode{Test}{../examples/technical/0d/correct_original.tex} & \commoncode{Test}{../examples/technical/0d/correct.tex}\\[1em]
+            Erwünscht & \\[-13px] % relative Angabe ggb. echtem Zeilenumbruch (1em) // relativ in dem Sinne: wir gehen von der Position des erwarteten Zeilenumbruches aus und verschieben nach unten oder oben (+ bzw - in der Höhe)
+            \commoncode{Original}{../examples/technical/0d/correct_original.tex} & \commoncode{Test}{../examples/technical/0d/correct.tex}\\[1em]
+        \midrule
             Unerwünscht & \\[-13px]
             \commoncode{Test}{../examples/technical/0d/wrong_original.tex} & \commoncode{Test}{../examples/technical/0d/wrong.tex}\\[-1em]
         \bottomrule

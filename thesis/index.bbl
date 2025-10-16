@@ -12,4 +12,12 @@ Lamport, L.  \harvardyearleft 1994\harvardyearright , {\em LaTeX: A Document
   \url{https://www.latex-project.org/help/books/tlc3-digital-chapter-samples.pdf}
   (last Access: 04.10.2025).
 
+\harvarditem{Shannon}{1948}{bellSystemTechnicalJournal:claudeShannon1948:mathematicalTheoryOfCommunication}
+Shannon, C.~E.  \harvardyearleft 1948\harvardyearright , `The mathematical
+  theory of communication', {\em The Bell System Technical Journal, ISSN:
+  0343-6993} {\bf (vol. 27)}.
+\newblock Harvard Reprint available at
+  \url{https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf}
+  (last Access: 16.10.2025).
+
 \end{thebibliography}

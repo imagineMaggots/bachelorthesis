@@ -1,3 +1,8 @@
+## about
+Machine-driven LaTeX-Document translation
+- current state: not even a proper state of the art review
+- this title was made up spontaneously on the 15th of october and is (somehow, after thinking about the title for a while now) the best one i've come up with yet
+
 #### directory structure
 | folder | contents |
 |---|---|
