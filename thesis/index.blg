@@ -5,56 +5,52 @@ Reallocating 'name_of_file' (item size: 1) to 5 items.
 The style file: agsm.bst
 Reallocating 'name_of_file' (item size: 1) to 23 items.
 A level-1 auxiliary file: introduction/short.aux
-Reallocating 'name_of_file' (item size: 1) to 19 items.
-A level-1 auxiliary file: problem/issues.aux
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+A level-1 auxiliary file: problems/list.aux
 Reallocating 'name_of_file' (item size: 1) to 25 items.
 A level-1 auxiliary file: technologies/summary.aux
-Reallocating 'name_of_file' (item size: 1) to 18 items.
-A level-1 auxiliary file: solution/desc.aux
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: conclusion/ending.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: appendices/appendix.aux
 Database file #1: index.bib
-You've used 2 entries,
+You've used 3 entries,
             2909 wiz_defined-function locations,
-            654 strings with 5201 characters,
-and the built_in function-call counts, 3817 in all, are:
-= -- 574
-> -- 48
+            661 strings with 5593 characters,
+and the built_in function-call counts, 5976 in all, are:
+= -- 910
+> -- 72
 < -- 0
-+ -- 251
-- -- 14
-* -- 278
-:= -- 866
-add.period$ -- 3
-call.type$ -- 2
-change.case$ -- 26
-chr.to.int$ -- 2
-cite$ -- 2
-duplicate$ -- 32
-empty$ -- 59
-format.name$ -- 18
-if$ -- 665
++ -- 401
+- -- 21
+* -- 446
+:= -- 1338
+add.period$ -- 5
+call.type$ -- 3
+change.case$ -- 40
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 47
+empty$ -- 85
+format.name$ -- 27
+if$ -- 1042
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 4
-newline$ -- 10
-num.names$ -- 20
-pop$ -- 17
+missing$ -- 5
+newline$ -- 14
+num.names$ -- 30
+pop$ -- 19
 preamble$ -- 1
-purify$ -- 30
+purify$ -- 45
 quote$ -- 0
-skip$ -- 19
+skip$ -- 33
 stack$ -- 0
-substring$ -- 767
-swap$ -- 2
-text.length$ -- 28
+substring$ -- 1221
+swap$ -- 5
+text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 8
 warning$ -- 0
-while$ -- 42
+while$ -- 63
 width$ -- 0
-write$ -- 28
+write$ -- 42

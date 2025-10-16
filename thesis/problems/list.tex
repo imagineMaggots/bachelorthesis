@@ -1,0 +1,44 @@
+%%%%% Comment-structure:
+%%%%%   % Simple comment, explaining the below sentence/paragraph
+%%%%%   %%% Introductory remarks for subsections / questions asked / goals to be achieved
+%%%%%   %% Intercepting/Concluding remarks for subsection and takeaway for the next subsection.
+
+%%%%% Kommentar-Struktur: 
+%%%%%   % Einfacher Kommentar, der den Satz/Paragraphen unter ihm übersetzt
+%%%%%   %%% Einleitende Bemerkungen für Unterabschnitte / Gestellte Fragen / zu erreichende Ziele
+%%%%%   %% Zwischengrätschende/Abschließende Bemerkung für Unterabschnitt und Takeaway für den Nächsten
+
+%%%%% Unter den Abschnitten meist noch ein PDF-Kommentar evtl. für Prof./Betreuer. Kann helfen
+
+\section{Problemfälle}
+\subsection{Hinweise für Leser}
+\paragraph*{Herangehensweise}
+% Reihenfolge der Probleme. Für Leser nachvollziehbar machen
+Die Reihenfolge der Auflistung von Problemen wird danach geführt, in welchem genauen System diese entstehen könnten. Begonnen wird deshalb bei möglichen Problemen, welche sich bereits in der reinen \TeX{} Syntax aufzeigen könnten, danach die Giganz an Möglichkeiten von \LaTeX{} erkundet und im Anschluss einige, speziellere Problematiken angerissen.
+% Wir nutzen einen konzeptionellen Übersetzer, keine Software
+Außerdem sei bemerkt, dass sich hier kein Übersetzer im herkömmlichen Sinne (ob menschlich, ob maschinell) herangezogen wurde, sondern ein Konzeptioneller. Dieser erkennt verschiedene Zeichen und weiß, dass diverse Zeichen Teil der \TeX{}-Syntax sein \textit{könnten}, aber betrachtet nur alleine-stehende Wörter, die er kennt und übersetzt rein diese. Abhängig von den bestimmten Zeichenketten könnten hierbei eine Vielzahl an Permutationen entstehen, welche möglichst versucht wurden in folgender Struktur einzuordnen.
+
+\paragraph*{Struktur eines Beispiels}
+% Erläuterung der Struktur
+Die Darstellung einzelner Beispiele erfolgt tabellarisch und demonstriert zunächst gewünschte (bzw.\ zulässige) Verhalten und danach Unerwünschte (bzw.\ Fehlerhafte). Untige~\ref{tab:problems:example} dient hierbei als einfaches Beispiel und zeigt, wie das Übersetzen von Zeichenketten, welche z.B.\ Tags enthalten, theoretisch unterschiedliche Permutationen erzeugen können. Inwiefern sich die einzelnen zuvor unterschiedenen, möglichen Verhalten unterschiedlich äußern, soll für jedes Beispiel konkretisiert werden. Dieses einleitende Beispiel nutzt daher (zunächst) den rein imaginären Befehl \texttt{ink} mit einer auswählbaren Farbe, die auf einen String angewendet wird. Wünschenswert ist, dass nur der in geschwungenen Klammern stehende String übersetzt wird, aber ein Auslassen dieses wäre in erster Betrachtung nicht \TeX{}-Syntax brechend und daher zulässig. Unerwünscht wäre das Übersetzen der zusätzlichen Option in eckigen Klammern, wobei man davon ausgehen würde, dass für diese Option auf einen \textit{default}-Wert zurückgegriffen wird. Dies ist zwar ein syntaktischer Fehler, würde jedoch den Befehl selbst ausführbar lassen. Als \enquote{Fälschlich} werden demnach Fehler betrachtet, welche die \TeX{}-Syntax insofern brechen, dass der Kompilierprozess unterbrochen/abgebrochen wird.
+\begin{table}[h!]
+    \centering
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+            English & Mögliche Übersetzung\\
+        \midrule
+            Erwünscht & \\[-13px]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Sample 1}{../examples/example/ideal.tex}\\[1em]
+        \midrule
+            Zulässig & \\[-13px]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Sample 2}{../examples/example/okay.tex}\\[1em]
+        \midrule
+            Unerwünscht & \\[-13px]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Sample 3}{../examples/example/problematic.tex}\\[1em]
+        \midrule
+            Fälschlich & \\[-13px]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Sample 4}{../examples/example/bad.tex}\\[-1em]
+        \bottomrule
+    \end{tabularx}
+    \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:example}
+\end{table}
