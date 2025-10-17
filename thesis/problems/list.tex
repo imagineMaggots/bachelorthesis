@@ -21,14 +21,28 @@
 \subsubsection*{Herangehensweise}
 % Eigentlich bräuchten die Problemfälle, da sie unabhängig sein sollten, keine Reihenfolge. Aber der Leser soll nicht komplett lost sein.
 Die nachfolgende Auflistung an verschiedener Fälle, welche Probleme gegenüber der \TeX{}-Syntax, bzw.\ innerhalb von \LaTeX{}-Dokumenten hervorrufen könnten, benötigt per se keine Reihenfolge, da sie möglichst alle behoben sein sollen. Ein zufälliges sequenzielles Nennen dieser würde jedoch die Lesbarkeit und Nachvollziehbarkeit dieser Arbeit mindern und eventuell auftretende, aber übersehene Fälle für Andere nicht schnellig ersichtlich machen\pdfcomment{Der Satz wird definitiv noch überarbeitet.}
-% Beschreibung und Begründung der gewählten Reihenfolge
-Deshalb wird eine Reihenfolge gewählt, welche nicht auf \LaTeX{}-Ebene beginnt, sondern sich so weit wie möglich dem Ursprung dieses Systemes nähert. Von also den bereits alleinig in \TeX{} auftretenden Problemen muss ein Weg in Richtung der auf dieser Software aufbauenden Technologien gebahnt werden. Als besonders relevante Systeme kämen hier zunächst \LaTeX{}, Bib\TeX{}, Ti\textit{k}Z und Weiterführende in Frage, allerdings bringen diese Technologien nicht immer \textit{wirklich} neue Probleme mit sich, welche bereits nicht bereits in \TeX{} selbst hätten entstehen können. Daher wird weniger nach \textit{eigentlichen, benannten} Software unterschieden, sondern nach Anwendungsfällen, für welche solche Systeme in einem Dokument dienen würden. Die Reihenfolge der Beispiele ähnelt somit zu Teilen der Vorgehensweise, wie man ein \TeX{}-Dokument erstellen könnte (wobei man hier klarstellen möchte, dass dies nicht zwingend an die beschriebene Form gebunden ist).
-% Wir nutzen einen konzeptionellen Übersetzer, keine Software
-Für jegliche Beispiele sei bemerkt, dass kein \enquote{Übersetzer} im herkömmlichen Sinne (menschlich, maschinell,\ldots) herangezogen wurde, sondern ein Konzeptioneller. Dieser erkennt verschiedene Zeichen und weiß, dass einige Teil der \TeX{}-Syntax sein \textit{könnten}, aber betrachtet immer nur alleine-stehende Wörter, die er kennt und versucht möglichst alle Gefundenen zu übersetzen, als auch eine alternative Zeichenkette zu liefern, in welcher dieses Wort nicht übersetzt wurde, falls es fälschlich aufgegriffen war. Abhängig von den bestimmten Zeichenketten könnten hierbei eine Vielzahl an Permutationen entstehen, welche möglichst versucht wurden in folgender Struktur einzuordnen.
+% Erwähnung des Startpunktes zur Problemerkundung
+Deshalb wird eine Reihenfolge gewählt, welche nicht auf \LaTeX{}-Ebene beginnt, sondern sich so weit wie möglich dem Ursprung dieses Systemes nähert. Von den bereits in \TeX{} auftretenden Problemen muss ein Weg in Richtung der auf dieser Software aufbauenden Technologien gebahnt werden. Als besonders relevante Systeme kämen hier zunächst \LaTeX{}, Bib\TeX{}, Ti\textit{k}Z und Weiterführende in Frage, allerdings bringen diese Technologien selbst neue Probleme mit sich, da sie auf \TeX{} aufsetzen und demnach bereits dort entstehen\pdfcomment{hätten können <- umgangssprachlich.\ schwierig für Muttersprachler.}. 
+% Unterscheidung der Fehler danach ob in einem echten Dokument (reell, wie es in einem TeX{}-Code beschrieben steht) oder nur virtuell entstehen könnte.
+Eine Fehlerunterscheidung findet nach Funktionalität in einem reellen Dokument (herkömmlich, das nach dem Kompilieren entstehende) und einem virtuellen Dokument. 
+% Sortierung so, wie auch der Compiler (aus logischer Sicht) das reelle, einzelne Dokument liest.
+Beispiele in reellen Dokumenten sind nach auftreten sortiert, wie man sie bei der Erstellung eines beliebigen \TeX{}-Dokumentes auffinden würde.
+% Hier also bereits table of contents und \label und sowas. aber noch nicht bibtex, pgf, ... pakete in general
+%% Hier: Übersetzen von Überschriften erfordert ein neues Kompilieren eines TeX-Dokumentes. liefert evtl. passende überleitung zu den anderen Technologien.
+% 
+% Trennung der virtuellen Fehler.
+Die möglicherweise entstehenden Fehler in einem \enquote{virtuellen} Dokument werden nach den Teilen des Dokumentes klassifiziert, welche sie verändern (sollen). Hierbei können entweder einzelne Paragraphen angepasst werden (reiner Fließtext ohne vorgegebene Struktur),% meint minted, listings, ... aber auch generell makros und umgebungen
+Literaturverzeichnisse oder Glossare entstehen (reiner Fließtext mit vorgegebene Struktur),% natbib, bibtex, ... hier muss ggf. in die .bst (bibstyle) rein.
+Bilder und Graphiken eingebunden werden oder erstellt werden (Fließtexte innerhalb einer vorgegebenen Struktur),% hab mich selbst verwirrt. der bibtex-style datei muss ja dann hier irgendwie kommen, oder?
+als auch Graphiken innerhalb eines Dokumentes an vorgesehenen Stellen beschrieben sein (Fließtexte in einer losen Struktur) und insbesondere letzteres zu diversen Verschachtelungen führen\pdfcomment{bspw.:\ wir zeichnen eine TikZ-Graphik, in welcher wir eine neue Tabelle malen, in einer Tabelle oder dergleichen}.% Ab hier ist dann einzuschränken, was man zulassen möchte
+Abschließend muss dann allerdings ein Unterpunkt, welcher nach der beschriebenen Reihenfolge in einem der ersteren Abschnitte zu erwarten wäre an das Ende gestellt werden, da aus diesem zu viele neue, eigene Probleme entstehen könnten.% Meint CatCode
+Zudem sind ein paar zusätzliche, sprachliche und teils unlösbare Probleme gelistet, welche nicht unbedingt als Anforderungen der gegebenen Problemstellung zu verstehen sind und daher als \enquote{abweichend} zu verstehen sind, aus welchen sich aber spätere Erweiterungspotentiale zeigen könnten.
 
 \subsubsection*{Struktur eines Beispiels}
 % Erläuterung der Struktur
 Die Darstellung einzelner Beispiele erfolgt tabellarisch und demonstriert zunächst gewünschte (bzw.\ zulässige) Verhalten und danach Unerwünschte (bzw.\ Fehlerhafte). Untige~\ref{tab:problems:example} dient hierbei als einfaches Beispiel und zeigt, wie das Übersetzen von Zeichenketten, welche z.B.\ Tags enthalten, theoretisch unterschiedliche Permutationen erzeugen können. Inwiefern sich die einzelnen zuvor unterschiedenen, möglichen Verhalten unterschiedlich äußern, soll für jedes Beispiel konkretisiert werden. Dieses einleitende Beispiel nutzt daher (zunächst) den rein imaginären Befehl \texttt{ink} mit einer auswählbaren Farbe, die auf einen String angewendet wird. Wünschenswert ist, dass nur der in geschwungenen Klammern stehende String übersetzt wird, aber ein Auslassen dieses wäre in erster Betrachtung nicht \TeX{}-Syntax brechend und daher zulässig. Unerwünscht wäre das Übersetzen der zusätzlichen Option in eckigen Klammern, wobei man davon ausgehen würde, dass für diese Option auf einen \textit{default}-Wert zurückgegriffen wird. Dies ist zwar ein syntaktischer Fehler, würde jedoch den Befehl selbst ausführbar lassen. Als \enquote{Fälschlich} werden demnach Fehler betrachtet, welche die \TeX{}-Syntax insofern brechen, dass der Kompilierprozess unterbrochen/abgebrochen wird.
+% Ein wenig abstraktere Schilderung
+Abstrahiert man von diesem detaillierterem Beispiel, so können \enquote{erwünschte} Übersetzungen als solche angesehen werden, welche keine Probleme verursachen, \enquote{zulässige} Übersetzungen als solche, die dem Endnutzer/Leser (vollständig) verborgen bleiben, \enquote{unerwünschte} Übersetzungen erste im Dokument sichtbare Fehler produzieren würden, jedoch dessen sprachliche Inhalte nicht verändern und \enquote{falsche} Übersetzungen als solche, die größere Teile des Dokumentes verschwinden lassen oder dafür Sorgen, dass der Quellcode gar nicht erst kompiliert werden kann.
 \begin{table}[h!tb]
     \centering
     \begin{tabularx}{\textwidth}{X X}
@@ -70,7 +84,7 @@ Die Darstellung einzelner Beispiele erfolgt tabellarisch und demonstriert zunäc
 %% Wir kennen nun einige Elemente innerhalb von einem Dokument. 
 %% Für mehrere, ganz viele, beliebige Dokumente: Wie kann man diese strukturell beschreiben oder einfach erzeugen?
 
-\subsection{Strukturen in beliebigen Dokumenten}
+\subsection{Strukturen beliebiger Dokumente}
 %%% Frage ist nicht: Welche Elemente gibt es in einem Dokument?
 %%% Frage: Wie kann man Elemente in TeX beschreiben, bzw. welche wurden schon beschrieben?
 %%% Siehe. Meint im wesentlichen LaTeX, Hyperref, BibTeX, TikZ und co., also diverse Pakete und auf TeX aufbauende Systeme. Hier: das erste Mal von Makros sprechen.
@@ -148,5 +162,7 @@ Die Darstellung einzelner Beispiele erfolgt tabellarisch und demonstriert zunäc
 
 %% Die Strukturen, welche auf mehrere Dokumente angewendet werden können sind klar. 
 %% 
-\subsection{Mehrfaches Kompilieren}
+\subsection{\TeX{}'s Category Codes}
 %%% Meint: 
+
+\subsection{Abweichende Probleme}
