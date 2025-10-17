@@ -49,17 +49,17 @@ Abstrahiert man von diesem detaillierterem Beispiel, so können \enquote{erwüns
         \toprule
             English & Mögliche Übersetzung\\
         \midrule
-            Erwünscht & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Sample 1}{../examples/example/ideal.tex}\\[1em]
+            Erwünschtes Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispiel}{../examples/example/ideal.tex}\\[1em]
         \midrule
-            Zulässig & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Sample 2}{../examples/example/okay.tex}\\[1em]
+            Zulässiges Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispiel}{../examples/example/okay.tex}\\[1em]
         \midrule
-            Unerwünscht & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Sample 3}{../examples/example/problematic.tex}\\[1em]
+            Unerwünschtes Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispiel}{../examples/example/problematic.tex}\\[1em]
         \midrule
-            Falsch & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Sample 4}{../examples/example/bad.tex}\\[-1em]
+            Falsches Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispiel}{../examples/example/bad.tex}\\[-1em]
         \bottomrule
     \end{tabularx}
     \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:example}
@@ -73,6 +73,83 @@ Abstrahiert man von diesem detaillierterem Beispiel, so können \enquote{erwüns
 %%% Frage (kompliziert): Wie können einzelne Strings so verändert sein, dass einzelne Wörter nicht übersetzt werden (oder übersetzt werden dürfen)?
 %%% Frage (einfach): Was möchte man in einem Dokument darstellen?
 % Damit: Formeln, Texte, Graphiken, Zitationen, Inhaltsverzeichnisse, Literatur, Titelseite, ... andere Dokumente!
+\subsubsection*{Paragraphen und einfache Textformatierungen}\phantomsection\label{problems:in:paragraphs}
+%%% Dürfen wir jeden x-beliebigen String übersetzen? Struktur: \befehl{zu-übersetzender-String}
+Logisch betrachtet wären an dieser Stelle zunächst Paragraphen zu erwarten, welche keinerlei Formatierung mittels \TeX{} unterliegen. Dieser Fall ist jedoch im gegebenen Kontext als trivial zu betrachten, da man sich hier nur mit der Übersetzung von reiner menschlicher Sprache beschäftigen würde. Einfache Textformatierung innerhalb solcher Paragraphen, wie bspw.\ das Unterstreichen eines einzelnen Wortes kann dazu führen, dass der Befehl, welcher diese Unterstreichung umsetzt als Wort aufgegriffen wird und daher nach einer Übersetzung diese Funktion nicht mehr erfüllt (siehe: Tabelle~\ref{tab:problems:in:paragraphs} und Tabelle~\ref{tab:problems:in:sections}).
+\subsubsection*{Überschriften und Abschnitte eines Dokumentes}
+%%% 
+Spannender werden nun Befehle, welche größere (logische) Strukturen des Dokumentes betreffen. Im \TeX{}-Quellcode belaufen sich diese zwar zunächst auf einzeilige Befehle, produzieren jedoch Elemente eines Dokumentes, welche einer vordefinierten, bestimmten Formatierung obliegen sollen. Tabelle~\ref{tab:problems:in:sections} zeigt hierbei ein Beispiel, wie das Übersetzen eines einfachen Wortes dazu führen kann, dass ein Paragraph nicht mehr als solcher erkannt werden könnte, sondern nur noch als reiner Fließtext interpretiert werden würde, da der fälschlich übersetzte Befehl missachtet werden könnte. (Insofern er nicht an anderer Stelle deklariert wurde). Diese Umstände würden dazu führen, dass dieser Paragraph nicht mehr in dem z.B.\ Inhaltsverzeichnis aufgeführt wird (sollte die \enquote{Tiefe} des Inhaltsverzeichnis passend mittels \verb|\setcounter{secnumdepth}{4}|% zu testen ob richtig
+gesetzt sein).
+Dem aufmerksamen Leser sollte hierbei allerdings direkt klar sein, dass bereits Abschnitte~\ref{problems:in:paragraphs} dieses Problem behandelt. Wohingegen die reine Formatierung dieser Überschriften bereits abgearbeitet ist, zeigen sich vermerke auf diese Abschnitte als problematisch. 
+
+\newpage
+\begin{table}[h!tb]
+    \centering
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+            English & Mögliche Übersetzung\\
+        \midrule
+            Erwünschtes Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/paragraphs/original.tex} & \commoncode{Beispiel}{../examples/paragraphs/ideal.tex}\\[1em]
+        \midrule
+            Zulässiges Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/paragraphs/original.tex} & \commoncode{Beispiel}{../examples/paragraphs/okay.tex}\\[1em]
+        \midrule
+            Unerwünschtes Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/paragraphs/original.tex} & \commoncode{Beispiel}{../examples/paragraphs/problematic.tex}\\[1em]
+        \midrule
+            Falsches Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/paragraphs/original.tex} & \commoncode{Beispiel}{../examples/paragraphs/bad.tex}\\[-1em]
+        \bottomrule
+    \end{tabularx}
+    \caption{Das Übersetzen eines einzelnen Wortes verhindert das Ausführen einer Funktion von \TeX{}.}\label{tab:problems:in:paragraphs}
+\end{table}
+\newpage
+\begin{table}[h!tb]
+    \centering
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+            English & Mögliche Übersetzung\\
+        \midrule
+            Erwünschtes Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispiel}{../examples/sections/ideal.tex}\\[1em]
+        \midrule
+            Zulässiges Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispiel}{../examples/sections/okay.tex}\\[1em]
+        \midrule
+            Unerwünschtes Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispiel}{../examples/sections/problematic.tex}\\[1em]
+        \midrule
+            Falsches Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispiel}{../examples/sections/bad.tex}\\[-1em]
+        \bottomrule
+    \end{tabularx}
+    \caption{Das Übersetzen eines einzelnen Wortes verhindert das Ausführen einer Funktion von \TeX{}.}\label{tab:problems:in:sections}
+\end{table}
+\newpage
+%%%%%%%%% NOT DONE YET EIAEONODFWNAIDNO
+\begin{table}[h!tb]
+    \centering
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+            English & Mögliche Übersetzung\\
+        \midrule
+            Erwünschtes Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispiel}{../examples/references/ideal.tex}\\[1em]
+        \midrule
+            Zulässiges Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispiel}{../examples/references/okay.tex}\\[1em]
+        \midrule
+            Unerwünschtes Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispiel}{../examples/references/problematic.tex}\\[1em]
+        \midrule
+            Falsches Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispiel}{../examples/references/bad.tex}\\[-1em]
+            
+        \bottomrule
+    \end{tabularx}
+    \caption{Das Übersetzen eines einzelnen Wortes verhindert das Ausführen einer Funktion von \TeX{}.}\label{tab:problems:in:document:references}
+\end{table}
 
 %% Fall: Mathematische Umgebungen (Meint: In solchen Umgebungen kann ein Übersetzen fragwürdig sein.)
 %% Die Lexeme beinhalten einer menschlichen Sprache fremde Sonderzeichen ($text=y$text$a=text$). Hier steht drei mal "text". Nur das Mittlere sollte übersetzt werden, da es Fließtext ist

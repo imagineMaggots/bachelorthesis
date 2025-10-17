@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  17 OCT 2025 13:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  17 OCT 2025 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1641,15 +1641,64 @@ Package hyperref Info: bookmark level for unknown lpcsec defaults to 0 on input
 
 
 
-] [4])
-[5] [6]
+] [4]
+
+LaTeX Warning: Reference `tab:problems:in:sections' on page 5 undefined on inpu
+t line 78.
+
+[5]
+
+LaTeX Warning: Reference `tab:problems:in:sections' on page 6 undefined on inpu
+t line 81.
+
+
+LaTeX Warning: Reference `problems:in:paragraphs' on page 6 undefined on input 
+line 83.
+
+[6] (../examples/paragraphs/original.tex) (../examples/paragraphs/ideal.tex)
+(../examples/paragraphs/original.tex) (../examples/paragraphs/okay.tex)
+(../examples/paragraphs/original.tex) (../examples/paragraphs/problematic.tex)
+(../examples/paragraphs/original.tex) (../examples/paragraphs/bad.tex)
+(../examples/paragraphs/original.tex) (../examples/paragraphs/ideal.tex)
+(../examples/paragraphs/original.tex) (../examples/paragraphs/okay.tex)
+(../examples/paragraphs/original.tex) (../examples/paragraphs/problematic.tex)
+(../examples/paragraphs/original.tex) (../examples/paragraphs/bad.tex)
+(../examples/paragraphs/original.tex) (../examples/paragraphs/ideal.tex)
+(../examples/paragraphs/original.tex) (../examples/paragraphs/okay.tex)
+(../examples/paragraphs/original.tex) (../examples/paragraphs/problematic.tex)
+(../examples/paragraphs/original.tex) (../examples/paragraphs/bad.tex) [7]
+(../examples/sections/original.tex) (../examples/sections/ideal.tex)
+(../examples/sections/original.tex) (../examples/sections/okay.tex)
+(../examples/sections/original.tex) (../examples/sections/problematic.tex)
+(../examples/sections/original.tex) (../examples/sections/bad.tex)
+(../examples/sections/original.tex) (../examples/sections/ideal.tex)
+(../examples/sections/original.tex) (../examples/sections/okay.tex)
+(../examples/sections/original.tex) (../examples/sections/problematic.tex)
+(../examples/sections/original.tex) (../examples/sections/bad.tex)
+(../examples/sections/original.tex) (../examples/sections/ideal.tex)
+(../examples/sections/original.tex) (../examples/sections/okay.tex)
+(../examples/sections/original.tex) (../examples/sections/problematic.tex)
+(../examples/sections/original.tex) (../examples/sections/bad.tex) [8]
+(../examples/references/original.tex) (../examples/references/ideal.tex)
+(../examples/references/original.tex) (../examples/references/okay.tex)
+(../examples/references/original.tex) (../examples/references/problematic.tex)
+(../examples/references/original.tex) (../examples/references/bad.tex)
+(../examples/references/original.tex) (../examples/references/ideal.tex)
+(../examples/references/original.tex) (../examples/references/okay.tex)
+(../examples/references/original.tex) (../examples/references/problematic.tex)
+(../examples/references/original.tex) (../examples/references/bad.tex)
+(../examples/references/original.tex) (../examples/references/ideal.tex)
+(../examples/references/original.tex) (../examples/references/okay.tex)
+(../examples/references/original.tex) (../examples/references/problematic.tex)
+(../examples/references/original.tex) (../examples/references/bad.tex))
+[9] [10]
 \openout2 = `technologies/summary.aux'.
 
- (technologies/summary.tex) [7
+ (technologies/summary.tex) [11
 
 
 
-] [8
+] [12
 
 
 ] (index.bbl
@@ -1665,7 +1714,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--14
 /l/it/10.95 https : / / www . latex-[]project . org / help / books /
  []
 
-) [9]
+) [13]
 \openout2 = `appendices/appendix.aux'.
 
  (appendices/appendix.tex (appendices/fontscaling.tex
@@ -1678,14 +1727,14 @@ File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
 (Font)              scaled to size 10.95pt on input line 17.
 
-[10
+[14
 
 {C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-ts1
 .enc}]
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample1.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample1.pdf, id=284, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample1.pdf, id=376, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample1.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample1.pdf>
 Package pdftex.def Info: appendices/fontscalingexample1.pdf  used on input line
@@ -1696,19 +1745,19 @@ Missing character: There is no ; in font nullfont!
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample2.pdf, id=287, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample2.pdf, id=379, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample2.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample2.pdf>
 Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
  57.
 (pdftex.def)             Requested size: 80.07498pt x 113.12413pt.
-)) [11 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2
+)) [15 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2
 .pdf
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
 >]
-runsystem(latexminted cleantemp  --timestamp 20251017132819 6A992D5529F459A44FE
+runsystem(latexminted cleantemp  --timestamp 20251017180356 6A992D5529F459A44FE
 E58C733255E86)...disabled (restricted).
 
  (index.aux (introduction/short.aux) (problems/list.aux)
@@ -1722,39 +1771,57 @@ L3 programming layer <2024-01-04>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
 Package rerunfilecheck Warning: File `index.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `index.out':
-(rerunfilecheck)             Before: 34EDC3811B96A68EFA8048FED5E8E5F3;1502
-(rerunfilecheck)             After:  ACC9AB94ACDA545C63730699FBF76F06;1501.
+(rerunfilecheck)             Before: 02C820D85CC057E1789427FEA08973E2;1501
+(rerunfilecheck)             After:  9803E5CEA00B0D42DA477BF7EE465965;1501.
  ) 
 Here is how much of TeX's memory you used:
- 50731 strings out of 474485
- 1198853 string characters out of 5744206
- 1991542 words of memory out of 5000000
- 72068 multiletter control sequences out of 15000+600000
+ 51034 strings out of 474485
+ 1208520 string characters out of 5744206
+ 2010542 words of memory out of 5000000
+ 72141 multiletter control sequences out of 15000+600000
  577860 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,18n,117p,1395b,2282s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/I
-nconsolata-zi4r.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/cm-super/sfsi1095.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/cm-super/sfss0800.pfb><C:/Users/Sxyx/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/cm-super/sfss1000.pfb><C:/Users/Sxyx/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/cm-super/sfss1095.pfb><C:/Users/Sxyx/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/cm-super/sfss1440.pfb><C:/Users/Sxyx/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx1095.pfb><C:/Users/
-Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx1200.pfb><C:
-/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx1440.
-pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sf
-sx2074.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-s
-uper/sfsx2488.pfb>
-Output written on index.pdf (14 pages, 703711 bytes).
+
+pdfTeX warning (dest): name{figure.caption.21} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.16} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section*.19} has been referenced but does not exist
+, replaced by a fixed one
+
+<C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inc
+onsolata-zi4r.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/cm-super/sfsi1095.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/cm-super/sfss0800.pfb><C:/Users/Sxyx/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/cm-super/sfss1000.pfb><C:/Users/Sxyx/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/cm-super/sfss1095.pfb><C:/Users/Sxyx/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/cm-super/sfss1440.pfb><C:/Users/Sxyx/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx1095.pfb><C:/Users/Sx
+yx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx1200.pfb><C:/U
+sers/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx1440.pf
+b><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx
+2074.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-sup
+er/sfsx2488.pfb>
+Output written on index.pdf (18 pages, 723090 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
- 87 named destinations out of 1000 (max. 500000)
+ 506 PDF objects out of 1000 (max. 8388607)
+ 167 named destinations out of 1000 (max. 500000)
  204 words of extra memory for PDF output out of 10000 (max. 10000000)
 
