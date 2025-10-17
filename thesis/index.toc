@@ -4,16 +4,23 @@
 \contentsline {subsection}{\numberline {1.2}Thematische Einordnung}{1}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Problemfälle}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Hinweise für Leser}{2}{subsection.2.1}%
-\contentsline {section}{\numberline {3}Stand der Technik}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Anforderungen}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Denkbare Ansätze}{4}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Existierende Ansätze}{4}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Testverfahren}{4}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Durchführung}{4}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Auswertung}{4}{subsubsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}Grenzen der Lösungen}{4}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Takeaways}{4}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Eigenständigkeitserklärung}{5}{section.4}%
-\contentsline {section}{Literatur}{6}{section*.14}%
-\contentsline {section}{\numberline {A}Anhänge}{7}{section.chX.1}%
-\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{7}{subsection.chX.1.1}%
+\contentsline {subsection}{\numberline {2.2}\TeX {}'s Syntax}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Befehle}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Umgebungen}{5}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Dateien}{5}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Definitionen (Makros)}{5}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}\LaTeX {} Dokumente}{6}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Erneuerungen}{6}{subsubsection.2.3.1}%
+\contentsline {section}{\numberline {3}Stand der Technik}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Anforderungen}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Denkbare Ansätze}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Existierende Ansätze}{8}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Testverfahren}{8}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Durchführung}{8}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Auswertung}{8}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Grenzen der Lösungen}{8}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Takeaways}{8}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Eigenständigkeitserklärung}{9}{section.4}%
+\contentsline {section}{Literatur}{10}{section*.23}%
+\contentsline {section}{\numberline {A}Anhänge}{11}{section.chX.1}%
+\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{11}{subsection.chX.1.1}%

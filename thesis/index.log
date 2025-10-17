@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  16 OCT 2025 13:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  16 OCT 2025 18:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1594,7 +1594,7 @@ your preamble.
  on input line 161.
 
 (titlepage.tex
-<pictures/UNIHRO_LOGO_2025.pdf, id=78, 703.62875pt x 144.54pt>
+<pictures/UNIHRO_LOGO_2025.pdf, id=106, 703.62875pt x 144.54pt>
 File: pictures/UNIHRO_LOGO_2025.pdf Graphic file (type pdf)
 <use pictures/UNIHRO_LOGO_2025.pdf>
 Package pdftex.def Info: pictures/UNIHRO_LOGO_2025.pdf  used on input line 12.
@@ -1637,22 +1637,194 @@ Package hyperref Info: bookmark level for unknown lpcsec defaults to 0 on input
 (../examples/example/original.tex) (../examples/example/ideal.tex)
 (../examples/example/original.tex) (../examples/example/okay.tex)
 (../examples/example/original.tex) (../examples/example/problematic.tex)
-(../examples/example/original.tex) (../examples/example/bad.tex))
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[2
+(../examples/example/original.tex) (../examples/example/bad.tex) [2
 
 
 
-] [3]
+]
+(problems/issuesInTeX.tex (../examples/tex/commands/original.tex)
+Enter file name: 
+(../examples/tex/commands/original.tex) Enter file name: 
+(../examples/tex/commands/original.tex) Enter file name: 
+(../examples/tex/commands/original.tex) Enter file name: 
+(../examples/tex/commands/original.tex)
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+
+! Package Listings Error: File `../tex/example/commands/original.tex(.tex)' not
+ found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+(../examples/tex/commands/original.tex)
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+
+! Package Listings Error: File `../tex/example/commands/bad.tex(.tex)' not foun
+d.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 18.
+
+[3] (../examples/tex/formatting/original.tex) Enter file name: 
+(../examples/tex/formatting/original.tex) Enter file name: 
+(../examples/tex/formatting/original.tex) Enter file name: 
+(../examples/tex/formatting/original.tex) Enter file name: 
+(../examples/tex/formatting/original.tex) Enter file name: 
+(../examples/tex/formatting/original.tex) Enter file name: 
+(../examples/tex/formatting/original.tex) Enter file name: 
+(../examples/tex/formatting/original.tex) Enter file name: 
+(../examples/tex/formatting/original.tex)
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+! Package Listings Error: File `../tex/example/formatting/ideal.tex(.tex)' not 
+found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+(../examples/tex/formatting/original.tex)
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+! Package Listings Error: File `../tex/example/formatting/okay.tex(.tex)' not f
+ound.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+(../examples/tex/formatting/original.tex)
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+! Package Listings Error: File `../tex/example/formatting/problematic.tex(.tex)
+' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+(../examples/tex/formatting/original.tex)
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 43.
+
+
+! Package Listings Error: File `../tex/example/formatting/bad.tex(.tex)' not fo
+und.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+
+LaTeX Warning: Float too large for page by 365.96413pt on input line 45.
+
+[4
+
+
+]) [5] (problems/issuesInLaTex.tex)) [6] [7
+
+
+
+
+]
 \openout2 = `technologies/summary.aux'.
 
- (technologies/summary.tex) [4
+ (technologies/summary.tex)
+[8
 
 
 
-] [5
+] [9
 
 
 ] (index.bbl
@@ -1668,7 +1840,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--14
 /l/it/10.95 https : / / www . latex-[]project . org / help / books /
  []
 
-) [6]
+) [10]
 \openout2 = `appendices/appendix.aux'.
 
  (appendices/appendix.tex (appendices/fontscaling.tex
@@ -1681,14 +1853,14 @@ File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
 (Font)              scaled to size 10.95pt on input line 17.
 
-[7
+[11
 
 {C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-ts1
 .enc}]
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample1.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample1.pdf, id=241, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample1.pdf, id=342, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample1.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample1.pdf>
 Package pdftex.def Info: appendices/fontscalingexample1.pdf  used on input line
@@ -1699,19 +1871,19 @@ Missing character: There is no ; in font nullfont!
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample2.pdf, id=244, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample2.pdf, id=345, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample2.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample2.pdf>
 Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
  57.
 (pdftex.def)             Requested size: 80.07498pt x 113.12413pt.
-)) [8 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2.
-pdf
+)) [12 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2
+.pdf
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
 >]
-runsystem(latexminted cleantemp  --timestamp 20251016130605 6A992D5529F459A44FE
+runsystem(latexminted cleantemp  --timestamp 20251016180033 6A992D5529F459A44FE
 E58C733255E86)...disabled (restricted).
 
  (index.aux (introduction/short.aux) (problems/list.aux)
@@ -1725,16 +1897,16 @@ L3 programming layer <2024-01-04>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: D94D4C59BC4ABEDF9BD9B8CA523A3EBA;1184.
+(rerunfilecheck)             Checksum: 56E12D98D6596A5756082C1CB179FC61;1679.
  ) 
 Here is how much of TeX's memory you used:
- 50717 strings out of 474485
- 1198680 string characters out of 5744206
- 1989542 words of memory out of 5000000
- 72064 multiletter control sequences out of 15000+600000
- 577860 words of font info for 83 fonts, out of 8000000 for 9000
+ 50893 strings out of 474485
+ 1203247 string characters out of 5744206
+ 2016542 words of memory out of 5000000
+ 72142 multiletter control sequences out of 15000+600000
+ 579772 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,18n,117p,1395b,2283s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,18n,117p,1395b,2282s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/I
 nconsolata-zi4r.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmr10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/t
@@ -1743,15 +1915,16 @@ fonts/type1/public/cm-super/sfss0800.pfb><C:/Users/Sxyx/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/cm-super/sfss1000.pfb><C:/Users/Sxyx/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/cm-super/sfss1095.pfb><C:/Users/Sxyx/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/cm-super/sfss1440.pfb><C:/Users/Sxyx/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx1095.pfb><C:/Users/
-Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx1200.pfb><C:
-/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx1440.
+pData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx0800.pfb><C:/Users/
+Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx1095.pfb><C:
+/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx1200.
 pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sf
-sx2074.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-s
-uper/sfsx2488.pfb>
-Output written on index.pdf (11 pages, 690793 bytes).
+sx1440.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-s
+uper/sfsx2074.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/cm-super/sfsx2488.pfb>
+Output written on index.pdf (15 pages, 716425 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
- 172 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 468 PDF objects out of 1000 (max. 8388607)
+ 127 named destinations out of 1000 (max. 500000)
+ 228 words of extra memory for PDF output out of 10000 (max. 10000000)
 
