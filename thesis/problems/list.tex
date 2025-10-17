@@ -10,18 +10,26 @@
 
 %%%%% Unter den Abschnitten meist noch ein PDF-Kommentar evtl. für Prof./Betreuer. Kann helfen
 
+%%%%%
+%%%%% Bemerkung für das aktuelle Dokument: Bitte nochmal die Einleitenden und abschließenden Bemerkungen in den Vordergrund stellen und diesen entsprechend die Kapitel verfassen.
+%%%%%
+
 \section{Problemfälle}
 \subsection{Hinweise für Leser}
-\paragraph*{Herangehensweise}
-% Reihenfolge der Probleme. Für Leser nachvollziehbar machen
-Die Reihenfolge der Auflistung von Problemen wird danach geführt, in welchem genauen System diese entstehen könnten. Begonnen wird deshalb bei möglichen Problemen, welche sich bereits in der reinen \TeX{} Syntax aufzeigen könnten, danach die Giganz an Möglichkeiten von \LaTeX{} erkundet und im Anschluss einige, speziellere Problematiken angerissen.
-% Wir nutzen einen konzeptionellen Übersetzer, keine Software
-Außerdem sei bemerkt, dass sich hier kein Übersetzer im herkömmlichen Sinne (ob menschlich, ob maschinell) herangezogen wurde, sondern ein Konzeptioneller. Dieser erkennt verschiedene Zeichen und weiß, dass diverse Zeichen Teil der \TeX{}-Syntax sein \textit{könnten}, aber betrachtet nur alleine-stehende Wörter, die er kennt und übersetzt rein diese. Abhängig von den bestimmten Zeichenketten könnten hierbei eine Vielzahl an Permutationen entstehen, welche möglichst versucht wurden in folgender Struktur einzuordnen.
+%%% Ziel: Die Reihenfolge der Auflistung und Struktur einzelner Beispiele beschreiben.
 
-\paragraph*{Struktur eines Beispiels}
+\subsubsection*{Herangehensweise}
+% Eigentlich bräuchten die Problemfälle, da sie unabhängig sein sollten, keine Reihenfolge. Aber der Leser soll nicht komplett lost sein.
+Die nachfolgende Auflistung an verschiedener Fälle, welche Probleme gegenüber der \TeX{}-Syntax, bzw.\ innerhalb von \LaTeX{}-Dokumenten hervorrufen könnten, benötigt per se keine Reihenfolge, da sie möglichst alle behoben sein sollen. Ein zufälliges sequenzielles Nennen dieser würde jedoch die Lesbarkeit und Nachvollziehbarkeit dieser Arbeit mindern und eventuell auftretende, aber übersehene Fälle für Andere nicht schnellig ersichtlich machen\pdfcomment{Der Satz wird definitiv noch überarbeitet.}
+% Beschreibung und Begründung der gewählten Reihenfolge
+Deshalb wird eine Reihenfolge gewählt, welche nicht auf \LaTeX{}-Ebene beginnt, sondern sich so weit wie möglich dem Ursprung dieses Systemes nähert. Von also den bereits alleinig in \TeX{} auftretenden Problemen muss ein Weg in Richtung der auf dieser Software aufbauenden Technologien gebahnt werden. Als besonders relevante Systeme kämen hier zunächst \LaTeX{}, Bib\TeX{}, Ti\textit{k}Z und Weiterführende in Frage, allerdings bringen diese Technologien nicht immer \textit{wirklich} neue Probleme mit sich, welche bereits nicht bereits in \TeX{} selbst hätten entstehen können. Daher wird weniger nach \textit{eigentlichen, benannten} Software unterschieden, sondern nach Anwendungsfällen, für welche solche Systeme in einem Dokument dienen würden. Die Reihenfolge der Beispiele ähnelt somit zu Teilen der Vorgehensweise, wie man ein \TeX{}-Dokument erstellen könnte (wobei man hier klarstellen möchte, dass dies nicht zwingend an die beschriebene Form gebunden ist).
+% Wir nutzen einen konzeptionellen Übersetzer, keine Software
+Für jegliche Beispiele sei bemerkt, dass kein \enquote{Übersetzer} im herkömmlichen Sinne (menschlich, maschinell,\ldots) herangezogen wurde, sondern ein Konzeptioneller. Dieser erkennt verschiedene Zeichen und weiß, dass einige Teil der \TeX{}-Syntax sein \textit{könnten}, aber betrachtet immer nur alleine-stehende Wörter, die er kennt und versucht möglichst alle Gefundenen zu übersetzen, als auch eine alternative Zeichenkette zu liefern, in welcher dieses Wort nicht übersetzt wurde, falls es fälschlich aufgegriffen war. Abhängig von den bestimmten Zeichenketten könnten hierbei eine Vielzahl an Permutationen entstehen, welche möglichst versucht wurden in folgender Struktur einzuordnen.
+
+\subsubsection*{Struktur eines Beispiels}
 % Erläuterung der Struktur
 Die Darstellung einzelner Beispiele erfolgt tabellarisch und demonstriert zunächst gewünschte (bzw.\ zulässige) Verhalten und danach Unerwünschte (bzw.\ Fehlerhafte). Untige~\ref{tab:problems:example} dient hierbei als einfaches Beispiel und zeigt, wie das Übersetzen von Zeichenketten, welche z.B.\ Tags enthalten, theoretisch unterschiedliche Permutationen erzeugen können. Inwiefern sich die einzelnen zuvor unterschiedenen, möglichen Verhalten unterschiedlich äußern, soll für jedes Beispiel konkretisiert werden. Dieses einleitende Beispiel nutzt daher (zunächst) den rein imaginären Befehl \texttt{ink} mit einer auswählbaren Farbe, die auf einen String angewendet wird. Wünschenswert ist, dass nur der in geschwungenen Klammern stehende String übersetzt wird, aber ein Auslassen dieses wäre in erster Betrachtung nicht \TeX{}-Syntax brechend und daher zulässig. Unerwünscht wäre das Übersetzen der zusätzlichen Option in eckigen Klammern, wobei man davon ausgehen würde, dass für diese Option auf einen \textit{default}-Wert zurückgegriffen wird. Dies ist zwar ein syntaktischer Fehler, würde jedoch den Befehl selbst ausführbar lassen. Als \enquote{Fälschlich} werden demnach Fehler betrachtet, welche die \TeX{}-Syntax insofern brechen, dass der Kompilierprozess unterbrochen/abgebrochen wird.
-\begin{table}[h!]
+\begin{table}[h!tb]
     \centering
     \begin{tabularx}{\textwidth}{X X}
         \toprule
@@ -36,9 +44,109 @@ Die Darstellung einzelner Beispiele erfolgt tabellarisch und demonstriert zunäc
             Unerwünscht & \\[-13px]
             \commoncode{Original}{../examples/example/original.tex} & \commoncode{Sample 3}{../examples/example/problematic.tex}\\[1em]
         \midrule
-            Fälschlich & \\[-13px]
+            Falsch & \\[-13px]
             \commoncode{Original}{../examples/example/original.tex} & \commoncode{Sample 4}{../examples/example/bad.tex}\\[-1em]
         \bottomrule
     \end{tabularx}
     \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:example}
 \end{table}
+
+%% Wir wissen, was auf uns zukommt. Hoffentlich.
+
+\newpage
+
+\subsection{Elemente eines Dokumentes}
+%%% Frage (kompliziert): Wie können einzelne Strings so verändert sein, dass einzelne Wörter nicht übersetzt werden (oder übersetzt werden dürfen)?
+%%% Frage (einfach): Was möchte man in einem Dokument darstellen?
+% Damit: Formeln, Texte, Graphiken, Zitationen, Inhaltsverzeichnisse, Literatur, Titelseite, ... andere Dokumente!
+
+%% Fall: Mathematische Umgebungen (Meint: In solchen Umgebungen kann ein Übersetzen fragwürdig sein.)
+%% Die Lexeme beinhalten einer menschlichen Sprache fremde Sonderzeichen ($text=y$text$a=text$). Hier steht drei mal "text". Nur das Mittlere sollte übersetzt werden, da es Fließtext ist
+%% Fall: Definitionen (Meint: Theorem und dabei auftretende Schwierigkeiten (insb. verschiedene Bedeutungen der Klammern in der Syntax))
+%% Fall: Die Präambel (Meint: Wörter, welche zur Syntax beitragen)
+
+
+
+%% Wir kennen nun einige Elemente innerhalb von einem Dokument. 
+%% Für mehrere, ganz viele, beliebige Dokumente: Wie kann man diese strukturell beschreiben oder einfach erzeugen?
+
+\subsection{Strukturen in beliebigen Dokumenten}
+%%% Frage ist nicht: Welche Elemente gibt es in einem Dokument?
+%%% Frage: Wie kann man Elemente in TeX beschreiben, bzw. welche wurden schon beschrieben?
+%%% Siehe. Meint im wesentlichen LaTeX, Hyperref, BibTeX, TikZ und co., also diverse Pakete und auf TeX aufbauende Systeme. Hier: das erste Mal von Makros sprechen.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% unter: Review
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\subsubsection{Befehle}
+% Befehle, die Strings ändern/ausgeben, dürfen nicht übersetzt werden
+%\paragraph*{Kommandos}
+%~\ref{tab:problems:commands1} zeigt, dass selbst das Übersetzen einzelner Wörter zu Problemen führen kann, da die \TeX{} interne Variable des Autoren, welche in der Präambel gesetzt wird, durch die gezeigte Übersetzung nun nicht mehr passend referenziert ist.
+%\begin{table}[h!tb]
+ %   \centering
+  %  \begin{tabularx}{\textwidth}{X X}
+   %     \toprule
+    %        English & Mögliche Übersetzung\\
+     %   \midrule
+      %      Erwünscht & \\[-13px]
+       %     \commoncode{Original}{../examples/tex/commands/original.tex} & \commoncode{Erwünschte Übersetzung}{../tex/example/commands/original.tex}\\[1em]
+        %\midrule
+         %   Falsch & \\[-13px]
+          %  \commoncode{Original}{../examples/tex/commands/original.tex} & \commoncode{Fehlerhafte Übersetzung}{../tex/example/commands/bad.tex}\\[-1em]
+        %\bottomrule
+    %\end{tabularx}
+    %\caption{Das Fehlerhafte Beispiel meint nun nicht mehr die \texttt{author}-Variable, sondern eine (wohlmöglich) nicht existierende \texttt{Autor}-Variable}\label{tab:problems:commands1}
+%\end{table}
+
+
+%\paragraph*{Auf Zeichenketten angewendete Kommandos}
+%abcd
+%\begin{table}[h!tb]
+ %   \centering
+  %  \begin{tabularx}{\textwidth}{X X}
+   %     \toprule
+    %        English & Mögliche Übersetzung\\
+     %   \midrule
+      %      Erwünscht & \\[-13px]
+       %     \commoncode{Original}{../examples/tex/formatting/original.tex} & \commoncode{Erwünschte Übersetzung}{../tex/example/formatting/ideal.tex}\\[1em]
+        %\midrule
+     %       Zulässig & \\[-13px]
+      %      \commoncode{Original}{../examples/tex/formatting/original.tex} & \commoncode{Erwünschte Übersetzung}{../tex/example/formatting/okay.tex}\\[1em]        
+       % \midrule
+        %    Unerwünscht & \\[-13px]
+         %   \commoncode{Original}{../examples/tex/formatting/original.tex} & \commoncode{Erwünschte Übersetzung}{../tex/example/formatting/problematic.tex}\\[1em]
+    %    \midrule
+     %       Falsch & \\[-13px]
+      %      \commoncode{Original}{../examples/tex/formatting/original.tex} & \commoncode{Fehlerhafte Übersetzung}{../tex/example/formatting/bad.tex}\\[-1em]
+       % \bottomrule
+    %\end{tabularx}
+    %\caption{caption}\label{tab:problems:commands2}
+%\end{table}
+
+
+% Befehle, welche Strings beinhalten, welche nicht übersetzt werden dürfen
+%\paragraph*{Kommandos mit Optionen}
+% Befehle, welche spezifische Eingaben (Strings, jedoch ohne "festes" Format) erwarten, müssen funktionabel bleiben
+%\paragraph*{Befehle mit spezifischen Eingaben}
+
+
+% Hier gilt das Gleiche, wie für Befehle, nur nicht mehr ein-, sondern mehrzeilig
+%\subsubsection{Umgebungen}
+% Hier gilt das Gleiche, wie für Umgebungen, nur nicht mehr mehrzeilig, sondern mehr-"dokumentig"
+%\subsubsection{Dateien}
+% Dateinamen müssen erkannt und missachtet sein
+%\paragraph*{includes und inputs}
+% Hier nur: Labels und Hyperref-Tags müssen unübersetzt bleiben.
+%\paragraph*{Referenzen}
+%\subsubsection{Definitionen (Makros)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% über: Review
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Die Strukturen, welche auf mehrere Dokumente angewendet werden können sind klar. 
+%% 
+\subsection{Mehrfaches Kompilieren}
+%%% Meint: 
