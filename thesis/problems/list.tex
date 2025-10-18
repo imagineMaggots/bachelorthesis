@@ -73,10 +73,13 @@ Der zuvor etablierten logischen Struktur der Beispiellistung folgend, würde man
     \end{tabularx}
     \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:sections}
 \end{table}
+
 \newpage
 
-\subsubsection{Paragraphen und Abschnitte}
-Der zuvor etablierten logischen Struktur der Beispiellistung folgend, würde man zunächst einen Abschnitt oder Paragraphen erwarten. Technisch gesehen äußern sich die Beispiele allerdings alle sehr ähnlich. Hier erwartet man immer einen Befehl, welcher nicht übersetzt werden darf (da er Teil der logischen Struktur des Dokumentes ist) und einen Wert, welcher diesem Befehl übergeben ist und übersetzt werden soll. Das präsentierte Beispiel~\ref{tab:problems:sections} zeigt hier wohlmöglich auftretende Fälle. Erstrebenswert ist hierbei \textbf{nur} die Übersetzung des in geschwungenen Klammern stehenden Strings, unerwünscht das Übersetzen von sowohl Befehl, als auch den umklammerten Teilen und falsch ein Übersetzen von Befehl ohne den in Klammern stehenden Inhalten.% ich hasse abstraktes denken so fucking sehr
+\subsubsection{Erwähnung von Paragraphen}
+Den Implikationen, welche Referenzen auf Abschnitte eines Dokumentes\pdfcomment{weiter verfolgt in späterem Abschnitt} mit sich bringen, abgesehen, müssen jegliche Fälle abgedeckt werden, in welchen möglicherweise übersetzbare Strings mit Sonderzeichen vermischt stehen könnten.% Hier auch das erste label beispiel denkbar. Siehe: irgendwo im git. ich muss aufräumen und geistig klarkommen. hilfe
+Verweise auf vorangegangene oder folgende Paragraphen (via \texttt{ref} auf ein \texttt{label}) müssen einer einheitlichen Übersetzung obliegen, in welcher denkbare Label-Tags mit korrespondierenden Referenzierungen auch nach Übersetzung korrespondierend bleiben.% BEISPIEL NOCH ANPASSEN.
+
 \begin{table}[h!tb]
     \centering
     \begin{tabularx}{\textwidth}{X X}
@@ -84,15 +87,18 @@ Der zuvor etablierten logischen Struktur der Beispiellistung folgend, würde man
             English & Mögliche Übersetzung\\
         \midrule
             Richtiges Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/ideal.tex}\\[1em]
+            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispielübersetzung}{../examples/references/ideal.tex}\\[1em]
+        \midrule
+            Zulässiges Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispielübersetzung}{../examples/references/okay.tex}\\[1em]
         \midrule
             Unerwünschtes Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/problematic.tex}\\[1em]
+            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispielübersetzung}{../examples/references/problematic.tex}\\[1em]
         \midrule
             Falsches Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/bad.tex}\\[-1em]
+            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispielübersetzung}{../examples/references/bad.tex}\\[-1em]
         \bottomrule
     \end{tabularx}
-    \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:sections}
+    \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:referencesInDoc}
 \end{table}
 \newpage
