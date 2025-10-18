@@ -26,6 +26,8 @@ Die Darstellung einzelner Beispiele erfolgt tabellarisch und demonstriert erst r
 
 Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} Übersetzungen frei von Informationsverlust, \enquote{zulässige} Übersetzungen nur dazu fähig Informationen für die graphische Aufbereitung (allerdings nicht den sprachlichen Inhalten) zu entwenden, \enquote{unerwünschte} Übersetzungen dazu in Lage Informationen verbergen können und \enquote{falsche} Übersetzungen fehlende sprachliche Inhalte innerhalb eines Dokumentes, sowie fehlende Übersetzungen dieser. Nicht jede Gruppe von Beispielen führt dazu, dass alle benannten Kategorien auftreten.
 
+\newpage
+
 \begin{table}[h!tb]
     \centering
     \begin{tabularx}{\textwidth}{X X}
@@ -47,11 +49,34 @@ Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} 
     \end{tabularx}
     \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:example}
 \end{table}
+
 \newpage
 
 \subsection{Elemente eines Dokumentes}
 \subsubsection{Paragraphen und Abschnitte}
-Der zuvor etablierten logischen Struktur der Beispiellistung folgend, würde man zunächst einen Abschnitt oder Paragraphen erwarten. Technisch gesehen äußern sich die Beispiele allerdings alle sehr ähnlich. Hier erwartet man immer einen Befehl, welcher nicht übersetzt werden darf (da er Teil der logischen Struktur des Dokumentes ist) und einen Wert, welcher diesem Befehl übergeben ist und übersetzt werden soll. Das präsentierte Beispiel~\ref{tab:problems:sections} zeigt hier wohlmöglich auftretende Fälle. 
+Der zuvor etablierten logischen Struktur der Beispiellistung folgend, würde man zunächst einen Abschnitt oder Paragraphen erwarten. Technisch gesehen äußern sich die Beispiele allerdings alle sehr ähnlich. Hier erwartet man immer einen Befehl, welcher nicht übersetzt werden darf (da er Teil der logischen Struktur des Dokumentes ist) und einen Wert, welcher diesem Befehl übergeben ist und übersetzt werden soll. Das präsentierte Beispiel~\ref{tab:problems:sections} zeigt hier wohlmöglich auftretende Fälle. Erstrebenswert ist hierbei \textbf{nur} die Übersetzung des in geschwungenen Klammern stehenden Strings, unerwünscht das Übersetzen von sowohl Befehl, als auch den umklammerten Teilen und falsch ein Übersetzen von Befehl ohne den in Klammern stehenden Inhalten.% ich hasse abstraktes denken so fucking sehr
+\begin{table}[h!tb]
+    \centering
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+            English & Mögliche Übersetzung\\
+        \midrule
+            Richtiges Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/ideal.tex}\\[1em]
+        \midrule
+            Unerwünschtes Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/problematic.tex}\\[1em]
+        \midrule
+            Falsches Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/bad.tex}\\[-1em]
+        \bottomrule
+    \end{tabularx}
+    \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:sections}
+\end{table}
+\newpage
+
+\subsubsection{Paragraphen und Abschnitte}
+Der zuvor etablierten logischen Struktur der Beispiellistung folgend, würde man zunächst einen Abschnitt oder Paragraphen erwarten. Technisch gesehen äußern sich die Beispiele allerdings alle sehr ähnlich. Hier erwartet man immer einen Befehl, welcher nicht übersetzt werden darf (da er Teil der logischen Struktur des Dokumentes ist) und einen Wert, welcher diesem Befehl übergeben ist und übersetzt werden soll. Das präsentierte Beispiel~\ref{tab:problems:sections} zeigt hier wohlmöglich auftretende Fälle. Erstrebenswert ist hierbei \textbf{nur} die Übersetzung des in geschwungenen Klammern stehenden Strings, unerwünscht das Übersetzen von sowohl Befehl, als auch den umklammerten Teilen und falsch ein Übersetzen von Befehl ohne den in Klammern stehenden Inhalten.% ich hasse abstraktes denken so fucking sehr
 \begin{table}[h!tb]
     \centering
     \begin{tabularx}{\textwidth}{X X}
