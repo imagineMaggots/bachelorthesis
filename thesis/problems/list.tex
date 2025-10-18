@@ -1,37 +1,14 @@
-%%%%% Comment-structure:
-%%%%%   % Simple comment, explaining the below sentence/paragraph
-%%%%%   %%% Introductory remarks for subsections / questions asked / goals to be achieved
-%%%%%   %% Intercepting/Concluding remarks for subsection and takeaway for the next subsection.
-
-%%%%% Kommentar-Struktur: 
-%%%%%   % Einfacher Kommentar, der den Satz/Paragraphen unter ihm übersetzt
-%%%%%   %%% Einleitende Bemerkungen für Unterabschnitte / Gestellte Fragen / zu erreichende Ziele
-%%%%%   %% Zwischengrätschende/Abschließende Bemerkung für Unterabschnitt und Takeaway für den Nächsten
-
-%%%%% Unter den Abschnitten meist noch ein PDF-Kommentar evtl. für Prof./Betreuer. Kann helfen
-
-%%%%%
-%%%%% Bemerkung für das aktuelle Dokument: Bitte nochmal die Einleitenden und abschließenden Bemerkungen in den Vordergrund stellen und diesen entsprechend die Kapitel verfassen.
-%%%%%
-
+% note: commenting / keeping track of these paragraphs is being done in the associated github-issues (see project: @imagineMaggots's bachelors-thesis)
+% note, too: the comments in this file are not necessary, really.
 \section{Problemfälle}
 \subsection{Hinweise für Leser}
-%%% Ziel: Die Reihenfolge der Auflistung und Struktur einzelner Beispiele beschreiben.
-
 \subsubsection*{Herangehensweise}
-% Eigentlich bräuchten die Problemfälle, da sie unabhängig sein sollten, keine Reihenfolge. Aber der Leser soll nicht komplett lost sein.
 Die nachfolgende Auflistung an verschiedener Fälle, welche Probleme gegenüber der \TeX{}-Syntax, bzw.\ innerhalb von \LaTeX{}-Dokumenten hervorrufen könnten, benötigt per se keine Reihenfolge, da sie möglichst alle behoben sein sollen. Ein unbedachtes, zufälliges sequenzielles Nennen dieser könnte logische Lücken produzieren und damit potentielle Fehler produzieren\pdfcomment{Der Satz wird definitiv noch überarbeitet.}. 
-% Erwähnung des Startpunktes zur Problemerkundung
 Deshalb wird eine Reihenfolge gewählt, welche nicht auf \LaTeX{}-Ebene beginnt, sondern sich so weit wie möglich dem Ursprung dieses Systemes nähert.
 Von den bereits in \TeX{} auftretenden Problemen muss ein Weg in Richtung der auf dieser Software aufbauenden Technologien gebahnt werden. Da es sich der Gesamtheit der Quelltextdateien, auf welche ein Kompiliervorgang von \TeX{} zugreifen kann, immer um reine Textdateien handelt, werden spätere Beispiele nicht nach einzelnen Technologien betrachtet, sondern nach ihren Use-Cases (als relevante Systeme kämen hier zunächst \LaTeX{}, Bib\TeX{}, Ti\textit{k}Z und Weiterführende in Frage, welche teils andere Probleme nach sich ziehen).% nach sich ziehen = mitbringen, aber passt in meinem Kopf gerade besser
-% Unterscheidung der Fehler danach ob in einem echten Dokument (reell, wie es in einem TeX{}-Code beschrieben steht) oder nur virtuell entstehen könnte.
 Eine Fehlerunterscheidung findet nach Funktionalität in einem reellen Dokument (das nach dem Kompilieren entstehende) und einem virtuellen Dokument (dessen Inhalte abhängig von anderen Dateien und Technologien sind). 
-% Sortierung so, wie auch der Compiler (aus logischer Sicht) das reelle, einzelne Dokument liest.
 Beispiele in reellen Dokumenten sind nach den Strukturen sortiert, welche man in Dokumenten beliebiger Natur wiederfinden kann. Als kleinste Struktur würde man hier (abgesehen von einzelnen Worten und Sätzen) Paragraphen sehen, aus welchen sich Abschnitte eines Dokumentes zusammensetzen. Mehrere dieser Abschnitte ergeben einen größeren Abschnitt. Statt von einem \enquote{Überabschnitt} zu sprechen, wird daher die Formulierung umgekehrt. Ein Dokument ist daher (zunächst) ein großer Abschnitt, welcher sich in verschiedene Unterabschnitte teilt, deren Namensgebung individuell sein kann. Hier wird (ähnlich wie bei:~\cite{texbook}) von Kapiteln, Abschnitten, Unterabschnitten und Paragraphen gesprochen, jedoch mögliche \enquote{Unterunterabschnitte} nicht als einzelne logische Struktur betrachtet, sondern als Unterabschnitt eines Unterabschnittes. 
 % Hier also bereits table of contents und \label und sowas. aber noch nicht bibtex, pgf, ... pakete in general
-%% Hier: Übersetzen von Überschriften erfordert ein neues Kompilieren eines TeX-Dokumentes. liefert evtl. passende überleitung zu den anderen Technologien.
-% 
-% Trennung der virtuellen Fehler.
 Die möglicherweise entstehenden Fehler in einem \enquote{virtuellen} Dokument werden nach den Teilen des Dokumentes klassifiziert, welche sie verändern (sollen). Hierbei können entweder einzelne Paragraphen angepasst werden (reiner Fließtext ohne vorgegebene Struktur),% meint minted, listings, ... aber auch generell makros und umgebungen
 Literaturverzeichnisse oder Glossare entstehen (reiner Fließtext mit vorgegebene Struktur),% natbib, bibtex, ... hier muss ggf. in die .bst (bibstyle) rein.
 Bilder und Graphiken eingebunden werden oder erstellt werden (Fließtexte innerhalb einer vorgegebenen Struktur),% hab mich selbst verwirrt. der bibtex-style datei muss ja dann hier irgendwie kommen, oder?
@@ -40,14 +17,13 @@ Abschließend muss dann allerdings ein Unterpunkt, welcher nach der beschriebene
 Zudem sind ein paar zusätzliche, sprachliche und teils unlösbare Probleme gelistet, welche nicht unbedingt als Anforderungen der gegebenen Problemstellung zu verstehen sind und daher als \enquote{abweichend} zu verstehen sind, aus welchen sich aber spätere Erweiterungspotentiale zeigen könnten.
 
 \subsubsection*{Struktur eines Beispiels}
-% Erläuterung der Struktur
 Die Darstellung einzelner Beispiele erfolgt tabellarisch und demonstriert erst richtiges (bzw.\ zulässige) Verhalten und danach Fehlerhaftes (bzw.\ Unerwünschtes). Untiges Beispiel (Tabelle~\ref{tab:problems:example}) dient hierbei als einfaches Beispiel für Fehler, die sich bei einem imaginären Befehl \texttt{ink} zeigen könnten. Dieser soll einen String mit einer bestimmten Farbe hinterlegen und besitzt einen zusätzlichen optionalen Farbparameter. 
 \enquote{Richtig} wäre es im originalen String nur das Wort in den geschwungenen Klammern zu übersetzen, da hierbei an keiner Stelle Information verloren geht und das Wort, nachdem es vom Deutschen ins Englische übersetzt wurde, weiterhin so wie vorgesehen hervorgehoben wird.
 \enquote{Zulässige} Übersetzungen treten dann auf, wenn nur für die Formatierung (insofern hieraus keine weiteren Probleme entstehen) verloren geht. Im gegebenen Beispiel würde dann zwar die farbige Hinterlegung verloren gehen, das Wort allerdings trotzdem übersetzt werden und würde den Weg in ein Dokument finden, ohne einen sprachlichen Informationsverlust zu riskieren (für den Endnutzer/Leser).\footnote{Selbst bei weißer Schriftfarbe kann das Wort in einem PDF-Reader markiert und kopiert werden.}
 \enquote{Unerwünscht} sind Fälle, in denen ein Übersetzen Fehler für die \TeX{}-Engine produziert. Übersetzt man hier z.B.\ \texttt{ink} nach \texttt{Tinte} könnte es sich bei Zweiterem wiederum um einen anderen Befehl handeln, das Wort \textit{Wort} einliest, aber eigentlich den alphanumerischen Wert von \textit{word} erwartet hätte.\footnote{$0x57+0x6f + 0x72 + 0x74 = 25\times 16^1 + 28 = 400$ statt:\ $0x77+0x6f + 0x72 + 0x64 = 26\times 16^1 + 28 = 416$. Wofür der Befehl \texttt{Tinte} einen/den Integer 416 benötigt, kann ich Ihnen allerdings nicht erläutern.} Ein Fehlschlagen des Befehls \texttt{Tinte} würde zwar einen Fehler für den \TeX{}-Parser produzieren, dieser wüsste dann aber, dass dieser Befehl bereits einmal fehlgeschlagen ist und eine neues Kompilieren verlangen, in welchem dieser Befehl und seine Optionen ignoriert werden, wodurch das Wort auch hier im Dokument landen würde. Man kann allerdings nicht bei jedem beliebigen \TeX{}-Befehl davon ausgehen, dass dieses Verhalten einheitlich auftreten wird. Hierbei existieren Fälle, welche dafür sorgen könnten, dass andere Wörter nun nicht mehr Teil eines Dokumentes werden könnten~\ref{}.% Meint das \include{clock} zu \include{Uhr} vs \include{clock.tex} zu \include{clock.tex} Beispiel.
 \enquote{Fehlerhaftes} Verhalten beim Übersetzen von \TeX{}-Quelltextdateien führt zu einem Informationsverlust, da das zu übersetzende Wort entweder nicht mehr übersetzt wird oder nicht mehr im Dokument wiederzufinden ist. Sobald man beginnt mit mehreren Dateien ein einziges Dokument zu beschreiben, riskiert ein na\"\i ives Übersetzen nur von einem Quelltext ausgehend, dass aus unerwünschten Fehlern innerhalb von einem Dokument fehlerhaftes Verhalten für das entstehende Produkt (meint:\ die kompilierte PDF) entsteht. 
 
-% Ein wenig abstraktere Schilderung
+
 Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} Übersetzungen frei von Informationsverlust, \enquote{zulässige} Übersetzungen nur dazu fähig Informationen für die graphische Aufbereitung (allerdings nicht den sprachlichen Inhalten) zu entwenden, \enquote{unerwünschte} Übersetzungen dazu in Lage Informationen verbergen können und \enquote{falsche} Übersetzungen fehlende sprachliche Inhalte innerhalb eines Dokumentes, sowie fehlende Übersetzungen dieser.
 \begin{table}[h!tb]
     \centering
@@ -70,182 +46,7 @@ Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} 
     \end{tabularx}
     \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:example}
 \end{table}
-
-%% Wir wissen, was auf uns zukommt. Hoffentlich.
-
 \newpage
 
 \subsection{Elemente eines Dokumentes}
-%%% Frage (kompliziert): Wie können einzelne Strings so verändert sein, dass einzelne Wörter nicht übersetzt werden (oder übersetzt werden dürfen)?
-%%% Frage (einfach): Was möchte man in einem Dokument darstellen?
-% Damit: Formeln, Texte, Graphiken, Zitationen, Inhaltsverzeichnisse, Literatur, Titelseite, ... andere Dokumente!
-\subsubsection*{Abschnitte und Paragraphen}\phantomsection\label{problems:in:paragraphs}
-%%% \command{example}
-Logisch betrachtet wären an dieser Stelle zunächst Paragraphen zu erwarten, welche keinerlei Formatierung mittels \TeX{} unterliegen. Dieser Fall ist jedoch im gegebenen Kontext als trivial zu betrachten, da man sich hier nur mit der Übersetzung von reiner menschlicher Sprache beschäftigen würde. Einfache Textformatierung innerhalb solcher Paragraphen, wie bspw.\ das Unterstreichen eines einzelnen Wortes kann dazu führen, dass der Befehl, welcher diese Unterstreichung umsetzt als Wort aufgegriffen wird und daher nach einer Übersetzung diese Funktion nicht mehr erfüllt (siehe: Tabelle~\ref{tab:problems:in:paragraphs} und Tabelle~\ref{tab:problems:in:sections}).
-\subsubsection*{Überschriften und Abschnitte eines Dokumentes}
-%%% 
-Spannender werden nun Befehle, welche größere (logische) Strukturen des Dokumentes betreffen. Im \TeX{}-Quellcode belaufen sich diese zwar zunächst auf einzeilige Befehle, produzieren jedoch Elemente eines Dokumentes, welche einer vordefinierten, bestimmten Formatierung obliegen sollen. Tabelle~\ref{tab:problems:in:sections} zeigt hierbei ein Beispiel, wie das Übersetzen eines einfachen Wortes dazu führen kann, dass ein Paragraph nicht mehr als solcher erkannt werden könnte, sondern nur noch als reiner Fließtext interpretiert werden würde, da der fälschlich übersetzte Befehl missachtet werden könnte. (Insofern er nicht an anderer Stelle deklariert wurde). Diese Umstände würden dazu führen, dass dieser Paragraph nicht mehr in dem z.B.\ Inhaltsverzeichnis aufgeführt wird (sollte die \enquote{Tiefe} des Inhaltsverzeichnis passend mittels \verb|\setcounter{secnumdepth}{4}|% zu testen ob richtig
-gesetzt sein).
-Dem aufmerksamen Leser sollte hierbei allerdings direkt klar sein, dass bereits Abschnitte~\ref{problems:in:paragraphs} dieses Problem behandelt. Wohingegen die reine Formatierung dieser Überschriften bereits abgearbeitet ist, zeigen sich vermerke auf diese Abschnitte als problematisch. 
-
-\newpage
-\begin{table}[h!tb]
-    \centering
-    \begin{tabularx}{\textwidth}{X X}
-        \toprule
-            English & Mögliche Übersetzung\\
-        \midrule
-            Erwünschtes Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/paragraphs/original.tex} & \commoncode{Beispiel}{../examples/paragraphs/ideal.tex}\\[1em]
-        \midrule
-            Zulässiges Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/paragraphs/original.tex} & \commoncode{Beispiel}{../examples/paragraphs/okay.tex}\\[1em]
-        \midrule
-            Unerwünschtes Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/paragraphs/original.tex} & \commoncode{Beispiel}{../examples/paragraphs/problematic.tex}\\[1em]
-        \midrule
-            Falsches Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/paragraphs/original.tex} & \commoncode{Beispiel}{../examples/paragraphs/bad.tex}\\[-1em]
-        \bottomrule
-    \end{tabularx}
-    \caption{Das Übersetzen eines einzelnen Wortes verhindert das Ausführen einer Funktion von \TeX{}.}\label{tab:problems:in:paragraphs}
-\end{table}
-\newpage
-\begin{table}[h!tb]
-    \centering
-    \begin{tabularx}{\textwidth}{X X}
-        \toprule
-            English & Mögliche Übersetzung\\
-        \midrule
-            Erwünschtes Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispiel}{../examples/sections/ideal.tex}\\[1em]
-        \midrule
-            Zulässiges Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispiel}{../examples/sections/okay.tex}\\[1em]
-        \midrule
-            Unerwünschtes Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispiel}{../examples/sections/problematic.tex}\\[1em]
-        \midrule
-            Falsches Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispiel}{../examples/sections/bad.tex}\\[-1em]
-        \bottomrule
-    \end{tabularx}
-    \caption{Das Übersetzen eines einzelnen Wortes verhindert das Ausführen einer Funktion von \TeX{}.}\label{tab:problems:in:sections}
-\end{table}
-\newpage
-%%%%%%%%% NOT DONE YET EIAEONODFWNAIDNO
-\begin{table}[h!tb]
-    \centering
-    \begin{tabularx}{\textwidth}{X X}
-        \toprule
-            English & Mögliche Übersetzung\\
-        \midrule
-            Erwünschtes Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispiel}{../examples/references/ideal.tex}\\[1em]
-        \midrule
-            Zulässiges Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispiel}{../examples/references/okay.tex}\\[1em]
-        \midrule
-            Unerwünschtes Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispiel}{../examples/references/problematic.tex}\\[1em]
-        \midrule
-            Falsches Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispiel}{../examples/references/bad.tex}\\[-1em]
-            
-        \bottomrule
-    \end{tabularx}
-    \caption{Das Übersetzen eines einzelnen Wortes verhindert das Ausführen einer Funktion von \TeX{}.}\label{tab:problems:in:document:references}
-\end{table}
-
-%% Fall: Mathematische Umgebungen (Meint: In solchen Umgebungen kann ein Übersetzen fragwürdig sein.)
-%% Die Lexeme beinhalten einer menschlichen Sprache fremde Sonderzeichen ($text=y$text$a=text$). Hier steht drei mal "text". Nur das Mittlere sollte übersetzt werden, da es Fließtext ist
-%% Fall: Definitionen (Meint: Theorem und dabei auftretende Schwierigkeiten (insb. verschiedene Bedeutungen der Klammern in der Syntax))
-%% Fall: Die Präambel (Meint: Wörter, welche zur Syntax beitragen)
-
-
-
-%% Wir kennen nun einige Elemente innerhalb von einem Dokument. 
-%% Für mehrere, ganz viele, beliebige Dokumente: Wie kann man diese strukturell beschreiben oder einfach erzeugen?
-
-\subsection{Strukturen beliebiger Dokumente}
-%%% Frage ist nicht: Welche Elemente gibt es in einem Dokument?
-%%% Frage: Wie kann man Elemente in TeX beschreiben, bzw. welche wurden schon beschrieben?
-%%% Siehe. Meint im wesentlichen LaTeX, Hyperref, BibTeX, TikZ und co., also diverse Pakete und auf TeX aufbauende Systeme. Hier: das erste Mal von Makros sprechen.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% unter: Review
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\subsubsection{Befehle}
-% Befehle, die Strings ändern/ausgeben, dürfen nicht übersetzt werden
-%\paragraph*{Kommandos}
-%~\ref{tab:problems:commands1} zeigt, dass selbst das Übersetzen einzelner Wörter zu Problemen führen kann, da die \TeX{} interne Variable des Autoren, welche in der Präambel gesetzt wird, durch die gezeigte Übersetzung nun nicht mehr passend referenziert ist.
-%\begin{table}[h!tb]
- %   \centering
-  %  \begin{tabularx}{\textwidth}{X X}
-   %     \toprule
-    %        English & Mögliche Übersetzung\\
-     %   \midrule
-      %      Erwünscht & \\[-13px]
-       %     \commoncode{Original}{../examples/tex/commands/original.tex} & \commoncode{Erwünschte Übersetzung}{../tex/example/commands/original.tex}\\[1em]
-        %\midrule
-         %   Falsch & \\[-13px]
-          %  \commoncode{Original}{../examples/tex/commands/original.tex} & \commoncode{Fehlerhafte Übersetzung}{../tex/example/commands/bad.tex}\\[-1em]
-        %\bottomrule
-    %\end{tabularx}
-    %\caption{Das Fehlerhafte Beispiel meint nun nicht mehr die \texttt{author}-Variable, sondern eine (wohlmöglich) nicht existierende \texttt{Autor}-Variable}\label{tab:problems:commands1}
-%\end{table}
-
-
-%\paragraph*{Auf Zeichenketten angewendete Kommandos}
-%abcd
-%\begin{table}[h!tb]
- %   \centering
-  %  \begin{tabularx}{\textwidth}{X X}
-   %     \toprule
-    %        English & Mögliche Übersetzung\\
-     %   \midrule
-      %      Erwünscht & \\[-13px]
-       %     \commoncode{Original}{../examples/tex/formatting/original.tex} & \commoncode{Erwünschte Übersetzung}{../tex/example/formatting/ideal.tex}\\[1em]
-        %\midrule
-     %       Zulässig & \\[-13px]
-      %      \commoncode{Original}{../examples/tex/formatting/original.tex} & \commoncode{Erwünschte Übersetzung}{../tex/example/formatting/okay.tex}\\[1em]        
-       % \midrule
-        %    Unerwünscht & \\[-13px]
-         %   \commoncode{Original}{../examples/tex/formatting/original.tex} & \commoncode{Erwünschte Übersetzung}{../tex/example/formatting/problematic.tex}\\[1em]
-    %    \midrule
-     %       Falsch & \\[-13px]
-      %      \commoncode{Original}{../examples/tex/formatting/original.tex} & \commoncode{Fehlerhafte Übersetzung}{../tex/example/formatting/bad.tex}\\[-1em]
-       % \bottomrule
-    %\end{tabularx}
-    %\caption{caption}\label{tab:problems:commands2}
-%\end{table}
-
-
-% Befehle, welche Strings beinhalten, welche nicht übersetzt werden dürfen
-%\paragraph*{Kommandos mit Optionen}
-% Befehle, welche spezifische Eingaben (Strings, jedoch ohne "festes" Format) erwarten, müssen funktionabel bleiben
-%\paragraph*{Befehle mit spezifischen Eingaben}
-
-
-% Hier gilt das Gleiche, wie für Befehle, nur nicht mehr ein-, sondern mehrzeilig
-%\subsubsection{Umgebungen}
-% Hier gilt das Gleiche, wie für Umgebungen, nur nicht mehr mehrzeilig, sondern mehr-"dokumentig"
-%\subsubsection{Dateien}
-% Dateinamen müssen erkannt und missachtet sein
-%\paragraph*{includes und inputs}
-% Hier nur: Labels und Hyperref-Tags müssen unübersetzt bleiben.
-%\paragraph*{Referenzen}
-%\subsubsection{Definitionen (Makros)}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% über: Review
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% Die Strukturen, welche auf mehrere Dokumente angewendet werden können sind klar. 
-%% 
-\subsection{\TeX{}'s Category Codes}
-%%% Meint: 
-
-\subsection{Abweichende Probleme}
+\subsubsection{}
