@@ -7,7 +7,7 @@ Die nachfolgende Auflistung an verschiedener Fälle, welche Probleme gegenüber 
 Deshalb wird eine Reihenfolge gewählt, welche nicht auf \LaTeX{}-Ebene beginnt, sondern sich so weit wie möglich dem Ursprung dieses Systemes nähert.
 Von den bereits in \TeX{} auftretenden Problemen muss ein Weg in Richtung der auf dieser Software aufbauenden Technologien gebahnt werden. Da es sich der Gesamtheit der Quelltextdateien, auf welche ein Kompiliervorgang von \TeX{} zugreifen kann, immer um reine Textdateien handelt, werden spätere Beispiele nicht nach einzelnen Technologien betrachtet, sondern nach ihren Use-Cases (als relevante Systeme kämen hier zunächst \LaTeX{}, Bib\TeX{}, Ti\textit{k}Z und Weiterführende in Frage, welche teils andere Probleme nach sich ziehen).% nach sich ziehen = mitbringen, aber passt in meinem Kopf gerade besser
 Eine Fehlerunterscheidung findet nach Funktionalität in einem reellen Dokument (das nach dem Kompilieren entstehende) und einem virtuellen Dokument (dessen Inhalte abhängig von anderen Dateien und Technologien sind). 
-Beispiele in reellen Dokumenten sind nach den Strukturen sortiert, welche man in Dokumenten beliebiger Natur wiederfinden kann. Als kleinste Struktur würde man hier (abgesehen von einzelnen Worten und Sätzen) Paragraphen sehen, aus welchen sich Abschnitte eines Dokumentes zusammensetzen. Mehrere dieser Abschnitte ergeben einen größeren Abschnitt. Statt von einem \enquote{Überabschnitt} zu sprechen, wird daher die Formulierung umgekehrt. Ein Dokument ist daher (zunächst) ein großer Abschnitt, welcher sich in verschiedene Unterabschnitte teilt, deren Namensgebung individuell sein kann. Hier wird (ähnlich wie bei:~\cite{texbook}) von Kapiteln, Abschnitten, Unterabschnitten und Paragraphen gesprochen, jedoch mögliche \enquote{Unterunterabschnitte} nicht als einzelne logische Struktur betrachtet, sondern als Unterabschnitt eines Unterabschnittes. 
+Beispiele in reellen Dokumenten sind nach den Strukturen sortiert, welche man in Dokumenten beliebiger Natur wiederfinden kann. Als kleinste Struktur würde man hier (abgesehen von einzelnen Worten und Sätzen) Paragraphen sehen, welche Abschnitte eines Dokumentes formen. Mehrere dieser Abschnitte ergeben einen größeren Abschnitt. Statt von einem \enquote{Überabschnitt} zu sprechen, wird daher die Formulierung umgekehrt. Ein Dokument ist daher (zunächst) ein großer Abschnitt, welcher sich in verschiedene Unterabschnitte teilt, deren Namensgebung individuell sein kann. Hier wird (ähnlich wie bei:~\cite{texbook}) von Kapiteln, Abschnitten, Unterabschnitten und Paragraphen gesprochen, jedoch mögliche \enquote{Unterunterabschnitte} nicht als einzelne logische Struktur betrachtet, sondern als Unterabschnitt eines Unterabschnittes. 
 % Hier also bereits table of contents und \label und sowas. aber noch nicht bibtex, pgf, ... pakete in general
 Die möglicherweise entstehenden Fehler in einem \enquote{virtuellen} Dokument werden nach den Teilen des Dokumentes klassifiziert, welche sie verändern (sollen). Hierbei können entweder einzelne Paragraphen angepasst werden (reiner Fließtext ohne vorgegebene Struktur),% meint minted, listings, ... aber auch generell makros und umgebungen
 Literaturverzeichnisse oder Glossare entstehen (reiner Fließtext mit vorgegebene Struktur),% natbib, bibtex, ... hier muss ggf. in die .bst (bibstyle) rein.
@@ -20,11 +20,12 @@ Zudem sind ein paar zusätzliche, sprachliche und teils unlösbare Probleme geli
 Die Darstellung einzelner Beispiele erfolgt tabellarisch und demonstriert erst richtiges (bzw.\ zulässige) Verhalten und danach Fehlerhaftes (bzw.\ Unerwünschtes). Untiges Beispiel (Tabelle~\ref{tab:problems:example}) dient hierbei als einfaches Beispiel für Fehler, die sich bei einem imaginären Befehl \texttt{ink} zeigen könnten. Dieser soll einen String mit einer bestimmten Farbe hinterlegen und besitzt einen zusätzlichen optionalen Farbparameter. 
 \enquote{Richtig} wäre es im originalen String nur das Wort in den geschwungenen Klammern zu übersetzen, da hierbei an keiner Stelle Information verloren geht und das Wort, nachdem es vom Deutschen ins Englische übersetzt wurde, weiterhin so wie vorgesehen hervorgehoben wird.
 \enquote{Zulässige} Übersetzungen treten dann auf, wenn nur für die Formatierung (insofern hieraus keine weiteren Probleme entstehen) verloren geht. Im gegebenen Beispiel würde dann zwar die farbige Hinterlegung verloren gehen, das Wort allerdings trotzdem übersetzt werden und würde den Weg in ein Dokument finden, ohne einen sprachlichen Informationsverlust zu riskieren (für den Endnutzer/Leser).\footnote{Selbst bei weißer Schriftfarbe kann das Wort in einem PDF-Reader markiert und kopiert werden.}
-\enquote{Unerwünscht} sind Fälle, in denen ein Übersetzen Fehler für die \TeX{}-Engine produziert. Übersetzt man hier z.B.\ \texttt{ink} nach \texttt{Tinte} könnte es sich bei Zweiterem wiederum um einen anderen Befehl handeln, das Wort \textit{Wort} einliest, aber eigentlich den alphanumerischen Wert von \textit{word} erwartet hätte.\footnote{$0x57+0x6f + 0x72 + 0x74 = 25\times 16^1 + 28 = 400$ statt:\ $0x77+0x6f + 0x72 + 0x64 = 26\times 16^1 + 28 = 416$. Wofür der Befehl \texttt{Tinte} einen/den Integer 416 benötigt, kann ich Ihnen allerdings nicht erläutern.} Ein Fehlschlagen des Befehls \texttt{Tinte} würde zwar einen Fehler für den \TeX{}-Parser produzieren, dieser wüsste dann aber, dass dieser Befehl bereits einmal fehlgeschlagen ist und eine neues Kompilieren verlangen, in welchem dieser Befehl und seine Optionen ignoriert werden, wodurch das Wort auch hier im Dokument landen würde. Man kann allerdings nicht bei jedem beliebigen \TeX{}-Befehl davon ausgehen, dass dieses Verhalten einheitlich auftreten wird. Hierbei existieren Fälle, welche dafür sorgen könnten, dass andere Wörter nun nicht mehr Teil eines Dokumentes werden könnten~\ref{}.% Meint das \include{clock} zu \include{Uhr} vs \include{clock.tex} zu \include{clock.tex} Beispiel.
+\enquote{Unerwünscht} sind Fälle, in denen ein Übersetzen Fehler für die \TeX{}-Engine produziert. Übersetzt man hier z.B.\ \texttt{ink} nach \texttt{Tinte} könnte es sich bei Zweiterem wiederum um einen anderen Befehl handeln, das Wort \textit{Wort} einliest, aber eigentlich den alphanumerischen Wert von \textit{word} erwartet hätte.\footnote{$57_{16}+6f_{16} + 72_{16} + 74_{16} = 25\times 16^1 + 28 = 400$ statt:\ $77_{16}+6f_{16} + 72_{16} + 64_{16} = 26\times 16^1 + 28 = 416$. Wofür der Befehl \texttt{Tinte} einen/den Integer 416 benötigt, kann ich Ihnen allerdings nicht erläutern.} Ein Fehlschlagen des Befehls \texttt{Tinte} würde zwar einen Fehler für den \TeX{}-Parser produzieren, dieser wüsste dann aber, dass dieser Befehl bereits einmal fehlgeschlagen ist und eine neues Kompilieren verlangen, in welchem dieser Befehl und seine Optionen ignoriert werden, wodurch das Wort auch hier im Dokument landen würde. Man kann allerdings nicht bei jedem beliebigen \TeX{}-Befehl davon ausgehen, dass dieses Verhalten einheitlich auftreten wird. Hierbei existieren Fälle, welche dafür sorgen könnten, dass andere Wörter nun nicht mehr Teil eines Dokumentes werden könnten~\ref{}.% Meint das \include{clock} zu \include{Uhr} vs \include{clock.tex} zu \include{clock.tex} Beispiel.
 \enquote{Fehlerhaftes} Verhalten beim Übersetzen von \TeX{}-Quelltextdateien führt zu einem Informationsverlust, da das zu übersetzende Wort entweder nicht mehr übersetzt wird oder nicht mehr im Dokument wiederzufinden ist. Sobald man beginnt mit mehreren Dateien ein einziges Dokument zu beschreiben, riskiert ein na\"\i ives Übersetzen nur von einem Quelltext ausgehend, dass aus unerwünschten Fehlern innerhalb von einem Dokument fehlerhaftes Verhalten für das entstehende Produkt (meint:\ die kompilierte PDF) entsteht. 
 
 
-Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} Übersetzungen frei von Informationsverlust, \enquote{zulässige} Übersetzungen nur dazu fähig Informationen für die graphische Aufbereitung (allerdings nicht den sprachlichen Inhalten) zu entwenden, \enquote{unerwünschte} Übersetzungen dazu in Lage Informationen verbergen können und \enquote{falsche} Übersetzungen fehlende sprachliche Inhalte innerhalb eines Dokumentes, sowie fehlende Übersetzungen dieser.
+Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} Übersetzungen frei von Informationsverlust, \enquote{zulässige} Übersetzungen nur dazu fähig Informationen für die graphische Aufbereitung (allerdings nicht den sprachlichen Inhalten) zu entwenden, \enquote{unerwünschte} Übersetzungen dazu in Lage Informationen verbergen können und \enquote{falsche} Übersetzungen fehlende sprachliche Inhalte innerhalb eines Dokumentes, sowie fehlende Übersetzungen dieser. Nicht jede Gruppe von Beispielen führt dazu, dass alle benannten Kategorien auftreten.
+
 \begin{table}[h!tb]
     \centering
     \begin{tabularx}{\textwidth}{X X}
@@ -32,16 +33,16 @@ Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} 
             English & Mögliche Übersetzung\\
         \midrule
             Richtiges Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispiel}{../examples/example/ideal.tex}\\[1em]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispielübersetzung}{../examples/example/ideal.tex}\\[1em]
         \midrule
             Zulässiges Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispiel}{../examples/example/okay.tex}\\[1em]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispielübersetzung}{../examples/example/okay.tex}\\[1em]
         \midrule
             Unerwünschtes Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispiel}{../examples/example/problematic.tex}\\[1em]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispielübersetzung}{../examples/example/problematic.tex}\\[1em]
         \midrule
             Falsches Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispiel}{../examples/example/bad.tex}\\[-1em]
+            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispielübersetzung}{../examples/example/bad.tex}\\[-1em]
         \bottomrule
     \end{tabularx}
     \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:example}
@@ -49,4 +50,24 @@ Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} 
 \newpage
 
 \subsection{Elemente eines Dokumentes}
-\subsubsection{}
+\subsubsection{Paragraphen und Abschnitte}
+Der zuvor etablierten logischen Struktur der Beispiellistung folgend, würde man zunächst einen Abschnitt oder Paragraphen erwarten. Technisch gesehen äußern sich die Beispiele allerdings alle sehr ähnlich. Hier erwartet man immer einen Befehl, welcher nicht übersetzt werden darf (da er Teil der logischen Struktur des Dokumentes ist) und einen Wert, welcher diesem Befehl übergeben ist und übersetzt werden soll. Das präsentierte Beispiel~\ref{tab:problems:sections} zeigt hier wohlmöglich auftretende Fälle. 
+\begin{table}[h!tb]
+    \centering
+    \begin{tabularx}{\textwidth}{X X}
+        \toprule
+            English & Mögliche Übersetzung\\
+        \midrule
+            Richtiges Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/ideal.tex}\\[1em]
+        \midrule
+            Unerwünschtes Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/problematic.tex}\\[1em]
+        \midrule
+            Falsches Verhalten & \\[-13px]
+            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/bad.tex}\\[-1em]
+        \bottomrule
+    \end{tabularx}
+    \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:sections}
+\end{table}
+\newpage
