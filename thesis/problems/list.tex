@@ -63,9 +63,19 @@ Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} 
     \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:example}
 \end{table}
 
+
 \newpage
 
 \subsection{Elemente in einem \TeX{}-Quellcode}
+\subsubsection{Die Präambel}
+Der unsichtbare Header eines \TeX{}-Dokumentes zeigt an (zunächst) wenigen, sehr spezifischen Stellen eine Schwierigkeit auf. In dieser sind meistenfalls Informationen enthalten, welche nicht zu übersetzen sind, da sie z.B.\ Parameter für dokumentenweite (globale) Einstellungen setzen. Die Art und Weise \textit{diese} zu setzen ist allerdings genauso behandelbar, wie einige folgende Kommandos (in Abschnitt~\ref{}) und wäre daher eigentlich nicht von weiterem Interesse, zeigt sich allerdings sehr geeignet dazu, einige triviale Fehlerquellen abzudecken (bzw.\ ungeeignete Ansätze). So kann man sich nicht immer gewiss sein, man einzelne Zeilen gesondert auswerten kann, da z.B.\ Pakete wie \texttt{hyperref} es in ihren Optionen (\texttt{hypersetup}) erlauben einige Einstellungen durch Zeilenbrüche voneinander getrennt (und übersichtlicher) darzustellen.% Beispiel einfügen
+Genauso sind allerdings auch einzelne Zeilen nicht direkt als \enquote{insgesamt \TeX{} syntaktisch} zu betrachten, nur weil ein syntaktisches Element von \TeX{} innerhalb dieses vorliegt.% Beispiel einzufügen
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% Not according to github-issue-structure %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % \command translatable <---> \item wasauchimmer
 % \command non-translatable <---> \def \string sumn... / consider talking about \renewcommand here?
 
