@@ -6,7 +6,7 @@
 Die nachfolgende Auflistung verschiedener Fälle, welche Probleme gegenüber der \TeX{}-Syntax, bzw.\ innerhalb von \LaTeX{}-Dokumenten hervorrufen könnten, benötigt per se keine Reihenfolge, da sie möglichst alle unabhängig voneinander behoben sein sollen. Ein unbedachtes, zufälliges sequenzielles Nennen dieser könnte logische Lücken produzieren und damit ein Übersehen potentieller Fehler riskieren\pdfcomment{Der Satz wird definitiv noch überarbeitet.}. 
 Deshalb wird eine Reihenfolge gewählt, welche nicht auf \LaTeX{}-Ebene beginnt, sondern sich so weit wie möglich dem Ursprung dieses Systemes nähert.
 Von den bereits in \TeX{} auftretenden Problemen muss ein Weg in Richtung der auf dieser Software aufbauenden Technologien gebahnt werden. Da es sich der Gesamtheit der Quelltextdateien, auf welche ein Kompiliervorgang von \TeX{} zugreifen kann, immer um reine Textdateien handelt, werden spätere Beispiele nicht nach einzelnen Technologien betrachtet, sondern nach ihren Use-Cases (als relevante Systeme kämen hier zunächst \LaTeX{}, Bib\TeX{}, Ti\textit{k}Z und Weiterführende in Frage, welche teils andere Probleme nach sich ziehen). Eine Fehlerunterscheidung findet nach Funktionalität in einem Dokument (das nach dem Kompilieren entstehende, ausgehend von einer Technologie\pdfcomment{jedoch nicht zwingend von nur einem Quelltext, das wird die Überleitung}, beschrieben in~\ref{subsec:logicInDocuments}) und dessen virtuellem Pendant (mit Inhalten abhängig von anderen Dateien und Technologien, beschrieben in~\ref{subsec:logicOutsideDocuments}).% 
-
+In einem einzelnen Beispiel wird zunächst von dem strukturellen Element ein Beispiel abgelitten und danach eine abstraktere Beschreibung dieser Fehlerquelle gefunden.% 
 \subsubsection*{Logische Strukturen in Dokumenten}\phantomsection\label{subsec:logicInDocuments}
 Beispiele in reellen Dokumenten sind nach den Strukturen sortiert, welche man in Dokumenten beliebiger Natur wiederfinden kann. Als kleinste Struktur würde man hier (abgesehen von einzelnen Worten und Sätzen) Paragraphen sehen, welche Abschnitte eines Dokumentes formen. Mehrere dieser Abschnitte ergeben einen größeren Abschnitt. Statt von einem \enquote{Überabschnitt} zu sprechen, wird daher die Formulierung umgekehrt. Ein Dokument ist zu Beginn als ein großer Abschnitt zu verstehen, welcher sich in verschiedene Unterabschnitte teilt, deren Namensgebung individuell sein kann. Hier wird (ähnlich wie bei:~\cite{texbook}) von Kapiteln, Abschnitten, Unterabschnitten und Paragraphen gesprochen, jedoch mögliche \enquote{Unterunterabschnitte} nicht als einzelne logische Struktur betrachtet, sondern als Unterabschnitt eines Unterabschnittes. 
 Abschnitte selbst stellen aber nicht die einzige logische Struktur in einem Dokument dar, sondern es existieren auch andere, nicht-textliche Inhalte (die dem Kompilieren eines \TeX{}-Quellcodes das Aussehen des Dokumentes beeinflussen). 
@@ -66,6 +66,11 @@ Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} 
 \newpage
 
 \subsection{Elemente in einem \TeX{}-Quellcode}
+% \command translatable <---> \item wasauchimmer
+% \command non-translatable <---> \def \string sumn... / consider talking about \renewcommand here?
+
+
+
 \subsubsection{Paragraphen und Abschnitte}
 % Meint: \command{translatable}
 
