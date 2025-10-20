@@ -12,16 +12,21 @@ Beispiele in reellen Dokumenten sind nach den Strukturen sortiert, welche man in
 Abschnitte selbst stellen aber nicht die einzige logische Struktur in einem Dokument dar, sondern es existieren auch andere, nicht-textliche Inhalte (die dem Kompilieren eines \TeX{}-Quellcodes das Aussehen des Dokumentes beeinflussen). 
 Die gröbste Struktur eines Dokumentes entscheidet die Präambel von \TeX{}-Dokumenten, welche sich aus verschiedenen Formen von Befehlen zusammensetzt, von welchen nur begrenzt viele Inhalte übersetzt werden dürften (meist:\ keine).
 Nach der Präambel, also im Teil, der \textit{tatsächliche} Inhalte im Dokument beschreiben soll, ist nach Befehlen (Kommandos) und Umgebungen zu klassifizieren, deren Funktion innerhalb des Quellcodes auch nach einem Übersetzen erhalten bleiben muss. Im Normalfall sei davon auszugehen, dass Kommandos innerhalb eines Dokumentes entweder bestimmte globale Parameter definieren (bspw.\ in der Präambel) oder in andere graphische Elemente (bspw.\ Formelzeichen, Stilisierung von Zeichenketten, \ldots) aufgelöst werden und Umgebungen Änderungen an größeren Teilen eines Abschnittes vornehmen\pdfcomment{beliebiger hierarchischen Höhe im DOM}. Einzelne Elemente der Präambel deuten jedoch darauf hin, welche Art von anderen Technologien (auf \TeX{}-aufbauend) in einem Dokument genutzt werden und wohingegen ein übersetztendes Programm die Suche nach zu übersetzenden Strings über das eigentliche Dokument (bzw.\ einen einzelnen Quellcode) hinaus ausweiten muss.
+% Überleitung fehlt
 
-Abschließend folgt ein Unterpunkt, welcher nach der beschriebenen Reihenfolge in einem der ersteren Abschnitte zu erwarten wäre, aber das Ende gestellt wird, da aus diesem zu viele neue, eigene Probleme entstehen könnten.% Meint CatCode, illuiert (gibts leider nach Duden nicht)
+% Überleitung fehlt
+Abschließend folgt ein Unterpunkt, welcher nach der beschriebenen Reihenfolge in einem der ersteren Abschnitte zu erwarten wäre, aber an das Ende gestellt wird, da aus diesem überabzählbar viele neue Probleme entstehen könnten.% Meint CatCode, illuiert (gibts leider nach Duden nicht)
 
-\subsubsection*{Externe Abhängigkeiten virtueller Dokumente}\phantomsection\label{subsec:logicOutsideDocuments}% Meint BibTeX, TikZ (wobei, eigentlich nicht mehr, es sei denn PGF, aber auch eigentlich nicht, es sei denn Graphik muss neu erzeugt werden?), ..., Pakete in general, und associated files
-\begin{enumerate}
-    \item Beispiel für \textit{Warum} mehrere Quellcodes für / in TeX? Ti\textit{k} Graphiken werden oft sehr umfangreich / unübersichtlich. Und:\ Nutzung von lstlistings für Code-Highlighting passt hier super!
-    \item
-\end{enumerate}
+%\subsubsection*{Externe Abhängigkeiten virtueller Dokumente}
+\phantomsection\label{subsec:logicOutsideDocuments}% Meint BibTeX, TikZ (wobei, eigentlich nicht mehr, es sei denn PGF, aber auch eigentlich nicht, es sei denn Graphik muss neu erzeugt werden?), ..., Pakete in general, und associated files
+Ein Dokument (\TeX{} oder \LaTeX{}) kann/muss nicht nur mittels einem Quelltext beschrieben werden oder nur unter Nutzung eines \TeX{}-Compilers entstehen. Den eigentlichen (im Sinne:\ existierenden, mit Namen versehenen) Technologien abgesehen, müssen Dokumente teils aus Gründen der Lesbarkeit (des Quelltextes) oder logischen Reihenfolge von strukturellen Elementen Informationen in mehrere Dateien auslagern oder auf mehrere Dateien zugreifen, um gesamte Inhalte eines Dokumentes zu produzieren. 
+% Voriger Satz schrieb: muss. Darauf muss ein kurzer Beweis folgen...
+Insbesondere die Lesbarkeit von Quellcodes kann von einer solchen Nutzung von mehreren Quelltextdateien für ein \LaTeX{}-Dokument profitieren, da z.B.\ Graphiken (via Ti\textit{k}Z o.Ä.\ erstellt) oder Quellcodes (mittels bspw.\ \texttt{minted} oder \texttt{lstlistings} dargestellt) ansonsten Quelltexte (für das \TeX{}-Dokument) produzieren können, die abertausende Zeilen lang sind\pdfcomment{und persönlich werden mir selbst reine Fließtexte zu unübersichtlich. von dark-mode auf light-mode in meiner bevorzugten ide zu wechseln, hilft allerdings dabei}.
+Andererseits kann (aus Sicht des \TeX{}-Parsers) keine Struktur in einem Dokument (ob übersetzt, ob unübersetzt) in einem bspw.\ Inhaltsverzeichnis gelistet sein, welches nach diesem Verzeichnis steht. Der Parser kann diese Struktur (beim Abarbeiten des Quelltextes von oben nach untern) nur sehen, nachdem er bereits den Befehl sah ein Inhaltsverzeichnis auszugeben. Die Informationen über die Inhalte dieses Inhaltsverzeichnis' erhält er logischerweise allerdings erst, nachdem er alle Teile des Dokumentes (dessen Beschreibung) gesehen hatte (und demnach in eine helfende Datei schreiben konnte, auf welche er beim nächsten Durchlaufen zugreifen kann).
+% Überleitung fehlt
 
-\subsubsection*{Weiteres}
+% Überleitung fehlt
+% \subsubsection*{Weiteres}
 Zudem sind ein paar zusätzliche, sprachliche und teils unlösbare Probleme gelistet, welche nicht unbedingt als Anforderungen der gegebenen Problemstellung zu verstehen sind und daher als \enquote{abweichend} zu verstehen sind, aus welchen sich aber spätere Erweiterungspotentiale zeigen könnten.
 
 \subsubsection*{Struktur eines Beispiels}
