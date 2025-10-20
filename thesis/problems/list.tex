@@ -72,6 +72,12 @@ Der unsichtbare Header eines \TeX{}-Dokumentes zeigt an (zunächst) wenigen, seh
 Genauso sind allerdings auch einzelne Zeilen nicht direkt als \enquote{insgesamt \TeX{} syntaktisch} zu betrachten, nur weil ein syntaktisches Element von \TeX{} innerhalb dieses vorliegt.% Beispiel einzufügen
 
 
+\subsubsection{Kommandos}
+\paragraph*{Ursprüngliche}
+Kommandos selbst sind in der reinen \TeX{}-Syntax durch ein Backslash \verb|\| gekennzeichnet. Es zeigen sich Unterscheidungen darin, ob das einem Kommando folgende Wort übersetzt werden sollte, oder nicht. Beispielsweise müsste innerhalb von Auflistungen der nach einem \verb|\item| folgende String übersetzt werden. Andererseits wäre in einer Definition mit \verb|\def| vorerst davon abzusehen den folgenden String zu übersetzen, da dieser ein neues Makro/Kommando/etc.\ definieren zu sucht.
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%% Not according to github-issue-structure %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
