@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  20 OCT 2025 10:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  21 OCT 2025 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1594,7 +1594,7 @@ your preamble.
  on input line 171.
 
 (titlepage.tex
-<pictures/UNIHRO_LOGO_2025.pdf, id=110, 703.62875pt x 144.54pt>
+<pictures/UNIHRO_LOGO_2025.pdf, id=114, 703.62875pt x 144.54pt>
 File: pictures/UNIHRO_LOGO_2025.pdf Graphic file (type pdf)
 <use pictures/UNIHRO_LOGO_2025.pdf>
 Package pdftex.def Info: pictures/UNIHRO_LOGO_2025.pdf  used on input line 12.
@@ -1625,65 +1625,136 @@ Package hyperref Info: bookmark level for unknown lpcsec defaults to 0 on input
 0.enc}] [2])
 \openout2 = `problems/list.aux'.
 
- (problems/list.tex
-LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 23.
-
-
-LaTeX Warning: Reference `' on page 3 undefined on input line 23.
-
-[3
-
-
-
-] [4] (../examples/example/original.tex) (../examples/example/ideal.tex)
-(../examples/example/original.tex) (../examples/example/okay.tex)
-(../examples/example/original.tex) (../examples/example/problematic.tex)
-(../examples/example/original.tex) (../examples/example/bad.tex)
-(../examples/example/original.tex) (../examples/example/ideal.tex)
-(../examples/example/original.tex) (../examples/example/okay.tex)
-(../examples/example/original.tex) (../examples/example/problematic.tex)
-(../examples/example/original.tex) (../examples/example/bad.tex)
-(../examples/example/original.tex) (../examples/example/ideal.tex)
-(../examples/example/original.tex) (../examples/example/okay.tex)
-(../examples/example/original.tex) (../examples/example/problematic.tex)
-(../examples/example/original.tex) (../examples/example/bad.tex)
-
-LaTeX Warning: Float too large for page by 7.43971pt on input line 51.
-
-(../examples/sections/original.tex) (../examples/sections/ideal.tex)
-(../examples/sections/original.tex) (../examples/sections/problematic.tex)
-(../examples/sections/original.tex) (../examples/sections/bad.tex)
-(../examples/sections/original.tex) (../examples/sections/ideal.tex)
-(../examples/sections/original.tex) (../examples/sections/problematic.tex)
-(../examples/sections/original.tex) (../examples/sections/bad.tex)
-(../examples/sections/original.tex) (../examples/sections/ideal.tex)
-(../examples/sections/original.tex) (../examples/sections/problematic.tex)
-(../examples/sections/original.tex) (../examples/sections/bad.tex)
-(../examples/references/original.tex) (../examples/references/ideal.tex)
-(../examples/references/original.tex) (../examples/references/okay.tex)
-(../examples/references/original.tex) (../examples/references/problematic.tex)
-(../examples/references/original.tex) (../examples/references/bad.tex)
-(../examples/references/original.tex) (../examples/references/ideal.tex)
-(../examples/references/original.tex) (../examples/references/okay.tex)
-(../examples/references/original.tex) (../examples/references/problematic.tex)
-(../examples/references/original.tex) (../examples/references/bad.tex)
-(../examples/references/original.tex) (../examples/references/ideal.tex)
-(../examples/references/original.tex) (../examples/references/okay.tex)
-(../examples/references/original.tex) (../examples/references/problematic.tex)
-(../examples/references/original.tex) (../examples/references/bad.tex)
-
-LaTeX Warning: Float too large for page by 7.43971pt on input line 102.
-
-[5] [6] [7] [8] [9] [10]) [11] [12] [13]
-\openout2 = `technologies/summary.aux'.
-
- (technologies/summary.tex) [14
+ (problems/list.tex [3
 
 
 
 ]
-[15
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 9.0pt on input line 32.
+
+
+LaTeX Warning: Reference `' on page 4 undefined on input line 32.
+
+[4] [5] (../examples/example/original.tex) (../examples/example/ideal.tex)
+(../examples/example/original.tex) (../examples/example/okay.tex)
+(../examples/example/original.tex) (../examples/example/problematic.tex)
+(../examples/example/original.tex) (../examples/example/bad.tex)
+(../examples/example/original.tex) (../examples/example/ideal.tex)
+(../examples/example/original.tex) (../examples/example/okay.tex)
+(../examples/example/original.tex) (../examples/example/problematic.tex)
+(../examples/example/original.tex) (../examples/example/bad.tex)
+(../examples/example/original.tex) (../examples/example/ideal.tex)
+(../examples/example/original.tex) (../examples/example/okay.tex)
+(../examples/example/original.tex) (../examples/example/problematic.tex)
+(../examples/example/original.tex) (../examples/example/bad.tex)
+
+LaTeX Warning: Float too large for page by 7.43971pt on input line 62.
+
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 68.
+
+[6]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@savsk' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lastskip' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@savsf' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\spacefactor' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@floatpenalty' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@Mii' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@currbox' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@freelist' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@marbox' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@freelist' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\global' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\count' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@marbox' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\m@ne' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 100.
+
+
+Overfull \hbox (138.19368pt too wide) in paragraph at lines 100--101
+[][]\T1/zi4/l/it/10.95 \command[non-translatable]{translatable}[]\T1/cmss/m/n/1
+0.95 , [][]\T1/zi4/l/it/10.95 \command[translatable]{translatable}[]\T1/cmss/m/
+n/10.95 , [][]\T1/zi4/l/it/10.95 \command[non-translatable] translatable|[][][]
+
+ []
+
+) [7] [8]
+\openout2 = `technologies/summary.aux'.
+
+ (technologies/summary.tex) [9
+
+
+
+] [10
 
 
 ] (index.bbl
@@ -1699,7 +1770,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--14
 /l/it/10.95 https : / / www . latex-[]project . org / help / books /
  []
 
-) [16]
+) [11]
 \openout2 = `appendices/appendix.aux'.
 
  (appendices/appendix.tex (appendices/fontscaling.tex
@@ -1712,14 +1783,14 @@ File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
 (Font)              scaled to size 10.95pt on input line 17.
 
-[17
+[12
 
 {C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-ts1
 .enc}]
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample1.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample1.pdf, id=396, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample1.pdf, id=360, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample1.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample1.pdf>
 Package pdftex.def Info: appendices/fontscalingexample1.pdf  used on input line
@@ -1730,19 +1801,19 @@ Missing character: There is no ; in font nullfont!
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<appendices/fontscalingexample2.pdf, id=399, 598.235pt x 845.1575pt>
+<appendices/fontscalingexample2.pdf, id=363, 598.235pt x 845.1575pt>
 File: appendices/fontscalingexample2.pdf Graphic file (type pdf)
 <use appendices/fontscalingexample2.pdf>
 Package pdftex.def Info: appendices/fontscalingexample2.pdf  used on input line
  57.
 (pdftex.def)             Requested size: 80.07498pt x 113.12413pt.
-)) [18 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2
+)) [13 <./appendices/fontscalingexample1.pdf> <./appendices/fontscalingexample2
 .pdf
 
 pdfTeX warning: pdflatex (file ./appendices/fontscalingexample2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
 >]
-runsystem(latexminted cleantemp  --timestamp 20251020102253 6A992D5529F459A44FE
+runsystem(latexminted cleantemp  --timestamp 20251021140129 6A992D5529F459A44FE
 E58C733255E86)...disabled (restricted).
 
  (index.aux (introduction/short.aux) (problems/list.aux)
@@ -1761,39 +1832,82 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: A9557936B7EDCD3D236B7EDE519B8F98;1883.
+
+Package rerunfilecheck Warning: File `index.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `index.out':
+(rerunfilecheck)             Before: 49CB95F09747EFFB095545E372E1AA56;1915
+(rerunfilecheck)             After:  733ACDDB2FD989C352BCD087C4BA562D;1410.
  ) 
 Here is how much of TeX's memory you used:
- 50936 strings out of 474485
- 1204919 string characters out of 5744206
- 2079542 words of memory out of 5000000
- 72121 multiletter control sequences out of 15000+600000
- 578997 words of font info for 87 fonts, out of 8000000 for 9000
+ 50785 strings out of 474485
+ 1199682 string characters out of 5744206
+ 2005542 words of memory out of 5000000
+ 72088 multiletter control sequences out of 15000+600000
+ 579821 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,18n,117p,1372b,2273s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/I
-nconsolata-zi4r.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmmi9.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Sxyx/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Sxyx/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Sxyx/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/cm-super/sfsi1095.pfb><C:/Users/Sxyx/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss0800.pfb><C:/Users/Sx
-yx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss0900.pfb><C:/U
-sers/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss1000.pf
-b><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss
-1095.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-sup
-er/sfss1440.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/cm-super/sfsx1095.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/cm-super/sfsx1200.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/font
-s/type1/public/cm-super/sfsx1440.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/cm-super/sfsx2074.pfb><C:/Users/Sxyx/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/cm-super/sfsx2488.pfb>
-Output written on index.pdf (21 pages, 779345 bytes).
+ 101i,17n,117p,1372b,2273s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{figure.caption.36} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.35} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section*.33} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.2.2.8} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.2.2.7} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.2.2.6} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.2.2.5} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.2.2.4} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.2.2.3} has been referenced but does n
+ot exist, replaced by a fixed one
+
+<C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inc
+onsolata-zi4r.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmmi9.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Sxyx/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Sxyx/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/cm-super/sfsi0900.pfb><C:/Users/Sxyx/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsi1095.pfb><C:/Users/Sxyx
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss0800.pfb><C:/Use
+rs/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss0900.pfb>
+<C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss10
+00.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super
+/sfss1095.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/public/c
+m-super/sfss1440.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/cm-super/sfsx1095.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/cm-super/sfsx1200.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/cm-super/sfsx1440.pfb><C:/Users/Sxyx/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/cm-super/sfsx2074.pfb><C:/Users/Sxyx/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/cm-super/sfsx2488.pfb>
+Output written on index.pdf (16 pages, 790956 bytes).
 PDF statistics:
- 542 PDF objects out of 1000 (max. 8388607)
- 147 named destinations out of 1000 (max. 500000)
- 236 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 505 PDF objects out of 1000 (max. 8388607)
+ 116 named destinations out of 1000 (max. 500000)
+ 244 words of extra memory for PDF output out of 10000 (max. 10000000)
 
