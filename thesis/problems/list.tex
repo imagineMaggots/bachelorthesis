@@ -84,15 +84,15 @@ Kommandos selbst sind in der reinen \TeX{}-Syntax durch ein Backslash \verb|\| g
 % Muster:
 Innerhalb des Quelltextes können also Strukturen auftreten, welche direkt folgende Zeichenketten als syntaktisches Element zur Dokumentenbeschreibung benötigen. Da hierbei beide Fälle auftreten könnten und nicht an dem Kommando selbst erkennbar sind, muss hierbei nach Art des Kommandos selbst abgewogen werden\pdfcomment{um dieses auf eine begrenzte Zahl an \TeX{} Primitiven zurückzuführen, welche darauf hindeuten können, ob übersetzt werden soll, oder nicht. (An dieser Stelle noch zu vorgreifend, daher der Kommentar)}. Demnach genügt es nicht nur reine Befehle anhand des \verb|\| zu erkennen oder als festes Maß dafür zu nehmen, ob ein folgender String (der kein weiteres Muster aufweist) zu übersetzen ist, oder nicht.
 
-\paragraph*{Klammern für Parameter}
-\subparagraph*{Vorgesehene}
+\paragraph*{Parameter}
+\subparagraph*{Geschwungene Klammern}
 Auf viele Kommandos (Makros) folgen ein Paar geschwungener Klammern. Die Inhalte dieser sind in einigen Fällen zu übersetzen und in Anderen nicht, aber insgesamt als eine Art Parameter für dieses Kommando zu verstehen. 
 
 Beispielsweise wäre das Kommando \verb|\paragraph{This is a string of many characters}| eines, in welchem die Inhalte der Klammern übersetzt werden sollen und das Kommando \verb|\usepackage{geometry}| ein Beispiel, in welchem das Übersetzen von \verb|geometry| zu \verb|Geometrie| dazu führen würde, dass das entsprechende Paket nicht im Quelltext verwendet wird. Diese Art von Fällen, welche der Übersetzung ausgeschlossen werden soll, ist besonders kritisch, wenn mit mehreren Dateien gearbeitet wird und so würde ein Übersetzen von z.B.\ \verb|\include{clock.tex}| (oder \verb|\include{clock}|) zu \verb|\include{Uhr.tex}| (oder:\ \verb|\include{Uhr}|) dazu führen, dass größere Teile eines Dokumentes komplett ausgeschlossen werden. 
 % Muster:
 Klammern dieser Art genügen also alleine noch nicht dafür eine Aussage darüber zu treffen, ob innenliegende Strings übersetzt werden dürfen, allerdings diese Zeichen (meint:\ die geschwungenen Klammern) kein Teil direkter Teil einer menschlichen Sprache und man würde davon meist erwarten, dass diese Klammern im Normalfall ein Indikator dafür sind, dass nicht übersetzt werden soll und in bestimmbaren Ausnahmefällen (bspw.\ \verb|\section{}|,\verb|\paragraph*{}|, \verb|\chapter{}|, \verb|\title{}|, etc.) von Interesse für ein Übersetzen sind. 
 
-\subparagraph*{Nutzer-eigene}
+\subparagraph*{Nutzer-eigene Klammern}
 Klammern für Parameter und Optionen belaufen sich nicht nur auf eckige und Geschwungene, sondern jegliche Zeichen könnten als Klammern betrachtbar werden. Einfachstes Beispiel liefert hierbei der \verb|\verb|-command, dessen (auf diesen) folgendes Zeichen als Klammer für die umschlossene Zeichenkette (bis benanntes Zeichen wieder auftritt) zu betrachten sei. Daher wäre ein \verb+\verb|something|+ mit verschiedensten Sonderzeichen denkbar (bspw.\ +,-,*,/, \ldots\ anstatt \verb/|/).
 Darüber hinaus lässt es der Befehl \verb|\catcode| zu, dass einzelne Zeichen, die üblicherweise in der standardmäßigen \TeX{}-Syntax eine eigene Semantik tragen (bspw.\ eckige, geschwungene Klammern oder das Backslash, die Tilde oder das At-Zeichen, bzw.\ Wort-Charaktere oder Zahlen), eine neue/andere Semantik ggb.\ des \TeX{}-Parsers erhalten könnten.
 %%%%%% BEISPIEL
@@ -101,9 +101,9 @@ Darüber hinaus lässt es der Befehl \verb|\catcode| zu, dass einzelne Zeichen, 
 %%% Da dies allerdings ein unnötiges Fehlerrisiko produziert, sollte davon abgesehen werden.
 
 \subsubsection{Optionen}\par
-\paragraph*{Details:}\par
+\paragraph*{Eckige Klammern (?) macht keinen Sinn}\par
 Optionen sind, neben Parametern, eine weitere Möglichkeit einem Kommando in \TeX{} zusätzliche Informationen mitzuliefern, z.B.\ für zusätzliche Formatierung. Aus logischer Reihenfolge müssten diese Optionen \textit{eigentlich} immer vor der Zeichenkette, welche formatiert werden soll, stehen, da erst nach Einlesen der Parameter die Information dieser erkannt und auf den folgenden String angewendet werden kann.% TIKZ IST MAL WIEDER SCHULD
-Diese Aussage wäre logisch, gilt allerdings nicht einheitlich (bspw.\ bei der Verwendung von Ti\textit{k}Z-Bibliotheken). Optionen in eckigen Klammern insgesamt einer Übersetzung zu entziehen, verhindert allerdings die Möglichkeit, dass die Optionen einiger Befehle selbst ein String sein könnten, welcher im Dokument gedruckt und somit übersetzt werden muss.  
+Diese Aussage wäre logisch, gilt allerdings nicht einheitlich (bspw.\ bei der Verwendung von Ti\textit{k}Z-Bibliotheken). Optionen in eckigen Klammern insgesamt einer Übersetzung zu entziehen, verhindert allerdings die Möglichkeit, dass die Optionen einiger Befehle selbst ein String sein könnten, welcher im Dokument gedruckt und somit übersetzt werden muss.
 \begin{comment}
 \subparagraph*{Beispiele:}\par
 % Hier brauch ich dann "größere" Beispiele (im Sinne: echter Platz, ab hier hübschere Formatierung)
