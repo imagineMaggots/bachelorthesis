@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{ifthen}
+
+\begin{document}
+\newcommand{\weather}[2][sunny]
+{
+    Heute war es 
+    \ifthenelse{\equal{#1}{sunny}} 
+    {sonnig.} 
+    {nicht sonnig. Hoffentlich ist es morgen nach dem Regen wieder 
+        \ifthenelse{\equal{#2}{rainy}} 
+        {
+            regnerisch, da die Wälder zu trocken sind.
+        }
+        {
+            wieder sonnig werden.
+        }
+    };
+}
+
+\weather{sunny}\\\\
+% produziert: "Heute war es sonnig."
+\weather{rainy}\\\\
+% produziert auch: "Heute war es sonnig." Da hier erwartet wird, dass Parameter 2 festgelegt wird, da für Par. 1 bereits ein Wert existiert.
+\weather[sunny]{rainy}\\\\
+% produziert auch: "Heute war es sonnig." Da 'sunny' = 'sunny'
+\weather[rainy]{sunny}\\\\
+% produziert: "Heute war es nicht sonnig. Hoffentlich ist es morgen nach dem Regen wieder wieder sonnig werden."
+\weather{rainy}{rainy}\\\\
+% produziert: "Heute war es sonnig.; rainy" Da, wie zuvor, 'rainy' als Parameter 2 aufgefasst wird. Das darauffolgende Wort wird also nicht als Teil des Befehls aufgefasst.
+
+\end{document}

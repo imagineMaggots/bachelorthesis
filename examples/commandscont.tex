@@ -1,0 +1,21 @@
+\newcommand{\weather}[2][sunny]
+{
+    Heute war es 
+    \ifthenelse{\equal{#1}{sunny}} 
+    {sonnig.} 
+    {nicht sonnig. Hoffentlich ist es morgen nach dem Regen wieder 
+        \ifthenelse{\equal{#2}{rainy}} 
+        {
+            regnerisch, da die Wälder zu trocken sind.
+        }
+        {
+            wieder sonnig werden.
+        }
+    };
+}
+
+\weather{sunny}\\\\
+\weather{rainy}\\\\
+\weather[rainy]{sunny}\\\\
+\weather{rainy}{rainy}\\\\
+\weather{rainy}{rainy}\\\\
