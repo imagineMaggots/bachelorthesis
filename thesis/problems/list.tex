@@ -2,36 +2,43 @@
 % note, too: the comments in this file are not necessary, really.
 \section{Problemfälle}
 \subsection{Herangehensweise}
-\subsubsection*{Reihenfolge}
-Die nachfolgende Auflistung verschiedener Fälle, welche Probleme gegenüber der \TeX{}-Syntax, bzw.\ innerhalb von \LaTeX{}-Dokumenten hervorrufen könnten, benötigt per se keine Reihenfolge, da sie möglichst alle unabhängig voneinander behoben sein sollen. Ein unbedachtes, zufälliges sequenzielles Nennen dieser könnte logische Lücken produzieren und damit ein Übersehen potentieller Fehler riskieren\pdfcomment{Der Satz wird definitiv noch überarbeitet.}. 
-Deshalb wird eine Reihenfolge gewählt, welche nicht auf \LaTeX{}-Ebene beginnt, sondern sich so weit wie möglich dem Ursprung dieses Systemes nähert.
-Von den bereits in \TeX{} auftretenden Problemen muss ein Weg in Richtung der auf dieser Software aufbauenden Technologien gebahnt werden. Da es sich der Gesamtheit der Quelltextdateien, auf welche ein Kompiliervorgang von \TeX{} zugreifen kann, immer um reine Textdateien handelt, werden spätere Beispiele nicht nach einzelnen Technologien betrachtet, sondern nach ihren Use-Cases (als relevante Systeme kämen hier zunächst \LaTeX{}, Bib\TeX{}, Ti\textit{k}Z und Weiterführende in Frage, welche teils andere Probleme nach sich ziehen). Eine Fehlerunterscheidung findet nach Funktionalität in einem Dokument (das nach dem Kompilieren entstehende, ausgehend von einer Technologie\pdfcomment{jedoch nicht zwingend von nur einem Quelltext, das wird die Überleitung}, beschrieben in~\ref{subsec:logicInDocuments}) und dessen virtuellem Pendant (mit Inhalten abhängig von anderen Dateien und Technologien, beschrieben in~\ref{subsec:logicOutsideDocuments}).% 
-In einem einzelnen Beispiel wird zunächst von dem strukturellen Element ein Beispiel abgelitten und danach eine abstraktere Beschreibung dieser Fehlerquelle gefunden.% 
-\subsubsection*{Logische Strukturen in Dokumenten}\phantomsection\label{subsec:logicInDocuments}
-Beispiele in reellen Dokumenten sind nach den Strukturen sortiert, welche man in Dokumenten beliebiger Natur wiederfinden kann. Als kleinste Struktur würde man hier (abgesehen von einzelnen Worten und Sätzen) Paragraphen sehen, welche Abschnitte eines Dokumentes formen. Mehrere dieser Abschnitte ergeben einen größeren Abschnitt. Statt von einem \enquote{Überabschnitt} zu sprechen, wird daher die Formulierung umgekehrt. Ein Dokument ist zu Beginn als ein großer Abschnitt zu verstehen, welcher sich in verschiedene Unterabschnitte teilt, deren Namensgebung individuell sein kann. Hier wird (ähnlich wie bei:~\cite{texbook}) von Kapiteln, Abschnitten, Unterabschnitten und Paragraphen gesprochen, jedoch mögliche \enquote{Unterunterabschnitte} nicht als einzelne logische Struktur betrachtet, sondern als Unterabschnitt eines Unterabschnittes. 
-Abschnitte selbst stellen aber nicht die einzige logische Struktur in einem Dokument dar, sondern es existieren auch andere, nicht-textliche Inhalte (die dem Kompilieren eines \TeX{}-Quellcodes das Aussehen des Dokumentes beeinflussen). 
-Die gröbste Struktur eines Dokumentes entscheidet die Präambel von \TeX{}-Dokumenten, welche sich aus verschiedenen Formen von Befehlen zusammensetzt, von welchen nur begrenzt viele Inhalte übersetzt werden dürften (meist:\ keine).
-Nach der Präambel, also im Teil, der \textit{tatsächliche} Inhalte im Dokument beschreiben soll, ist nach Befehlen (Kommandos) und Umgebungen zu klassifizieren, deren Funktion innerhalb des Quellcodes auch nach einem Übersetzen erhalten bleiben muss. Im Normalfall sei davon auszugehen, dass Kommandos innerhalb eines Dokumentes entweder bestimmte globale Parameter definieren (bspw.\ in der Präambel) oder in andere graphische Elemente (bspw.\ Formelzeichen, Stilisierung von Zeichenketten, \ldots) aufgelöst werden und Umgebungen Änderungen an größeren Teilen eines Abschnittes vornehmen\pdfcomment{beliebiger hierarchischen Höhe im DOM}. Einzelne Elemente der Präambel deuten jedoch darauf hin, welche Art von anderen Technologien (auf \TeX{}-aufbauend) in einem Dokument genutzt werden und wohingegen ein übersetztendes Programm die Suche nach zu übersetzenden Strings über das eigentliche Dokument (bzw.\ einen einzelnen Quellcode) hinaus ausweiten muss.
+% \subsubsection*{Reihenfolge}
+Ähnlich wie ein \TeX{}-Dokument selbst entsteht, können auch potentielle Fehler entstehen, wenn Quelltexte der Art übersetzt werden. Hierbei sind zuerst alle möglichen Fehler innerhalb eines einzelnen und \enquote{reinen} \TeX{}-Quellcodes abzudecken und danach werden Fehler ersichtlich, welche bei der Ausweitung auf Mehrere entstehen (auf Grundlage der Tatsache, warum diese anderen Quelltexte entstehen \textit{könnten} und teilweise \textit{müssen}). Ausgehend von den kleinsten Strukturen innerhalb einer Quelltextdatei wird sich zu immer größer werdenden Strukturen hingearbeitet.\pdfcomment{der Satz existiert im Moment nur, um die 5 Paragraphen zu rechtfertigen, welche ich hier in ein paar Sätzen gerade zusammenfasse}
+Zudem sind ein paar zusätzliche, sprachliche und teils unlösbare Probleme gelistet, welche nicht unbedingt als Anforderungen der gegebenen Problemstellung zu verstehen sind und daher als \enquote{abweichend} zu verstehen sind, aus welchen sich aber spätere Erweiterungspotentiale zeigen könnten.
+%
+% Die nachfolgende Auflistung verschiedener Fälle, welche Probleme gegenüber der \TeX{}-Syntax, bzw.\ innerhalb von \LaTeX{}-Dokumenten hervorrufen könnten, benötigt per se keine Reihenfolge, da sie möglichst alle unabhängig voneinander behoben sein sollen. Ein unbedachtes, zufälliges sequenzielles Nennen dieser könnte logische Lücken produzieren und damit ein Übersehen potentieller Fehler riskieren\pdfcomment{Der Satz wird definitiv noch überarbeitet.}. 
+% Deshalb wird eine Reihenfolge gewählt, welche nicht auf \LaTeX{}-Ebene beginnt, sondern sich so weit wie möglich dem Ursprung dieses Systemes nähert.
+% Von den bereits in \TeX{} auftretenden Problemen muss ein Weg in Richtung der auf dieser Software aufbauenden Technologien gebahnt werden. Da es sich der Gesamtheit der Quelltextdateien, auf welche ein Kompiliervorgang von \TeX{} zugreifen kann, immer um reine Textdateien handelt, werden spätere Beispiele nicht nach einzelnen Technologien betrachtet, sondern nach ihren Use-Cases (als relevante Systeme kämen hier zunächst \LaTeX{}, Bib\TeX{}, Ti\textit{k}Z und Weiterführende in Frage, welche teils andere Probleme nach sich ziehen). Eine Fehlerunterscheidung findet nach Funktionalität in einem Dokument (das nach dem Kompilieren entstehende, ausgehend von einer Technologie\pdfcomment{jedoch nicht zwingend von nur einem Quelltext, das wird die Überleitung}, beschrieben in~\ref{subsec:logicInDocuments}) und dessen virtuellem Pendant (mit Inhalten abhängig von anderen Dateien und Technologien, beschrieben in~\ref{subsec:logicOutsideDocuments}).% 
+%In einem einzelnen Beispiel wird zunächst von dem strukturellen Element ein Beispiel abgelitten und danach eine abstraktere Beschreibung dieser Fehlerquelle gefunden.% 
+% \subsubsection*{Logische Strukturen in Dokumenten}\phantomsection\label{subsec:logicInDocuments}
+% Beispiele in reellen Dokumenten sind nach den Strukturen sortiert, welche man in Dokumenten beliebiger Natur wiederfinden kann. Als kleinste Struktur würde man hier (abgesehen von einzelnen Worten und Sätzen) Paragraphen sehen, welche Abschnitte eines Dokumentes formen. Mehrere dieser Abschnitte ergeben einen größeren Abschnitt. Statt von einem \enquote{Überabschnitt} zu sprechen, wird daher die Formulierung umgekehrt. Ein Dokument ist zu Beginn als ein großer Abschnitt zu verstehen, welcher sich in verschiedene Unterabschnitte teilt, deren Namensgebung individuell sein kann. Hier wird (ähnlich wie bei:~\cite{texbook}) von Kapiteln, Abschnitten, Unterabschnitten und Paragraphen gesprochen, jedoch mögliche \enquote{Unterunterabschnitte} nicht als einzelne logische Struktur betrachtet, sondern als Unterabschnitt eines Unterabschnittes. 
+% Abschnitte selbst stellen aber nicht die einzige logische Struktur in einem Dokument dar, sondern es existieren auch andere, nicht-textliche Inhalte (die dem Kompilieren eines \TeX{}-Quellcodes das Aussehen des Dokumentes beeinflussen). 
+
+
+% Die gröbste Struktur eines Dokumentes entscheidet die Präambel von \TeX{}-Dokumenten, welche sich aus verschiedenen Formen von Befehlen zusammensetzt, von welchen nur begrenzt viele Inhalte übersetzt werden dürften (meist:\ keine).
+% Nach der Präambel, also im Teil, der \textit{tatsächliche} Inhalte im Dokument beschreiben soll, ist nach Befehlen (Kommandos) und Umgebungen zu klassifizieren, deren Funktion innerhalb des Quellcodes auch nach einem Übersetzen erhalten bleiben muss. Im Normalfall sei davon auszugehen, dass Kommandos innerhalb eines Dokumentes entweder bestimmte globale Parameter definieren (bspw.\ in der Präambel) oder in andere graphische Elemente (bspw.\ Formelzeichen, Stilisierung von Zeichenketten, \ldots) aufgelöst werden und Umgebungen Änderungen an größeren Teilen eines Abschnittes vornehmen\pdfcomment{beliebiger hierarchischen Höhe im DOM}. Einzelne Elemente der Präambel deuten jedoch darauf hin, welche Art von anderen Technologien (auf \TeX{}-aufbauend) in einem Dokument genutzt werden und wohingegen ein übersetztendes Programm die Suche nach zu übersetzenden Strings über das eigentliche Dokument (bzw.\ einen einzelnen Quellcode) hinaus ausweiten muss.
 
 %\subsubsection*{Externe Abhängigkeiten virtueller Dokumente}
-\phantomsection\label{subsec:logicOutsideDocuments}% Meint BibTeX, TikZ (wobei, eigentlich nicht mehr, es sei denn PGF, aber auch eigentlich nicht, es sei denn Graphik muss neu erzeugt werden?), ..., Pakete in general, und associated files
-Ein Dokument (\TeX{} oder \LaTeX{}) kann/muss nicht nur mittels einem Quelltext beschrieben werden oder nur unter Nutzung eines \TeX{}-Compilers entstehen. Den eigentlichen (im Sinne:\ existierenden, mit Namen versehenen) Technologien abgesehen, müssen Dokumente teils aus Gründen der Lesbarkeit (des Quelltextes) oder logischen Reihenfolge von strukturellen Elementen Informationen in mehrere Dateien auslagern oder auf mehrere Dateien zugreifen, um gesamte Inhalte eines Dokumentes zu produzieren. 
+% \phantomsection\label{subsec:logicOutsideDocuments}% Meint BibTeX, TikZ (wobei, eigentlich nicht mehr, es sei denn PGF, aber auch eigentlich nicht, es sei denn Graphik muss neu erzeugt werden?), ..., Pakete in general, und associated files
+% Ein Dokument (\TeX{} oder \LaTeX{}) kann/muss nicht nur mittels einem Quelltext beschrieben werden oder nur unter Nutzung eines \TeX{}-Compilers entstehen. Den eigentlichen (im Sinne:\ existierenden, mit Namen versehenen) Technologien abgesehen, müssen Dokumente teils aus Gründen der Lesbarkeit (des Quelltextes) oder logischen Reihenfolge von strukturellen Elementen Informationen in mehrere Dateien auslagern oder auf mehrere Dateien zugreifen, um gesamte Inhalte eines Dokumentes zu produzieren. 
 % Voriger Satz schrieb: muss. Darauf muss ein kurzer Beweis folgen...
-Insbesondere die Lesbarkeit von Quellcodes kann von einer solchen Nutzung von mehreren Quelltextdateien für ein \LaTeX{}-Dokument profitieren, da z.B.\ Graphiken (via Ti\textit{k}Z o.Ä.\ erstellt) oder Quellcodes (mittels bspw.\ \texttt{minted} oder \texttt{lstlistings} dargestellt) ansonsten Quelltexte (für das \TeX{}-Dokument) produzieren können, die abertausende Zeilen lang sind\pdfcomment{und persönlich werden mir selbst reine Fließtexte zu unübersichtlich. von dark-mode auf light-mode in meiner bevorzugten ide zu wechseln, hilft allerdings dabei}.
-Andererseits kann (aus Sicht des \TeX{}-Parsers) keine Struktur in einem Dokument (ob übersetzt, ob unübersetzt) in einem bspw.\ Inhaltsverzeichnis gelistet sein, welches nach diesem Verzeichnis steht. Der Parser kann diese Struktur (beim Abarbeiten des Quelltextes von oben nach untern) nur sehen, nachdem er bereits den Befehl sah ein Inhaltsverzeichnis auszugeben. Die Informationen über die Inhalte dieses Inhaltsverzeichnis' erhält er logischerweise allerdings erst, nachdem er alle Teile des Dokumentes (dessen Beschreibung) gesehen hatte (und demnach in eine helfende Datei schreiben konnte, auf welche er beim nächsten Durchlaufen zugreifen kann).
+% Insbesondere die Lesbarkeit von Quellcodes kann von einer solchen Nutzung von mehreren Quelltextdateien für ein \LaTeX{}-Dokument profitieren, da z.B.\ Graphiken (via Ti\textit{k}Z o.Ä.\ erstellt) oder Quellcodes (mittels bspw.\ \texttt{minted} oder \texttt{lstlistings} dargestellt) ansonsten Quelltexte (für das \TeX{}-Dokument) produzieren können, die abertausende Zeilen lang sind\pdfcomment{und persönlich werden mir selbst reine Fließtexte zu unübersichtlich. von dark-mode auf light-mode in meiner bevorzugten ide zu wechseln, hilft allerdings dabei}.
+% Andererseits kann (aus Sicht des \TeX{}-Parsers) keine Struktur in einem Dokument (ob übersetzt, ob unübersetzt) in einem bspw.\ Inhaltsverzeichnis gelistet sein, welches nach diesem Verzeichnis steht. Der Parser kann diese Struktur (beim Abarbeiten des Quelltextes von oben nach untern) nur sehen, nachdem er bereits den Befehl sah ein Inhaltsverzeichnis auszugeben. Die Informationen über die Inhalte dieses Inhaltsverzeichnis' erhält er logischerweise allerdings erst, nachdem er alle Teile des Dokumentes (dessen Beschreibung) gesehen hatte (und demnach in eine helfende Datei schreiben konnte, auf welche er beim nächsten Durchlaufen zugreifen kann).
 % Überleitung fehlt
 
 % Überleitung fehlt
 % \subsubsection*{Weiteres}
-Zudem sind ein paar zusätzliche, sprachliche und teils unlösbare Probleme gelistet, welche nicht unbedingt als Anforderungen der gegebenen Problemstellung zu verstehen sind und daher als \enquote{abweichend} zu verstehen sind, aus welchen sich aber spätere Erweiterungspotentiale zeigen könnten.
 
-\subsubsection*{Struktur eines Beispiels}
-Die Darstellung einzelner Beispiele erfolgt tabellarisch und demonstriert erst richtiges (bzw.\ zulässige) Verhalten und danach Fehlerhaftes (bzw.\ Unerwünschtes). Untiges Beispiel (Tabelle~\ref{tab:problems:example}) dient hierbei als einfaches Beispiel für Fehler, die sich bei einem imaginären Befehl \texttt{ink} zeigen könnten. Dieser soll einen String mit einer bestimmten Farbe hinterlegen und besitzt einen zusätzlichen optionalen Farbparameter. 
+
+\subsubsection*{Struktur einzelner Beispiele}\par
+Einzelne Beispiele werden nacheinander in einer originalen Datei und einer idealen, richtigen Übersetzung dargestellt.\pdfcomment{Erstreckt sich noch nicht über das hierige Doc}
+Anstatt jegliche mögliche Permutation zu listen, eignet es sich konkrete Muster abzuleiten und anhand dieser zu beschreiben, an welchen Stellen übersetzt werden darf und an welchen nicht. 
+%
+Das einleitende Beispiel (~\ref{tab:problems:example}) zeigt allerdings auf, welche Fehler sich bei einem imaginären Befehl \texttt{ink} zeigen könnten und inwiefern einige es erlauben \textit{würden}\pdfcomment{evtl. gebraucht, falls solche Unterscheidung später benötigt}, dass kleinere Fehler missachtet werden können. Der Befehl selbst soll einen String mit einer bestimmten Farbe hinterlegen und besitzt einen zusätzlichen optionalen Farbparameter. 
 \enquote{Richtig} wäre es im originalen String nur das Wort in den geschwungenen Klammern zu übersetzen, da hierbei an keiner Stelle Information verloren geht und das Wort, nachdem es vom Deutschen ins Englische übersetzt wurde, weiterhin so wie vorgesehen hervorgehoben wird.
 \enquote{Zulässige} Übersetzungen treten dann auf, wenn nur für die Formatierung (insofern hieraus keine weiteren Probleme entstehen) verloren geht. Im gegebenen Beispiel würde dann zwar die farbige Hinterlegung verloren gehen, das Wort allerdings trotzdem übersetzt werden und würde den Weg in ein Dokument finden, ohne einen sprachlichen Informationsverlust zu riskieren (für den Endnutzer/Leser).\footnote{Selbst bei weißer Schriftfarbe kann das Wort in einem PDF-Reader markiert und kopiert werden.}
 \enquote{Unerwünscht} sind Fälle, in denen ein Übersetzen Fehler für die \TeX{}-Engine produziert. Übersetzt man hier z.B.\ \texttt{ink} nach \texttt{Tinte} könnte es sich bei Zweiterem wiederum um einen anderen Befehl handeln, das Wort \textit{Wort} einliest, aber eigentlich den alphanumerischen Wert von \textit{word} erwartet hätte.\footnote{$57_{16}+6f_{16} + 72_{16} + 74_{16} = 25\times 16^1 + 28 = 400$ statt:\ $77_{16}+6f_{16} + 72_{16} + 64_{16} = 26\times 16^1 + 28 = 416$. Wofür der Befehl \texttt{Tinte} einen/den Integer 416 benötigt, kann ich Ihnen allerdings nicht erläutern.} Ein Fehlschlagen des Befehls \texttt{Tinte} würde zwar einen Fehler für den \TeX{}-Parser produzieren, dieser wüsste dann aber, dass dieser Befehl bereits einmal fehlgeschlagen ist und eine neues Kompilieren verlangen, in welchem dieser Befehl und seine Optionen ignoriert werden, wodurch das Wort auch hier im Dokument landen würde. Man kann allerdings nicht bei jedem beliebigen \TeX{}-Befehl davon ausgehen, dass dieses Verhalten einheitlich auftreten wird. Hierbei existieren Fälle, welche dafür sorgen könnten, dass andere Wörter nun nicht mehr Teil eines Dokumentes werden könnten~\ref{}.% Meint das \include{clock} zu \include{Uhr} vs \include{clock.tex} zu \include{clock.tex} Beispiel.
 \enquote{Fehlerhaftes} Verhalten beim Übersetzen von \TeX{}-Quelltextdateien führt zu einem Informationsverlust, da das zu übersetzende Wort entweder nicht mehr übersetzt wird oder nicht mehr im Dokument wiederzufinden ist. Sobald man beginnt mit mehreren Dateien ein einziges Dokument zu beschreiben, riskiert ein na\"\i ives Übersetzen nur von einem Quelltext ausgehend, dass aus unerwünschten Fehlern innerhalb von einem Dokument fehlerhaftes Verhalten für das entstehende Produkt (meint:\ die kompilierte PDF) entsteht. 
-
 Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} Übersetzungen frei von Informationsverlust, \enquote{zulässige} Übersetzungen nur dazu fähig Informationen für die graphische Aufbereitung (allerdings nicht den sprachlichen Inhalten) zu entwenden, \enquote{unerwünschte} Übersetzungen dazu in Lage Informationen verbergen können und \enquote{falsche} Übersetzungen fehlende sprachliche Inhalte innerhalb eines Dokumentes, sowie fehlende Übersetzungen dieser. Nicht jede Gruppe von Beispielen führt dazu, dass alle benannten Kategorien auftreten.
 
 % Mit wenigen Ausnahmen lassen sich in vielen Beispielen größere Strukturen innerhalb des Quelltextes erkennen, welche musterhaft geschildert werden.
@@ -41,50 +48,54 @@ Abstrahiert man von diesem detaillierterem Beispiel, so sind \enquote{richtige} 
 
 \begin{table}[h!tb]
     \centering
-    \begin{tabularx}{\textwidth}{X X}
+    \begin{tabularx}{\textwidth}{X}
         \toprule
-            English & Mögliche Übersetzung\\
+            Englisches Original\\
+            \commoncode{Original}{../examples/example/original.tex}\\
         \midrule
-            Richtiges Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispielübersetzung}{../examples/example/ideal.tex}\\[1em]
+            Richtige Übersetzung\\
+            \commoncode{Beispielübersetzung}{../examples/example/ideal.tex}\\
         \midrule
-            Zulässiges Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispielübersetzung}{../examples/example/okay.tex}\\[1em]
+            Zulässiges Verhalten\\
+            \commoncode{Beispielübersetzung}{../examples/example/okay.tex}\\
         \midrule
-            Unerwünschtes Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispielübersetzung}{../examples/example/problematic.tex}\\[1em]
+            Unerwünschtes Verhalten\\
+            \commoncode{Beispielübersetzung}{../examples/example/problematic.tex}\\
         \midrule
-            Falsches Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/example/original.tex} & \commoncode{Beispielübersetzung}{../examples/example/bad.tex}\\[-1em]
+            Falsches Verhalten\\[-13px]
+            \commoncode{Beispielübersetzung}{../examples/example/bad.tex}\\
         \bottomrule
     \end{tabularx}
-    \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:example}
+    \caption{Mögliche Permutationen in einer Übersetzung eines Befehles mit zwei Parametern}\label{tab:problems:example}
 \end{table}
 
 \newpage
 
 \subsection{Elemente in einem \TeX{}-Quellcode}
 \subsubsection{Die Präambel}
-Der unsichtbare Header eines \TeX{}-Dokumentes zeigt an (zunächst) wenigen, sehr spezifischen Stellen eine Schwierigkeit auf. In dieser sind meistenfalls Informationen enthalten, welche nicht zu übersetzen sind, da sie z.B.\ Parameter für dokumentenweite (globale) Einstellungen setzen. Die Art und Weise \textit{diese} zu setzen ist allerdings genauso behandelbar, wie einige folgende Kommandos (in Abschnitt~\ref{}) und wäre daher eigentlich nicht von weiterem Interesse, zeigt sich allerdings sehr geeignet dazu, einige triviale Fehlerquellen abzudecken (bzw.\ ungeeignete Ansätze). So kann man sich nicht immer gewiss sein, man einzelne Zeilen gesondert auswerten kann, da z.B.\ Pakete wie \texttt{hyperref} es in ihren Optionen (\texttt{hypersetup}) erlauben einige Einstellungen durch Zeilenbrüche voneinander getrennt (und übersichtlicher) darzustellen.% Beispiel einfügen, Hyperref denkbar, existiert bereits.
-Genauso sind allerdings auch einzelne Zeilen nicht direkt als \enquote{insgesamt \TeX{} syntaktisch} zu betrachten, nur weil ein syntaktisches Element von \TeX{} innerhalb dieses vorliegt.% Beispiel einzufügen
-
+Der unsichtbare Header eines \TeX{}-Dokumentes zeigt an (zunächst) wenigen, sehr spezifischen Stellen eine Schwierigkeit auf. In dieser sind meistenfalls Informationen enthalten, welche nicht zu übersetzen sind, da sie z.B.\ Parameter für dokumentenweite (globale) Einstellungen setzen. Die Art und Weise \textit{diese} zu setzen ist in späteren Fehlerbeschreibungen theoretisch abgedeckt und wäre daher eigentlich nicht von weiterem Interesse, eignet sich allerdings dazu, einige triviale Fehlerquellen abzudecken (bzw.\ ungeeignete Ansätze). 
+So kann man sich nicht immer gewiss sein, man einzelne Zeilen gesondert auswerten kann, da z.B.\ Pakete wie \texttt{hyperref} es in ihren Optionen (\texttt{hypersetup}) erlauben einige Einstellungen durch Zeilenbrüche voneinander getrennt darzustellen. Nur weil ein Quelltext also \TeX{} Syntaktik beinhält (und demnach \TeX{}-Semantik trägt), kann nicht direkt ein ganzer Quelltext von der Übersetzung ausgeschlossen sein, darf aber auch nicht vollständig übersetzt werden, ohne einzelne Zeilen genauer zu betrachten.% Beispiel einfügen, Hyperref denkbar, existiert bereits.
+Genauso sind allerdings auch einzelne Zeilen nicht direkt als \enquote{insgesamt \TeX{} syntaktisch} zu betrachten, nur weil ein syntaktisches Element von \TeX{} innerhalb dieses Strings vorliegt. Auch innerhalb einzelner Zeilen (bspw.\ \verb|\title{carriage return, line feed}|) können sowohl \TeX{}-syntaktische (dadurch:\ \TeX{}-Semantik tragende), als auch wortsprachliche Inhalte vorliegen, welche bei einem Übersetzen nicht verloren gehen dürfen. (Genanntes Beispiel müsste in:\ \verb|\title{Karren-Rückkehr, Zeilen-Einspeisung}| oder Ähnliches übersetzt werden).
 
 \subsubsection{Kommandos}
-%%% Paragraph noch zusammenführen mit nachfolgendem
-
 %\subparagraph*{Ohne}
-Kommandos selbst sind in der reinen \TeX{}-Syntax durch ein Backslash \verb|\| gekennzeichnet. Die Frage, ob das Wort, das einem Kommando folgt, übersetzt werden sollte, oder nicht, bringt Konflikte. Beispielsweise müsste innerhalb von Auflistungen der nach einem \verb|\item| folgende String übersetzt werden. Andererseits wäre in einer Definition mit \verb|\def| vorerst davon abzusehen den folgenden String zu übersetzen, da dieser ein neues Makro/Kommando/etc.\ definieren zu sucht. Demnach darf \verb|\def\hello| nicht zu: \verb|\def\hallo| werden (es sei denn alle folgenden \verb|\hello| werden auch übersetzt).\footnote{Da aber, wie bereits bekannt, immer eine Wahrscheinlichkeit, so gering sie auch sein mag, besteht, dass an einer nicht vorgesehenen Stelle eine Übersetzung auftreten \textit{könnte}, kann man sich nicht auf die vorherige Aussage verlassen}.
+Kommandos selbst sind in der reinen \TeX{}-Syntax durch ein Backslash \verb|\| gekennzeichnet. Die Frage, ob das Wort, das einem Kommando folgt, übersetzt werden sollte, oder nicht, bringt Konflikte\footnote{Kommandos selbst werden hier noch als fester Teil der \TeX{}-Syntax betrachtet und als auszuschließender Teil für den Übersetzer gewertet}. Beispielsweise müsste innerhalb von Auflistungen der nach einem \verb|\item| folgende String übersetzt werden. Andererseits wäre in einer Definition mit \verb|\def| vorerst davon abzusehen den folgenden String zu übersetzen, da dieser ein neues Makro/Kommando/etc.\ definieren zu sucht. Demnach darf \verb|\def\hello| nicht zu: \verb|\def\hallo| werden (es sei denn alle folgenden \verb|\hello| werden auch übersetzt).\footnote{Da aber, wie bereits bekannt, immer eine Wahrscheinlichkeit, so gering sie auch sein mag, besteht, dass an einer nicht vorgesehenen Stelle eine Übersetzung auftreten \textit{könnte}, kann man sich nicht auf die vorherige Aussage verlassen}.
 
 % Muster:
 Innerhalb des Quelltextes können also Strukturen auftreten, welche direkt folgende Zeichenketten als syntaktisches Element zur Dokumentenbeschreibung benötigen. Da hierbei beide Fälle auftreten könnten und nicht an dem Kommando selbst erkennbar sind, muss hierbei nach Art des Kommandos selbst abgewogen werden\pdfcomment{um dieses auf eine begrenzte Zahl an \TeX{} Primitiven zurückzuführen, welche darauf hindeuten können, ob übersetzt werden soll, oder nicht. (An dieser Stelle noch zu vorgreifend, daher der Kommentar)}. Demnach genügt es nicht nur reine Befehle anhand des \verb|\| zu erkennen oder als festes Maß dafür zu nehmen, ob ein folgender String (der kein weiteres Muster aufweist) zu übersetzen ist, oder nicht.
 
 \paragraph*{Klammern für Parameter}
+\subparagraph*{Vorgesehene}
 Auf viele Kommandos (Makros) folgen ein Paar geschwungener Klammern. Die Inhalte dieser sind in einigen Fällen zu übersetzen und in Anderen nicht, aber insgesamt als eine Art Parameter für dieses Kommando zu verstehen. 
 
 Beispielsweise wäre das Kommando \verb|\paragraph{This is a string of many characters}| eines, in welchem die Inhalte der Klammern übersetzt werden sollen und das Kommando \verb|\usepackage{geometry}| ein Beispiel, in welchem das Übersetzen von \verb|geometry| zu \verb|Geometrie| dazu führen würde, dass das entsprechende Paket nicht im Quelltext verwendet wird. Diese Art von Fällen, welche der Übersetzung ausgeschlossen werden soll, ist besonders kritisch, wenn mit mehreren Dateien gearbeitet wird und so würde ein Übersetzen von z.B.\ \verb|\include{clock.tex}| (oder \verb|\include{clock}|) zu \verb|\include{Uhr.tex}| (oder:\ \verb|\include{Uhr}|) dazu führen, dass größere Teile eines Dokumentes komplett ausgeschlossen werden. 
-
 % Muster:
 Klammern dieser Art genügen also alleine noch nicht dafür eine Aussage darüber zu treffen, ob innenliegende Strings übersetzt werden dürfen, allerdings diese Zeichen (meint:\ die geschwungenen Klammern) kein Teil direkter Teil einer menschlichen Sprache und man würde davon meist erwarten, dass diese Klammern im Normalfall ein Indikator dafür sind, dass nicht übersetzt werden soll und in bestimmbaren Ausnahmefällen (bspw.\ \verb|\section{}|,\verb|\paragraph*{}|, \verb|\chapter{}|, \verb|\title{}|, etc.) von Interesse für ein Übersetzen sind. 
+
+\subparagraph*{Nutzer-eigene}
+Klammern für Parameter und Optionen belaufen sich nicht nur auf eckige und Geschwungene, sondern jegliche Zeichen könnten als Klammern betrachtbar werden. Einfachstes Beispiel liefert hierbei der \verb|\verb|-command, dessen (auf diesen) folgendes Zeichen als Klammer für die umschlossene Zeichenkette (bis benanntes Zeichen wieder auftritt) zu betrachten sei. Daher wäre ein \verb+\verb|something|+ mit verschiedensten Sonderzeichen denkbar (bspw.\ +,-,*,/, \ldots\ anstatt \verb/|/).
+Darüber hinaus lässt es der Befehl \verb|\catcode| zu, dass einzelne Zeichen, die üblicherweise in der standardmäßigen \TeX{}-Syntax eine eigene Semantik tragen (bspw.\ eckige, geschwungene Klammern oder das Backslash, die Tilde oder das At-Zeichen, bzw.\ Wort-Charaktere oder Zahlen), eine neue/andere Semantik ggb.\ des \TeX{}-Parsers erhalten könnten.
+%%%%%% BEISPIEL
 
 %%% \label{key} und \ref{key}, bzw. deren keys dürfte man prinzipiell auch alle übersetzen, sollten die keys persistent im Dokument bestehen bleiben und entsprechende Referenzierungen richtig im Dokument angelangen.
 %%% Da dies allerdings ein unnötiges Fehlerrisiko produziert, sollte davon abgesehen werden.
@@ -136,6 +147,11 @@ keine \enquote{gewöhnliche} Tabelle zu erkennen, allerdings kann man sich einze
             English Original \\ 
         \midrule
             \commoncode{Original}{../examples/tables.tex} \\
+    \end{tabularx}
+\end{table}
+\newpage
+\begin{table}[h!tb]
+    \begin{tabularx}{\textwidth}{X}
         \toprule
             Ideale Übersetzung\\
         \midrule
@@ -156,6 +172,11 @@ Unteres Beispiel ist eine Möglichkeit einen String (\newcommand*{\appendstring}
             English Original \\ 
         \midrule
             \commoncode{Original}{../examples/commands.tex} \\
+    \end{tabularx}
+\end{table}
+\newpage
+\begin{table}[h!tb]
+    \begin{tabularx}{\textwidth}{X}
         \toprule
             Ideale Übersetzung\\
         \midrule    
@@ -175,6 +196,11 @@ Problematisch wird dieser Fall, wenn solche Makros eigene und optionale Paramete
             English Original \\ 
         \midrule
             \commoncode{Original}{../examples/commandscont.tex} \\
+    \end{tabularx}
+\end{table}
+\newpage
+\begin{table}[h!tb]
+    \begin{tabularx}{\textwidth}{X}
         \toprule
             Ideale Übersetzung\\
         \midrule    
@@ -185,10 +211,11 @@ Problematisch wird dieser Fall, wenn solche Makros eigene und optionale Paramete
 \end{table}
 \newpage
 
+
 %%%%%%%%%
 %%%%%%%%% Brauche ab hier ein neues File
 %%%%%%%%%
-
+\begin{comment}
 \section{Durch mehrere Quellcodes und Hilfsdateien}% Idee für Paket: vorgefertigte Tabelle mit Strings in der ersten Spalte. bekomm ich da irgendetwas interessantes, zufälliges hin?
 \subsection{Pakete}
 Pakete sind ihrerseits keine, innerhalb eines Quelltextes direkt vorliegende Struktur, aber besitzen die Fähigkeit, dass sie Zeichenketten erwarten/tragen könnten, welche es zu übersetzen gilt. Zwar erfolgt die Einbindung solcher immer auf gleicherlei art und weise, aber hier einzelne befehle sind... übersetzbar... morgen anzupassen, weil ich kann nicht mehr
@@ -210,7 +237,7 @@ Pakete sind ihrerseits keine, innerhalb eines Quelltextes direkt vorliegende Str
 % \command non-translatable <---> \def \string sumn... / consider talking about \renewcommand here?
 
 
-\begin{comment}
+
 \subsubsection{Paragraphen und Abschnitte}
 % Meint: \command{translatable}
 

@@ -1,13 +1,11 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Hintergrund}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Thematische Abgrenzung}{1}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Problemfälle}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Herangehensweise}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Elemente in einem \TeX {}-Quellcode}{6}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Die Präambel}{6}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Kommandos}{6}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Optionen}{7}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2}Elemente in einem \TeX {}-Quellcode}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Die Präambel}{5}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Kommandos}{5}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Optionen}{6}{subsubsection.2.2.3}%
 \contentsline {section}{\numberline {3}Stand der Technik}{16}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Anforderungen}{16}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Denkbare Ansätze}{16}{subsection.3.2}%
@@ -18,6 +16,6 @@
 \contentsline {subsection}{\numberline {3.4}Grenzen der Lösungen}{16}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Takeaways}{16}{subsection.3.5}%
 \contentsline {section}{\numberline {4}Eigenständigkeitserklärung}{17}{section.4}%
-\contentsline {section}{Literatur}{18}{section*.38}%
+\contentsline {section}{Literatur}{18}{section*.36}%
 \contentsline {section}{\numberline {A}Anhänge}{19}{section.chX.1}%
 \contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{19}{subsection.chX.1.1}%
