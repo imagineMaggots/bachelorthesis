@@ -89,10 +89,11 @@ Klammern dieser Art genügen also alleine noch nicht dafür eine Aussage darübe
 %%% \label{key} und \ref{key}, bzw. deren keys dürfte man prinzipiell auch alle übersetzen, sollten die keys persistent im Dokument bestehen bleiben und entsprechende Referenzierungen richtig im Dokument angelangen.
 %%% Da dies allerdings ein unnötiges Fehlerrisiko produziert, sollte davon abgesehen werden.
 
-\paragraph*{Optionen}\par
-\subparagraph*{Details:}\par
+\subsubsection{Optionen}\par
+\paragraph*{Details:}\par
 Optionen sind, neben Parametern, eine weitere Möglichkeit einem Kommando in \TeX{} zusätzliche Informationen mitzuliefern, z.B.\ für zusätzliche Formatierung. Aus logischer Reihenfolge müssten diese Optionen \textit{eigentlich} immer vor der Zeichenkette, welche formatiert werden soll, stehen, da erst nach Einlesen der Parameter die Information dieser erkannt und auf den folgenden String angewendet werden kann.% TIKZ IST MAL WIEDER SCHULD
 Diese Aussage wäre logisch, gilt allerdings nicht einheitlich (bspw.\ bei der Verwendung von Ti\textit{k}Z-Bibliotheken). Optionen in eckigen Klammern insgesamt einer Übersetzung zu entziehen, verhindert allerdings die Möglichkeit, dass die Optionen einiger Befehle selbst ein String sein könnten, welcher im Dokument gedruckt und somit übersetzt werden muss.  
+\begin{comment}
 \subparagraph*{Beispiele:}\par
 % Hier brauch ich dann "größere" Beispiele (im Sinne: echter Platz, ab hier hübschere Formatierung)
 \subparagraph*{Muster:}\par
@@ -105,23 +106,99 @@ Sie zeigen sich in
 \verb|\command[translatable]{non-translatable}|, oder
 \verb|\command[translatable]{translatable}|
 und sind anhand spezifischer Kommandos erkennbar.
+\end{comment}
 
-\subparagraph*{Problem:}% Problem in Problemen suggeriert: Oh oh
-\verb|\newcommand{\appendstring}[3][hello][At]{#2 #3 #1} \appendstring{world:}| ist eine Möglichkeit einen String (\newcommand{\appendstring}[3][hello][At]{#2 #3 #1} \appendstring{world:}) zu erzeugen. Jedoch ist mit dieser Definition auch der String:\ \appendstring{now}{Goodbye}{for} in der Form \verb|\appendstring{now}{Goodbye}{for}| produzierbar. Diesem Muster entsprechend könnten (theoretisch) unendlich viele eckige Klammern zu übersetzende Strings beinhalten. Dies wäre zunächst unproblematisch unter der Vorannahme, dass alle diese Strings zu übersetzen sind. Was allerdings, wenn eine Definition der Form \verb|\newcommand{\addandappend}[3][1][2]{#1+#2 ist #3 #1+#2}| vorliegt, in welcher für \verb|#3| ein String (hier denkbar:\ gleich) erwartet wird? Solche Erwartungen sind nicht immer vorhersagbar und können dadurch nur schwer beschrieben werden (sind allerdings deterministisch nachvollziehbar, da die \TeX{}-Engine solche Makros schließlich auch interpretieren und rendern kann).% ? hoffentlich
 
 \subparagraph*{Unvorhersagbarkeiten}% -> spezielle fehler
-Eigene, definierte Makros erlauben für eine quasi-beliebige Zahl an Stellen, innerhalb welcher Strings erwartet werden könnten. So könnte beispielsweise ein Befehl definiert werden, welcher 7 Eingabeparameter erwartet:\ \verb|\def\whatev a#1a#2a#3a#4a#5a#6a#7{This #1 is #2 to #3 be #4 troublesome. Hence we will only print one hundred now #5#6#7}| bei einem Aufruf der Form \verb|\whatev amacroagoingatoaverya1a0a0| erwarten, dass sowohl alle menschensprachlichen Zeichenketten innerhalb der Definition (\textit{This is to be troublesome. Hence we will only print one hundred now}) als auch außerhalb dieser (\textit{macro going to very}) übersetzt werden und einen schlüssigen Satz bilden.
+Eigene, definierte Makros erlauben für eine quasi-beliebige Zahl an Stellen, innerhalb welcher Strings erwartet werden könnten. So könnte beispielsweise ein Befehl definiert werden, welcher 7 Eingabeparameter erwartet:\ \verb|\def\whatev a#1a#2a#3a#4a#5a#6a#7{This #1 is #2 to #3 be #4 troublesome. Hence we will only print one hundred now #5#6#7}| bei einem Aufruf der Form \verb|\whatev amacroagoingatoaverya1a0a0| erwarten, dass sowohl alle menschensprachlichen Zeichenketten innerhalb der Definition (\textit{This is to be troublesome. Hence we will only print one hundred now}), als auch außerhalb dieser (\textit{macro going to very}) übersetzt werden und einen schlüssigen Satz bilden.
 
 \paragraph*{Strukturen}
-\subparagraph*{Umgebungen}
+\subparagraph*{Umgebungen und Makros}
 Größere Strukturen in der \TeX{}-Syntax zeigen sich oftmals in sog.\ Umgebungen auf und stellen gerne/oft Graphiken\pdfcomment{Tabellen sind eine Untergattung von Graphiken} dar (wie bspw.\ in Ti\textit{k}Z), müssen dies allerdings nicht zwingend. Genauso wäre zu erwarten, dass größere Texte innerhalb dieser Umgebungen reinen Text-Formatierungen obliegen und damit gänzlich zu übersetzen wären. Allerdings können verschiedene Umgebungen auch eigene Syntaktik tragen (bspw.\ Tabellen), wodurch sich innerhalb von solchen Umgebungen sowohl zu übersetzende Strings, als auch zu Erhaltende (= nicht zu übersetzende Strings) verbergen können. 
 
-Insbesondere Problematisch wird die Ermittlung solcher bei Umgebungen, welche nicht mittels entsprechender \texttt{begin} und \texttt{end} Kommandos betreten/verlassen werden, sondern auf welche mittels eigener Symbolik ein access gewährt werden kann. Innerhalb reinen \TeX{}'s sind diese \pdfcomment{glücklicherweise}auf wenige Zeichenketten beschränkt und so können nur ein/zwei Dollar-Zeichen (\$,\$\$) oder \verb|\(|,\verb|\)|, \verb|\[|, \verb|\]|auf den/das Beginn/Ende einer ein-/ mehrzeiligen mathematischen Umgebung hindeuten. Darüberhinaus erlauben gerade diese Umgebungen den Wechsel in \textit{normale} Umgebungen (also hinein in die Textumgebung des eigentlichen Dokumentes, aus welcher solche mathematisch Umgebungen zu fliehen suchten) innerhalb welcher wieder in beschriebene mathematische Umgebungen gewechselt werden kann. Solange auf jeden Wechsel \textit{in} eine solche Umgebung ein Wechsel \textit{aus} einer solchen Umgebung heraus erfolgt, kann \TeX{} dies interpretieren und alle rein textlichen Strings \textit{sollten} übersetzt werden.
+\textbf{Vordefinierte}\\
+\noindent Insbesondere Problematisch wird die Ermittlung solcher bei Umgebungen, welche nicht mittels entsprechender \texttt{begin} und \texttt{end} Kommandos betreten/verlassen werden, sondern auf welche mittels eigener Symbolik ein access gewährt werden kann. Innerhalb reinen \TeX{}'s sind diese \pdfcomment{glücklicherweise}auf wenige Zeichenketten beschränkt und so können nur ein/zwei Dollar-Zeichen (\$,\$\$) oder \verb|\(|,\verb|\)|, \verb|\[|, \verb|\]|auf den/das Beginn/Ende einer ein-/ mehrzeiligen mathematischen Umgebung hindeuten. Darüberhinaus erlauben gerade diese Umgebungen den Wechsel in \textit{normale} Umgebungen (also hinein in die Textumgebung des eigentlichen Dokumentes, aus welcher solche mathematisch Umgebungen zu fliehen suchten) innerhalb welcher wieder in beschriebene mathematische Umgebungen gewechselt werden kann. Solange auf jeden Wechsel \textit{in} eine solche Umgebung ein Wechsel \textit{aus} einer solchen Umgebung heraus erfolgt, kann \TeX{} dies interpretieren und alle rein textlichen Strings \textit{sollten} übersetzt werden.
 
-\subparagraph*{Pakete}
-Pakete sind ihrerseits keine, innerhalb eines Quelltextes direkt vorliegende, Struktur, aber besitzen die Fähigkeit, dass sie Zeichenketten erwarten/tragen könnten, welche es zu übersetzen gilt. Zwar erfolgt die Einbindung solcher immer auf gleicherlei art und weise, aber hier einzelne befehle sind... übersetzbar... morgen anzupassen, weil ich kann nicht mehr
+\subparagraph*{Tabellen und Formeln}
+Tabellarische Strukturen eignen sich für eine übersichtliche Darstellung von z.B.\ Messwerten oder auch mathematischer Formeln. Zwar ist bei z.B. 
+\begin{align*}\label{problems:tables:eq}
+    \sin(\omega t - k\vec{r})                    &= 0 \\
+    \arcsin(\sin(\omega t - k\vec{r}))           &= \arcsin(0) \\
+    (\omega t - k\vec{r})                        &= 0 \\
+    \omega t                                     &= k\vec{r} \text{ note that: $\omega = 2\pi \text{$f$ (frequency)}$}
+    % Ab hier bräuchte man Raum und Zeit. Dieses Beispiel kommt allerdings ohne aus.
+\end{align*}
+keine \enquote{gewöhnliche} Tabelle zu erkennen, allerdings kann man sich einzelne Terme innerhalb vor und/oder nach einer Äquivalenzrelation wie Inhalte einer Zelle\pdfcomment{geht aus der Satzstellung eindeutig hervor, dass es sich um eine Zelle einer Tabelle handelt? zu prüfen -> Hendrik} vorstellen. Gegebenes Beispiel erhält seine Struktur im \TeX{}-Quelltext durch eine eigene Syntax innerhalb solcher Umgebungen. Hierbei kann allerdings auch der Fall, wie zum Beispiel innerhalb einer Tabelle, Strings einzelner Zellen zu übersetzen sind, andere jedoch nicht. Bereits~\hyperref[problems:tables:eq]{obiges Beispiel} zeigt Wörter, welche interessant für einen Übersetzer sein sollten. Anders ist dies jedoch bei
+\begin{table}[h!tb]
+    \centering
+    \begin{tabularx}{\textwidth}{X}
+        \toprule
+            English Original \\ 
+        \midrule
+            \commoncode{Original}{../examples/tables.tex} \\
+        \toprule
+            Ideale Übersetzung\\
+        \midrule
+            \commoncode{Beispielübersetzung}{../examples/tables.tex}\\[-1em]
+        \bottomrule
+    \end{tabularx}
+    \caption{Beispiel für die Vermischung von Tabellarischen Strukturen und Texten}\label{tab:problems:sections}
+\end{table}
+
+\newpage
+
+\subparagraph*{Eigene Makros und Logik}
+Unteres Beispiel ist eine Möglichkeit einen String (\newcommand*{\appendstring}[3]{#2 #3 #1}\appendstring{world:}{Hello}{to this}) zu erzeugen. Jedoch ist mit dieser Definition auch der String:\ \appendstring{now}{Goodbye}{for} in der Form \verb|\appendstring{now}{Goodbye}{for}| produzierbar. Diesem Muster entsprechend könnten (theoretisch) unendlich viele eckige Klammern zu übersetzende Strings beinhalten. Dies wäre zunächst unproblematisch unter der Vorannahme, dass alle diese Strings zu übersetzen sind. Was allerdings, wenn eine Definition der Form \verb|\newcommand{\addandappend}[3][1][2]{#1+#2 ist #3 #1+#2}| vorliegt, in welcher für \verb|#3| ein String (hier denkbar:\ gleich) erwartet wird? Solche Erwartungen sind nicht immer vorhersagbar und können dadurch nur schwer beschrieben werden (sind allerdings deterministisch nachvollziehbar, da die \TeX{}-Engine solche Makros schließlich auch interpretieren und rendern kann).% ? hoffentlich
+\begin{table}[h!tb]
+    \centering
+    \begin{tabularx}{\textwidth}{X}
+        \toprule
+            English Original \\ 
+        \midrule
+            \commoncode{Original}{../examples/commands.tex} \\
+        \toprule
+            Ideale Übersetzung\\
+        \midrule    
+            \commoncode{Beispielübersetzung}{../examples/commands_translated.tex}\\[-1em]
+        \bottomrule
+    \end{tabularx}
+    \caption{Beispiel für die Fähigkeit, dass Makros einzelne Strings einlesen können}\label{tab:problems:order}
+\end{table}
+
+\newpage
+Problematisch wird dieser Fall, wenn solche Makros eigene und optionale Parameter in beliebiger Reihenfolge erwarten wollen, wie das folgende Beispiel (~\ref{sunnyRainy}). Übersetzt man z.B. das Wort \enquote{sunny} auch nur an einer Stelle nicht, riskiert man Fälle, in welchen falsche Inhalte angezeigt werden. Auch kann man sich nicht gewiss sein\pdfcomment{und darauf will ich hier hinaus}, dass zu übersetzende Optionen oder Parameter immer in einheitlicher und vorhersagbarer Reihenfolge auftreten werden. Ob man einen String innerhalb eines Makros übersetzen darf, bestimmt sich danach, ob das String-Literal logisch benötigt wird. Dies ist daran erkennbar, dass wie im gelisteten Beispiel Vergleiche mit dem String geschehen und liegt zur Kompilierzeit im Quelltext vor.% da ansonsten: kein Dokument
+
+\begin{table}[h!tb]
+    \centering
+    \begin{tabularx}{\textwidth}{X}
+        \toprule
+            English Original \\ 
+        \midrule
+            \commoncode{Original}{../examples/commandscont.tex} \\
+        \toprule
+            Ideale Übersetzung\\
+        \midrule    
+            \commoncode{Beispielübersetzung}{../examples/commandscont_translated.tex}\\[-1em]
+        \bottomrule
+    \end{tabularx}
+    \caption{Beispiel für die Fähigkeit, dass Makros Strings logisch verarbeiten können}\label{tab:problems:sunnyRainy}
+\end{table}
+\newpage
+
+%%%%%%%%%
+%%%%%%%%% Brauche ab hier ein neues File
+%%%%%%%%%
+
+\section{Durch mehrere Quellcodes und Hilfsdateien}% Idee für Paket: vorgefertigte Tabelle mit Strings in der ersten Spalte. bekomm ich da irgendetwas interessantes, zufälliges hin?
+\subsection{Pakete}
+Pakete sind ihrerseits keine, innerhalb eines Quelltextes direkt vorliegende Struktur, aber besitzen die Fähigkeit, dass sie Zeichenketten erwarten/tragen könnten, welche es zu übersetzen gilt. Zwar erfolgt die Einbindung solcher immer auf gleicherlei art und weise, aber hier einzelne befehle sind... übersetzbar... morgen anzupassen, weil ich kann nicht mehr
 % https://www.overleaf.com/learn/latex/Writing_your_own_package
-\subparagraph*{Klassen}
+
+
+
+
+
+\subsection{Klassen}
 % https://www.overleaf.com/learn/latex/Writing_your_own_class#General_structure         scheint gleich zu packages. wobei, man kann hier in sowas wie \title (oder \@title) eigene Strings integrieren? glaub ich?
 
 
