@@ -6,16 +6,16 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Die Präambel}{5}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Kommandos}{5}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Optionen}{6}{subsubsection.2.2.3}%
-\contentsline {section}{\numberline {3}Stand der Technik}{16}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Anforderungen}{16}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Denkbare Ansätze}{16}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Existierende Ansätze}{16}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Testverfahren}{16}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Durchführung}{16}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Auswertung}{16}{subsubsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}Grenzen der Lösungen}{16}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Takeaways}{16}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Eigenständigkeitserklärung}{17}{section.4}%
-\contentsline {section}{Literatur}{18}{section*.36}%
-\contentsline {section}{\numberline {A}Anhänge}{19}{section.chX.1}%
-\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{19}{subsection.chX.1.1}%
+\contentsline {section}{\numberline {3}Stand der Technik}{17}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Anforderungen}{17}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Denkbare Ansätze}{17}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Existierende Ansätze}{17}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Testverfahren}{17}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Durchführung}{17}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Auswertung}{17}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Grenzen der Lösungen}{17}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Takeaways}{17}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Eigenständigkeitserklärung}{18}{section.4}%
+\contentsline {section}{Literatur}{19}{section*.39}%
+\contentsline {section}{\numberline {A}Anhänge}{20}{section.chX.1}%
+\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{20}{subsection.chX.1.1}%
