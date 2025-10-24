@@ -84,6 +84,54 @@ Die zuvor beschriebenen String-Literale sind nicht, so wie es \verb|\item| deute
 \paragraph{Weitere Beispiele}
 
 \subsubsection{Parameter}
+\paragraph{Unterscheidung}\par
+Parameter sind neben Kommandos eine weitere Möglichkeit Informationen an \TeX{} zu übermitteln und äußern sich entweder als String-Literale oder Teil einer bestimmten Menge an verfügbaren Optionen für ein Kommando (bspw.\ \verb|\color{red}|). Genauso, wie aus einzelnen Kommandos bereits bekannt ist, sollten nur String-Literale übersetzt werden. Das wesentliche Problem liegt hierbei daran, wie sie erkennbar sind. Die übliche \TeX{}-Notation sieht hierbei geschwungene Klammern für zwingend erforderliche Parameter vor, und eckige Klammern für optionale Parameter. Jedoch erwarten unterschiedliche Befehle verschiedene optionale und erforderliche Parameter, für welche nicht vorhergesagt werden kann, ob sie übersetzt werden dürfen, oder nicht. Allerdings bleiben logisch gesehen nicht viele mögliche Reihenfolgen, in welchen Parameter an \TeX{}-Kommandos übergeben werden könnten, da \TeX{} zur Ausführung dieses alle in diesem benötigten Parameter an dieses Kommando übergeben muss, da ansonsten diesem ein erwarteter Wert fehlt, wodurch ein Fehler provoziert wird. Für jeden Befehl lassen sich Standard-Werte festlegen, die genutzt werden können, um diese Werte nicht zwingend beim Funktionaufruf als Argument zu benötigen. Sollten in der Logik des definierten Makros optionale Parameter nach Erforderlichen verlangt sein, ist dies in der Definition des Makros selbst als eckige Klammer vermerkbar, die allerdings keinen Wert trägt, auf welche wieder eine eckige Klammer mit einem Wert folgt. 
+Aus theoretischer Sicht ist die Menge an möglichen Parametern unendlich, \TeX{} selbst begrenzt diese jedoch auf 9 und setzt damit ein technisches Limit für \texttt{def}. Dieses ist auf verschiedene Arten umgehbar,\footnote{Einzelne Parameter tragen mehr Informationen,\pdfcomment{bei bekannter Codierung} Definitionen mit Relays oder Newcommand in Verbindung mit \textit{key-value}-Paaren (elegantere Lösung, bspw.\ in \texttt{hyperref}'s \verb|\hypersetup| zu finden)} zeigt aber nur Probleme auf, wenn in irgendeiner Form mit Name-Wert-Paaren gearbeitet wird, in welchen der erstere Key nicht übersetzt werden darf, jedoch zweiter Parameter es soll.#% Beispiel fehlt, siehe: irgendwo hier
+Inwiefern ist das logisch, in einem Programm, nachvollziehbar? Man würde nach einem Zurückverfolgen des Befehles und Keys überprüfen können, ob dieser in einer logischen Abfrage Verwendung findet. Falls dies nicht der Fall ist, dann kann davon ausgegangen werden, dass dieser Parameter übersetzt werden darf, ansonsten nicht.#% Konkrete Beispiele fehlen und eig problemlösung schon
+
+\paragraph{Erkennung}
+Verschiedene zuvor beschriebene Permutationen sind beispielhaft in~\hyperref[tab:problems:exampleParameter]{unterem Beispiel}, in welchem zur einfacheren Lesbarkeit die Kürzel \textit{t} für übersetzbare Felder (translatable string) und \textit{p} für nicht zu übersetzende Strings (parameter) stehen.
+
+\begin{comment}
+    Möglich ist alles:
+        \command(([t] OR {t}) AND ([n] OR {t}) AND ([t] OR {n}) AND ([n] OR {n}))^9
+            -> Aus Def's und Newcommand
+            -> 9 Felder mit je 2*2=4 Optionen --> 4^9 Permutationen alleine hier (ca. 250 Tausend // 4^9 = 2^2^9 = 2^18 = 2^20 / 4 \approx 10^6 / 4)
+        \objectForCommandClass{
+            key_1 = t or n,
+            key_2 = t or n,
+            ...
+            key_alpha = t or n
+        }
+            -> Theoretically infinite, given infinite runtime?
+            -> Actual limit to be tested in own implementation?
+\end{comment}
+
+\begin{table}
+    \centering
+    \begin{tabularx}[l | c c c]
+        \toprule
+        Richtige Übersetzungen & Fehlerhafte Übersetzungen & &\\
+            \verb|1000| & \verb|1111| & \verb|0011| & \verb|1010|\\
+            \verb|0100| & \verb|1110| & \verb|1101| & \verb|0101|\\
+            \verb|0010| & \verb|0111| & \verb|1011| & \verb|0110|\\
+            \verb|0001| & \verb|1100| & \verb|0000| & \verb|1001|\\
+    \end{tabularx}
+    \caption{2-dimensionale Darstellung von kleinerem Quellcode (illustrativ)}\phantomsection\label{tab:problems:exampleParameter}
+\end{table}
+
+\paragraph{Weitere Beispiele}
+Einzelne Kommandos erwarten zunächst optionale, zusätzliche Parameter in eckigen Klammern, für welche Standard-Werte existieren, demnach nicht zwingend bei Funktionsaufruf übergeben werden müssen und danach übrige, benötigte in Geschwungenen (ein Beispiel hierfür zeigt~\ref{subpar:problems:macros}). 
+
+Bei einigen Befehlen (z.B.\ einer URL-Angabe in einer Hyperreferenz\footnote{Hyperreferenz meint hierbei für gewöhnlich Schlüsselwörter oder URL}) ist jedoch der Parameter, abhängig von seiner Funktionalität, sowohl als zwingend erforderlicher und unveränderlicher Teil einer entstehenden Übersetzung zu betrachten, damit bspw.\ \verb|\hyperref[key]{value}| nicht zu \verb|\hyperref[Schlüssel]{Wert}| sondern zu \verb|\hyperref[key]{Wert}| wird. Ein präzises und erwünschtes Verhalten kann nicht für alle Befehle ausgesprochen sein, jedoch obliegt einer gewissen Form.
+
+
+\paragraph{Weiterführendes}
+Beispielsweise wäre das Kommando \verb|\paragraph{This is a string of many characters}| eines, in welchem die Inhalte der Klammern übersetzt werden sollen und das Kommando \verb|\usepackage{geometry}| ein Beispiel, in welchem das Übersetzen von \verb|geometry| zu \verb|Geometrie| dazu führen würde, dass das entsprechende Paket nicht im Quelltext verwendet wird. Diese Art von Fällen, welche der Übersetzung ausgeschlossen werden soll, ist besonders kritisch, wenn mit mehreren Dateien gearbeitet wird und so würde ein Übersetzen von z.B.\ \verb|\include{clock.tex}| (oder \verb|\include{clock}|) zu \verb|\include{Uhr.tex}| (oder:\ \verb|\include{Uhr}|) dazu führen, dass größere Teile eines Dokumentes komplett ausgeschlossen werden. 
+Für manche Befehle impliziert allerdings der Befehl selbst (bspw.\ \texttt{includegraphics}), dass eine Parameter folgen muss (hier:\ URL, bei welchen auch erwartet werden muss, dass sie menschensprachliche Wörter/Phrasen enthalten). 
+
+
+
 
 \subsubsection{Makros und Umgebungen}
 
@@ -140,10 +188,9 @@ Genauso sind allerdings auch einzelne Zeilen nicht direkt als \enquote{insgesamt
 
 \paragraph*{Parameter}
 % Welche kennen wir?
-\subparagraph*{Geschwungene Klammern}
 Auf viele Kommandos (Makros) folgen ein Paar geschwungener Klammern. Die Inhalte dieser sind in einigen Fällen zu übersetzen und in Anderen nicht, aber insgesamt als eine Art Parameter für dieses Kommando zu verstehen. 
 
-Beispielsweise wäre das Kommando \verb|\paragraph{This is a string of many characters}| eines, in welchem die Inhalte der Klammern übersetzt werden sollen und das Kommando \verb|\usepackage{geometry}| ein Beispiel, in welchem das Übersetzen von \verb|geometry| zu \verb|Geometrie| dazu führen würde, dass das entsprechende Paket nicht im Quelltext verwendet wird. Diese Art von Fällen, welche der Übersetzung ausgeschlossen werden soll, ist besonders kritisch, wenn mit mehreren Dateien gearbeitet wird und so würde ein Übersetzen von z.B.\ \verb|\include{clock.tex}| (oder \verb|\include{clock}|) zu \verb|\include{Uhr.tex}| (oder:\ \verb|\include{Uhr}|) dazu führen, dass größere Teile eines Dokumentes komplett ausgeschlossen werden. 
+
 % Muster:
 Klammern dieser Art genügen also alleine noch nicht dafür eine Aussage darüber zu treffen, ob innenliegende Strings übersetzt werden dürfen, allerdings diese Zeichen (meint:\ die geschwungenen Klammern) kein Teil direkter Teil einer menschlichen Sprache und man würde davon meist erwarten, dass diese Klammern im Normalfall ein Indikator dafür sind, dass nicht übersetzt werden soll und in bestimmbaren Ausnahmefällen (bspw.\ \verb|\section{}|,\verb|\paragraph*{}|, \verb|\chapter{}|, \verb|\title{}|, etc.) von Interesse für ein Übersetzen sind. 
 
@@ -166,8 +213,7 @@ Hieraus entsteht also eine darstellbare Zeichenkette nach dem Kompilieren von \T
 \paragraph*{Darstellungsform}\par
 Optionen sind, neben Parametern, eine weitere Möglichkeit einem Kommando in \TeX{} zusätzliche Informationen mitzuliefern, z.B.\ für zusätzliche Formatierung. Aus logischer Reihenfolge müssten diese Optionen \textit{eigentlich} immer vor der Zeichenkette, welche formatiert werden soll, stehen, da erst nach Einlesen der Parameter die Information dieser erkannt und auf den folgenden String angewendet werden kann.% TIKZ IST MAL WIEDER SCHULD
 Diese Aussage wäre logisch, gilt allerdings nicht einheitlich (bspw.\ bei der Verwendung von Ti\textit{k}Z-Bibliotheken). Optionen in eckigen Klammern insgesamt einer Übersetzung zu entziehen, verhindert allerdings die Möglichkeit, dass die Optionen einiger Befehle selbst ein String sein könnten, welcher im Dokument gedruckt und somit übersetzt werden muss.
-Die übliche \TeX{}-Notation sieht hierbei geschwungene Klammern für zwingend erforderliche Parameter vor und Eckige für optionale. Einzelne Kommandos erwarten zunächst optionale, zusätzliche Parameter in eckigen Klammern, welche vorher festgesetzte wurden und danach übrige, benötigte in Geschwungenen (ein Beispiel hierfür zeigt~\ref{subpar:problems:macros}). Für manche Befehle impliziert allerdings der Befehl selbst (bspw.\ \texttt{includegraphics}), dass eine Parameter folgen muss (hier:\ URL, bei welchen auch erwartet werden muss, dass sie menschensprachliche Wörter/Phrasen enthalten). 
-Aus theoretischer Sicht wäre die Menge an möglichen Parametern unendlich, \TeX{} selbst begrenzt diese jedoch auf 9 und setzt damit ein technisches Limit. Dieses ist auf verschiedene Arten umgehbar,\footnote{Einzelne Parameter tragen mehr Informationen\pdfcomment{bei bekannter Codierung} Definitionen mit Relays oder Newcommand in Verbindung mit \textit{key-value}-Paaren (elegantere Lösung, bspw.\ in \texttt{hyperref}'s \verb|\hypersetup| zu finden)} zeigt aber nur Probleme auf, wenn in irgendeiner Form mit Name-Wert-Paaren gearbeitet wird, in welchen der erstere Key nicht übersetzt werden darf, jedoch zweiter Parameter es soll.\pdfcomment{oh oh der Part muss noch größer werden, da er mehr Permutationen mitbringt, als ich vorher gesehen hatte\ldots}.
+
 
 \begin{comment}
 \subparagraph*{Beispiele:}\par
