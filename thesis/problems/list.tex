@@ -26,12 +26,6 @@
 %%%         - kp. den ****, den du dir mit TikZ ausgedacht hast
 %%%
 %%%
-%%%
-%%%
-%%%
-%%%
-%%%
-%%%
 \section{Problemfälle}
 \subsection{Herangehensweise}
 \TeX{}-Quellcodes \enquote{einfach} zu übersetzen, birgt Gefahr Fehler zu produzieren. Bereits innerhalb eines \TeX{}-Quellcodes können (theoretisch) unendlich viele Fehler entstehen, sollten (wohlmöglich) vorfindbare Zeichenketten unbedacht übersetzt werden (\enquote{unbedacht}:\ ohne vorher zu prüfen, ob das Wort eine semantische Bedeutung für \TeX{} trägt). Bevor sich Unendlichkeiten genähert wird, werden hier, abhängig von der Größe der innerhalb \TeX{}-Quelltexten auftretenden Strukturen (welche der vorgesehenen Struktur folgen~\cite{texbook}), jegliche Form von denkbar auftretenden Fehlerquellen präsentiert. 
@@ -83,14 +77,59 @@ Die zuvor beschriebenen String-Literale sind nicht, so wie es \verb|\item| deute
 
 \paragraph{Weitere Beispiele}
 
-\subsubsection{Parameter}
+\subsubsection{Zusätzliche Parameter}
 \paragraph{Unterscheidung}\par
-Parameter sind neben Kommandos eine weitere Möglichkeit Informationen an \TeX{} zu übermitteln und äußern sich entweder als String-Literale oder Teil einer bestimmten Menge an verfügbaren Optionen für ein Kommando (bspw.\ \verb|\color{red}|). Genauso, wie aus einzelnen Kommandos bereits bekannt ist, sollten nur String-Literale übersetzt werden. Das wesentliche Problem liegt hierbei daran, wie sie erkennbar sind. Die übliche \TeX{}-Notation sieht hierbei geschwungene Klammern für zwingend erforderliche Parameter vor, und eckige Klammern für optionale Parameter. Jedoch erwarten unterschiedliche Befehle verschiedene optionale und erforderliche Parameter, für welche nicht vorhergesagt werden kann, ob sie übersetzt werden dürfen, oder nicht. Allerdings bleiben logisch gesehen nicht viele mögliche Reihenfolgen, in welchen Parameter an \TeX{}-Kommandos übergeben werden könnten, da \TeX{} zur Ausführung dieses alle in diesem benötigten Parameter an dieses Kommando übergeben muss, da ansonsten diesem ein erwarteter Wert fehlt, wodurch ein Fehler provoziert wird. Für jeden Befehl lassen sich Standard-Werte festlegen, die genutzt werden können, um diese Werte nicht zwingend beim Funktionaufruf als Argument zu benötigen. Sollten in der Logik des definierten Makros optionale Parameter nach Erforderlichen verlangt sein, ist dies in der Definition des Makros selbst als eckige Klammer vermerkbar, die allerdings keinen Wert trägt, auf welche wieder eine eckige Klammer mit einem Wert folgt. 
-Aus theoretischer Sicht ist die Menge an möglichen Parametern unendlich, \TeX{} selbst begrenzt diese jedoch auf 9 und setzt damit ein technisches Limit für \texttt{def}. Dieses ist auf verschiedene Arten umgehbar,\footnote{Einzelne Parameter tragen mehr Informationen,\pdfcomment{bei bekannter Codierung} Definitionen mit Relays oder Newcommand in Verbindung mit \textit{key-value}-Paaren (elegantere Lösung, bspw.\ in \texttt{hyperref}'s \verb|\hypersetup| zu finden)} zeigt aber nur Probleme auf, wenn in irgendeiner Form mit Name-Wert-Paaren gearbeitet wird, in welchen der erstere Key nicht übersetzt werden darf, jedoch zweiter Parameter es soll.#% Beispiel fehlt, siehe: irgendwo hier
-Inwiefern ist das logisch, in einem Programm, nachvollziehbar? Man würde nach einem Zurückverfolgen des Befehles und Keys überprüfen können, ob dieser in einer logischen Abfrage Verwendung findet. Falls dies nicht der Fall ist, dann kann davon ausgegangen werden, dass dieser Parameter übersetzt werden darf, ansonsten nicht.#% Konkrete Beispiele fehlen und eig problemlösung schon
+Parameter sind neben Kommandos eine weitere Möglichkeit Informationen an \TeX{} zu übermitteln und äußern sich entweder als String-Literale oder Teil einer bestimmten Menge an verfügbaren Optionen für ein Kommando (bspw.\ \verb|\color{red}|). Genauso, wie aus einzelnen Kommandos bereits bekannt ist, sollten nur String-Literale übersetzt werden. Das wesentliche Problem liegt hierbei daran, wie sie erkennbar sind. Die übliche \TeX{}-Notation sieht hierbei geschwungene Klammern für zwingend erforderliche Parameter vor, und eckige Klammern für optionale Parameter. Jedoch erwarten unterschiedliche Befehle verschiedene optionale und erforderliche Parameter, für welche nicht vorhergesagt werden kann, ob sie übersetzt werden dürfen. Die logische Reihenfolge ob erwartete Parameter optional oder erforderlich sind, können einzelne Befehle selbst bestimmen.\footnote{Ein Parameter eines Befehls wird optional beim Aufrufen des Kommandos, sollte ein initialer/standardmäßiger Wert bei der Deklaration mittels \verb"\def" oder \verb"\newcommand" (und Verwandte) festgelegt worden sein. Dies geschieht innerhalb eckiger Klammern (\texttt{newcommand}), wobei das erste Paar hierbei die Anzahl an Parametern festlegt und jedes folgende mit einer \verb|#|-Nummer korrespondiert.}
+Aus theoretischer Sicht ist die Menge an möglichen Parametern unendlich, \TeX{} selbst begrenzt diese jedoch auf 9 und setzt damit ein technisches Limit für \texttt{def}. Dieses ist auf verschiedene Arten umgehbar (einzelne Parameter/Strings können mehr Informationen kodieren, Definitionen mit Relays erweitert werden oder \textit{key-value}-Strukturen genutzt werden (bspw.\ in \texttt{hyperref}'s \verb|\hypersetup| wiederzufinden)), zeigt aber nur Probleme auf, wenn wortsprachliche Strings und keine alphanumerischen Werte innerhalb diesen genutzt werden, solche Strings also als String-Literale genutzt werden und daher übersetzt werden sollen. % Beispiel fehlt, siehe: irgendwo hier
+Konkreter muss abgewägt werden, ob es sich bei einzelnen Parametern um Werte handelt, welche für Operationen ihren exakten Wert tragen müssen (bspw.\ \verb"\hypersetup{urlcolor=red}" darf weder zu \verb"\hypersetup{URL-Farbe=rot}", noch \verb"\hypersetup{URL-Farbe=red}" oder \verb"\hypersetup{urlcolor=rot}" werden) oder um Strings, welche im eigentlichen Dokument erscheinen sollen (bspw.\ \verb"\paragraph{Trick or Treat}" muss zu \verb"\paragraph{Süßes oder Saueres}" werden, darf aber, bekanntlich, nicht \verb"\Paragraph{Süßes oder Saures}" produzieren). 
+Aus den reinen Funktions-/Kommandoaufrufen geht allerdings nicht immer die Information hervor, ob die Übersetzung stattfinden darf. Betrachtet man z.B.\ die Kommandos des \texttt{theorem} Paketes (\textit{package(s)} werden später noch eingeführt), so erfordern diese String-Literale als anzuzeigender String für eine neue nummerierte Umgebung.\\
+Beispielsweise
+\begin{Verbatim}
+    \newtheorem{lemma}{problem}
+\end{Verbatim}
+würde bei jedem Aufruf von \verb"\begin{lemma}" (bzw.\ inkl.\ \verb|\end{lemma}|) den String \verb"problem" gefolgt mit einer Nummer korrespondierend zu \texttt{kapitel.unterkapitel.problemNummer} produzieren. Wichtig ist hierbei, dass 
+\begin{Verbatim}
+    \newtheorem{lemma}{problem}
+\end{Verbatim}
+nicht zu 
+\begin{Verbatim}
+    \newtheorem{Lemma}{Problem}
+\end{Verbatim}
+im Deutschen werden darf, sondern idealerweise in 
+\begin{Verbatim}
+    \newtheorem{lemma}{Problem}
+\end{Verbatim}
+übersetzt werden sollte.\footnote{\enquote{Lemma} statt \enquote{Problem} in diesem Kontext zu produzieren, könnte man als eine Art \textit{Bonus} interpretieren, in welchem der Kontext erkannt wurde und ein \enquote{üblicheres} Wort im Deutschen gewählt wurde.}
+Ähnliches ist bei optionalen Parametern denkbar. So dürfte ein \verb"\usepackage[english]{babel}" nicht zu \verb"\usepackage[Englisch]{babel}" werden. Gegenüber zuvor erwähnten \textit{key-value}-Paaren ist in solchen Fällen keine Zuweisung eines Schlüssels zu einem Wert anhand eines \verb-=- erkennbar.
+
 
 \paragraph{Erkennung}
+Beschränkt man die Anzahl an Parametern (optional und erforderlich) zunächst auf 3, gelangt man bei ${2*2}^{3}=64$ möglichen Permutationen an (ein Parameter kann entweder optional oder erforderlich sein, dessen Inhalte dürfen entweder Übersetzt werden oder nicht und es existieren, bekanntlich, drei Parameter. Die Zahlen 1--4 in beliebiger Reihenfolge in einem 3-elementigen Array anordnen.). 
 Verschiedene zuvor beschriebene Permutationen sind beispielhaft in~\hyperref[tab:problems:exampleParameter]{unterem Beispiel}, in welchem zur einfacheren Lesbarkeit die Kürzel \textit{t} für übersetzbare Felder (translatable string) und \textit{p} für nicht zu übersetzende Strings (parameter) stehen.
+
+% note for future: statt ein _table_ environment zu nutzen, ein eigenes erzeugen, was genau das Gleiche macht, nur mit "Beispiel X.x:" statt "Tabelle X.x:"
+\begin{table}[h!]
+    \centering
+    \begin{tabularx}[l | c c c]
+        \toprule
+        Übersetzbar & Riskiert Fehler & & & & & &\\
+            \verb|\cmd{t}{t}{t}| & \verb|\cmd{t}{t}{p}| & \verb|\cmd{t}{p}{t}| & \verb|\cmd{t}{p}{p}| & \verb|\cmd{p}{t}{t}| & \verb|\cmd{p}{t}{p}| & \verb|\cmd{p}{p}{t}| & \verb|\cmd{p}{p}{p}|\\
+            \verb|\cmd{t}{t}[t]| & \verb|\cmd{t}{t}[p]| & \verb|\cmd{t}{p}[t]| & \verb|\cmd{t}{p}[p]| & \verb|\cmd{p}{t}[t]| & \verb|\cmd{p}{t}[p]| & \verb|\cmd{p}{p}[t]| & \verb|\cmd{p}{p}[p]|\\
+            \verb|\cmd{t}[t]{t}| & \verb|\cmd{t}[t]{p}| & \verb|\cmd{t}[p]{t}| & \verb|\cmd{t}[p]{p}| & \verb|\cmd{p}[t]{t}| & \verb|\cmd{p}[t]{p}| & \verb|\cmd{p}[p]{t}| & \verb|\cmd{p}[p]{p}|\\
+            \verb|\cmd{t}[t][t]| & \verb|\cmd{t}[t][p]| & \verb|\cmd{t}[p][t]| & \verb|\cmd{t}[p][p]| & \verb|\cmd{p}[t][t]| & \verb|\cmd{p}[t][p]| & \verb|\cmd{p}[p][t]| & \verb|\cmd{p}[p][p]|\\
+            \verb|\cmd[t]{t}{t}| & \verb|\cmd[t]{t}{p}| & \verb|\cmd[t]{p}{t}| & \verb|\cmd[t]{p}{p}| & \verb|\cmd[p]{t}{t}| & \verb|\cmd[p]{t}{p}| & \verb|\cmd[p]{p}{t}| & \verb|\cmd[p]{p}{p}|\\
+            \verb|\cmd[t]{t}[t]| & \verb|\cmd[t]{t}[p]| & \verb|\cmd[t]{p}[t]| & \verb|\cmd[t]{p}[p]| & \verb|\cmd[p]{t}[t]| & \verb|\cmd[p]{t}[p]| & \verb|\cmd[p]{p}[t]| & \verb|\cmd[p]{p}[p]|\\
+            \verb|\cmd[t][t]{t}| & \verb|\cmd[t][t]{p}| & \verb|\cmd[t][p]{t}| & \verb|\cmd[t][p]{p}| & \verb|\cmd[p][t]{t}| & \verb|\cmd[p][t]{p}| & \verb|\cmd[p][p]{t}| & \verb|\cmd[p][p]{p}|\\
+            \verb|\cmd[t][t][t]| & \verb|\cmd[t][t][p]| & \verb|\cmd[t][p][t]| & \verb|\cmd[t][p][p]| & \verb|\cmd[p][t][t]| & \verb|\cmd[p][t][p]| & \verb|\cmd[p][p][t]| & \verb|\cmd[p][p][p]|\\
+
+    \end{tabularx}
+    \caption{2-dimensionale Darstellung möglicher Permutationen von Kommandos mit 3 Parametern}\phantomsection\label{tab:problems:exampleParameter}
+\end{table}
+% Worauf möchte ich hiermit genau heraus? Wie viele verschiedene Sachen man testen sollte oder ob man irgendwann eine Grenze setzen muss!
+Bereits eine solche kleine Anzahl an Parametern macht erkenntlich, dass jeder dieser einzeln ausgewertet werden muss und so weit ins Backend der Software verfolgt werden muss, bis klar ist, dass mit diesem String keine logische Operation vorgenommen wird. Die maximale Anzahl an Parametern für jedes einzelne Kommando beträgt 9, was die Anzahl an möglichen Permutationen auf circa 250 Tausend erhöht.
+
+\subparagraph{Problem bei diesem Ansatz} zeigt sich darin, wenn man versuchen würde alle nach einem Kommando stehenden Klammer-Paare ggb.\ diesem Kommando zurückzuverfolgen. Dieser Ansatz vergisst, dass geschwungene Klammern auch dazu dienen könnten, dass Umgebungen geöffnet und geschlossen werden.
+
 
 \begin{comment}
     Möglich ist alles:
@@ -107,19 +146,8 @@ Verschiedene zuvor beschriebene Permutationen sind beispielhaft in~\hyperref[tab
             -> Actual limit to be tested in own implementation?
 \end{comment}
 
-\begin{table}
-    \centering
-    \begin{tabularx}[l | c c c]
-        \toprule
-        Richtige Übersetzungen & Fehlerhafte Übersetzungen & &\\
-            \verb|1000| & \verb|1111| & \verb|0011| & \verb|1010|\\
-            \verb|0100| & \verb|1110| & \verb|1101| & \verb|0101|\\
-            \verb|0010| & \verb|0111| & \verb|1011| & \verb|0110|\\
-            \verb|0001| & \verb|1100| & \verb|0000| & \verb|1001|\\
-    \end{tabularx}
-    \caption{2-dimensionale Darstellung von kleinerem Quellcode (illustrativ)}\phantomsection\label{tab:problems:exampleParameter}
-\end{table}
 
+\begin{comment}
 \paragraph{Weitere Beispiele}
 Einzelne Kommandos erwarten zunächst optionale, zusätzliche Parameter in eckigen Klammern, für welche Standard-Werte existieren, demnach nicht zwingend bei Funktionsaufruf übergeben werden müssen und danach übrige, benötigte in Geschwungenen (ein Beispiel hierfür zeigt~\ref{subpar:problems:macros}). 
 
@@ -129,14 +157,71 @@ Bei einigen Befehlen (z.B.\ einer URL-Angabe in einer Hyperreferenz\footnote{Hyp
 \paragraph{Weiterführendes}
 Beispielsweise wäre das Kommando \verb|\paragraph{This is a string of many characters}| eines, in welchem die Inhalte der Klammern übersetzt werden sollen und das Kommando \verb|\usepackage{geometry}| ein Beispiel, in welchem das Übersetzen von \verb|geometry| zu \verb|Geometrie| dazu führen würde, dass das entsprechende Paket nicht im Quelltext verwendet wird. Diese Art von Fällen, welche der Übersetzung ausgeschlossen werden soll, ist besonders kritisch, wenn mit mehreren Dateien gearbeitet wird und so würde ein Übersetzen von z.B.\ \verb|\include{clock.tex}| (oder \verb|\include{clock}|) zu \verb|\include{Uhr.tex}| (oder:\ \verb|\include{Uhr}|) dazu führen, dass größere Teile eines Dokumentes komplett ausgeschlossen werden. 
 Für manche Befehle impliziert allerdings der Befehl selbst (bspw.\ \texttt{includegraphics}), dass eine Parameter folgen muss (hier:\ URL, bei welchen auch erwartet werden muss, dass sie menschensprachliche Wörter/Phrasen enthalten). 
-
+\end{comment}
 
 
 
 \subsubsection{Makros und Umgebungen}
+\paragraph{Umgebungen}\par
+\TeX{} trägt ein Konzept von \enquote{Umgebungen}, für deren Inhalte (ob textlich oder mittels parameterisierter Kommandos produzierte) dieselben Befehle innerhalb dieser prozedural angewendet werden. So könnte man die Farbe der ausgegebenen Zeichenkette mittels \verb|{\color{red} text}| ({\color{red} text}) zu rot wechseln. Solche einfachen Umgebungen selbst produzieren noch keine neuen Fehler, allerdings exisiteren spezifische, teils vordefinierte Umgebungen, innerhalb welcher von Übersetzungen abzusehen ist (bzw.\ zu übersetzende Inhalte nur anhand bestimmter Elemente erkannt werden können). 
+% Mathematische Umgebungen
+\subparagraph*{Mathematische}\par
+Einfachstes Beispiel hierfür sind mathematische Umgebungen, welche z.B.\ Formeln, griechische Buchstaben und sonstige mathematische Sonderzeichen darstellen können, jedoch auch an vorher nicht unbedingt bekannten Stellen textliche Inhalte tragen können (siehe: unten). Ein Wechsel zwischen solchen Umgebungen ist theoretisch unendlich oft möglich, solange auf jedes Betreten ein Verlassen (der Umgebung) erfolgt. Hierbei wäre es ideal, wenn alle textuellen Inhalte (des Quellcodes) übersetzt werden und alle Mathematischen nicht (im Beispiel:\ \textit{reminder:} zu \textit{Erinnerung:} und \textit{frequency} zu \textit{Frequenz}). 
+\begin{Verbatim}
+    \begin{align*}\label{problems:tables:eq}
+        \sin(\omega t - k\vec{r})                    &= 0 \\
+        \arcsin(\sin(\omega t - k\vec{r}))           &= \arcsin(0) \\
+        (\omega t - k\vec{r})                        &= 0 \\
+        \omega t                                     &= k\vec{r} \text{ reminder: $\omega = 2\pi \text{$f$ (frequency)}$}
+    \end{align*}
+\end{Verbatim}
+Insbesondere müssen Fälle betrachtet werden, in welchen Sätze (oder teils Paragraphen) durch mathematische Inhalte unterbrochen/segmentiert werden. So sollte bspw.\ \verb"The below equation $$x=4+x$$ is false." zu \verb"Die untenstehende Gleichung $$x=4+x$$ ist falsch." werden und nicht als zwei einzelne Sätze aufgegriffen werden (\verb"Die untere Gleichung. $$x=4+x$$ Ist falsch.").% Des is gut testbar i believe. Evtl schonmal auf Tests von sowas verweisen? Halt lieber: hier der Anhang der getestet wurde, statt das Kapitel hier zu fluten
+Andererseits darf nicht nur, weil eine mathematische Umgebung betreten wurde, auf einmal Texte innerhalb dieser vergessen werden oder erwartet sein, dass die mathematischen Inhalte nicht selbst menschensprachliche Worte tragen. Beispielsweise sollte \verb|$a != b \land a \text{ a isn't b and a}$| in \verb|$a != b \land a \text{ a ist nicht b und a}$| resultieren, aber \verb|$cars = 3, value = 20 ct$| die Variablen unverändert lassen, dementsprechend nicht \verb|$Autos = 3, Wert = 20 ct$| produzieren.
+Hierbei sind höhere Verschachtelungen (bzw.\ Vernestungen) zu prüfen. 
 
+% Verbatim Umgebungen
+\subparagraph*{Verbatim}\par
+Ähnlich wie bei der Unterbrechung von einzelnen Sätzen durch mathematische Formeln können in \TeX{} auch verschiedene Wege genutzt werden, wortwörtliche Zitate zu verwenden um Sätze oder Paragraphen zu unterbrechen. Neben dem bekannten Befehl \verb-\verb- existiert auch eine großflächigere \texttt{verbatim}-Umgebung. Denkbar ist ihre Nutzung um kleinere \TeX{}-Quellcodes\footnote{Quelltexte anderer Programmiersprachen werden später betrachtet.} darzustellen. Innerhalb dieser Bereiche sind selbstverständlich alle bisher bekannten Fehlerquellen ihrerseits zu umgehen. Wie verhält sich jedoch ein Übersetzer, sollten Teile dieser \textit{verbatim}-Umgebungen zum Wortlaut des formulierten Satzes beitragen? Soll aus\ \verb"I detest using the \verb|\verb command| unnecessaringly." eher \verb"Ich lehne ein ünnötiges Nutzen des \verb|\verb command| ab." oder \verb"Ich lehne ein unnötiges Nutzen des \verb|\verb Kommando| ab." werden? Denkbar sind, in diesem Kontext, beide Alternativen, allerdings müssen größere Beispiele die Inhalte der wortwörtlichen Zitierung näher auswerten und als \TeX{}-Quellcode behandeln.
+
+% Bilder, Figuren und TikZ
+\subparagraph*{Mit eigener Syntax}\par
+Umgebungen können mitunter ihre eigen syntaktische Forderungen stellen, für welche sie beispielsweise englishe Begriffe nutzen, wie z.B.\ Ti\textit{k}Z. In solchen Umgebungen muss wieder ausgewertet werden, wann einzelne Zeichenketten übersetzt werden dürfen, denn z.B.\ \texttt{nodes} erlauben es, dass Texte an diesen platziert werden, aber die Erstellung dieser erfordert den englischen Begriff \textit{at} um ihrer Position innerhalb einer Graphik eine Koordinate zu geben.
+\verb|\node at (1,1) {hello}| muss in \verb|\node at (1,1) {Hallo}| resultieren und darf nicht zu \verb|\node bei (1,1) {Hallo}| werden. 
+
+% Kommentare? X
+\subparagraph*{Kommentare}\par
+Wohingegen einzeilige Kommentare in \TeX{} mit einem \verb"%" gekennzeichnet werden, sind auch Mehrzeilige erlaubt, oder solche, die innerhalb ein- und derselben Zeile starten und enden. Hierbei müssen diese Kommentare missachtet werden. So muss ein \verb|This statement is \begin{comment}not\end{comment} true.| nicht zwingend in \verb|Diese Aussage ist \begin{comment}nicht\end{comment} wahr.| enden, darf aber unter keinen Umständen \verb|Diese Aussage ist falsch.| produzieren, innerhalb welcher der Kommentar interpretiert wurde und die Ausgabe kommentarlos angepasst wurde.
+
+\paragraph*{Makros}\par
+Ähnlich wie Kommandos sind Makros eine Art und Weise kürzere Befehle zu nutzen um Ausgaben zu produzieren.% Beispiel von unten
+
+
+% Siehe unten, umgebungsabhängig. Sowas wie verbatim wollen wir betrachten, in mathemathischen Umgebungen nur textliche inhalte... tikz und so nicht...
 \subsection{Mehrere Quelltexte}
+\subsubsection{\TeX{} und Andere}
+% include, input, ...
+% Hier auch: lstlistings und minted, wenn auch Nische?
 \subsubsection{Pakete}
+
+% danach andere aux-files
+
+\subsubsection{Klassen}
+
+% .sty, .dtx?
+
+\subsubsection{Hilfsdateien}
+% bspw. Table of contents, Zitations_style_, BibTeX_Zitationsquellen_, 
+
+\subsubsection{Zitationen}
+% endlich bibtex
+% wie \label, \ref und \cite Kontexte für einzelne Sätze setzen können und dadurch andere Ausgaben produzieren müssten
+%%%%%
+%%%%%
+%%%%%
+
+\subsection{Spezifisch}
+\subsubsection{Sprachliche Hürden}
+\subsubsection{Layouting-Probleme}
 
 
 
