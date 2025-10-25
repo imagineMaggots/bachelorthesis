@@ -36,7 +36,7 @@ Aufbauend auf diesen kleinsten Strukturen bahnt sich der Weg Richtung größeren
 Einige dieser Strukturen neben reinem Quellcode auch einzelne String-Literale, welche nicht immer übersetzt werden müssen, aber von Interesse für eine Übersetzung werden könnten.% Meint: Titel von Werken (BibTeX) müssen nicht zwingend übersetzt werden, da der Originaltitel es am Einfachsten macht, das erwähnte Werk zu finden
 Hiernach bleiben jedoch einige spezifischere Probleme, für welche sich nicht immer eindeutige Lösungen finden lassen.
 
-\subsection{Struktur einzelner Beispiele}
+\subsubsection{Struktur einzelner Beispiele}
 Um alle möglichen Permutationen von Problemen abzudecken, die bei einem Übersetzen von \TeX{} entstehen könnten, und dabei in eine übersichtliche Form zu überführen, wird durch verschiedene mögliche, denkbare Darstellungsformen gewechselt. Hierbei kann, aus einem zunächst, abstraktem Blickwinkel recht einfach nach Größe der Struktur und Zahl an möglichen Permutationen unterschieden werden, wobei weder noch eine konkrete, quantitative Angabe zulassen. Daher finden sich zunächst \enquote{kleine} Strukturen mit \enquote{wenigen} oder \enquote{vielen} \textit{erlaubten} Permutationen (in wohlmöglich entstehenden Übersetzungen) zusammen und bilden danach \enquote{Große}.% Übersetzungen, die entstehen könnten.
 Für diese abstrakten Strukturen schnell einfache Darstellungsmöglichkeiten finden, abhängig von 2-dimensionalem Platzverbrauch, bzw.\ in dem Minimieren dieses. So werden kleine Beispiele mit wenigen Permutationen (innerhalb eines, wie hier, Dokumentes) möglichst nebeneinander gelistet, nachdem sie zuvor kurz beschrieben waren
 % Hatte hier die deutsche Grammatik verletzt: englisch: "So small examples with limited permutations will be listed most adjacently" geht gerade eben noch, aber: "So kleine Beispiele mit wenigen Permutationen möglichst nebeneinander gelistet" entstand, da ich das "werden" schon bedacht hatte, es in der englischen Grammatik nicht dort folgte, wo es in der Deutschen hätte platziert werden müssen, wodurch ich es übersprang... was mir erst im nachherein aufgefallen war
@@ -47,7 +47,7 @@ gelangt man bei 4 richtigen \enquote{Übersetzungen} an (insofern man das Übers
 In dieser Darstellung ist zudem vorteilhaft, dass anhand der gebildeten \enquote{Muster} erkenntlich wird, dass nicht alle 4 bit eines Wortes gepüft werden müssen, um eine Richtigkeit zu bestätigen, wenn man davon ausgeht, dass Zeichenketten auch von rechts nach links gelesen werden können. Diese rein logische Operation führt dazu, dass bei einem Zeitgleichen überprüfen in beide Richtungen beide \enquote{Tests}, nachdem sie sich in der Mitte trafen, im nächsten bit fertig sind. Nach dem Ausschlussverfahren müss nämlich entweder eine \textit{links-nach-rechts} Iteration beachten, wie viele 1 vorliegen, genause wie die \textit{rechts-nach-links}. Jede dieser Iterationen muss dafür den gesamten Prüfungs-Prozess abbrechen können, sobald sie mehr als nur eine 1 liest (was 7 Fehler in zwei Schritten abdeckt). Im (logischen) dritten Schritt würden beide Iterationen ihre gesammelten auf Ungleichheit prüfen. Hätten beide Iteratoren je eine oder keine 1 gelesen, wäre diese Äquivalenzrelation gebrochen, wodurch ein Fehler erkennbar wäre (denn die Abfrage schließt die übrigen 5 Fehler mit ein).\footnote{Vorteil:\ $\mathcal{O}(\log{n}) statt \mathcal{O}(n)$ zur Überprüfung einzelner Zeichenketten auf Fehler. Diese könnte unter Anderem auf Rechtschreibkorrekturen angewendet werden.}% prüfen nochmal
 \begin{table}
     \centering
-    \begin{tabularx}[l | c c c]
+    \begin{tabularx}{\textwidth}{X|XXX}
         \toprule
         Richtige Übersetzungen & Fehlerhafte Übersetzungen & &\\
             \verb|1000| & \verb|1111| & \verb|0011| & \verb|1010|\\
@@ -61,8 +61,11 @@ In dieser Darstellung ist zudem vorteilhaft, dass anhand der gebildeten \enquote
 
 
 Ein weiterer nutzbarer Vorteil ist, dass die größeren Strukturen aus den kleineren Strukturen in \TeX{} bestehen (bspw.\ Quelltexte bestehen aus Befehlen, Funktionen, Parametern, \ldots), wodurch Fehler nicht bis ins Detail verfolgt werden müssen, sondern nur ihre (logischen) Auswirkungen innerhalb von Dokumenten berücksichtigt werden müssen, sowie welche Änderungen in einem Dokument in mehrere andere Dateien nachverfolgt werden müssen, um danach rückwirkend Anpassungen im eigentlichen Dokument festzustellen.% Reihenfolge muss umgedreht werden,,,
-Hierzu wird in der Darstellung der Quelltexte mehr räumlicher Platz beansprucht.#
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Hierzu wird in der Darstellung der Quelltexte mehr räumlicher Platz beansprucht.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection{Elemente in einem Quelltext}
 \subsubsection{Kommandos}
 \paragraph{Unterscheidung}
 Kommandos sind in der reinen \TeX{}-Syntax durch ein Backslash \verb|\| gekennzeichnet. Das Wörter, auf welche ein \verb|\| folgt, nicht übersetzt werden dürfen, ist trivial. 
@@ -76,10 +79,9 @@ Ob das auf diesen definierten Befehl folgende Wort übersetzt werden darf (und d
 Die zuvor beschriebenen String-Literale sind nicht, so wie es \verb|\item| deuten lässt, an festen Zeichen zu erkennen. Verschiedene Befehle sind dazu in der Lage Strings als Parameter aufzugreifen, welche als Literale im Dokument erscheinen sollen. Neben den üblichen Klammern, welche diese fassen können (\verb${}$ oder \verb$[]$) existieren auch Wege andere Zeichen an diesen Stellen zu nutzen. Einfachstes Beispiel wäre hierfür der \textit{wortwörtliche} \verb$\verb$-Befehl, der alle für alle ASCII-Zeichen (in UTF8, inkl.\ LATIN-Extensions) erlaubt diese als eine Umklammerung von (wie gezeigt, mittels:\ \verb+\verb$\verb$+ reproduzierbar) einem Befehl zu nutzen, damit nicht dieser von \TeX{}'s Parser als der eigentliche Befehl gedeutet wird, sondern als \textit{genau} diese Zeichenkette. Ein Übersetzer muss demnach jegliche Permutation hierfür diesen Befehl abdecken. Hierbei ist zu vermerken, dass es auch möglich ist, Wort-Charaktere (A-Z,a-z) zu nutzen, insofern zuerst ein Space nach dem \verb a\verba folgt (wobei diese Zeichen dann logischerweise nicht mehr Teil der innerhalb von \verb a\verba stehenden Zeichenkette werden kann). Zu übersetzen sind in diesen Fällen nur Permutationen, welche mit Gewissheit ein Wort einer menschlichen Sprache sind, was sich entweder anhand fehlender Zeichen für ein Alphabet (heuristisch, da unter der Annahme, dass die Sprache selbst \textit{immer} alle Zeichen ihrer Zeichensatzes verwendet) oder an überschüssigen Zeichen innerhalb des nachverfolgten Strings aufzeigen kann/wird.
 
 \paragraph{Weitere Beispiele}
-
 \subsubsection{Zusätzliche Parameter}
 \paragraph{Unterscheidung}\par
-Parameter sind neben Kommandos eine weitere Möglichkeit Informationen an \TeX{} zu übermitteln und äußern sich entweder als String-Literale oder Teil einer bestimmten Menge an verfügbaren Optionen für ein Kommando (bspw.\ \verb|\color{red}|). Genauso, wie aus einzelnen Kommandos bereits bekannt ist, sollten nur String-Literale übersetzt werden. Das wesentliche Problem liegt hierbei daran, wie sie erkennbar sind. Die übliche \TeX{}-Notation sieht hierbei geschwungene Klammern für zwingend erforderliche Parameter vor, und eckige Klammern für optionale Parameter. Jedoch erwarten unterschiedliche Befehle verschiedene optionale und erforderliche Parameter, für welche nicht vorhergesagt werden kann, ob sie übersetzt werden dürfen. Die logische Reihenfolge ob erwartete Parameter optional oder erforderlich sind, können einzelne Befehle selbst bestimmen.\footnote{Ein Parameter eines Befehls wird optional beim Aufrufen des Kommandos, sollte ein initialer/standardmäßiger Wert bei der Deklaration mittels \verb"\def" oder \verb"\newcommand" (und Verwandte) festgelegt worden sein. Dies geschieht innerhalb eckiger Klammern (\texttt{newcommand}), wobei das erste Paar hierbei die Anzahl an Parametern festlegt und jedes folgende mit einer \verb|#|-Nummer korrespondiert.}
+Parameter sind neben Kommandos eine weitere Möglichkeit Informationen an \TeX{} zu übermitteln und äußern sich entweder als String-Literale oder Teil einer bestimmten Menge an verfügbaren Optionen für ein Kommando (bspw.\ \verb|\color{red}|). Genauso, wie aus einzelnen Kommandos bereits bekannt ist, sollten nur String-Literale übersetzt werden. Das wesentliche Problem liegt hierbei daran, wie sie erkennbar sind. Die übliche \TeX{}-Notation sieht hierbei geschwungene Klammern für zwingend erforderliche Parameter vor, und eckige Klammern für optionale Parameter. Jedoch erwarten unterschiedliche Befehle verschiedene optionale und erforderliche Parameter, für welche nicht vorhergesagt werden kann, ob sie übersetzt werden dürfen. Die logische Reihenfolge ob erwartete Parameter optional oder erforderlich sind, können einzelne Befehle selbst bestimmen.\footnote{Ein Parameter eines Befehls wird optional beim Aufrufen des Kommandos, sollte ein initialer/standardmäßiger Wert bei der Deklaration mittels \verb"\def" oder \verb"\newcommand" (und Verwandte) festgelegt worden sein. Dies geschieht innerhalb eckiger Klammern (\texttt{newcommand}), wobei das erste Paar hierbei die Anzahl an Parametern festlegt und jedes folgende mit einer \#-Nummer korrespondiert.}
 Aus theoretischer Sicht ist die Menge an möglichen Parametern unendlich, \TeX{} selbst begrenzt diese jedoch auf 9 und setzt damit ein technisches Limit für \texttt{def}. Dieses ist auf verschiedene Arten umgehbar (einzelne Parameter/Strings können mehr Informationen kodieren, Definitionen mit Relays erweitert werden oder \textit{key-value}-Strukturen genutzt werden (bspw.\ in \texttt{hyperref}'s \verb|\hypersetup| wiederzufinden)), zeigt aber nur Probleme auf, wenn wortsprachliche Strings und keine alphanumerischen Werte innerhalb diesen genutzt werden, solche Strings also als String-Literale genutzt werden und daher übersetzt werden sollen. % Beispiel fehlt, siehe: irgendwo hier
 Konkreter muss abgewägt werden, ob es sich bei einzelnen Parametern um Werte handelt, welche für Operationen ihren exakten Wert tragen müssen (bspw.\ \verb"\hypersetup{urlcolor=red}" darf weder zu \verb"\hypersetup{URL-Farbe=rot}", noch \verb"\hypersetup{URL-Farbe=red}" oder \verb"\hypersetup{urlcolor=rot}" werden) oder um Strings, welche im eigentlichen Dokument erscheinen sollen (bspw.\ \verb"\paragraph{Trick or Treat}" muss zu \verb"\paragraph{Süßes oder Saueres}" werden, darf aber, bekanntlich, nicht \verb"\Paragraph{Süßes oder Saures}" produzieren). 
 Aus den reinen Funktions-/Kommandoaufrufen geht allerdings nicht immer die Information hervor, ob die Übersetzung stattfinden darf. Betrachtet man z.B.\ die Kommandos des \texttt{theorem} Paketes (\textit{package(s)} werden später noch eingeführt), so erfordern diese String-Literale als anzuzeigender String für eine neue nummerierte Umgebung.\\
@@ -99,7 +101,7 @@ im Deutschen werden darf, sondern idealerweise in
 \begin{Verbatim}
     \newtheorem{lemma}{Problem}
 \end{Verbatim}
-übersetzt werden sollte.\footnote{\enquote{Lemma} statt \enquote{Problem} in diesem Kontext zu produzieren, könnte man als eine Art \textit{Bonus} interpretieren, in welchem der Kontext erkannt wurde und ein \enquote{üblicheres} Wort im Deutschen gewählt wurde.}
+übersetzt werden sollte.\footnote{\enquote{Lemma} statt \enquote{Problem} in diesem Kontext zu produzieren, könnte man als eine Art \textit{Bonus} interpretieren, in welchem der Kontext erkannt wurde und ein \enquote{üblicheres} Wort im Deutschen gewählt wurde.}% passende Beispiele auch: \renewcommand{\abstractname}{Abstrakt} oder ähnliche (wie auch bei: Inhaltverzeichnis, Literaturverzeichnis usw.)
 Ähnliches ist bei optionalen Parametern denkbar. So dürfte ein \verb"\usepackage[english]{babel}" nicht zu \verb"\usepackage[Englisch]{babel}" werden. Gegenüber zuvor erwähnten \textit{key-value}-Paaren ist in solchen Fällen keine Zuweisung eines Schlüssels zu einem Wert anhand eines \verb-=- erkennbar.
 
 
@@ -110,9 +112,10 @@ Verschiedene zuvor beschriebene Permutationen sind beispielhaft in~\hyperref[tab
 % note for future: statt ein _table_ environment zu nutzen, ein eigenes erzeugen, was genau das Gleiche macht, nur mit "Beispiel X.x:" statt "Tabelle X.x:"
 \begin{table}[h!]
     \centering
-    \begin{tabularx}[l | c c c]
+    \begin{tabularx}{\textwidth}{X|XXXXXXX}
         \toprule
         Übersetzbar & Riskiert Fehler & & & & & &\\
+        \midrule
             \verb|\cmd{t}{t}{t}| & \verb|\cmd{t}{t}{p}| & \verb|\cmd{t}{p}{t}| & \verb|\cmd{t}{p}{p}| & \verb|\cmd{p}{t}{t}| & \verb|\cmd{p}{t}{p}| & \verb|\cmd{p}{p}{t}| & \verb|\cmd{p}{p}{p}|\\
             \verb|\cmd{t}{t}[t]| & \verb|\cmd{t}{t}[p]| & \verb|\cmd{t}{p}[t]| & \verb|\cmd{t}{p}[p]| & \verb|\cmd{p}{t}[t]| & \verb|\cmd{p}{t}[p]| & \verb|\cmd{p}{p}[t]| & \verb|\cmd{p}{p}[p]|\\
             \verb|\cmd{t}[t]{t}| & \verb|\cmd{t}[t]{p}| & \verb|\cmd{t}[p]{t}| & \verb|\cmd{t}[p]{p}| & \verb|\cmd{p}[t]{t}| & \verb|\cmd{p}[t]{p}| & \verb|\cmd{p}[p]{t}| & \verb|\cmd{p}[p]{p}|\\
@@ -121,7 +124,7 @@ Verschiedene zuvor beschriebene Permutationen sind beispielhaft in~\hyperref[tab
             \verb|\cmd[t]{t}[t]| & \verb|\cmd[t]{t}[p]| & \verb|\cmd[t]{p}[t]| & \verb|\cmd[t]{p}[p]| & \verb|\cmd[p]{t}[t]| & \verb|\cmd[p]{t}[p]| & \verb|\cmd[p]{p}[t]| & \verb|\cmd[p]{p}[p]|\\
             \verb|\cmd[t][t]{t}| & \verb|\cmd[t][t]{p}| & \verb|\cmd[t][p]{t}| & \verb|\cmd[t][p]{p}| & \verb|\cmd[p][t]{t}| & \verb|\cmd[p][t]{p}| & \verb|\cmd[p][p]{t}| & \verb|\cmd[p][p]{p}|\\
             \verb|\cmd[t][t][t]| & \verb|\cmd[t][t][p]| & \verb|\cmd[t][p][t]| & \verb|\cmd[t][p][p]| & \verb|\cmd[p][t][t]| & \verb|\cmd[p][t][p]| & \verb|\cmd[p][p][t]| & \verb|\cmd[p][p][p]|\\
-
+        \bottomrule
     \end{tabularx}
     \caption{2-dimensionale Darstellung möglicher Permutationen von Kommandos mit 3 Parametern}\phantomsection\label{tab:problems:exampleParameter}
 \end{table}
@@ -179,6 +182,11 @@ Insbesondere müssen Fälle betrachtet werden, in welchen Sätze (oder teils Par
 Andererseits darf nicht nur, weil eine mathematische Umgebung betreten wurde, auf einmal Texte innerhalb dieser vergessen werden oder erwartet sein, dass die mathematischen Inhalte nicht selbst menschensprachliche Worte tragen. Beispielsweise sollte \verb|$a != b \land a \text{ a isn't b and a}$| in \verb|$a != b \land a \text{ a ist nicht b und a}$| resultieren, aber \verb|$cars = 3, value = 20 ct$| die Variablen unverändert lassen, dementsprechend nicht \verb|$Autos = 3, Wert = 20 ct$| produzieren.
 Hierbei sind höhere Verschachtelungen (bzw.\ Vernestungen) zu prüfen. 
 
+\subparagraph*{Captions und Table of Contents}\par
+In ähnlicher Art und Weise wie mathematische Umgebungen können auch Tabellen syntaktische Elemente, Umgebungen und textliche Inhalte miteinander vermischen.% Beispiel von unten
+Neben recht einfach erkennbaren Unterschieden ist es ebenso denkbar, dass vereinzelt Umgebungen innerhalb einzelner Tabellen-Zellen genutzt werden, welche ihrerseits entweder Wörter enthalten, welche nicht übersetzt werden dürfen oder auf String-Literale zugreifen, die an anderer Stelle stehen. Bei der Übersetzung in eine andere Sprache als Englisch muss hierbei natürlich bedacht werden, dass vordefinierte Untertitel bzw.\ Beschreibungen angepasst werden, damit z.B.\ eine Tabelle oder Abbildung nicht als \textit{table} oder \textit{figure}, sondern als \textit{Tabelle} oder \textit{Abbildung} berzeichnet wird. Gleiches muss für einzelne Abschnitte, wie zum Beispiel die Überschriften des Inhalts-, Abbildungs- und Tabellenverzeichnisses, als auch einer Nomenklatur oder eines Glossares gewährleistet sein und beinhaltet Änderungen, welche idealerweise in die Präambel des Dokumentes aufgenommen werden.
+% Bspw. möglich via \renewcommand{\contentsname}{Inhaltsverzeichnis}
+
 % Verbatim Umgebungen
 \subparagraph*{Verbatim}\par
 Ähnlich wie bei der Unterbrechung von einzelnen Sätzen durch mathematische Formeln können in \TeX{} auch verschiedene Wege genutzt werden, wortwörtliche Zitate zu verwenden um Sätze oder Paragraphen zu unterbrechen. Neben dem bekannten Befehl \verb-\verb- existiert auch eine großflächigere \texttt{verbatim}-Umgebung. Denkbar ist ihre Nutzung um kleinere \TeX{}-Quellcodes\footnote{Quelltexte anderer Programmiersprachen werden später betrachtet.} darzustellen. Innerhalb dieser Bereiche sind selbstverständlich alle bisher bekannten Fehlerquellen ihrerseits zu umgehen. Wie verhält sich jedoch ein Übersetzer, sollten Teile dieser \textit{verbatim}-Umgebungen zum Wortlaut des formulierten Satzes beitragen? Soll aus\ \verb"I detest using the \verb|\verb command| unnecessaringly." eher \verb"Ich lehne ein ünnötiges Nutzen des \verb|\verb command| ab." oder \verb"Ich lehne ein unnötiges Nutzen des \verb|\verb Kommando| ab." werden? Denkbar sind, in diesem Kontext, beide Alternativen, allerdings müssen größere Beispiele die Inhalte der wortwörtlichen Zitierung näher auswerten und als \TeX{}-Quellcode behandeln.
@@ -190,29 +198,56 @@ Umgebungen können mitunter ihre eigen syntaktische Forderungen stellen, für we
 
 % Kommentare? X
 \subparagraph*{Kommentare}\par
-Wohingegen einzeilige Kommentare in \TeX{} mit einem \verb"%" gekennzeichnet werden, sind auch Mehrzeilige erlaubt, oder solche, die innerhalb ein- und derselben Zeile starten und enden. Hierbei müssen diese Kommentare missachtet werden. So muss ein \verb|This statement is \begin{comment}not\end{comment} true.| nicht zwingend in \verb|Diese Aussage ist \begin{comment}nicht\end{comment} wahr.| enden, darf aber unter keinen Umständen \verb|Diese Aussage ist falsch.| produzieren, innerhalb welcher der Kommentar interpretiert wurde und die Ausgabe kommentarlos angepasst wurde.
+Wohingegen einzeilige Kommentare in \TeX{} mit einem \verb"\%" gekennzeichnet werden, sind auch Mehrzeilige erlaubt, oder solche, die innerhalb ein- und derselben Zeile starten und enden. Hierbei müssen diese Kommentare missachtet werden. So muss ein \verb|This statement is \begin{comment}not\end{comment} true.| nicht zwingend in \verb|Diese Aussage ist \begin{comment}nicht\end{comment} wahr.| enden, darf aber unter keinen Umständen \verb|Diese Aussage ist falsch.| produzieren, innerhalb welcher der Kommentar interpretiert wurde und die Ausgabe kommentarlos angepasst wurde.
 
-\paragraph*{Makros}\par
-Ähnlich wie Kommandos sind Makros eine Art und Weise kürzere Befehle zu nutzen um Ausgaben zu produzieren.% Beispiel von unten
+\paragraph*{Makro Erneuerungen}\par
+Ähnlich wie Kommandos sind Makros eine Art und Weise kürzere Befehle zu nutzen um Ausgaben zu produzieren.% Beispiel von unten // Insb. renewcommand für z.B. \renewcommand{maketitle} oder Ähnlichen, die Strings tragen.
 
 
 % Siehe unten, umgebungsabhängig. Sowas wie verbatim wollen wir betrachten, in mathemathischen Umgebungen nur textliche inhalte... tikz und so nicht...
 \subsection{Mehrere Quelltexte}
 \subsubsection{\TeX{} und Andere}
+Nicht alle Informationen, welche benötigt sind, um ein Dokument zu kompilieren, liegen zwingend in einem Quelltext vor. Insbesondere größere Dokumente, wie bspw.\ Bücher können davon profitieren ihre Texte auf mehrere \verb|.tex|-Dateien zu verbreiten und ausgehend von einem ursprünglichen Dokument diese per \verb|\include| oder \verb|\input| mit einzubinden. Die Inhalte dieser Dateien sollten hierbei als weitere Teile des vorliegenden Quelltextes (für eine Übersetzung) zu sehen sein und demnach nicht übersehen werden.% Beispiel, aber größer?
+%%% BEMERKUNG: bei \verb|\include| hat \include Priorität und versucht |.tex zu finden :)
 % include, input, ...
+\begin{comment}
+    - Kurzfassung - 
+    Datei 1:
+        \documentclass{article}
+        \title{sample}
+        \begin{document}
+        \include{sample}
+        \input{sample.tex}
+        \end{document}
+    Datei sample.tex:
+        Will i be translated?
+
+    Erwarteter Output:
+        Werde ich übersetzt?
+        (nächste Seite)
+        Werde ich übersetzt?
+\end{comment}
+
 % Hier auch: lstlistings und minted, wenn auch Nische?
-\subsubsection{Pakete}
+Neben der Verwendung mehrerer \TeX{}-Quelltextdateien kann es ebenso von Interesse sein, dass verschiedene Quelltexte (verschiedener Programmiersprachen) in einem Dokument darstellen möchte. Pakete wie \texttt{lstlisting} oder \texttt{minted} erlauben dies auf verschiedene Wege. Quelltexte (quasi-) beliebiger Sprachen können entweder innerhalb entsprechender Umgebungen eingefügt werden oder es kann ein URL zur Datei-Adresse an passender Stelle angegeben sein. Hierbei sind nicht nur syntaktisch relevante Wörter von bekannten Sprachen zu erhalten, sondern auch z.B.\ in diesen Quelltexten vorhandene Kommentare, welche die Funktionsweise des Codes erklären oder auszugebende Strings (falls es sich um Codefetzen mit String-Ausgaben handelt) für einen Übersetzer in Betracht zu ziehen.\footnote{Wobei hier die Übersetzung eingebundener \TeX{}-Codes insbesondere von Interesse ist, da diese überwiegend textliche Inhalte tragen könnten.}
 
-% danach andere aux-files
 
-\subsubsection{Klassen}
+\subsubsection{Pakete und Klassen}\par
+Bereits einige vorherige Beispiele zogen sog.\ \enquote{Pakete} zur Erklärung der potentiellen Fehlerquellen heran. Mit Hilfe dieser können einem \TeX{}-User (die nicht zu verwechseln mit späteren \enquote{Endnutzern} sind, bei welchen es sich um die Leser des entgültigen, kompilierten Dokumentes handelt) zusätzliche Umgebungen, Kommandos oder Makros zu Verfügung gestellt werden. Diese Funktionen der Pakete sind bekannterweise (genauso, wie vorangegangene Kommandos, Umgebungen, etc.) dazu in der Lage Strings zu tragen, welche möglicherweise im Dokument landen könnten. Zwar technisch eigentlich unterschiedlich, sind Klassen trotzdem gleich behandelbar, da auch in diesen nur Makro-Erstellungen, -Erneuerungen und Umgebungen nachvollzogen werden müssen und deren textliche Inhalte, welche im Dokument landen werden, übersetzt werden sollen.% Beispiel fehlt hier, gerade wenig Lust
 
 % .sty, .dtx?
+% .cls, ...
 
-\subsubsection{Hilfsdateien}
+\subsubsection{Hilfsdateien}\par
+Einige typische Elemente von Dokumenten erfordern es aus logischer Sicht, dass einzelne Informationen in eine Hilfsdatei geschrieben werden müssen und erst beim einem erneuten Kompilieren eine richtige, vorgesehene Ausgabe produzieren können. Hierbei sind vielerlei Möglichkeiten denkbar, daher wird zunächst mit einer, den meisten \TeX{}-Usern vertrautesten (Quelltext-), Datei gestartet und zwar einer \texttt{.bib}, welche für die Literaturverwaltung genutzt werden kann. Innerhalb dieser existieren verschiedene Felder, welche für eine Übersetzung interessant werden könnten, beispielsweise Titel oder Abstrakt einzelner zitierter Werke, allerdings auch Notizen oder sonstige Anpassungen, wie zum Beispiel ein Vermerk \enquote{verfügbar unter: <URL>} im entsprechenden Feld eines BibTeX assozierten Paketes.\footnote{BibLaTeX oder NatBib} 
+Bei der Nutzung dieser Technologie (BibTeX) bemerkt ein \TeX{}-User direkt, dass aus logischer Perspektive mehrfach kompiliert werden muss, da zunächst ein \TeX{}-Compiler alle Zitationen im Quellcode sehen muss, diese Information dann über die \texttt{.aux} übermittelt, auf welche BibTeX zugreift. Nachdem BibTeX dann diese Datei angepasst hat, kann der \TeX{}-Compiler im nächsten Lauf die Zitationen an richtiger Stelle einfügen und am Ende entsprechend im Literaturverzeichnis vermerken.
 % bspw. Table of contents, Zitations_style_, BibTeX_Zitationsquellen_, 
+Die gleiche Denkweise lässt sich auf andere Hilfsdateien anwenden. Bei einem Übersetzen von z.B.\ Kapiteltiteln reicht es nicht aus nur \verb|\chapter{Incredible}| zu \verb|\chapter{Unglaublich}| zu übersetzen, sondern genauso muss neu kompiliert werden (einfach, wenn die \texttt{.toc} angepasst wurde, ansonsten zweifach). Genauso verhält es sich mit Verzeichnissen anderer Art (bspw.\ Abbildungen, Tabellen, etc.) oder den Inhalten von Glossaren oder Nomenklaturen, sollten sich diese in anderen Dateien befinden.\footnote{Obwohl dies theoretisch gesehen schon unter \enquote{\TeX{}} und andere behandelt sein sollte, wäre eine Auswirkung auf insb.\ Glossare interessant und inwiefern Abkürzungen angepasst werden. Eine deutsche WDF (Wahrscheinlichkeitsdichtefunktion) wäre im Englischen als PDF (probability density function) zu erwarten.}
+% Hier evtl. konkretere Beispiele listen?
 
-\subsubsection{Zitationen}
+\subsubsection{Zitationen}\par
+Hierbei handelt es sich nicht um ein direktes, technisches Problem von übersetzenden Programmen, aber um ein Implizites. Viele Wörter benötigen in bestimmten Kontexten eine spezifische Übersetzung. Diese Kontexte müssen in \LaTeX{} nicht nur aus den direkten Sätzen hervorgehen, sondern können auch hinter Verweisen/Referenzen oder Zitationen an anderer Stelle im Quelltext verborgen stehen. Zitiert man beispielsweise ein Originalwerk vom französischen Mathematiker Évariste Galois und verwendet danach das Wort \textit{fields} (\enquote{{\verb|~\cite{math:galo}|} defines fields as \ldots}) so sollte dieses nicht einfach zum Deutschen \textit{Felder} werden, sondern man würde das Wort \textit{Körper} erwarten (von \enquote{endlichen Körpern}, englisch:\ \textit{finite fields} oder \textit{galois fields}).
+Fraglich ist hierbei, wie weit ein solcher Kontext nachverfolgt wird. Liegt er direkt in einem vorigen Teil des Quelltextes vor und mittels \verb|~\ref| ein mit passendem \textit{key} ein entsprechendes \verb|\label| verlinkt, so gibt es wenig Gründe, die für einen Verlust des Kontextes sprächen. Ähnlich zu betrachten ist eine (Hyper-) Referenz auf eine andere, lokale Quelltextdatei. Interessant könnten auch Bib\TeX{} Zitationen in diesem Kontext werden, da bei diesen verschiedene, theoretisch ausreichende Verweise auf Informationsquellen angegeben werden können, denn ein solcher Literatureintrag muss nicht zwingend vollständig ausgefüllt werden. Es könnte der Fall eintreten, dass nur eine URL oder DOI angegeben wird, eine ISBN (zu mitunter nicht allgemein zugängigen Werken) oder ISSN. Zu erwarten wäre, dass aus solchen Angaben genau so viel Kontext entnommen wird, wie es auch ein Mensch könnte. Dieses Konzept wäre per se auch auf jegliche URL (meist) hinter Sätzen/Paragraphen anwendbar, da dies eine recht schnelle und einfache Art und Weise ist, mit welcher sich nötigste Quellangaben liefern ließen, wird allerdings aufgrunde mangelnder Professionalität solcher Zitationsweisen nicht weiter untersucht.
 % endlich bibtex
 % wie \label, \ref und \cite Kontexte für einzelne Sätze setzen können und dadurch andere Ausgaben produzieren müssten
 %%%%%
@@ -226,6 +261,8 @@ Wohingegen einzeilige Kommentare in \TeX{} mit einem \verb"%" gekennzeichnet wer
 
 
 %%% Ab hier Kriega-zone. (KRIEGe ich es in die Arbeit, oder fliegt es raus?) Beispiele sind teilweise mitnehmbar
+
+\begin{comment}
 Das einleitende Beispiel (~\ref{tab:problems:example}) zeigt allerdings auf, welche Fehler sich bei einem imaginären Befehl \texttt{ink} zeigen könnten und inwiefern einige es erlauben \textit{würden}\pdfcomment{evtl. gebraucht, falls solche Unterscheidung später benötigt}, dass kleinere Fehler missachtet werden können. Der Befehl selbst soll einen String mit einer bestimmten Farbe hinterlegen und besitzt einen zusätzlichen optionalen Farbparameter. 
 \enquote{Richtig} wäre es im originalen String nur das Wort in den geschwungenen Klammern zu übersetzen, da hierbei an keiner Stelle Information verloren geht und das Wort, nachdem es vom Deutschen ins Englische übersetzt wurde, weiterhin so wie vorgesehen hervorgehoben wird.
 \enquote{Zulässige} Übersetzungen treten dann auf, wenn nur für die Formatierung (insofern hieraus keine weiteren Probleme entstehen) verloren geht. Im gegebenen Beispiel würde dann zwar die farbige Hinterlegung verloren gehen, das Wort allerdings trotzdem übersetzt werden und würde den Weg in ein Dokument finden, ohne einen sprachlichen Informationsverlust zu riskieren (für den Endnutzer/Leser).\footnote{Selbst bei weißer Schriftfarbe kann das Wort in einem PDF-Reader markiert und kopiert werden.}
@@ -313,7 +350,7 @@ Sie zeigen sich in
 \verb|\command[translatable]{non-translatable}|, oder
 \verb|\command[translatable]{translatable}|
 und sind anhand spezifischer Kommandos erkennbar.
-\end{comment}
+
 
 % Welche könnte es geben?
 \paragraph*{Unvorhersagbarkeiten}% -> spezielle fehler
@@ -437,95 +474,9 @@ Pakete sind ihrerseits keine, innerhalb eines Quelltextes direkt vorliegende Str
 
 
 
-\subsubsection{Paragraphen und Abschnitte}
-% Meint: \command{translatable}
-
-Der zuvor etablierten logischen Struktur der Beispiellistung folgend, würde man zunächst einen Abschnitt oder Paragraphen erwarten. Technisch gesehen äußern sich die Beispiele allerdings alle sehr ähnlich. Hier erwartet man immer einen Befehl, welcher nicht übersetzt werden darf (da er Teil der logischen Struktur des Dokumentes ist) und einen Wert, welcher diesem Befehl übergeben ist und übersetzt werden soll. Das präsentierte Beispiel~\ref{tab:problems:sections} zeigt hier wohlmöglich auftretende Fälle. Erstrebenswert ist hierbei \textbf{nur} die Übersetzung des in geschwungenen Klammern stehenden Strings, unerwünscht das Übersetzen von sowohl Befehl, als auch den umklammerten Teilen und falsch ein Übersetzen von Befehl ohne den in Klammern stehenden Inhalten.% ich hasse abstraktes denken so fucking sehr
-\begin{table}[h!tb]
-    \centering
-    \begin{tabularx}{\textwidth}{X X}
-        \toprule
-            English & Mögliche Übersetzung\\
-        \midrule
-            Richtiges Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/ideal.tex}\\[1em]
-        \midrule
-            Unerwünschtes Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/problematic.tex}\\[1em]
-        \midrule
-            Falsches Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/sections/original.tex} & \commoncode{Beispielübersetzung}{../examples/sections/bad.tex}\\[-1em]
-        \bottomrule
-    \end{tabularx}
-    \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:sections}
-\end{table}
-
-Abstrahiertes Muster: \verb|\command{translatable-string}|.
-
-
-\subsubsection{Kommandos}
-\paragraph{Ohne Optionen}
-% Meint: \command{non-translatable}
 
 Den Implikationen, welche Referenzen auf Abschnitte eines Dokumentes\pdfcomment{weiter verfolgt in späterem Abschnitt} mit sich bringen, abgesehen, müssen jegliche Fälle abgedeckt werden, in welchen möglicherweise übersetzbare Strings mit Sonderzeichen vermischt stehen könnten. % Hier auch das erste label beispiel denkbar. Siehe: irgendwo im git. ich muss aufräumen und geistig klarkommen. hilfe
 Verweise auf vorangegangene oder folgende Paragraphen, Abschnitte oder Inhalte (via \texttt{ref} auf ein \texttt{label}) müssen einer einheitlichen Übersetzung obliegen, in welcher denkbare Label-Tags mit korrespondierenden Referenzierungen auch nach Übersetzung korrespondierend bleiben. % BEISPIEL NOCH ANPASSEN.
 
-\begin{table}[h!tb]
-    \centering
-    \begin{tabularx}{\textwidth}{X X}
-        \toprule
-            English & Mögliche Übersetzung\\
-        \midrule
-            Richtiges Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispielübersetzung}{../examples/references/ideal.tex}\\[1em]
-        \midrule
-            Zulässiges Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispielübersetzung}{../examples/references/okay.tex}\\[1em]
-        \midrule
-            Unerwünschtes Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispielübersetzung}{../examples/references/problematic.tex}\\[1em]
-        \midrule
-            Falsches Verhalten & \\[-13px]
-            \commoncode{Original}{../examples/references/original.tex} & \commoncode{Beispielübersetzung}{../examples/references/bad.tex}\\[-1em]
-        \bottomrule
-    \end{tabularx}
-    \caption{Abstrakte Struktur der folgenden Beispiele}\label{tab:problems:referencesInDoc}
-\end{table}
-
-Abstrahiertes Muster: \verb|\command{non-translatable-string}|.
-
-\newpage
-
-\paragraph{Kommandos mit Optionen}
-\subparagraph{Ohne Übersetzungen} % Ohne bedeutet: im String darf rein gar nichts übersetzt werden
-% Meint: \command[non-translatable]{non-translatable}
-
-Abstrahiertes Muster: \verb|\command[non-translatable]{non-translatable-string}|.
-
-\subparagraph{Vorhersagbare Übersetzungen} % Vorhersehbar bedeuted:
-
-
-\subsubsection{Mathematische Theoreme}
-% Meint: \command[translatable]{non-translatable-parameter} oder \command{non-translatable}[translatable]
-
-\newpage
-
-
-
-\newpage
-
-\subsubsection{Inhaltsverzeichnisse}
-
-
-
-\newpage
-
-\subsubsection{Tabellen}
-
-\newpage
-
-\subsubsection{Auflistung von Tabellen und Abbildungen}
-iwtkms
-\newpage
 
 \end{comment}

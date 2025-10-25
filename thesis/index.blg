@@ -13,9 +13,10 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: appendices/appendix.aux
 Database file #1: index.bib
+Warning--I didn't find a database entry for "math:galo"
 You've used 3 entries,
             2909 wiz_defined-function locations,
-            661 strings with 5593 characters,
+            662 strings with 5602 characters,
 and the built_in function-call counts, 5976 in all, are:
 = -- 910
 > -- 72
@@ -54,3 +55,4 @@ warning$ -- 0
 while$ -- 63
 width$ -- 0
 write$ -- 42
+(There was 1 warning)

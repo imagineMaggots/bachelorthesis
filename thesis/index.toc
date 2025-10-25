@@ -2,20 +2,36 @@
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
 \contentsline {section}{\numberline {2}Problemfälle}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Herangehensweise}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Elemente in einem \TeX {}-Quellcode}{5}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Die Präambel}{5}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Kommandos}{5}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Optionen}{6}{subsubsection.2.2.3}%
-\contentsline {section}{\numberline {3}Stand der Technik}{17}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Anforderungen}{17}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Denkbare Ansätze}{17}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Existierende Ansätze}{17}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Testverfahren}{17}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Durchführung}{17}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Auswertung}{17}{subsubsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}Grenzen der Lösungen}{17}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Takeaways}{17}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Eigenständigkeitserklärung}{18}{section.4}%
-\contentsline {section}{Literatur}{19}{section*.39}%
-\contentsline {section}{\numberline {A}Anhänge}{20}{section.chX.1}%
-\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{20}{subsection.chX.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Struktur einzelner Beispiele}{3}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Elemente in einem Quelltext}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Kommandos}{4}{subsubsection.2.2.1}%
+\contentsline {paragraph}{\numberline {2.2.1.1}Unterscheidung}{4}{paragraph.2.2.1.1}%
+\contentsline {paragraph}{\numberline {2.2.1.2}Erkennung}{5}{paragraph.2.2.1.2}%
+\contentsline {paragraph}{\numberline {2.2.1.3}Weitere Beispiele}{5}{paragraph.2.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.2.2}Zusätzliche Parameter}{5}{subsubsection.2.2.2}%
+\contentsline {paragraph}{\numberline {2.2.2.1}Unterscheidung}{5}{paragraph.2.2.2.1}%
+\contentsline {paragraph}{\numberline {2.2.2.2}Erkennung}{6}{paragraph.2.2.2.2}%
+\contentsline {subparagraph}{\numberline {2.2.2.2.1}Problem bei diesem Ansatz}{7}{subparagraph.2.2.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.3}Makros und Umgebungen}{7}{subsubsection.2.2.3}%
+\contentsline {paragraph}{\numberline {2.2.3.1}Umgebungen}{7}{paragraph.2.2.3.1}%
+\contentsline {subsection}{\numberline {2.3}Mehrere Quelltexte}{9}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}\TeX {} und Andere}{9}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Pakete und Klassen}{9}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Hilfsdateien}{10}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Zitationen}{10}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Spezifisch}{11}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Sprachliche Hürden}{11}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Layouting-Probleme}{11}{subsubsection.2.4.2}%
+\contentsline {section}{\numberline {3}Stand der Technik}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Anforderungen}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Denkbare Ansätze}{12}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Existierende Ansätze}{12}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Testverfahren}{12}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Durchführung}{12}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Auswertung}{12}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Grenzen der Lösungen}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Takeaways}{12}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Eigenständigkeitserklärung}{13}{section.4}%
+\contentsline {section}{Literatur}{14}{section*.22}%
+\contentsline {section}{\numberline {A}Anhänge}{15}{section.chX.1}%
+\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{15}{subsection.chX.1.1}%
