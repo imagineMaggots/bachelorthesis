@@ -202,7 +202,25 @@ Wohingegen einzeilige Kommentare in \TeX{} mit einem \verb"\%" gekennzeichnet we
 
 \paragraph*{Makro Erneuerungen}\par
 Ähnlich wie Kommandos sind Makros eine Art und Weise kürzere Befehle zu nutzen um Ausgaben zu produzieren.% Beispiel von unten // Insb. renewcommand für z.B. \renewcommand{maketitle} oder Ähnlichen, die Strings tragen.
+Wie bereits einzelne Kommandos dazu in der Lage sind, rein menschensprachliche Strings zu beinhalten (welche ihrerseits übersetzt werden sollten), so sind es auch Makros. Sie vermischen hierüber hinaus die Nutzung von Kommandos und textlichen Inhalten, stellen jedoch in der Syntaktik und der Erkennung solcher Strings zunächst keine weitere Hürde dar. Problematischer wird der Befehl \verb|\renewcommand|, da dieser dazu in der Lage ist auch bekannte Kommandos und Makros zu verändern. Geht man davon aus, dass zum Beispiel Kommandos, wie z.B.\ \verb|\TeX| oder \verb|\LaTeX| immer nur \TeX{} oder \LaTeX{} produzieren, liegt man falsch. Genauso ist es denkbar, dass solche Befehle eine neue Definition erhalten (\verb|\renewcommand{\TeX{}}{This is a TeX example!}|), von denen einzelne Inhalte übersetzt werden müssen, jedoch nur (!) nachdem das Makro erneuert wurde.
 
+\begin{comment}
+    This is a \TeX{} example!
+    \renewcommand{\TeX{}}{This is a TeX example!}
+    \TeX{}
+\end{comment}
+\begin{comment}
+    Muss zu:
+        Das ist ein \TeX{} Beispiel!
+        \renewcommand{\TeX{}}{Das ist ein TeX Beispiel!}
+        \TeX{}
+    werden und dabei:
+        Das ist ein \TeX{} Beispiel!
+        Das ist ein TeX Beispiel!
+    produzieren und nicht:
+        Das ist ein Das ist ein TeX Beispiel! Beispiel!
+        Das ist ein TeX Beispiel!
+\end{comment}
 
 % Siehe unten, umgebungsabhängig. Sowas wie verbatim wollen wir betrachten, in mathemathischen Umgebungen nur textliche inhalte... tikz und so nicht...
 \subsection{Mehrere Quelltexte}
@@ -256,8 +274,10 @@ Fraglich ist hierbei, wie weit ein solcher Kontext nachverfolgt wird. Liegt er d
 
 \subsection{Spezifisch}
 \subsubsection{Sprachliche Hürden}
-\subsubsection{Layouting-Probleme}
+Neben technischen Problemen, bzw.\ Anforderungen an einen Übersetzer können auch einige Tücken oder Unlösbarkeiten näher betrachtet werden und deren \enquote{bestmögliche} Lösung in Betracht gezogen werden. Hierbei existieren zwei Kernprobleme, welche bereits bei der alleinigen Sprachübersetzung (an sich) unabhängig von \TeX{} berücksichtigt werden sollten/könnten. Als Ersteres sind sprachliche Mehrdeutigkeiten von Interesse. 
 
+\subsubsection{Layouting-Probleme}
+Das, in diesem Kontext, interessantere Problem sind der räumliche Platzanspruch, welcher sich für verschiedene Sprachen unterscheidet. Hierbei ist nicht nur gemeint, dass einzelne Sätze, abhängig von der Sprache, länger oder kürzer enden könnten, was ggf.\ im Layout von Graphiken zu Verschiebungen oder Überlappungen führen könnten (wobei Zweiteres unlesbare Inhalte produzieren könnte). 
 
 
 %%% Ab hier Kriega-zone. (KRIEGe ich es in die Arbeit, oder fliegt es raus?) Beispiele sind teilweise mitnehmbar
