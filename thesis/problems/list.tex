@@ -1,88 +1,79 @@
-%%% Problemfälle (muss fertig sein bis montag):
-%%%     - Herangehensweise
-%%%         - Wie ist das Kapitel strukturiert?
-%%%         -> Kleinste Struktur, welche ein Übersetzer sehen könnte, hin zu immer größer Werdenen
-%%%         - Wie sehen Beispiele aus(?)
-%%%         -> Abhängig von Größe der Struktur und möglichen Permutationen unterschiedlich
-%%%         --> Kleine Struktur, wenige (eine) Permutation -> kurzes Verbatim
-%%%         --> Kleine Struktur, viele Permutationen -> möglichst viele auf eine Seite
-%%%         --> Große Struktur -> auf möglichst wenig Seiten
-%%%     - Elemente in einem \TeX{}-Code
-%%%         - Das kleinste Element: ein Befehl (Indikatior '\') -> nicht übersetzen
-%%%             - Folgt das kleinste Element einer festen Form?
-%%%             -> Nein, da Catcode, Verbatim, ...
-%%%         - Danach: Optionen -> Achtung, mehrere Arten -> Indikatoren (standardmäßig) '[]','{}' 
-%%%             - Wie unterscheiden die sich? 
-%%%             - Kann man die ändern? Wo entstehen potentiell unendlich viele Permutationen
-%%%         - Danach: Mehrzeilige Optionen / Key-Value-Paare
-%%%             - Achtung, mehrere Arten denkbar.
-%%%             - Entweder: Value ist übersetzbar (da String-Literal) oder darf nicht übersetzt werden (da: Wert des Strings erfragt)
-%%%             - Erwähnen: Insbesondere schwer nachvollziehbar bei der Arbeit mit mehreren Quelltexten (wird ne tolle Überleitung)
-%%%     - Elemente in mehreren Quelltextdateien
-%%%         - Wofür braucht man aus logischer Perspektive mehrere Dateien
-%%%         -> Bibliotheken
-%%%         -> Lesbarkeit des Codes (ist schwierig manchmal. bei TeX ist so ab 200 Zeilen adé)
-%%%     - Spezifische Unlösbarkeiten
-%%%         - kp. den ****, den du dir mit TikZ ausgedacht hast
-%%%
-%%%
 \section{Problemfälle}
 \subsection{Herangehensweise}
-\TeX{}-Quellcodes \enquote{einfach} zu übersetzen, birgt Gefahr Fehler zu produzieren. Bereits innerhalb eines \TeX{}-Quellcodes können (theoretisch) unendlich viele Fehler entstehen, sollten (wohlmöglich) vorfindbare Zeichenketten unbedacht übersetzt werden (\enquote{unbedacht}:\ ohne vorher zu prüfen, ob das Wort eine semantische Bedeutung für \TeX{} trägt). Bevor sich Unendlichkeiten genähert wird, werden hier, abhängig von der Größe der innerhalb \TeX{}-Quelltexten auftretenden Strukturen (welche der vorgesehenen Struktur folgen~\cite{texbook}), jegliche Form von denkbar auftretenden Fehlerquellen präsentiert. 
-Hierbei wären die kleinsten denkbaren Strukturen, sollte man sich auf den eigentlichen Verwendungszweck von \TeX{} konzentrieren, einzelne Zeichen oder Buchstaben. Diese alleinig bilden allerdings noch keine logische Struktur in \TeX{}, sondern erst konkrete Befehle/Funktionen und diesen übergebbare Parameter. Hierbei zeigen sich diverse Wege, wie sowohl die Übergabe dieser Parameter aussehen \textit{könnte},% meint hier: welche Klammern können genutzt werden und wie "jedes Zeichen" als Klammer verstanden werden kann
+\TeX{}-Quellcodes \enquote{einfach} zu übersetzen, birgt Gefahr Fehler zu produzieren. Bereits innerhalb eines \TeX{}-Quellcodes können (theoretisch) unendlich viele Fehler entstehen, sollten (wohlmöglich) vorfindbare Zeichenketten unbedacht übersetzt werden (\enquote{unbedacht}:\ ohne vorher zu prüfen, ob das Wort eine semantische Bedeutung für \TeX{} trägt). Abhängig von der Größe der innerhalb \TeX{}-Quelltexten auftretenden Strukturen (insb.\ den nach~\cite{texbook} vorgesehenen) treten verschiedene Fehlerquellen auf, aber bereits Fehler in den Kleinsten können immense Auswirkungen auf die Inhalte des entgültigen Dokumentes haben und zur Folge tragen, dass der übersetzte Quelltext kein sprachlich äquivalentes Dokument in einer anderen Sprache, als der Ursprünglichen, erzeugt. 
+Hierbei wären die kleinsten denkbaren Strukturen, wenn man sich auf den eigentlichen Verwendungszweck von \TeX{} konzentriet, einzelne Zeichen oder Buchstaben. Diese allein bilden allerdings noch keine interessante (als auch logische) Struktur in \TeX{}, sondern erst konkrete Befehle/Funktionen, sowie diesen übergebbare Parameter. Hierbei zeigen sich diverse Wege, wie sowohl die Übergabe dieser Parameter aussehen \textit{könnte},% meint hier: welche Klammern können genutzt werden und wie "jedes Zeichen" als Klammer verstanden werden kann
 als auch die Parameter selbst.% Meint/Impliziert: Parameter in den Klammern können codierte Informationen sein (ein bestimmtes String-Muster erwarten, bspw. "1 0 0" für RGB) und key-value-pairs (in welchen ihrerseits abzuwägen ist, ob übersetzt werden soll, oder nicht)
-Die Sinnhaftigkeit einzelner Formen solcher Parameter könnte fraglich sein, kann aber mittels \TeX{} produziert werden und muss daher betrachtet sein.% klingt komisch
-Aufbauend auf diesen kleinsten Strukturen bahnt sich der Weg Richtung größeren Strukturen, welche sich nicht nur in einem einzelnen Quelltext befinden, sondern mitunter auf mehrere Quelltextdateien zugreifen (müssen), die nicht zwingend denselben syntaktischen Vorgaben obliegen.% "Quelltextdateien" als Implikation für alle möglichen auxilliaries 
-Einige dieser Strukturen neben reinem Quellcode auch einzelne String-Literale, welche nicht immer übersetzt werden müssen, aber von Interesse für eine Übersetzung werden könnten.% Meint: Titel von Werken (BibTeX) müssen nicht zwingend übersetzt werden, da der Originaltitel es am Einfachsten macht, das erwähnte Werk zu finden
-Hiernach bleiben jedoch einige spezifischere Probleme, für welche sich nicht immer eindeutige Lösungen finden lassen.
+Abgesehen der Sinnhaftigkeit vereinzelter Formen solcher Parameter/-übergaben, könnten sie aber mittels \TeX{} produziert werden und müssen daher betrachtet werden.
+Aufbauend auf diesen kleinsten Strukturen bahnt sich ein Weg in Richtung größerer Strukturen, welche sich nicht nur in einem einzelnen Quelltext befinden, sondern mitunter auf mehrere Quelltextdateien zugreifen (müssen) und nicht zwingend denselben, einheitlichen syntaktischen Vorgaben unterliegen.% "Quelltextdateien" als Implikation für alle möglichen auxilliaries 
 
-\subsubsection{Struktur einzelner Beispiele}
-Um alle möglichen Permutationen von Problemen abzudecken, die bei einem Übersetzen von \TeX{} entstehen könnten, und dabei in eine übersichtliche Form zu überführen, wird durch verschiedene mögliche, denkbare Darstellungsformen gewechselt. Hierbei kann, aus einem zunächst, abstraktem Blickwinkel recht einfach nach Größe der Struktur und Zahl an möglichen Permutationen unterschieden werden, wobei weder noch eine konkrete, quantitative Angabe zulassen. Daher finden sich zunächst \enquote{kleine} Strukturen mit \enquote{wenigen} oder \enquote{vielen} \textit{erlaubten} Permutationen (in wohlmöglich entstehenden Übersetzungen) zusammen und bilden danach \enquote{Große}.% Übersetzungen, die entstehen könnten.
-Für diese abstrakten Strukturen schnell einfache Darstellungsmöglichkeiten finden, abhängig von 2-dimensionalem Platzverbrauch, bzw.\ in dem Minimieren dieses. So werden kleine Beispiele mit wenigen Permutationen (innerhalb eines, wie hier, Dokumentes) möglichst nebeneinander gelistet, nachdem sie zuvor kurz beschrieben waren
-% Hatte hier die deutsche Grammatik verletzt: englisch: "So small examples with limited permutations will be listed most adjacently" geht gerade eben noch, aber: "So kleine Beispiele mit wenigen Permutationen möglichst nebeneinander gelistet" entstand, da ich das "werden" schon bedacht hatte, es in der englischen Grammatik nicht dort folgte, wo es in der Deutschen hätte platziert werden müssen, wodurch ich es übersprang... was mir erst im nachherein aufgefallen war
-(bspw.:\ <Beispiel A> wird Fehler in möglichen Übersetzungen <Beispiel B> oder <Beispiel C> produzieren, da <B> die deutsche Grammatik oder <C> die \TeX{} Syntaktik verletzt, in Anwendung in z.B.~\ref{}).
-Bei einer höhereren Zahl an Permutationen von kleinen Strukturen ist es von Interesse, diese möglichst dicht aneinander in zwei Dimensionen darzustellen, damit wohlmöglich kleine Unterschiede oder logische Muster in diesen erkennbar werden können. Diese Art der Darstellung findet sich in~\ref{} in Anwendung und wird in~\hyperref[tab:problems:exampleExample]{Beispiel 0} vereinfacht mit Hilfe von Binärkodierung dargestellt. Hierbei soll ein Ausgangswort/Zeichenkette, welche 4 Zeichen trägt, so verändert sein, dass sie genau eine 1 trägt. Aus allen 16 zulässlichen Permutationen für binäre Zeichenketten der Länge 4 ($2^4$)%, Münzwurf, für jedes Zeichen zwei Optionen
-\pdfcomment{bei der Verwendung von --binären-- Zeichenketten, darf man davon ausgehen, dass 0 und 1 die Menge des Zeichensatzes formen? da in der Satzstellung binär auch anders interpretiert werden könnte, als zwei verschiedene, beliebige Zeichen}
-gelangt man bei 4 richtigen \enquote{Übersetzungen} an (insofern man das Übersetzen auch als eine Form der Codierung betrachten kann).
-In dieser Darstellung ist zudem vorteilhaft, dass anhand der gebildeten \enquote{Muster} erkenntlich wird, dass nicht alle 4 bit eines Wortes gepüft werden müssen, um eine Richtigkeit zu bestätigen, wenn man davon ausgeht, dass Zeichenketten auch von rechts nach links gelesen werden können. Diese rein logische Operation führt dazu, dass bei einem Zeitgleichen überprüfen in beide Richtungen beide \enquote{Tests}, nachdem sie sich in der Mitte trafen, im nächsten bit fertig sind. Nach dem Ausschlussverfahren müss nämlich entweder eine \textit{links-nach-rechts} Iteration beachten, wie viele 1 vorliegen, genause wie die \textit{rechts-nach-links}. Jede dieser Iterationen muss dafür den gesamten Prüfungs-Prozess abbrechen können, sobald sie mehr als nur eine 1 liest (was 7 Fehler in zwei Schritten abdeckt). Im (logischen) dritten Schritt würden beide Iterationen ihre gesammelten auf Ungleichheit prüfen. Hätten beide Iteratoren je eine oder keine 1 gelesen, wäre diese Äquivalenzrelation gebrochen, wodurch ein Fehler erkennbar wäre (denn die Abfrage schließt die übrigen 5 Fehler mit ein).\footnote{Vorteil:\ $\mathcal{O}(\log{n}) statt \mathcal{O}(n)$ zur Überprüfung einzelner Zeichenketten auf Fehler. Diese könnte unter Anderem auf Rechtschreibkorrekturen angewendet werden.}% prüfen nochmal
-\begin{table}
-    \centering
-    \begin{tabularx}{\textwidth}{X|XXX}
-        \toprule
-        Richtige Übersetzungen & Fehlerhafte Übersetzungen & &\\
-            \verb|1000| & \verb|1111| & \verb|0011| & \verb|1010|\\
-            \verb|0100| & \verb|1110| & \verb|1101| & \verb|0101|\\
-            \verb|0010| & \verb|0111| & \verb|1011| & \verb|0110|\\
-            \verb|0001| & \verb|1100| & \verb|0000| & \verb|1001|\\
-    \end{tabularx}
-    \caption{2-dimensionale Darstellung von kleinerem Quellcode (illustrativ)}\phantomsection\label{tab:problems:exampleExample}
-\end{table}
+% Meint Kapitel: Spezifische Schwierigkeiten/Probleme/Unlösbarkeiten/Whatev
+Vereinzelte Inhalte von Quellcodes enthalten einzelne String-Literale, deren Übersetzung nicht zwangsweise erforderlich ist oder konsequent und garantierbar richtig ist. 
+Neben solchen Problemen, welche bereits für die Sprachübersetzung allgemein spezifisch sind, bleiben noch Andere, für welche sich nicht immer eindeutige Lösungen finden lassen.
+
+Direkte Quelltext-Beispiele sind dem Anhang~\ref{appendix:c} zu entnehmen. Dieses Kapitel schildert zunächst das gröbere Aussehen der verschiedenen Fehlerarten, statt konkrete Beispiele aufzuführen.
+
+% Für iwo unten: Titel von Werken (BibTeX) müssen nicht zwingend übersetzt werden, da der Originaltitel es am Einfachsten macht, das erwähnte Werk zu finden
 
 
 
-Ein weiterer nutzbarer Vorteil ist, dass die größeren Strukturen aus den kleineren Strukturen in \TeX{} bestehen (bspw.\ Quelltexte bestehen aus Befehlen, Funktionen, Parametern, \ldots), wodurch Fehler nicht bis ins Detail verfolgt werden müssen, sondern nur ihre (logischen) Auswirkungen innerhalb von Dokumenten berücksichtigt werden müssen, sowie welche Änderungen in einem Dokument in mehrere andere Dateien nachverfolgt werden müssen, um danach rückwirkend Anpassungen im eigentlichen Dokument festzustellen.% Reihenfolge muss umgedreht werden,,,
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Hierzu wird in der Darstellung der Quelltexte mehr räumlicher Platz beansprucht.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \subsection{Elemente in einem Quelltext}
 \subsubsection{Kommandos}
+% Hier konkretes Beispiel, oder Link ins Appendix
 \paragraph{Unterscheidung}
-Kommandos sind in der reinen \TeX{}-Syntax durch ein Backslash \verb|\| gekennzeichnet. Das Wörter, auf welche ein \verb|\| folgt, nicht übersetzt werden dürfen, ist trivial. 
-Die Frage, ob das Wort, das einem Kommando folgt, übersetzt werden sollte, oder nicht, zeigt jedoch erste Konflikte und ist daher nach Art des Strings zu unterscheiden. %\footnote{Kommandos selbst werden hier noch als fester Teil der \TeX{}-Syntax betrachtet und als auszuschließender Teil für den Übersetzer gewertet}
-Hierbei existieren zwei Wege einen String zu interpretieren (aus logischer Perspektive). Entweder soll er als Wort (Literal) im Dokument als dieser String angezeigt werden, oder dient als anderer z.B.\ Parameter für eine Funktion.% Metaebene aua
-Beispielsweise müsste innerhalb von Auflistungen der nach einem \verb|\item| folgende String übersetzt werden und steht einzeln, wodurch er leicht erkannt werden kann. Andererseits wäre in einer Definition mit \verb|\def| vorerst davon abzusehen den folgenden String zu übersetzen, da dieser ein neues Makro/Kommando/etc.\ definiert (welche Wörter sind, welche dem Übersetzer zu \enquote{leicht} auffallen und von diesem als \TeX{}-Semantik tragende syntaktische Elemente interpretiert werden). 
-Demnach darf \verb|\def\hello| nicht zu: \verb|\def\hallo| werden (es sei denn alle folgenden \verb|\hello| werden auch übersetzt).\footnote{Letzteres ist allerdings nicht immer als gewährleistet zu betrachten.}%Da aber, wie bereits bekannt, immer eine Wahrscheinlichkeit, so gering sie auch sein mag, besteht, dass an einer nicht vorgesehenen Stelle eine Übersetzung auftreten \textit{könnte}, kann man sich nicht auf die vorherige Aussage verlassen}.
-Ob das auf diesen definierten Befehl folgende Wort übersetzt werden darf (und dies zu erkennen ist), wird später (siehe:~\ref{#}) näher verfolgt, da es sich hier zunächst noch um eine andere Fehlerquelle drehen soll. 
+Kommandos sind in der reinen \TeX{}-Syntax durch ein Backslash \verb|\| gekennzeichnet und tragen immer eine Bedeutung für die \TeX{}-Engine, wodurch von einem Übersetzen dieser abgesehen sein sollte. 
+Diese Entscheidung ist allerdings für Wörter, welche direkt auf ein Kommando folgen, nicht trivial und es zeigen sich dort bereits innerhalb \TeX{} erste Konflikte und Unterscheidungen, je nach Art des Kommandos.
+Es existieren zwei Wege einen String zu interpretieren (aus logischer Perspektive). Entweder soll er als Wort (Literal) im Dokument als dieser String angezeigt werden, oder dient als anderer z.B.\ Parameter für eine Funktion.% Metaebene aua
+Beispielsweise müsste innerhalb von Auflistungen der nach einem \verb|\item| folgende String übersetzt werden und steht vorteilhafterweise vom Kommando getrennt, wodurch er leicht erkannt werden kann. Andererseits wäre in einer Definition mit \verb|\def| vorerst davon abzusehen den folgenden String zu übersetzen, da dieser ein neues Makro/Kommando/etc.\ definiert (welche Wörter sind, welche dem Übersetzer zu \enquote{leicht} auffallen und von diesem als \TeX{}-Semantik tragende syntaktische Elemente interpretiert werden). 
+Konkreter dürfte \verb|\def\hello| nicht zu: \verb|\def\hallo| werden (es sei denn alle folgenden \verb|\hello| werden auch übersetzt), aber \verb|\item pessimism| sollte zu \verb|\item Pessimismus| werden.\footnote{Letzteres ist allerdings nicht immer als gewährleistet zu betrachten.}%Da aber, wie bereits bekannt, immer eine Wahrscheinlichkeit, so gering sie auch sein mag, besteht, dass an einer nicht vorgesehenen Stelle eine Übersetzung auftreten \textit{könnte}, kann man sich nicht auf die vorherige Aussage verlassen}.
+
+
+% Def betrachtet hier nur neue \commandos, nicht deren evtl. textlichen Inhalte. Das erst bei Makros....
+
 
 \paragraph{Erkennung}
-Die zuvor beschriebenen String-Literale sind nicht, so wie es \verb|\item| deuten lässt, an festen Zeichen zu erkennen. Verschiedene Befehle sind dazu in der Lage Strings als Parameter aufzugreifen, welche als Literale im Dokument erscheinen sollen. Neben den üblichen Klammern, welche diese fassen können (\verb${}$ oder \verb$[]$) existieren auch Wege andere Zeichen an diesen Stellen zu nutzen. Einfachstes Beispiel wäre hierfür der \textit{wortwörtliche} \verb$\verb$-Befehl, der alle für alle ASCII-Zeichen (in UTF8, inkl.\ LATIN-Extensions) erlaubt diese als eine Umklammerung von (wie gezeigt, mittels:\ \verb+\verb$\verb$+ reproduzierbar) einem Befehl zu nutzen, damit nicht dieser von \TeX{}'s Parser als der eigentliche Befehl gedeutet wird, sondern als \textit{genau} diese Zeichenkette. Ein Übersetzer muss demnach jegliche Permutation hierfür diesen Befehl abdecken. Hierbei ist zu vermerken, dass es auch möglich ist, Wort-Charaktere (A-Z,a-z) zu nutzen, insofern zuerst ein Space nach dem \verb a\verba folgt (wobei diese Zeichen dann logischerweise nicht mehr Teil der innerhalb von \verb a\verba stehenden Zeichenkette werden kann). Zu übersetzen sind in diesen Fällen nur Permutationen, welche mit Gewissheit ein Wort einer menschlichen Sprache sind, was sich entweder anhand fehlender Zeichen für ein Alphabet (heuristisch, da unter der Annahme, dass die Sprache selbst \textit{immer} alle Zeichen ihrer Zeichensatzes verwendet) oder an überschüssigen Zeichen innerhalb des nachverfolgten Strings aufzeigen kann/wird.
+Zu übersetzende String (Literale) lassen sich nicht, wie es \verb|\item| deuten lässt, anhand fester Zeichen erkennen. Daher muss stets betrachtet werden, ob einzelne Befehle Strings als Parameter aufgreifen sind (unsichtbar im Dokument) oder ob diese Strings, so wie sie stehen, Teil des Dokumentes werden sollen (diese könnten, technisch gesehen, auch als \textit{Parameter} des Befehles interpretiert werden, wovon in diesem Kontext allerdings abgesehen wird, da es spätere Komplikationen hervorrufen würde).
+% Verschiedene Befehle sind dazu in der Lage Strings als Parameter aufzugreifen, welche als Literale im Dokument erscheinen sollen. 
+Erkannt wird die Zugehörigkeit von Strings ggb.\ einem Kommando zunächst dadurch, dass diese Parameter unmittelbar und innerhalb eckiger oder geschwungener Klammern auf einen Befehl (bzw.\ ein Kommando) folgen.
+Neben diesen üblichen Klammern, welche Parameter umfassen können (\verb${}$ oder \verb$[]$), existieren aber auch Wege, um andere Zeichen an deren Stelle zu nutzen. Einfachstes Beispiel wäre hierfür der \textit{wortwörtliche} \verb$\verb$-Befehl, welcher alle ASCII-Zeichen (in UTF8, inkl.\ LATIN-Extensions) als eine Umklammerung von (wie gezeigt, mittels:\ \verb+\verb$\verb$+ reproduzierbar) einer Zeichenkette (oftmals:\ einem Befehl) zulässt, um somit diesen für den \TeX{}'s Parser nicht als den Befehl, sondern als \textit{genau} diese Zeichenkette, kenntlich zu machen. 
+Ein Übersetzer muss demnach jegliche Permutation für diesen Befehl abdecken. Hierbei ist jegliches UTF8 (ASCII + LATIN1) Zeichen denkbar, wobei bei den Wort-Charakteren ein Leerzeichen vor den eigentlichen \enquote{wortwörtlichen} Inhalten zu notieren ist.
 
-\paragraph{Weitere Beispiele}
+Beispielsweise kann die Zeichenfolge \verb!\verb athinga! auftreten, welche in \verb!\verb aDinga! übersetzt werden müsste, jedoch nicht in \verb!\verb Ein Dinga! resultieren darf, da dies einen Fehler provoziert, da alle Zeichen bis zum nächsten \verb|E| als Teil der \textit{Verbatim}-Zitierung interpretiert werden würden.
+Zu übersetzen sind also nur Wörter, welche mit Gewissheit Teil einer menschlichen Sprache sind, ohne dabei Teile dieses beispielhaften Befehles zu beinhalten.
+% was sich entweder anhand fehlender Zeichen für ein Alphabet (heuristisch, da unter der Annahme, dass die Sprache selbst \textit{immer} alle Zeichen ihrer Zeichensatzes verwendet) oder an überschüssigen Zeichen innerhalb des nachverfolgten Strings aufzeigen kann/wird.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsubsection{Zusätzliche Parameter}
 \paragraph{Unterscheidung}\par
-Parameter sind neben Kommandos eine weitere Möglichkeit Informationen an \TeX{} zu übermitteln und äußern sich entweder als String-Literale oder Teil einer bestimmten Menge an verfügbaren Optionen für ein Kommando (bspw.\ \verb|\color{red}|). Genauso, wie aus einzelnen Kommandos bereits bekannt ist, sollten nur String-Literale übersetzt werden. Das wesentliche Problem liegt hierbei daran, wie sie erkennbar sind. Die übliche \TeX{}-Notation sieht hierbei geschwungene Klammern für zwingend erforderliche Parameter vor, und eckige Klammern für optionale Parameter. Jedoch erwarten unterschiedliche Befehle verschiedene optionale und erforderliche Parameter, für welche nicht vorhergesagt werden kann, ob sie übersetzt werden dürfen. Die logische Reihenfolge ob erwartete Parameter optional oder erforderlich sind, können einzelne Befehle selbst bestimmen.\footnote{Ein Parameter eines Befehls wird optional beim Aufrufen des Kommandos, sollte ein initialer/standardmäßiger Wert bei der Deklaration mittels \verb"\def" oder \verb"\newcommand" (und Verwandte) festgelegt worden sein. Dies geschieht innerhalb eckiger Klammern (\texttt{newcommand}), wobei das erste Paar hierbei die Anzahl an Parametern festlegt und jedes folgende mit einer \#-Nummer korrespondiert.}
-Aus theoretischer Sicht ist die Menge an möglichen Parametern unendlich, \TeX{} selbst begrenzt diese jedoch auf 9 und setzt damit ein technisches Limit für \texttt{def}. Dieses ist auf verschiedene Arten umgehbar (einzelne Parameter/Strings können mehr Informationen kodieren, Definitionen mit Relays erweitert werden oder \textit{key-value}-Strukturen genutzt werden (bspw.\ in \texttt{hyperref}'s \verb|\hypersetup| wiederzufinden)), zeigt aber nur Probleme auf, wenn wortsprachliche Strings und keine alphanumerischen Werte innerhalb diesen genutzt werden, solche Strings also als String-Literale genutzt werden und daher übersetzt werden sollen. % Beispiel fehlt, siehe: irgendwo hier
+Parameter sind, neben Kommandos, eine weitere Möglichkeit Informationen an \TeX{} zu übermitteln und äußern sich entweder als String-Literale oder Teil einer bestimmten Menge an, für ein Kommando, verfügbaren Optionen (bspw.\ \verb|\color{red}|). Genauso, wie aus einzelnen Kommandos bereits bekannt ist, sollten nur solche Strings übersetzt werden, die auch tatsächlich im Dokument als ebendiese erscheinen. 
+Das wesentliche Problem liegt hier wieder in der Erkennung und Unterscheidung dieser. 
+Die übliche \TeX{}-Notation sieht hierbei geschwungene Klammern für zwingend erforderliche Parameter vor, und eckige Klammern für optionale Parameter. 
+Einzelne Befehle/Kommandos unterscheiden allerdings für optionale und erforderliche Parameter, ob diese als eigentliche Strings ins Dokument eingehen, oder ob sie als alphanumerischer Parameter aufgefasst werden müssen. 
+Auch die logische Reihenfolge solcher erwarteter Parameter, ob optional oder zwingend erforderlich, können einzelne Befehle selbst bestimmen.
+\footnote{Ein Parameter eines Befehls wird optional beim Aufrufen des Kommandos, sollte ein initialer/standardmäßiger Wert bei der Deklaration mittels \verb"\def" oder \verb"\newcommand" (und Verwandte) festgelegt worden sein. Dies geschieht innerhalb eckiger Klammern (\texttt{newcommand}), wobei das erste Paar hierbei die Anzahl an Parametern festlegt und jedes folgende mit einer \#-Nummer korrespondiert.}
+
+Aus theoretischer Sicht ist die Menge an möglichen Parametern (quasi-) unendlich, aber \TeX{} selbst begrenzt diese auf 9 und setzt damit ein technisches Limit, zumindest für \texttt{def}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Dieses ist auf verschiedene Arten umgehbar (einzelne Parameter/Strings können mehr Informationen kodieren, Definitionen mit Relays erweitert werden oder \textit{key-value}-Strukturen genutzt werden (bspw.\ in \texttt{hyperref}'s \verb|\hypersetup| wiederzufinden)), zeigt aber nur Probleme auf, wenn wortsprachliche Strings und keine alphanumerischen Werte innerhalb diesen genutzt werden, solche Strings also als String-Literale genutzt werden und daher übersetzt werden sollen. % Beispiel fehlt, siehe: irgendwo hier
 Konkreter muss abgewägt werden, ob es sich bei einzelnen Parametern um Werte handelt, welche für Operationen ihren exakten Wert tragen müssen (bspw.\ \verb"\hypersetup{urlcolor=red}" darf weder zu \verb"\hypersetup{URL-Farbe=rot}", noch \verb"\hypersetup{URL-Farbe=red}" oder \verb"\hypersetup{urlcolor=rot}" werden) oder um Strings, welche im eigentlichen Dokument erscheinen sollen (bspw.\ \verb"\paragraph{Trick or Treat}" muss zu \verb"\paragraph{Süßes oder Saueres}" werden, darf aber, bekanntlich, nicht \verb"\Paragraph{Süßes oder Saures}" produzieren). 
 Aus den reinen Funktions-/Kommandoaufrufen geht allerdings nicht immer die Information hervor, ob die Übersetzung stattfinden darf. Betrachtet man z.B.\ die Kommandos des \texttt{theorem} Paketes (\textit{package(s)} werden später noch eingeführt), so erfordern diese String-Literale als anzuzeigender String für eine neue nummerierte Umgebung.\\
 Beispielsweise
@@ -109,6 +100,8 @@ im Deutschen werden darf, sondern idealerweise in
 Beschränkt man die Anzahl an Parametern (optional und erforderlich) zunächst auf 3, gelangt man bei ${2*2}^{3}=64$ möglichen Permutationen an (ein Parameter kann entweder optional oder erforderlich sein, dessen Inhalte dürfen entweder Übersetzt werden oder nicht und es existieren, bekanntlich, drei Parameter. Die Zahlen 1--4 in beliebiger Reihenfolge in einem 3-elementigen Array anordnen.). 
 Verschiedene zuvor beschriebene Permutationen sind beispielhaft in~\hyperref[tab:problems:exampleParameter]{unterem Beispiel}, in welchem zur einfacheren Lesbarkeit die Kürzel \textit{t} für übersetzbare Felder (translatable string) und \textit{p} für nicht zu übersetzende Strings (parameter) stehen.
 
+
+\begin{comment}
 % note for future: statt ein _table_ environment zu nutzen, ein eigenes erzeugen, was genau das Gleiche macht, nur mit "Beispiel X.x:" statt "Tabelle X.x:"
 \begin{table}[h!]
     \centering
@@ -130,6 +123,7 @@ Verschiedene zuvor beschriebene Permutationen sind beispielhaft in~\hyperref[tab
 \end{table}
 % Worauf möchte ich hiermit genau heraus? Wie viele verschiedene Sachen man testen sollte oder ob man irgendwann eine Grenze setzen muss!
 Bereits eine solche kleine Anzahl an Parametern macht erkenntlich, dass jeder dieser einzeln ausgewertet werden muss und so weit ins Backend der Software verfolgt werden muss, bis klar ist, dass mit diesem String keine logische Operation vorgenommen wird. Die maximale Anzahl an Parametern für jedes einzelne Kommando beträgt 9, was die Anzahl an möglichen Permutationen auf circa 250 Tausend erhöht.
+\end{comment}
 
 \subparagraph{Problem bei diesem Ansatz} zeigt sich darin, wenn man versuchen würde alle nach einem Kommando stehenden Klammer-Paare ggb.\ diesem Kommando zurückzuverfolgen. Dieser Ansatz vergisst, dass geschwungene Klammern auch dazu dienen könnten, dass Umgebungen geöffnet und geschlossen werden.
 
@@ -198,7 +192,7 @@ Umgebungen können mitunter ihre eigen syntaktische Forderungen stellen, für we
 
 % Kommentare? X
 \subparagraph*{Kommentare}\par
-Wohingegen einzeilige Kommentare in \TeX{} mit einem \verb"\%" gekennzeichnet werden, sind auch Mehrzeilige erlaubt, oder solche, die innerhalb ein- und derselben Zeile starten und enden. Hierbei müssen diese Kommentare missachtet werden. So muss ein \verb|This statement is \begin{comment}not\end{comment} true.| nicht zwingend in \verb|Diese Aussage ist \begin{comment}nicht\end{comment} wahr.| enden, darf aber unter keinen Umständen \verb|Diese Aussage ist falsch.| produzieren, innerhalb welcher der Kommentar interpretiert wurde und die Ausgabe kommentarlos angepasst wurde.
+Wohingegen einzeilige Kommentare in \TeX{} mit einem \verb"\%" gekennzeichnet werden, sind auch Mehrzeilige erlaubt, oder solche, die innerhalb ein- und derselben Zeile starten und enden. Hierbei müssen diese Kommentare missachtet werden. So muss ein \verb|This statement is \begin{comment}not\end{comment} true.| nicht zwingend in \verb|Diese Aussage ist \begin{comment}nicht\end{comment} wahr.| enden, darf aber unter keinen Umständen \verb|Diese Aussage ist falsch.| oder Ähnliches produzieren, innerhalb welcher der Kommentar interpretiert wurde und die Ausgabe kommentarlos angepasst wurde.
 
 \paragraph*{Makro Erneuerungen}\par
 Ähnlich wie Kommandos sind Makros eine Art und Weise kürzere Befehle zu nutzen um Ausgaben zu produzieren.% Beispiel von unten // Insb. renewcommand für z.B. \renewcommand{maketitle} oder Ähnlichen, die Strings tragen.
@@ -277,7 +271,7 @@ Fraglich ist hierbei, wie weit ein solcher Kontext nachverfolgt wird. Liegt er d
 Neben technischen Problemen, bzw.\ Anforderungen an einen Übersetzer können auch einige Tücken oder Unlösbarkeiten näher betrachtet werden und deren \enquote{bestmögliche} Lösung in Betracht gezogen werden. Hierbei existieren zwei Kernprobleme, welche bereits bei der alleinigen Sprachübersetzung (an sich) unabhängig von \TeX{} berücksichtigt werden sollten/könnten. Als Ersteres sind sprachliche Mehrdeutigkeiten von Interesse. 
 
 \subsubsection{Layouting-Probleme}
-Das, in diesem Kontext, interessantere Problem sind der räumliche Platzanspruch, welcher sich für verschiedene Sprachen unterscheidet. Hierbei ist nicht nur gemeint, dass einzelne Sätze, abhängig von der Sprache, länger oder kürzer enden könnten, was ggf.\ im Layout von Graphiken zu Verschiebungen oder Überlappungen führen könnten (wobei Zweiteres unlesbare Inhalte produzieren könnte). 
+Das, in diesem Kontext, interessantere Problem sind der räumliche Platzanspruch, welcher sich für verschiedene Sprachen unterscheidet. Hierbei ist nicht nur gemeint, dass einzelne Sätze, abhängig von der Sprache, länger oder kürzer enden könnten, was ggf.\ im Layout von Graphiken zu Verschiebungen oder Überlappungen führen könnten (wobei Zweiteres unlesbare Inhalte produzieren könnte), sondern auch einzelne Symbole (bspw.\ aus Kanji, Hanzi, Devanagari,\ldots), die in größeren Zeichenketten/Sätzen in anderen Sprachen resultieren. Insbesondere Graphiken/Graphen/Diagramme, oder sonstige Situationen, in welchen einzelne Zeichenketten an festen, absoluten Positionen stehen müssen, können in die Situation geraten, dass bspw.\ eine Überschrift, welche nur nach unten hin vergrößert werden kann, ohne außerhalb des Anzeigebereiches der Graphik zu gelangen, könnte die anderen Elemente überdecken. 
 
 
 %%% Ab hier Kriega-zone. (KRIEGe ich es in die Arbeit, oder fliegt es raus?) Beispiele sind teilweise mitnehmbar

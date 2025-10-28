@@ -1,4 +1,5 @@
 \section{Stand der Technik}
+\begin{comment}
 \subsection{Anforderungen}\phantomsection\label{technologies:demands}
 Abgelitten aus der Problemliste werden hier die Probleme umformuliert als Anforderungen dargestellt und in absteigender Reihenfolge nach Relevanz in Bezug auf die gegebene Aufgabenstellung aufgeführt.
 
@@ -22,3 +23,26 @@ logischerweise:\ In den denkbaren Ansätzen schon gegenargumentieren, was unsinn
 \subsubsection{Auswertung}
 \subsection{Grenzen der Lösungen}% Mal schauen
 \subsection{Takeaways}% Was geht wo noch besser?
+\end{comment}
+\subsection{Übersicht}
+Erste Ansätze zur automatischen Be- und Verarbeitung von \LaTeX{}-Dokumenten lassen sich bis in die 1990er Jahre verfolgen~\cite{catholicUniversityOfAmerica:peterWilson1997:aLaTeXtoXautotagger} (abgesehen von einem Compiler natürlich). Die Übersetzung von den rein wort-sprachlichen, textuellen Inhalten eines Dokumentes\footnote{\texttt{pgfplots} wäre bspw.\ dazu in der Lage Audiosignale darzustellen, welche sich maschinell interpretieren ließen. Solche Ansätze werden hier allerdings nicht weiter verfolgt} zeigt sich wiederum als ein Problem, welches eine Niche bedienen zu scheint. Von besonderem Interesse für die Sprachübersetzung heutzutage sind große Sprachmodelle, bzw.\ \enquote{künstliche Intelligenzen}, wie zum Beispiel DeepL, Google Gemini (Cloud Translate) oder andere GPT-Modelle, welche in diesem Kontext trainiert wurden (GPT$=$generative pre-trained text). Deshalb seien auch im Kontext der Sprachübersetzung von \LaTeX{}-Dokumenten Ansätze der Art in den Vordergrund gerückt und jegliche betrachtete Technologie kurz aufgeführt.
+
+% Was man kennt und die Aufgabe aus theoretischer Sicht lösen könnte.
+\subsubsection{Nicht auf \TeX{} spezialisierte Werkzeuge}
+\paragraph*{ChatGPT}\par
+Als \enquote{All-Rounder} unter den heutigen künstlichen Intelligenzen ist es denkbar, dass auch ein \textit{general-purpose} Sprachmodell, gegeben eines passenden \textit{prompting}, dazu in der Lage sein \textbf{könnte} zuvor beschriebene Fehlerquellen zu meiden. Ein Ansatz dieser Art könnte allerdings genau dann scheitern, sobald einige benötigte Informationen (bspw.\ die Definition eigener Makros, Umgebungen, \ldots) nicht mehr in einem einzigen Quellcode vorliegt.% kein Bock auf prompt-entwicklung gerade, sry
+
+\paragraph*{GitHub Copilot}\par
+Ein auf die Arbeit mit Quellcode spezialisiertes Tool, wie benanntes \enquote{GitHub Copilot}, könnte unter Umständen noch effektiver/effizienter/besser mit Quelltexten umgehen und ist ähnlich wie ChatGPT zu behandeln.
+
+\paragraph*{DeepL}\par
+Konkurrierend zu dem jahrelangen Marktführer (in Hinsicht auf durch Computer realisierte Sprachübersetzung) Google, gewann DeepL zunehmend an Bekanntheit und ist neben, Google Translate, ein viel genutztes Werkzeug, insbesondere im Kontext von Anwendungsgebieten, in welchen das Übersetzen durch einen Menschen zu viel (Echt-) Zeit beanspruchen würde. Die API lässt hierbei die Übergabe von einem \textit{Kontext} zu, welcher sich allerdings in der gewählten Wortwahl innerhalb der Ausgabe zeigen wird und keinen Einfluss auf die eingelesenen Inhalte haben sollte. (In dem Sinn, dass durch einen Kontext \enquote{LaTeX} nicht davon auszugehen ist, dass Quellcode als Input erwartet ist, sondern Texte über die benannte$($n$)$ Technologie$($n$)$). Von besonderem Interesse ist bei einem Ansatz dieser Art also, inwiefern diese Technologie selbstständig dazu fähig ist Quellcode zu erkennen und weniger, ob sie \textit{perfekte} Ausgaben (fehlerfrei) liefert.
+
+\paragraph*{Google Cloud Translate}\par
+% Siehe DeepL, gleiche Begründung
+
+% Wer sich _genau_ mit dem Thema beschäftigt!
+\subsubsection{Existierende Technologien und Ansätze}
+
+% Tools, Software, ..., welche später interessant werden könnten / genutzt werden
+\subsubsection{Nicht auf Sprachübersetzung konzentrierte Werkzeuge}
