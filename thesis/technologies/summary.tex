@@ -38,11 +38,31 @@ Ein auf die Arbeit mit Quellcode spezialisiertes Tool, wie benanntes \enquote{Gi
 \paragraph*{DeepL}\par
 Konkurrierend zu dem jahrelangen Marktführer (in Hinsicht auf durch Computer realisierte Sprachübersetzung) Google, gewann DeepL zunehmend an Bekanntheit und ist neben, Google Translate, ein viel genutztes Werkzeug, insbesondere im Kontext von Anwendungsgebieten, in welchen das Übersetzen durch einen Menschen zu viel (Echt-) Zeit beanspruchen würde. Die API lässt hierbei die Übergabe von einem \textit{Kontext} zu, welcher sich allerdings in der gewählten Wortwahl innerhalb der Ausgabe zeigen wird und keinen Einfluss auf die eingelesenen Inhalte haben sollte. (In dem Sinn, dass durch einen Kontext \enquote{LaTeX} nicht davon auszugehen ist, dass Quellcode als Input erwartet ist, sondern Texte über die benannte$($n$)$ Technologie$($n$)$). Von besonderem Interesse ist bei einem Ansatz dieser Art also, inwiefern diese Technologie selbstständig dazu fähig ist Quellcode zu erkennen und weniger, ob sie \textit{perfekte} Ausgaben (fehlerfrei) liefert.
 
-\paragraph*{Google Cloud Translate}\par
 % Siehe DeepL, gleiche Begründung
+\paragraph*{Google Cloud Translate}\par
+Natürlich ist besagter Marktführer für die Übersetzung menschlicher Sprache im gleichen Kontext, wie auch DeepL, zur Bewältigung derselben Aufgabe heranziehbar. Nur muss zunächst klargestellt sein, dass Google Translate nicht gleich Google Cloud Translate ist. Google Translate bezeichnet üblicherweise das bekannte Browser-Tool, welches höchstwahrscheinlich (hoffentlich) mittlerweile auch auf einem GPT aufbaut. Da ein solches Tool auf eine möglichst einfache Bedienbarkeit zugeschneidert ist, verliert es an Transparenz hinsichtlich der eigentlichen zugrundeliegenden Technik. Wirklich sicher, dass ein solcher, moderner
+\pdfcomment{Muss in diesem Kontext auch irgendwo hervorgehen, wie/inwiefern heutige Sprachübersetzung unterschiedlich ist?} 
+Ansatz (auf Grundlage großer Sprachmodelle, statt reinen statistischen Modellen)
+\footnote{\textit{Große Sprachmodelle}:\ Lernen die Sprache, bzw.\ werden auf Grundlage einer Sprache trainiert, wohingegen \textit{statistische Modelle} sich rein auf die wörtlichen Übersetzungen fokussieren. Wesentlichster Unterschied der Ansätze ist, dass große Sprachmodelle eine Semantik in den Wörtern suchen (in dem Sinn, dass sie die Inhalte \enquote{versuchen zu verstehen}, wohingegen einfachere statistische Modelle nur die Wörter und deren grammatikalischen Zusammenhänge untersuchen, um daraus die treffenste Übersetzung zu finden)}.
+genutzt wird, kann man sich allerdings nur sein, sollte man vollständige Einsicht in die Zugrundeliegenden Quelltexte erhalten. Dies ist aber, aus verständlichen, marktwirtschaftlichen Gründen nicht immer möglich. Daher wird darauf vertraut, dass auf Angabe des Unternehmens die \enquote{Google Cloud Translate}-API so arbeitet, wie es versprochen wird.% Hier evtl. Link oder Zitation.-.
+
+\paragraph*{Microsoft Translate und Weitere}\par
+Google, Microsoft und DeepL sind nicht die Ersten und werden auch nicht die letzten Anbieter von maschineller Sprachübersetzung sein. Statt hier noch weitere unkonkrete Ansätze zu listen, wird nun spezifischere Technologien in den Vordergrund gerückt.
 
 % Wer sich _genau_ mit dem Thema beschäftigt!
 \subsubsection{Existierende Technologien und Ansätze}
+\paragraph*{GPT-LaTeX-Translator}\par
+% https://github.com/aemartinez/gpt-latex-translator/blob/main/gptlatextranslator/GPTTranslator.py#L57
+Der von Suñé und Arcuschin (2023) entwickelte Ansatz verfolgt die zuvor beschriebene Idee, ein \textit{general purpose} Sprachenmodell heranzuziehen. Ihre genaue herangehensweise geht aus Zeile 57 des Quellcodes (Python) \enquote{GPTTranslator.py} hervor, in welchem sie lediglich zugrundeliegende \texttt{.tex}-Dateien so weit zerlegen, dass sie der Anwendungsschnittstelle (damalig) gerecht werden und dann der künstlichen Intelligenz die Information mitteilen, dass \LaTeX{}-Quellcode vorliegt.
+
+\paragraph*{Textsynth/trsltx}\par
+% https://github.com/phelluy/trsltx/tree/main
+Helluy (2025) arbeitet an einem sehr spezifischen Ansatz, welcher sich der gegebenen Aufgabenstellung sehr gezielt zu nähern scheint. Allerdings zeigt er selbst auf, inwiefern seine Herangehensweise Fehler in \LaTeX{} produzieren kann. Insbesondere verweist er auf Schwächen hinsichtlich eigener Makros und anscheinenden Labels, Referenzen und Zitationen, die die KI eigenständig hinzufügt. Auch bemerkt er, dass einige Umstände zu unvollständigen Übersetzungen führen können, welche es zu erproben gilt.
+% Hier: Was genau macht er?
+
+\paragraph*{MathTranslate}\par
+% https://github.com/SUSYUSTC/MathTranslate/blob/main/mathtranslate/translate.py
+% scheinen nur google translate oder tencent heranzuziehen, keine, wie zuvor geschilderten, großen Sprachmodelle
 
 % Tools, Software, ..., welche später interessant werden könnten / genutzt werden
 \subsubsection{Nicht auf Sprachübersetzung konzentrierte Werkzeuge}
