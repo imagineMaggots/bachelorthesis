@@ -17,29 +17,48 @@ Abhängig von der Größe der innerhalb von \TeX{}/\LaTeX{}-Dokumenten auftreten
 %%% Ausgangssituation beschreiben // Nötige Strukturen erklären // Realisierung der Strukturen im Kontext
 Wohingegen man solche Flächen und Texte auf einem Papier als sehr direkt zugänglich betrachten kann, muss eine rein textliche Beschreibung solcher Dokumente alternativen finden und zum Beispiel Farben und Flächen durch Wörter und Zahlen beschreiben. Zu erwarten wäre also, dass die kleinste zu betrachtende Struktur von \TeX{}-Quelltexten einzelne Zeichen sind. Diese allein bilden allerdings noch keine interessante (als auch logische) Struktur in \TeX{}, sondern erst konkrete Befehle/Funktionen, sowie diesen übergebbare Parameter. Hierbei zeigen sich diverse Wege, wie sowohl die Übergabe dieser Parameter aussehen \textit{könnte}, als auch die Parameter selbst und ob ein solcher Parameter zu übersetzen ist, oder nicht.
 
-%%% Verallgemeinertes Problem schildern
+%%% Verallgemeinertes Problem schildern // Technische Perspektive beschreiben
 Fernab der Sinnhaftigkeit vereinzelter Formen solcher Parameter/-übergaben, sind alle möglichen Äußerungsformen von \TeX{}-Quellcodes zu betrachten.
 Aufbauend auf diesen kleinsten Strukturen muss sich nun ein Weg in Richtung größerer Strukturen gebahnt werden, welche teilweise auf andere Quelltexte zugreifen und nicht zwingend denselben, einheitlichen syntaktischen Vorgaben unterliegen.% "Quelltextdateien" als Implikation für alle möglichen auxilliaries 
 Besonders Quelltexte, deren absolute Position im System (meint:\ ein beliebiges Betriebssystem) nicht immer bekannt ist, können vereinzelt Strings tragen, deren Übersetzung erforderlich wäre, aber schnell übersehen werden könnten.% Meint BibTeX Citation Style Dateien 
-Neben solchen Problemen, welche bereits für die Sprachübersetzung allgemein spezifisch sind, bleiben noch Andere, für welche sich nicht immer eindeutige Lösungen finden lassen.
 
+%%% Verallgemeinertes Problem schildern // Allgemeine Perspektive bewahren --- Erwartete Anforderungen der Endnutzer
+Aus Sicht des Endnutzers sollen hierbei natürlich alle ablaufenden Prozesse verborgen sein, sodass er/sie/etc.\ nur das (übersetzte) Dokument wahrnimmt. Insbesondere müssen Fehler vermieden sein, welche überschüssige Wörter im Dokument produzieren oder Texte von einer Übersetzung ausschließen, bzw.\ dafür sorgen, dass vereinzelte Texte (beliebiger Größe) nicht den vorgesehenen Weg in das Dokument finden. Zudem muss darauf geachtet werden, dass präzise Formulierungen gewählt werden, sollte ein Text einen spezifischen fachlichen Kontext tragen, in denen bestimmte Übersetzungen von Wörtern erwartet werden, welche von den intuitiven sprachlichen Pendants dieser Wörter abweichen.
+Vereinzelte Fällen zeigen Ausnahmen, welche technisch realisierbare Probleme hervorrufen, aber keine eindeutig richtigen Lösungen mit sich führen. Probleme/Fehler dieser Art lassen sich sprachlich, als auch graphisch finden.
+
+\newpage
 
 \subsubsection{Darstellung der Beispiele}
+Für einzelne Beispiele werden erwartete \textbf{Soll}-Übersetzungen und mögliche \textbf{Ist}-Übersetzungen gegenüber gestellt. Als Parade soll hierbei das Wort \textit{set} dienen, welches kontext-abhängig eine andere Übersetzung verlangt. Gewünscht wäre in dem hierigen Beispiel, dass das Wort zu \textit{Menge} im Deutschen übersetzt wird, da der Satz \enquote{Let's consider a finite set of vertices and edges.} als \enquote{Betrachten wir nun eine endliche Menge an Knoten und Kanten.} erwartet wird.
+\footnote{In diesem Kontext wäre auch die Formulierung \enquote{abgeschlossene} statt \enquote{endliche} denkbar}
+Würde man alle Wörter einzeln, für sich selbst, betrachten, dann würde man zu einer Übersetzung von \textit{set} zu \textit{setzen} tendieren. Dies würde allerdings sowohl sprachlich keinen Sinn mehr ergeben, als auch die syntaktischen Regeln der deutschen Sprache brechen (denn:\ Verben werden nicht durch Adjektive beschrieben, sondern durch ein Adverb).
+Die Darstellung des erläuterten Beispiels gilt musterhaft für folgende Beispiele.\pdfcomment{Und fliegt heraus, falls dieser Abschnitt ggb.\ der folgenden Listung überflüssig wird. Aktuell finde ich es jedoch sinnvoll den Leser vorher Kenntnis mitzugeben, wie Beispiele aussehen, falls diese/r/\ldots nur diese und nicht die Fließtexte betrachten zu sucht}
 
-Direkte Quelltext-Beispiele sind dem Anhang~\ref{appendix:c} zu entnehmen. Dieses Kapitel schildert zunächst das gröbere Aussehen der verschiedenen Fehlerarten, statt konkrete Beispiele aufzuführen. 
 
-Aus abstraktester Ebene kann man jedoch danach unterscheiden, ob einzelne dieser Fehler dazu führen, dass überschüssige Wörter im Dokument entstehen, einzelne Wörter (oder gar Dateien) missachtet werden (was provoziert, dass evtl.\ erforderliche Kontexte verloren gehen) oder fälschliche Übersetzungen entstehen (als Resultat dieses beschriebenen \enquote{Verlust eines Kontexts}). Weiterhin lassen sich einzelne Fehlerarten in verschiedene Situationen unterteilen, wodurch nach dieser Unterscheidung kurz erläutert wird, wie diese Art an Fehler zu erkennen ist (um daraus eine Produktions-/Testweise für diese Fehler zu ermitteln). In vereinzelten Fällen zeigen sich Ausnahmen, welche technisch realisierbare Probleme hervorrufen, aber nur schwer konkrete und intuitive Lösungen mit sich führen.
+
+%Direkte Quelltext-Beispiele sind dem Anhang~\ref{appendix:c} zu entnehmen. Dieses Kapitel schildert zunächst das gröbere Aussehen der verschiedenen Fehlerarten, statt konkrete Beispiele aufzuführen. 
+
 
 % Für iwo unten: Titel von Werken (BibTeX) müssen nicht zwingend übersetzt werden, da der Originaltitel es am Einfachsten macht, das erwähnte Werk zu finden
 
 
-
 \subsection{Elemente in einem Quelltext}
+%%% Häufige Fehler, im Sinn: Solche Strukturen sind oft Teile von LaTeX Dokumenten
+\subsubsection{Fließtexte, Überschriften und Captions}
+\subsubsection{Mathematische Typsetzung}
+\subsubsection{Tabellen}
+\subsubsection{Definitionen und Makros}% Wird: Kommandos beinhalten!
+\subsubsection{Umgebungen}% Wird evtl. Überleitung zu mehreren Quelltexten/Paketen
+
+
+
+
+
 \subsubsection{Kommandos}
 % Hier konkretes Beispiel, oder Link ins Appendix
 \paragraph*{Unterscheidung}\par
 Kommandos sind in der reinen \TeX{}-Syntax durch ein Backslash \verb|\| gekennzeichnet und tragen immer eine Bedeutung für die \TeX{}-Engine, wodurch von einem Übersetzen dieser abgesehen sein sollte. 
-Diese Entscheidung ist allerdings für Wörter, welche direkt auf ein Kommando folgen, nicht trivial und es zeigen sich dort bereits innerhalb \TeX{} erste Konflikte und Unterscheidungen, je nach Art des Kommandos.
+Diese Entscheidung ist allerdings für Wörter, welche direkt auf ein Kommando folgen, nicht trivial und dort zeigen sich bereits erste Konflikte und Unterscheidungen, je nach Art des Kommandos.
 Es existieren zwei Wege einen String zu interpretieren (aus logischer Perspektive). Entweder soll er als Wort (Literal) im Dokument als dieser String angezeigt werden, oder dient als anderer z.B.\ Parameter für eine Funktion.% Metaebene aua
 Beispielsweise müsste innerhalb von Auflistungen der nach einem \verb|\item| folgende String übersetzt werden und steht vorteilhafterweise vom Kommando getrennt, wodurch er leicht erkannt werden kann. Andererseits wäre in einer Definition mit \verb|\def| vorerst davon abzusehen den folgenden String zu übersetzen, da dieser ein neues Makro/Kommando/etc.\ definiert (welche Wörter sind, welche dem Übersetzer zu \enquote{leicht} auffallen und von diesem als \TeX{}-Semantik tragende syntaktische Elemente interpretiert werden). 
 Konkreter dürfte \verb|\def\hello| nicht zu: \verb|\def\hallo| werden (es sei denn alle folgenden \verb|\hello| werden auch übersetzt), aber \verb|\item pessimism| sollte zu \verb|\item Pessimismus| werden.\footnote{Letzteres ist allerdings nicht immer als gewährleistet zu betrachten.}%Da aber, wie bereits bekannt, immer eine Wahrscheinlichkeit, so gering sie auch sein mag, besteht, dass an einer nicht vorgesehenen Stelle eine Übersetzung auftreten \textit{könnte}, kann man sich nicht auf die vorherige Aussage verlassen}.

@@ -170,6 +170,21 @@
 		backref,
 }
 
+
+% Auslagern in eigene Datei. Dort Testen und Schick machen. Erst dann zurück!
+\begin{comment}
+\newenvironment{texsample}[2]
+{
+	\centering
+	\begin{tabular}{p{.4\textwidth} p{.4\textwidth}}
+	1 & #1 \\
+}
+{
+	2 & #2 \\
+	\end{tabular}
+}
+\end{comment}
+
 \begin{document}
 
 \makeatletter % um \@author und co zu nutzen
