@@ -1,14 +1,30 @@
 \section{Problemfälle}
 \subsection{Herangehensweise}
-\TeX{}-Quellcodes \enquote{einfach} zu übersetzen, birgt Gefahr Fehler zu produzieren. Bereits innerhalb eines \TeX{}-Quellcodes können (theoretisch) unendlich viele Fehler entstehen, sollten (wohlmöglich) vorfindbare Zeichenketten unbedacht übersetzt werden (\enquote{unbedacht}:\ ohne vorher zu prüfen, ob das Wort eine semantische Bedeutung für \TeX{} trägt). Abhängig von der Größe der innerhalb \TeX{}-Quelltexten auftretenden Strukturen (insb.\ den nach~\cite{texbook} vorgesehenen) treten verschiedene Fehlerquellen auf, aber bereits Fehler in den Kleinsten können immense Auswirkungen auf die Inhalte des entgültigen Dokumentes haben und zur Folge tragen, dass der übersetzte Quelltext kein sprachlich äquivalentes Dokument in einer anderen Sprache, als der Ursprünglichen, erzeugt. 
-Hierbei wären die kleinsten denkbaren Strukturen, wenn man sich auf den eigentlichen Verwendungszweck von \TeX{} konzentriet, einzelne Zeichen oder Buchstaben. Diese allein bilden allerdings noch keine interessante (als auch logische) Struktur in \TeX{}, sondern erst konkrete Befehle/Funktionen, sowie diesen übergebbare Parameter. Hierbei zeigen sich diverse Wege, wie sowohl die Übergabe dieser Parameter aussehen \textit{könnte},% meint hier: welche Klammern können genutzt werden und wie "jedes Zeichen" als Klammer verstanden werden kann
-als auch die Parameter selbst.% Meint/Impliziert: Parameter in den Klammern können codierte Informationen sein (ein bestimmtes String-Muster erwarten, bspw. "1 0 0" für RGB) und key-value-pairs (in welchen ihrerseits abzuwägen ist, ob übersetzt werden soll, oder nicht)
-Abgesehen der Sinnhaftigkeit vereinzelter Formen solcher Parameter/-übergaben, könnten sie aber mittels \TeX{} produziert werden und müssen daher betrachtet werden.
-Aufbauend auf diesen kleinsten Strukturen bahnt sich ein Weg in Richtung größerer Strukturen, welche sich nicht nur in einem einzelnen Quelltext befinden, sondern mitunter auf mehrere Quelltextdateien zugreifen (müssen) und nicht zwingend denselben, einheitlichen syntaktischen Vorgaben unterliegen.% "Quelltextdateien" als Implikation für alle möglichen auxilliaries 
+\subsubsection{Vorgehen}
+%%% Ziel betrachten
+Auf dem Weg \LaTeX{}-Dokumente zu übersetzen, startet man unausweichlich bei der Betrachtung der Entstehungsweise eines solchen Dokumentes. Üblicherweise soll ein fertiges Dokument in einem allgemein verbreitetem und zugänglichen Format vorliegen. Etabliert hat sich hierbei das Portable Document Format (PDF), welches ursprünglich von der Firma Adobe entworfen und spezifiziert wurde.% Langweilig
+Ein \TeX{}-Compiler produziert ein solches Dokument ausgehend von einer einzelnen \texttt{.tex} Datei, welche ihrerseits Quellcode trägt, welcher mehrere Sprachen vermengt (die Programmiersprache \TeX{} und menschliche, druckbare Sprachen).% "druckbar" mag verwirrend klingen, schließt aber Gebärdensprachen aus
+Bereits ein \TeX{}-Code besitzt (theoretisch) das Potential unendlich viele Fehler zu tragen, sollten alle von einem Übersetzer vorgefundene Zeichenketten übersetzt werden. 
+Der sprachlichen Syntax folgend könnte man bestimmte Elemente eines Quelltextes umgehen, aber die genaue semantische Bedeutung einzelner Strings im Quelltext muss immer dahingegen evaluiert sein, ob die vorliegende Zeichenkette Teil des \enquote{fertigen} Dokumentes werden soll, oder nicht.
 
-% Meint Kapitel: Spezifische Schwierigkeiten/Probleme/Unlösbarkeiten/Whatev
-Vereinzelte Inhalte von Quellcodes enthalten einzelne String-Literale, deren Übersetzung nicht zwangsweise erforderlich ist oder konsequent und garantierbar richtig ist. 
+%%% Ausgangssituation beschreiben // Nötige Strukturen erklären // Abstrakte logische Strukturen
+Klar ist also, dass etwaige Lösungen nicht auf Grundlage der sprachlichen Struktur des Quelltextes arbeiten dürfen, sondern die logische Struktur des Dokumentes verstehen/erkennen sollten um mögliche Fehlinterpretationen von Strings zu vermeiden.
+Abhängig von der Größe der innerhalb von \TeX{}/\LaTeX{}-Dokumenten auftretenden kleineren, logischen Strukturen (insb.\ den nach~\cite{texbook} vorgesehenen) treten verschiedene Fehlerquellen auf. Fehler in den Kleinsten bewirken immense Änderungen auf die Inhalte und den Aufbau des entgültigen Dokumentes. Sie tragen zur Folge, dass der übersetzte Quelltext kein äquivalentes Dokument (sprachlich, als auch strukturell) zu der originalen Beschreibung erzeugen kann. 
+
+%%% Ausgangssituation beschreiben // Nötige Strukturen erklären // Bennenung bekannter logischer Strukturen
+Ähnlich wie bei der Erstellung von Dokumenten insgesamt teilt sich jedes \LaTeX{}-Dokument in verschiedene Bereiche. Diese können sich sowohl echte/relative Fläche auf einer Seite (einem Papier/Bildschirm), textliche Paragraphen/Abschnitte, Graphiken, Überschriften und dergleichen beziehen, aber auch auf größere Konzepte, wie Inhaltsverzeichnisse, Literaturverzeichnisse (Zitationen, insb.\ Links) oder spezifischere Vorgaben für Dokumente beziehen (bspw.\ die Form wissenschaftlicher Arbeiten).
+
+%%% Ausgangssituation beschreiben // Nötige Strukturen erklären // Realisierung der Strukturen im Kontext
+Wohingegen man solche Flächen und Texte auf einem Papier als sehr direkt zugänglich betrachten kann, muss eine rein textliche Beschreibung solcher Dokumente alternativen finden und zum Beispiel Farben und Flächen durch Wörter und Zahlen beschreiben. Zu erwarten wäre also, dass die kleinste zu betrachtende Struktur von \TeX{}-Quelltexten einzelne Zeichen sind. Diese allein bilden allerdings noch keine interessante (als auch logische) Struktur in \TeX{}, sondern erst konkrete Befehle/Funktionen, sowie diesen übergebbare Parameter. Hierbei zeigen sich diverse Wege, wie sowohl die Übergabe dieser Parameter aussehen \textit{könnte}, als auch die Parameter selbst und ob ein solcher Parameter zu übersetzen ist, oder nicht.
+
+%%% Verallgemeinertes Problem schildern
+Fernab der Sinnhaftigkeit vereinzelter Formen solcher Parameter/-übergaben, sind alle möglichen Äußerungsformen von \TeX{}-Quellcodes zu betrachten.
+Aufbauend auf diesen kleinsten Strukturen muss sich nun ein Weg in Richtung größerer Strukturen gebahnt werden, welche teilweise auf andere Quelltexte zugreifen und nicht zwingend denselben, einheitlichen syntaktischen Vorgaben unterliegen.% "Quelltextdateien" als Implikation für alle möglichen auxilliaries 
+Besonders Quelltexte, deren absolute Position im System (meint:\ ein beliebiges Betriebssystem) nicht immer bekannt ist, können vereinzelt Strings tragen, deren Übersetzung erforderlich wäre, aber schnell übersehen werden könnten.% Meint BibTeX Citation Style Dateien 
 Neben solchen Problemen, welche bereits für die Sprachübersetzung allgemein spezifisch sind, bleiben noch Andere, für welche sich nicht immer eindeutige Lösungen finden lassen.
+
+
+\subsubsection{Darstellung der Beispiele}
 
 Direkte Quelltext-Beispiele sind dem Anhang~\ref{appendix:c} zu entnehmen. Dieses Kapitel schildert zunächst das gröbere Aussehen der verschiedenen Fehlerarten, statt konkrete Beispiele aufzuführen. 
 

@@ -16,27 +16,34 @@ Abschlussarbeit ITTI B.Sc.:
 // Automatische Sprachübersetzung von LaTeX-Dokumenten // 
 - allgemeines (23+? bis 30+? Seiten, ohne Anhänge) [4 bis 5 Wochen]
     - soll: sprachliche Korrektur
+    - soll: Fehler korrigieren
+        - ist: Erkennung von Parameter --- Permutationen falsch
+        - ist: "problemfälle" für den Leser schwer nachvollziehbar
 - einleitung (1 bis 2 Seite(n)) [2 bis 3 Stunden]
     - ist: Lesergruppe eingrenzen
     - evtl: Shannon-zitat streichen --- nicht gänzlich unpassend (aber holt sehr weit aus)
 - problemfälle (6 bis 7 Seiten) [2 bis 3 Tage]
     - ist: Herangehensweise schildern
-        - soll: Ziel betrachten
-        - soll: Nötige (logische) Strukturen erklären
-        - ist: Ausgangssituation beschreiben // Wo beginnt das Problem? Hier nicht bei Zeichenketten, sondern bei dem, was aus diesen Strings wird!
+        - ist: Ziel betrachten
+        - ist: Ausgangssituation beschreiben
+            - ist: Nötige Strukturen erklären
+                - ist: Abstrakte (Logische) Strukturen schildern
+                - ist: Bennenung bekannter Strukturen // aus gewöhnlichen Dokumenten //
+            - ist: Realisierung der Strukturen im Kontext // ggb. normalen Texten //
         - ist: Verallgemeinertes Problem schildern
+// Stand des letzten Arbeitens.
         - soll: Darstellung einzelner Beispiele erklären
     - ist: Einzelne Beispiele darstellen
         - soll: Tabellarisch auflisten --- Soll/Ist
-        - soll: Beispiele verdeutlichen
+        - ist: Beispiele verdeutlichen
         - soll: Beispiele typographisch herausstellen
-        - soll: Fehler noch auffälliger zeigen (optisch schneller greifbar; Überlesbarkeiten vermeiden)
-    - soll: Auflistung von einfach/häufigen Fehlern zu Schwierigen/Seltenen
-        - ist: allgemeine probleme mit schwierigen untermengt.
-        - ist: für den Leser schwer nachvollziehbar
-    - soll: Lücken und Fehler vermeiden
-        - ist: Erkennung von Parameter --- Permutationen falsch
-        - soll: Lücken erkennen
+            - soll: Fehler noch auffälliger zeigen 
+            - soll: Visuell schnell erfassbar sein 
+            - soll: Überlesbarkeiten vermeiden
+    - soll: Auflistung von Fehlern
+        - soll: Führt von häufig zu selten
+        - soll: Leicht nachvollziehbar
+    - soll: Potentielle Schwächen aufzeigen 
 - technologien (6 bis 7 Seiten) [1 bis 1,5 Wochen]
     - soll: Kandidaten betrachten (2 Seiten) [1 bis 2 Tage]
         - ist: Auflistung --- von "allgemein bekannt" zu "spezifischeren Lösungen"
@@ -62,6 +69,9 @@ Abschlussarbeit ITTI B.Sc.:
         - soll: Neue/Geeignete Lösungen mit passender Software oder Technologie bestücken
         - soll: Fehlende Technologien bereitstellen (? Seiten) [? Tage]
     - soll: Neue/Geeignete Lösungen testen --- faire und neutrale Testung // wie in Technologien (3 bis 4 Seiten) [4 bis 5 Tage]
+    - soll: Optimierungspotentiale in Lösungen finden
+        - soll: Unvermeidbare Fehler minimieren
+        - soll: Laufzeit optimieren
 - fazit (3 bis 4 Seiten) [1 bis 2 Tage]
     - soll: Unlösbare Probleme diskutieren (1 bis 2 Seiten)
     - soll: Gelöste Probleme darstellen (1 Seite)
