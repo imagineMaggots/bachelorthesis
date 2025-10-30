@@ -1,4 +1,33 @@
 % Zusammenfassung der Inhalte und Ziele der jeweiligen Kapitel
+
+%%% Problemfälle (muss fertig sein bis montag):
+%%%     - Herangehensweise
+%%%         - Wie ist das Kapitel strukturiert?
+%%%         -> Kleinste Struktur, welche ein Übersetzer sehen könnte, hin zu immer größer Werdenen
+%%%         - Wie sehen Beispiele aus(?)
+%%%         -> Abhängig von Größe der Struktur und möglichen Permutationen unterschiedlich
+%%%         --> Kleine Struktur, wenige (eine) Permutation -> kurzes Verbatim
+%%%         --> Kleine Struktur, viele Permutationen -> möglichst viele auf eine Seite
+%%%         --> Große Struktur -> auf möglichst wenig Seiten
+%%%     - Elemente in einem \TeX{}-Code
+%%%         - Das kleinste Element: ein Befehl (Indikator '\') -> nicht übersetzen
+%%%             - Folgt das kleinste Element einer festen Form?
+%%%             -> Nein, da Catcode, Verbatim, ...
+%%%         - Danach: Optionen -> Achtung, mehrere Arten -> Indikatoren (standardmäßig) '[]','{}' 
+%%%             - Wie unterscheiden die sich? 
+%%%             - Kann man die ändern? Wo entstehen potentiell unendlich viele Permutationen
+%%%         - Danach: Mehrzeilige Optionen / Key-Value-Paare
+%%%             - Achtung, mehrere Arten denkbar.
+%%%             - Entweder: Value ist übersetzbar (da String-Literal) oder darf nicht übersetzt werden (da: Wert des Strings erfragt)
+%%%             - Erwähnen: Insbesondere schwer nachvollziehbar bei der Arbeit mit mehreren Quelltexten (wird ne tolle Überleitung)
+%%%     - Elemente in mehreren Quelltextdateien
+%%%         - Wofür braucht man aus logischer Perspektive mehrere Dateien
+%%%         -> Bibliotheken
+%%%         -> Lesbarkeit des Codes (ist schwierig manchmal. bei TeX ist so ab 200 Zeilen adé)
+%%%     - Spezifische Unlösbarkeiten
+%%%         - kp. den ****, den du dir mit TikZ ausgedacht hast
+%%%
+%%%
 \section{Problemfälle}% 
 Schildert alle denkbaren Probleme, auf die ein Übersetzungsprogramm stoßen könnte, wenn es nicht weiß, dass ein \LaTeX{} Dokument vorliegt.
 \subsection{Technische Semantik}% Die allgemeine Ausgangslage ist ein unbekanntes Dokument, von einem beliebigen Autoren und Schilderung erfolgt unabhängig von den eigentlichen Inhalten des Dokumentes (im Sinne: "leeres" Dokument, unbedeutend, aber LaTeX).

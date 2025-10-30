@@ -1,0 +1,6 @@
+In einem Dokument geht ein Kontext für die spezifische Wortwahl, in welcher der jeweilige Paragraph/Satz resultieren soll, aus einer Referenz (\cite, \ref, ...) hervor. 
+Was aber, wenn diese Angabe in der Bibliothek unvollständig ist?
+- Kein einfach erreichbarer Link zu einer Website?
+- Nur ISBN zu nicht-öffentlichen Werken? ISSN?
+- Nur Titel, keine _richtigen_ Angaben?
+- ...

@@ -2,20 +2,46 @@
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
 \contentsline {section}{\numberline {2}Problemfälle}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Herangehensweise}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Elemente in einem \TeX {}-Quellcode}{5}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Die Präambel}{5}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Kommandos}{5}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Optionen}{6}{subsubsection.2.2.3}%
-\contentsline {section}{\numberline {3}Stand der Technik}{16}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Anforderungen}{16}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Denkbare Ansätze}{16}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Existierende Ansätze}{16}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Testverfahren}{16}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Durchführung}{16}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Auswertung}{16}{subsubsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}Grenzen der Lösungen}{16}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Takeaways}{16}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Eigenständigkeitserklärung}{17}{section.4}%
-\contentsline {section}{Literatur}{18}{section*.36}%
+\contentsline {subsection}{\numberline {2.2}Elemente in einem Quelltext}{3}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Kommandos}{3}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Zusätzliche Parameter}{5}{subsubsection.2.2.2}%
+\contentsline {paragraph}{\numberline {2.2.2.1}Erkennung}{6}{paragraph.2.2.2.1}%
+\contentsline {subparagraph}{\numberline {2.2.2.1.1}Problem bei diesem Ansatz}{6}{subparagraph.2.2.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.2.3}Makros und Umgebungen}{6}{subsubsection.2.2.3}%
+\contentsline {paragraph}{\numberline {2.2.3.1}Umgebungen}{6}{paragraph.2.2.3.1}%
+\contentsline {subsection}{\numberline {2.3}Mehrere Quelltexte}{8}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}\TeX {} und Andere}{8}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Pakete und Klassen}{9}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Hilfsdateien}{9}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Zitationen}{10}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Spezifisch}{10}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Sprachliche Hürden}{10}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Fehlinterpretierbare Verweise}{11}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Layouting-Probleme}{11}{subsubsection.2.4.3}%
+\contentsline {section}{\numberline {3}Stand der Technik}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Übersicht}{12}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Nicht auf \TeX {} spezialisierte Werkzeuge}{12}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Existierende Technologien und Ansätze}{13}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Nicht auf Sprachübersetzung konzentrierte Werkzeuge}{14}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Testverfahren}{14}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Tests}{14}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Erzielte Werte}{14}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Auswertung}{14}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Übrige Probleme}{14}{subsubsection.3.3.3}%
+\contentsline {section}{\numberline {4}Eigener Beitrag}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Existierenden Herangehensweisen}{15}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Übersetzung von Quellcode}{15}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Quelltext-filternde Tokenizer}{15}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Ausweichen in andere Formate}{15}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Andere Lösungswege}{15}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Abstrakte Beschreibung}{15}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Technische Umsetzungsmöglichkeiten}{15}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Konzeptionelle Probleme}{15}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Empfohlene Maßnahmen}{15}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Fazit}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Zusammenfassung}{16}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Ausblick}{16}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Weiterführend}{16}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Eigenständigkeitserklärung}{17}{section.6}%
+\contentsline {section}{Literatur}{18}{section*.31}%
 \contentsline {section}{\numberline {A}Anhänge}{19}{section.chX.1}%
-\contentsline {subsection}{\numberline {A.1}Fontskalierung auf Webseiten}{19}{subsection.chX.1.1}%

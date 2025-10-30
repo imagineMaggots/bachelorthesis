@@ -1,0 +1,78 @@
+//  
+    Syntaktische Erläuterung für meine ToDo-Listen und Notizen:
+    - Punkt der ToDo-Liste 
+        - Unterpunkt des ToDo 
+            - Sub-Unterpunkt 
+        - Unterscheidung nach key:
+            - soll: "to do"
+            - ist:  "done"
+            - evtl: schwaches soll/ist --- "nice-to-haves"
+    - Notizen von zwei Slashes umklammert "// Notiz //"
+        - Fehler/Fehlannahmen oder verbundene Erläuterung --- Kennzeichnung
+        - Klammern () [] beschreiben Arbeitsumfang nach (Anzahl an Seiten) oder [Vermutung des restlichen Zeitumfangs]
+//
+
+Abschlussarbeit ITTI B.Sc.: 
+// Automatische Sprachübersetzung von LaTeX-Dokumenten // 
+- allgemeines (23+? bis 30+? Seiten, ohne Anhänge) [4 bis 5 Wochen]
+    - soll: sprachliche Korrektur
+    - soll: Fehler korrigieren
+        - ist: Erkennung von Parameter --- Permutationen falsch
+        - ist: "problemfälle" für den Leser schwer nachvollziehbar
+- einleitung (1 bis 2 Seite(n)) [2 bis 3 Stunden]
+    - ist: Lesergruppe eingrenzen
+    - evtl: Shannon-zitat streichen --- nicht gänzlich unpassend (aber holt sehr weit aus)
+- problemfälle (6 bis 7 Seiten) [2 bis 3 Tage]
+    - ist: Herangehensweise schildern
+        - ist: Ziel betrachten
+        - ist: Ausgangssituation beschreiben
+            - ist: Nötige Strukturen erklären
+                - ist: Abstrakte (Logische) Strukturen schildern
+                - ist: Bennenung bekannter Strukturen // aus gewöhnlichen Dokumenten //
+            - ist: Realisierung der Strukturen im Kontext // ggb. normalen Texten //
+        - ist: Verallgemeinertes Problem schildern
+// Stand des letzten Arbeitens.
+        - soll: Darstellung einzelner Beispiele erklären
+    - ist: Einzelne Beispiele darstellen
+        - soll: Tabellarisch auflisten --- Soll/Ist
+        - ist: Beispiele verdeutlichen
+        - soll: Beispiele typographisch herausstellen
+            - soll: Fehler noch auffälliger zeigen 
+            - soll: Visuell schnell erfassbar sein 
+            - soll: Überlesbarkeiten vermeiden
+    - soll: Auflistung von Fehlern
+        - soll: Führt von häufig zu selten
+        - soll: Leicht nachvollziehbar
+    - soll: Potentielle Schwächen aufzeigen 
+- technologien (6 bis 7 Seiten) [1 bis 1,5 Wochen]
+    - soll: Kandidaten betrachten (2 Seiten) [1 bis 2 Tage]
+        - ist: Auflistung --- von "allgemein bekannt" zu "spezifischeren Lösungen"
+        - evtl: Später genutzte Technologien vorstellen
+    - ist: Testverfahren beschreiben (1 Seite) [1 bis 2 Stunden]
+        - ist: Automatisches Verfahren mit vielen Daten
+        - ist: Manuelles Verfahren mit gezielten Proben
+        - soll: Besprechung der Methodik
+// Bis hier soll textuell bis: 04.11.2025 mit Termin am 05.11.2025 14:30 //
+    - soll: Tests durchführen (3 bis 4 Seiten) [4 bis 5 Tage]
+        - soll: Tabellarische Darstellung erreichter Messwerte
+        - soll: Sprachliche Auswertung der tabellarischen Inhalte
+        - soll: Gezielte Proben gesondert auswerten
+// Ein paar Tests vorbereiten:
+- eigener Beitrag (7 bis ? Seiten) [2 bis 3 Wochen]
+    - soll: Bestehende Lösungswege der anderen Ansätze abstrahiert schildern (1 Seite) [2 bis 3 Stunden]
+    - soll: Andere/Neue Lösungswege diskutieren // ggb. der Aufgabenstellung (1 bis 2 Seite(n)) [2 bis 3 Tage]
+        - soll: Verschiedene Wege vom Problem zur Lösung zeigen
+        - soll: Denkbare Orte der Problemlösung klarstellen --- Wann besteht die Chance die sprachlichen Strings in einem Dokument zu übersetzen
+        - evtl: Unbekannte Ansätze im Nachherein vermerken(?)
+    - soll: Umsetzungswege der Lösungswege zeigen (1 bis ? Seite(n)) [1 bis ? Tage]
+        - soll: Bestehende Lösungswege mit neuer/anderer Software betrachten
+        - soll: Neue/Geeignete Lösungen mit passender Software oder Technologie bestücken
+        - soll: Fehlende Technologien bereitstellen (? Seiten) [? Tage]
+    - soll: Neue/Geeignete Lösungen testen --- faire und neutrale Testung // wie in Technologien (3 bis 4 Seiten) [4 bis 5 Tage]
+    - soll: Optimierungspotentiale in Lösungen finden
+        - soll: Unvermeidbare Fehler minimieren
+        - soll: Laufzeit optimieren
+- fazit (3 bis 4 Seiten) [1 bis 2 Tage]
+    - soll: Unlösbare Probleme diskutieren (1 bis 2 Seiten)
+    - soll: Gelöste Probleme darstellen (1 Seite)
+    - soll: Ausblickende Gedanken und weiterführende Ideen vorstellen (? Seiten)

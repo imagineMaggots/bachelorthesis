@@ -1,4 +1,5 @@
 \section{Stand der Technik}
+\begin{comment}
 \subsection{Anforderungen}\phantomsection\label{technologies:demands}
 Abgelitten aus der Problemliste werden hier die Probleme umformuliert als Anforderungen dargestellt und in absteigender Reihenfolge nach Relevanz in Bezug auf die gegebene Aufgabenstellung aufgeführt.
 
@@ -22,3 +23,62 @@ logischerweise:\ In den denkbaren Ansätzen schon gegenargumentieren, was unsinn
 \subsubsection{Auswertung}
 \subsection{Grenzen der Lösungen}% Mal schauen
 \subsection{Takeaways}% Was geht wo noch besser?
+\end{comment}
+\subsection{Übersicht}
+Erste Ansätze zur automatischen Be- und Verarbeitung von \LaTeX{}-Dokumenten lassen sich bis in die 1990er Jahre verfolgen~\cite{catholicUniversityOfAmerica:peterWilson1997:aLaTeXtoXautotagger} (abgesehen von einem Compiler natürlich). Die Übersetzung von den rein wort-sprachlichen, textuellen Inhalten eines Dokumentes\footnote{\texttt{pgfplots} wäre bspw.\ dazu in der Lage Audiosignale darzustellen, welche sich maschinell interpretieren ließen. Solche Ansätze werden hier allerdings nicht weiter verfolgt} zeigt sich wiederum als ein Problem, welches eine Niche bedienen zu scheint. Von besonderem Interesse für die Sprachübersetzung heutzutage sind große Sprachmodelle, bzw.\ \enquote{künstliche Intelligenzen}, wie zum Beispiel DeepL, Google Gemini (Cloud Translate) oder andere GPT-Modelle, welche in diesem Kontext trainiert wurden (GPT$=$generative pre-trained text). Deshalb seien auch im Kontext der Sprachübersetzung von \LaTeX{}-Dokumenten Ansätze der Art in den Vordergrund gerückt und jegliche betrachtete Technologie kurz aufgeführt.
+
+% Was man kennt und die Aufgabe aus theoretischer Sicht lösen könnte.
+\subsubsection{Nicht auf \TeX{} spezialisierte Werkzeuge}
+\paragraph*{ChatGPT}\par
+Als \enquote{All-Rounder} unter den heutigen künstlichen Intelligenzen ist es denkbar, dass auch ein \textit{general-purpose} Sprachmodell, gegeben eines passenden \textit{prompting}, dazu in der Lage sein \textbf{könnte} zuvor beschriebene Fehlerquellen zu meiden. Ein Ansatz dieser Art könnte allerdings genau dann scheitern, sobald einige benötigte Informationen (bspw.\ die Definition eigener Makros, Umgebungen, \ldots) nicht mehr in einem einzigen Quellcode vorliegt.% kein Bock auf prompt-entwicklung gerade, sry
+
+\paragraph*{GitHub Copilot}\par
+Ein auf die Arbeit mit Quellcode spezialisiertes Tool, wie benanntes \enquote{GitHub Copilot}, könnte unter Umständen noch effektiver/effizienter/besser mit Quelltexten umgehen und ist ähnlich wie ChatGPT zu behandeln.
+
+\paragraph*{DeepL}\par
+Konkurrierend zu dem jahrelangen Marktführer (in Hinsicht auf durch Computer realisierte Sprachübersetzung) Google, gewann DeepL zunehmend an Bekanntheit und ist neben, Google Translate, ein viel genutztes Werkzeug, insbesondere im Kontext von Anwendungsgebieten, in welchen das Übersetzen durch einen Menschen zu viel (Echt-) Zeit beanspruchen würde. Die API lässt hierbei die Übergabe von einem \textit{Kontext} zu, welcher sich allerdings in der gewählten Wortwahl innerhalb der Ausgabe zeigen wird und keinen Einfluss auf die eingelesenen Inhalte haben sollte. (In dem Sinn, dass durch einen Kontext \enquote{LaTeX} nicht davon auszugehen ist, dass Quellcode als Input erwartet ist, sondern Texte über die benannte$($n$)$ Technologie$($n$)$). Von besonderem Interesse ist bei einem Ansatz dieser Art also, inwiefern diese Technologie selbstständig dazu fähig ist Quellcode zu erkennen und weniger, ob sie \textit{perfekte} Ausgaben (fehlerfrei) liefert.
+
+% Siehe DeepL, gleiche Begründung
+\paragraph*{Google Cloud Translate}\par
+Natürlich ist besagter Marktführer für die Übersetzung menschlicher Sprache im gleichen Kontext, wie auch DeepL, zur Bewältigung derselben Aufgabe heranziehbar. Nur muss zunächst klargestellt sein, dass Google Translate nicht gleich Google Cloud Translate ist. Google Translate bezeichnet üblicherweise das bekannte Browser-Tool, welches höchstwahrscheinlich (hoffentlich) mittlerweile auch auf einem GPT aufbaut. Da ein solches Tool auf eine möglichst einfache Bedienbarkeit zugeschneidert ist, verliert es an Transparenz hinsichtlich der eigentlichen zugrundeliegenden Technik. Wirklich sicher, dass ein solcher, moderner
+\pdfcomment{Muss in diesem Kontext auch irgendwo hervorgehen, wie/inwiefern heutige Sprachübersetzung unterschiedlich ist? --- Ja} 
+Ansatz (auf Grundlage großer Sprachmodelle, statt reinen statistischen Modellen)
+\footnote{\textit{Große Sprachmodelle}:\ Lernen die Sprache, bzw.\ werden auf Grundlage einer Sprache trainiert, wohingegen \textit{statistische Modelle} sich rein auf die wörtlichen Übersetzungen fokussieren. Wesentlichster Unterschied der Ansätze ist, dass große Sprachmodelle eine Semantik in den Wörtern suchen (in dem Sinn, dass sie die Inhalte \enquote{versuchen zu verstehen}, wohingegen einfachere statistische Modelle nur die Wörter und deren grammatikalischen Zusammenhänge untersuchen, um daraus die treffenste Übersetzung zu finden)}.
+genutzt wird, kann man sich allerdings nur sein, sollte man vollständige Einsicht in die Zugrundeliegenden Quelltexte erhalten. Dies ist aber, aus verständlichen, marktwirtschaftlichen Gründen nicht immer möglich. Daher wird darauf vertraut, dass auf Angabe des Unternehmens die \enquote{Google Cloud Translate}-API so arbeitet, wie es versprochen wird.% Hier evtl. Link oder Zitation.-.
+
+\paragraph*{Microsoft Translate und Weitere}\par
+Google, Microsoft und DeepL sind nicht die Ersten und werden auch nicht die letzten Anbieter von maschineller Sprachübersetzung sein. Statt hier noch weitere unkonkrete Ansätze zu listen, wird nun spezifischere Technologien in den Vordergrund gerückt.
+
+% Wer sich _genau_ mit dem Thema beschäftigt!
+\subsubsection{Existierende Technologien und Ansätze}
+\paragraph*{GPT-LaTeX-Translator}\par
+% https://github.com/aemartinez/gpt-latex-translator/blob/main/gptlatextranslator/GPTTranslator.py#L57
+Der von Suñé und Arcuschin (2023) entwickelte Ansatz verfolgt die zuvor beschriebene Idee, ein \textit{general purpose} Sprachenmodell heranzuziehen. Ihre genaue herangehensweise geht aus Zeile 57 des Quellcodes (Python) \enquote{GPTTranslator.py} hervor, in welchem sie lediglich zugrundeliegende \texttt{.tex}-Dateien so weit zerlegen, dass sie der Anwendungsschnittstelle (damalig) gerecht werden und dann der künstlichen Intelligenz die Information mitteilen, dass \LaTeX{}-Quellcode vorliegt.
+
+\paragraph*{Textsynth/trsltx}\par
+% https://github.com/phelluy/trsltx/tree/main
+Helluy (2025) arbeitet an einem sehr spezifischen Ansatz, welcher sich der gegebenen Aufgabenstellung sehr gezielt zu nähern scheint. Allerdings zeigt er selbst auf, inwiefern seine Herangehensweise Fehler in \LaTeX{} produzieren kann. Insbesondere verweist er auf Schwächen hinsichtlich eigener Makros und anscheinenden Labels, Referenzen und Zitationen, die die KI eigenständig hinzufügt. Auch bemerkt er, dass einige Umstände zu unvollständigen Übersetzungen führen können, welche es zu erproben gilt.
+% Hier: Was genau macht er?
+
+\paragraph*{MathTranslate}\par
+% https://github.com/SUSYUSTC/MathTranslate/blob/main/mathtranslate/translate.py
+% scheinen nur google translate oder tencent heranzuziehen, keine, wie zuvor geschilderten, großen Sprachmodelle
+Sun (2025) präsentiert auf der WebSite von seinem Tool \enquote{MathTranslate} einen Ansatz, welcher zunächst äußerst vielversprechend erscheint. Ein näheres Betrachten des vorliegenden Quelltextes zeigt aber schnell potentielle Schwächen auf, welche auf die gewählten Übersetzungs-Softwares zurückführbar sind. Der Quelltext \texttt{translate.py} weist hierbei nur auf eine Nutzungsmöglichkeit von entweder (zuvor entgegen argumentiertem) Google Translate oder aber auf Tencent hin. Hierbei wird zweitere Engine näher betrachtet.
+
+\paragraph*{TransLaTeX}\par
+% https://cassandre.pages.math.unistra.fr/translatex/
+Der von Erken /2023 präsentierte Ansatz beschäftigt sich so konkret mit der Hürde der automatischen Sprachübersetzung von \LaTeX{}-Dokumenten, wie kaum ein Anderer. Jedoch scheint hier der Fortschritt bei (selbst eingeschätzten) 88\% vor circa 2 Jahren stehen geblieben zu sein und offenbart in der Beschreibung der Website / des GitHub-Repositories vereinzelte Schwächen \url{https://gitlab.math.unistra.fr/cassandre/translatex}. Zudem ist dieser Ansatz auf einer interpretierten Sprache (Python) basierend, welche stets einen performanten Nachteil gegenüber (optimierten) prozeduralen Sprachen zeigen wird, da Zweitere kein \textit{Interpreter-} Modul benötigen.
+
+\paragraph*{PolyMath Translator}
+% https://arxiv.org/pdf/2010.05229
+Ohri und Schmah (2020) gingen einen Weg über die Konvertierungs-Software \texttt{pandoc}, um in dieser den abstrakten Syntax-Graphen/Baum zu ermitteln, auf dessen Grundlage sehr klar ist, welche Inhalte textliche Strings sind, welche in einem kompilierten Dokument angezeigt werden sollen und welche Inhalte lediglich Teile der Dokument-Beschreibung sind. Allerdings zeigt sich ihre veröffentlichte Lösung als heute (Ende 2025) nicht mehr zugänglich, sodass nur noch der Ansatz getestet werden könnte.
+
+% Tools, Software, ..., welche später interessant werden könnten / genutzt werden
+\subsubsection{Nicht auf Sprachübersetzung konzentrierte Werkzeuge}
+\paragraph*{Pandoc}\par
+% Software um Textdateien und Dokumente hin- und her zu konvertieren
+\paragraph*{Translate Package}\par
+
+
+
+\input{technologies/testverfahren.tex}

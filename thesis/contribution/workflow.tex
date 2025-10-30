@@ -1,0 +1,19 @@
+\section{Eigener Beitrag}% Eigenwirkung. Eigener Einfluss. Mitwirken. Eigenes Bewirken. Bewirkungen. 
+\subsection{Existierenden Herangehensweisen}% Meint: Welchen Lösungsweg sind die anderen, gefundenen Ansätze auf abstrakterer Ebene gegangen. Abzugrenzen von der Auswertung der Tests. 
+\subsubsection{Übersetzung von Quellcode}
+Diese Herangehensweise verfolgt den Weg den gesamten Quelltext, ohne größere Interpretation, als Eingabe für einen Übersetzer zu nutzen, um daraus einen neuen, übersetzten Quelltext zu erhalten, in welcher sämtliche \LaTeX{} relevanten Inhalte unverändert (ggb.\ dem Original) vorzufinden sind. Dieser neue Quelltext soll dann, genauso wie der Originale, mit Hilfe eines bekannten \TeX{}-Compilers (bspw.\ \texttt{pdflatex}, \texttt{xelatex}, \texttt{lualatex}, \ldots) in eine PDF überführt werden.
+
+\subsubsection{Quelltext-filternde Tokenizer}\phantomsection\label{contrib:existing:tokenizer}% Bildung des Syntax-Graphen, bzw. Filtern aus der Token-Menge % Meint hier: TransLaTeX!
+Jeder \TeX{}-Compiler muss einen ihm vorliegenden Quelltext in seine einzelnen Token zerlegen und (in dem Fall, dass der Quelltext ein Dokument beschreibt) in eine DOM-ähnliche Struktur überführen. Diese abstrakte, aber vollständige und vollständig beschriebene/detaillierte Struktur des Dokumentes kann als Grundlage genutzt werden, um aus dieser rein textliche/sprachliche Inhalte zu extrahieren und nur noch diese einem Übersetzer zu präsentieren. Danach kann diese vollständige Struktur mit übersetzten sprachlichen Inhalten in das beschriebene Dokument übersetzt werden.
+
+\subsubsection{Ausweichen in andere Formate}
+% Meint eigene oder sowas wie XML... muss evtl nach "Andere"... Hilfsdateien
+Dieser Ansatz ist ähnlich zu Vorigem, unterscheidet sich jedoch in der Hinsicht, dass auf ein \enquote{Zwischenformat}, also einer Hilfsdatei ausgewichen wird (welche theoretisch gesehen Grundlage für eine künftige Verarbeitung des Dokumentes sein/werden könnte).
+
+\subsection{Andere Lösungswege}
+\subsubsection{Abstrakte Beschreibung}% Haben Workflow A, B, C, ... mit Rollen 1, 2, 3, .... Brauchen Technologien, die diese Rollen einnehmen können.
+\paragraph*{Mitwirkung im Compiler}
+Ähnlich wie~\ref{contrib:existing:tokenizer} könnte auch ein \TeX{}-Compiler selbst angepasst werden.
+\subsubsection{Technische Umsetzungsmöglichkeiten}
+\subsubsection{Konzeptionelle Probleme}
+\subsection{Empfohlene Maßnahmen}% hinsichtlich der geg. Aufgabenstellung
