@@ -12,19 +12,16 @@ Neben solchen Problemen, welche bereits für die Sprachübersetzung allgemein sp
 
 Direkte Quelltext-Beispiele sind dem Anhang~\ref{appendix:c} zu entnehmen. Dieses Kapitel schildert zunächst das gröbere Aussehen der verschiedenen Fehlerarten, statt konkrete Beispiele aufzuführen. 
 
-Aus abstraktester Ebene kann man jedoch danach unterscheiden, ob einzelne dieser Fehler dazu führen, dass überschüssige Wörter im Dokument entstehen, einzelne Wörter (oder gar Dateien) missachtet werden (was provoziert, dass evtl.\ erforderliche Kontexte verloren gehen) oder fälschliche Übersetzungen entstehen (als Resultat dieses beschriebenen \enquote{Verlust eines Kontexts}).
+Aus abstraktester Ebene kann man jedoch danach unterscheiden, ob einzelne dieser Fehler dazu führen, dass überschüssige Wörter im Dokument entstehen, einzelne Wörter (oder gar Dateien) missachtet werden (was provoziert, dass evtl.\ erforderliche Kontexte verloren gehen) oder fälschliche Übersetzungen entstehen (als Resultat dieses beschriebenen \enquote{Verlust eines Kontexts}). Weiterhin lassen sich einzelne Fehlerarten in verschiedene Situationen unterteilen, wodurch nach dieser Unterscheidung kurz erläutert wird, wie diese Art an Fehler zu erkennen ist (um daraus eine Produktions-/Testweise für diese Fehler zu ermitteln). In vereinzelten Fällen zeigen sich Ausnahmen, welche technisch realisierbare Probleme hervorrufen, aber nur schwer konkrete und intuitive Lösungen mit sich führen.
 
 % Für iwo unten: Titel von Werken (BibTeX) müssen nicht zwingend übersetzt werden, da der Originaltitel es am Einfachsten macht, das erwähnte Werk zu finden
-
-
-
 
 
 
 \subsection{Elemente in einem Quelltext}
 \subsubsection{Kommandos}
 % Hier konkretes Beispiel, oder Link ins Appendix
-\paragraph{Unterscheidung}\par
+\paragraph*{Unterscheidung}\par
 Kommandos sind in der reinen \TeX{}-Syntax durch ein Backslash \verb|\| gekennzeichnet und tragen immer eine Bedeutung für die \TeX{}-Engine, wodurch von einem Übersetzen dieser abgesehen sein sollte. 
 Diese Entscheidung ist allerdings für Wörter, welche direkt auf ein Kommando folgen, nicht trivial und es zeigen sich dort bereits innerhalb \TeX{} erste Konflikte und Unterscheidungen, je nach Art des Kommandos.
 Es existieren zwei Wege einen String zu interpretieren (aus logischer Perspektive). Entweder soll er als Wort (Literal) im Dokument als dieser String angezeigt werden, oder dient als anderer z.B.\ Parameter für eine Funktion.% Metaebene aua
@@ -35,7 +32,7 @@ Konkreter dürfte \verb|\def\hello| nicht zu: \verb|\def\hallo| werden (es sei d
 % Def betrachtet hier nur neue \commandos, nicht deren evtl. textlichen Inhalte. Das erst bei Makros....
 
 
-\paragraph{Erkennung}\par
+\paragraph*{Erkennung}\par
 Zu übersetzende String (Literale) lassen sich nicht, wie es \verb|\item| deuten lässt, anhand fester Zeichen erkennen. Daher muss stets betrachtet werden, ob einzelne Befehle Strings als Parameter aufgreifen sind (unsichtbar im Dokument) oder ob diese Strings, so wie sie stehen, Teil des Dokumentes werden sollen (diese könnten, technisch gesehen, auch als \textit{Parameter} des Befehles interpretiert werden, wovon in diesem Kontext allerdings abgesehen wird, da es spätere Komplikationen hervorrufen würde).
 % Verschiedene Befehle sind dazu in der Lage Strings als Parameter aufzugreifen, welche als Literale im Dokument erscheinen sollen. 
 Erkannt wird die Zugehörigkeit von Strings ggb.\ einem Kommando zunächst dadurch, dass diese Parameter unmittelbar und innerhalb eckiger oder geschwungener Klammern auf einen Befehl (bzw.\ ein Kommando) folgen.
@@ -47,7 +44,7 @@ Zu übersetzen sind also nur Wörter, welche mit Gewissheit Teil einer menschlic
 % was sich entweder anhand fehlender Zeichen für ein Alphabet (heuristisch, da unter der Annahme, dass die Sprache selbst \textit{immer} alle Zeichen ihrer Zeichensatzes verwendet) oder an überschüssigen Zeichen innerhalb des nachverfolgten Strings aufzeigen kann/wird.
 
 
-\paragraph{Ausnahme}\par
+\paragraph*{Ausnahme}\par
 Jedes Zeichen in \TeX{}-Quellcodes trägt eine eigene Bedeutung für den Parser der Sprache. Problematisch wird aber, dass sich diese Bedeutung (sogenannter \textit{category code}, nach~\cite[Appendix D, Seite 371]{texbook}) mit Hilfe des Befehles \verb/\catcode'/ ändern lässt. Auf diese Art und Weise ist es spezifischen Umgebungen (bspw.\ der von \texttt{pgf}/Ti\textit{k}Z) erlaubt, zusätzlichen Whitespace zu ignorieren oder beispielweise ein \LaTeX{}-Kommando anhand eines Ausrufezeichens, statt einem gespiegelten Schrägstrich (Backslash) für den Parser als Kommando erkenntlich zu machen.%~\ref{} 
 % Hier keine Sinnhaftigkeit argumentieren, nur Möglichkeit aufzeigen und später testen.
 %% Diese Änderungen sind prinzipiell nachvollziehbar und rückwirkend anpassbar, sodass nicht solche "dirty tricks" verwendet werden, sondern eine Zwischenstufe mit "reinerem" Quellcode vorgezogen wird.
@@ -86,7 +83,7 @@ Aus theoretischer Sicht ist die Menge an möglichen Parametern (quasi-) unendlic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Dieses ist auf verschiedene Arten umgehbar (einzelne Parameter/Strings können mehr Informationen kodieren, Definitionen mit Relays erweitert werden oder \textit{key-value}-Strukturen genutzt werden (bspw.\ in \texttt{hyperref}'s \verb|\hypersetup| wiederzufinden)), zeigt aber nur Probleme auf, wenn wortsprachliche Strings und keine alphanumerischen Werte innerhalb diesen genutzt werden, solche Strings also als String-Literale genutzt werden und daher übersetzt werden sollen. % Beispiel fehlt, siehe: irgendwo hier
+Dieses ist auf verschiedene Arten umgehbar (einzelne Parameter/Strings können mehr Informationen kodieren, Definitionen mit Relays erweitert werden oder \textit{key-value}-Strukturen genutzt werden (wie es bspw.\ in \texttt{hyperref}'s \verb|\hypersetup| wiederzufinden ist)), zeigt aber nur Probleme auf, wenn wortsprachliche Strings und keine alphanumerischen Werte innerhalb von diesen genutzt werden und solche Strings als \enquote{zu druckende} Zeichenkette genutzt werden, bzw.\ übersetzt werden sollen. % Beispiel fehlt, siehe: irgendwo hier
 Konkreter muss abgewägt werden, ob es sich bei einzelnen Parametern um Werte handelt, welche für Operationen ihren exakten Wert tragen müssen (bspw.\ \verb"\hypersetup{urlcolor=red}" darf weder zu \verb"\hypersetup{URL-Farbe=rot}", noch \verb"\hypersetup{URL-Farbe=red}" oder \verb"\hypersetup{urlcolor=rot}" werden) oder um Strings, welche im eigentlichen Dokument erscheinen sollen (bspw.\ \verb"\paragraph{Trick or Treat}" muss zu \verb"\paragraph{Süßes oder Saueres}" werden, darf aber, bekanntlich, nicht \verb"\Paragraph{Süßes oder Saures}" produzieren). 
 Aus den reinen Funktions-/Kommandoaufrufen geht allerdings nicht immer die Information hervor, ob die Übersetzung stattfinden darf. Betrachtet man z.B.\ die Kommandos des \texttt{theorem} Paketes (\textit{package(s)} werden später noch eingeführt), so erfordern diese String-Literale als anzuzeigender String für eine neue nummerierte Umgebung.\\
 Beispielsweise

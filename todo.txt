@@ -1,25 +1,23 @@
-- "to-do" Listen des Repo's anpassen und sortieren
 - einleitung
-    - lesergruppe so eingrenzen, dass nur noch Leser bleiben, die ein passendes Vorwissen besitzen
-    - anpassen bei fortschritt oder änderung
+    - evtl. später nötige anpassungen betrachten
     - sprachlich überarbeiten/berichtigen
 - problemfälle
-    - Darstellung einzelner Beispiele überdenken/anpassen
-    - welche potentiellen Fehlerquellen/Risikos gehen aus der Aufgabenstellung hervor? 
+    - darstellung einzelner Beispiele überdenken/anpassen
     - auf lücken prüfen
     - sprachlich überarbeiten
 - technologien
-    - betrachtete kandidaten schildern
-        - warum könnten die das Problem der Aufgabenstellung lösen?
-        - welche sind besonders gut geeignet, da sie genau das gleiche Problem bedienen zu scheinen?
-        - welche anderen Technologien werden für spätere Lösungswege interessant?
+    - betrachtete kandidaten 
+        - weiterführen
+        - sprachlich überarbeiten
     - testverfahren beschreiben
+        - überdenken/besprechen
+        - sprachlich überarbeiten
     - tests durchführen
         - auf Grundlage größerer Datensätze mit erklärter Strategie
         - auf Grundlage kleinerer, spezifischer Einzelbeispiele, die gezielt Fehler erproben
 - eigener Beitrag
     (- abstrahierende Darstellung der Lösungswege der anderen Ansätze)
-    - erdachte Lösungswege (ggb. der Aufgabenstellung) schildern
+    - andere Lösungswege (ggb. der Aufgabenstellung) schildern
         - verschiedene Wege, wie das Problem gelöst werden kann
         - exemplarisch/hier: welchen Weg kann die ursprüngliche Datei (tex) gehen, bevor sie eine PDF wird, bzw. wann könnten die textlichen Inhalte übersetzt werden?
         - evtl. noch einmal verdeutlichen, welcher der bereits präsentierten Ansätze dies leistet
@@ -28,4 +26,4 @@
     - welcher Lösungsweg ist aus theoretischer Sicht am geeignetsten?
     - welcher Weg ist nach tests der Beste?
     - gibt es übrige/unlösbare Probleme?
-- Fazit
+- fazit

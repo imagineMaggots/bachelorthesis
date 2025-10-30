@@ -1,0 +1,24 @@
+- einleitung
+    - lesergruppe eingegrenzt
+    - nicht: sprachlich perfekt
+- problemfälle
+    - Fehlerquellen beschrieben/gelistet
+    - nicht: sprachlich perfekt
+- technologien
+    - differenziert welche arten von kandidaten interessant sind
+    - betrachtete kandidaten genannt
+        - allgemeinere Lösungen (einfache Ideen/Umsetzungswege) nach vorne gestellt
+        - spezielle/spezifische Systeme danach eingeführt (nicht im Detail, nur was sie versprechen)
+    - testverfahren beschreiben
+        - quantitative testweisen
+        - qualitatives testen anhand speziellerer Fehler (bei denen nicht eine Lösung erwartet ist)
+    - tests durchführen
+        - nicht
+        -> Ungelöste probleme
+    - nicht: sprachlich perfekt
+- eigener Beitrag
+    - nicht
+    - nicht: sprachlich perfekt
+- fazit
+    - nicht
+    - nicht: sprachlich perfekt

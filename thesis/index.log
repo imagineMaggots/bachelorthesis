@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  29 OCT 2025 13:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.5.10)  29 OCT 2025 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1635,52 +1635,46 @@ LaTeX Warning: Reference `appendix:c' on page 3 undefined on input line 13.
 
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 5
-1.
+LaTeX Font Info:    Trying to load font information for TS1+zi4 on input line 4
+8.
 
 (C:\Users\Sxyx\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\ts1zi4.fd
 File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 51.
+(Font)              scaled to size 10.95pt on input line 48.
 
 [4{C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t
 s1.enc}]
-Overfull \hbox (11.94528pt too wide) in paragraph at lines 89--93
-[]\T1/cmss/m/n/10.95 wer-den) oder um Strings, wel-che im ei-gent-li-chen Do-ku
--ment er-schei-nen sol-len (bspw. [][]\T1/zi4/l/it/10.95 \paragraph{Trick or Tr
-eat}
+Overfull \hbox (14.28876pt too wide) in paragraph at lines 86--90
+[][]\T1/zi4/l/it/10.95 \hypersetup{urlcolor=red} []\T1/cmss/m/n/10.95 darf we-d
+er zu [][]\T1/zi4/l/it/10.95 \hypersetup{URL-Farbe=rot}[]\T1/cmss/m/n/10.95 , n
+och [][]\T1/zi4/l/it/10.95 \hypersetup{URL-Farbe=red}
  []
 
 
-Overfull \hbox (19.44676pt too wide) in paragraph at lines 89--93
-[]\T1/cmss/m/n/10.95 muss zu [][]\T1/zi4/l/it/10.95 \paragraph{Süÿes oder Sauer
-es} []\T1/cmss/m/n/10.95 wer-den, darf aber, be-kannt-lich, nicht [][]\T1/zi4/l
-/it/10.95 \Paragraph{Süÿes oder Saures}
- []
-
-
-Overfull \hbox (34.1419pt too wide) in paragraph at lines 108--110
+Overfull \hbox (34.1419pt too wide) in paragraph at lines 105--107
 \T1/cmss/m/n/10.95 übersetzt wer-den soll-te.[][][]Ähnliches ist bei op-tio-na-
 len Pa-ra-me-tern denk-bar. So dürf-te ein [][]\T1/zi4/l/it/10.95 \usepackage[e
 nglish]{babel}
  []
 
+[5]
 
-LaTeX Warning: Hyper reference `tab:problems:exampleParameter' on page 5 undefi
-ned on input line 114.
+LaTeX Warning: Hyper reference `tab:problems:exampleParameter' on page 6 undefi
+ned on input line 111.
 
-[5] [6]
-Overfull \hbox (127.345pt too wide) in paragraph at lines 208--209
+[6]
+Overfull \hbox (127.345pt too wide) in paragraph at lines 205--206
 [][]\T1/zi4/l/it/10.95 I detest using the \verb|\verb command| unnecessaringly.
  []\T1/cmss/m/n/10.95 eher [][]\T1/zi4/l/it/10.95 Ich lehne ein ünnötiges Nutze
 n des \verb|\verb command| ab.
  []
 
-[7] [8]
+[7] [8] [9]
 
-Package natbib Warning: Citation `math:galo' on page 9 undefined on input line 
-296.
+Package natbib Warning: Citation `math:galo' on page 10 undefined on input line
+ 293.
 
 
 ! LaTeX Error: \verb illegal in argument.
@@ -1689,58 +1683,58 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.296 ...te{math:galo}|} defines fields as \ldots}
+l.293 ...te{math:galo}|} defines fields as \ldots}
                                                   ) so sollte dieses nicht e...
 
 ? 
-[9]) [10]
+[10]) [11]
 \openout2 = `technologies/summary.aux'.
 
  (technologies/summary.tex
 
 Package natbib Warning: Citation `catholicUniversityOfAmerica:peterWilson1997:a
-LaTeXtoXautotagger' on page 11 undefined on input line 28.
+LaTeXtoXautotagger' on page 12 undefined on input line 28.
 
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 9.0pt on input line 28.
 Package hyperref Info: bookmark level for unknown lpcsec defaults to 0 on input
  line 44.
-[11
+[12
 
 
 
-] [12] (technologies/testverfahren.tex
+] [13] (technologies/testverfahren.tex
 
 Package natbib Warning: Citation `https://www.loremipsum.de/ueber_lorem_ipsum.h
-tml' on page 13 undefined on input line 2.
+tml' on page 14 undefined on input line 2.
 
 
 Package natbib Warning: Citation `https://support.microsoft.com/de-de/topic/hin
 weise-zum-text-lorem-ipsum-dolor-sit-amet-in-der-hilfe-von-microsoft-word-bf3b0
-a9e-8f6b-c2ab-edd9-41c1f9aa2ea0' on page 13 undefined on input line 2.
+a9e-8f6b-c2ab-edd9-41c1f9aa2ea0' on page 14 undefined on input line 2.
 
 
 Package natbib Warning: Citation `https://info.arxiv.org/help/bulk_data.html' o
-n page 13 undefined on input line 2.
+n page 14 undefined on input line 2.
 
 
-LaTeX Warning: Reference `appendix:c' on page 13 undefined on input line 6.
+LaTeX Warning: Reference `appendix:c' on page 14 undefined on input line 6.
 
-)) [13]
+)) [14]
 \openout2 = `contribution/workflow.aux'.
 
- (contribution/workflow.tex) [14
+ (contribution/workflow.tex) [15
 
 
 
 ]
 \openout2 = `conclusion/ending.aux'.
 
- (conclusion/ending.tex) [15
+ (conclusion/ending.tex) [16
 
 
 
-] [16
+] [17
 
 
 ]
@@ -1757,16 +1751,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--14
 /l/it/10.95 https : / / www . latex-[]project . org / help / books /
  []
 
-) [17]
+) [18]
 \openout2 = `appendices/appendix.aux'.
 
- (appendices/appendix.tex) [18
+ (appendices/appendix.tex) [19
 
 ]
 
 Package natbib Warning: There were undefined citations.
 
-runsystem(latexminted cleantemp  --timestamp 20251029131008 6A992D5529F459A44FE
+runsystem(latexminted cleantemp  --timestamp 20251029171849 6A992D5529F459A44FE
 E58C733255E86)...disabled (restricted).
 
 (index.aux (introduction/short.aux) (problems/list.aux)
@@ -1784,13 +1778,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: 63A7B53A90D8ACCEA495F660C70D1D35;3161.
+(rerunfilecheck)             Checksum: 95288595EB89DA84C936FA77C57B0B43;3223.
  ) 
 Here is how much of TeX's memory you used:
- 50405 strings out of 474485
- 1194464 string characters out of 5744206
+ 50409 strings out of 474485
+ 1194503 string characters out of 5744206
  1941542 words of memory out of 5000000
- 71752 multiletter control sequences out of 15000+600000
+ 71753 multiletter control sequences out of 15000+600000
  579286 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,13n,117p,1628b,871s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1812,9 +1806,9 @@ ic/cm-super/sfsx1200.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/cm-super/sfsx1440.pfb><C:/Users/Sxyx/AppData/Local/Programs/MiKTeX/fo
 nts/type1/public/cm-super/sfsx2074.pfb><C:/Users/Sxyx/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/cm-super/sfsx2488.pfb>
-Output written on index.pdf (22 pages, 774449 bytes).
+Output written on index.pdf (23 pages, 779180 bytes).
 PDF statistics:
- 546 PDF objects out of 1000 (max. 8388607)
- 109 named destinations out of 1000 (max. 500000)
+ 555 PDF objects out of 1000 (max. 8388607)
+ 112 named destinations out of 1000 (max. 500000)
  362 words of extra memory for PDF output out of 10000 (max. 10000000)
 
