@@ -1,15 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%% Fraglich, ob gebraucht? Bzw. wenn: Anpassungsbedarf!
-%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsubsection{Struktur einzelner Beispiele}
-% Um alle möglichen Permutationen von Problemen abzudecken, die bei einem Übersetzen von \TeX{} entstehen könnten, und dabei in eine übersichtliche Form zu überführen, wird durch verschiedene mögliche, denkbare Darstellungsformen gewechselt. Hierbei kann, aus einem zunächst, abstraktem Blickwinkel recht einfach nach Größe der Struktur und Zahl an möglichen Permutationen unterschieden werden, wobei weder noch eine konkrete, quantitative Angabe zulassen. Daher finden sich zunächst \enquote{kleine} Strukturen mit \enquote{wenigen} oder \enquote{vielen} \textit{erlaubten} Permutationen (in wohlmöglich entstehenden Übersetzungen) zusammen und bilden danach \enquote{Große}.% Übersetzungen, die entstehen könnten.
-% Für diese abstrakten Strukturen schnell einfache Darstellungsmöglichkeiten finden, abhängig von 2-dimensionalem Platzverbrauch, bzw.\ in dem Minimieren dieses. So werden kleine Beispiele mit wenigen Permutationen (innerhalb eines, wie hier, Dokumentes) möglichst nebeneinander gelistet, nachdem sie zuvor kurz beschrieben waren
-% Hatte hier die deutsche Grammatik verletzt: englisch: "So small examples with limited permutations will be listed most adjacently" geht gerade eben noch, aber: "So kleine Beispiele mit wenigen Permutationen möglichst nebeneinander gelistet" entstand, da ich das "werden" schon bedacht hatte, es in der englischen Grammatik nicht dort folgte, wo es in der Deutschen hätte platziert werden müssen, wodurch ich es übersprang... was mir erst im nachherein aufgefallen war
-% (bspw.:\ <Beispiel A> wird Fehler in möglichen Übersetzungen <Beispiel B> oder <Beispiel C> produzieren, da <B> die deutsche Grammatik oder <C> die \TeX{} Syntaktik verletzt, in Anwendung in z.B.~\ref{}).
-% Bei einer höhereren Zahl an Permutationen von kleinen Strukturen ist es von Interesse, diese möglichst dicht aneinander in zwei Dimensionen darzustellen, damit wohlmöglich kleine Unterschiede oder logische Muster in diesen erkennbar werden können. Diese Art der Darstellung findet sich in~\ref{} in Anwendung und wird in~\hyperref[tab:problems:exampleExample]{Beispiel 0} vereinfacht mit Hilfe von Binärkodierung dargestellt. Hierbei soll ein Ausgangswort/Zeichenkette, welche 4 Zeichen trägt, so verändert sein, dass sie genau eine 1 trägt. Aus allen 16 zulässlichen Permutationen für binäre Zeichenketten der Länge 4 ($2^4$)%, Münzwurf, für jedes Zeichen zwei Optionen
-% \pdfcomment{Darf man davon ausgehen, dass bei der Verwendung von --binären-- Zeichenketten 0 und 1 als Menge des Zeichensatzes verstanden werden? In der Satzstellung könnte --binär-- auch anders interpretiert werden (als zwei verschiedene, beliebige Zeichen)}
-% gelangt man bei 4 richtigen \enquote{Übersetzungen} an (insofern man das Übersetzen auch als eine Form der Codierung betrachten kann).
-
 % In dieser Darstellung ist zudem vorteilhaft, dass anhand der gebildeten \enquote{Muster} erkenntlich wird, dass nicht alle 4 bit eines Wortes gepüft werden müssen, um eine Richtigkeit zu bestätigen, wenn man davon ausgeht, dass Zeichenketten auch von rechts nach links gelesen werden können. Diese rein logische Operation führt dazu, dass bei einem Zeitgleichen überprüfen in beide Richtungen beide \enquote{Tests}, nachdem sie sich in der Mitte trafen, im nächsten bit fertig sind. Nach dem Ausschlussverfahren müss nämlich entweder eine \textit{links-nach-rechts} Iteration beachten, wie viele 1 vorliegen, genause wie die \textit{rechts-nach-links}. Jede dieser Iterationen muss dafür den gesamten Prüfungs-Prozess abbrechen können, sobald sie mehr als nur eine 1 liest (was 7 Fehler in zwei Schritten abdeckt). Im (logischen) dritten Schritt würden beide Iterationen ihre gesammelten auf Ungleichheit prüfen. Hätten beide Iteratoren je eine oder keine 1 gelesen, wäre diese Äquivalenzrelation gebrochen, wodurch ein Fehler erkennbar wäre (denn die Abfrage schließt die übrigen 5 Fehler mit ein).\footnote{Vorteil:\ $\mathcal{O}(\log{n}) statt \mathcal{O}(n)$ zur Überprüfung einzelner Zeichenketten auf Fehler. Diese könnte unter Anderem auf Rechtschreibkorrekturen angewendet werden.}% prüfen nochmal
 %\begin{table}
 %    \centering
@@ -25,24 +13,12 @@
 %\end{table}
 
 
-%Ein weiterer nutzbarer Vorteil ist, dass die größeren Strukturen aus den kleineren Strukturen in \TeX{} bestehen (bspw.\ Quelltexte bestehen aus Befehlen, Funktionen, Parametern, \ldots), wodurch Fehler nicht bis ins Detail verfolgt werden müssen, sondern nur ihre (logischen) Auswirkungen innerhalb von Dokumenten berücksichtigt werden müssen, sowie welche Änderungen in einem Dokument in mehrere andere Dateien nachverfolgt werden müssen, um danach rückwirkend Anpassungen im eigentlichen Dokument festzustellen.% Reihenfolge muss umgedreht werden,,,
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Hierzu wird in der Darstellung der Quelltexte mehr räumlicher Platz beansprucht.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%% Fraglich, ob gebraucht? Bzw. wenn: Anpassungsbedarf!
-%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 \begin{comment}
 \subsubsection{Interne Referenzen}
-\paragraph*{Abstraktes Beispiel}% Liegt in 2.2.3 konkreter vor. Diese Abschnitte lassen sich zusammenfassen, da sie das Gleiche meinen.
 Mittels \texttt{ref} oder \texttt{hyperref} (oder ähnlichem) wird auf einen Teil des Dokumentes verwiesen, in welchem ein Kontext für eine Übersetzung gesetzt wird (bspw.\ kann eine Referenz auf den Euklid einen mathematischen Kontext setzen). Jedoch produziert nur die Kenntnis, das eine Referenz auftritt und das Wort (z.B.) \enquote{ungerade} die Übersetzung:\ \enquote{crooked}, statt \enquote{odd}.
 
-\paragraph*{Nähere Erläuterung}
 Funktionen in \TeX{}, wie bspw.\ das Referenzieren (via \verb|~\ref{key}|) machen es möglich andere Teile des Dokumentes zu erwähnen und dadurch einen Kontext innerhalb eines Satzes oder Paragraphen zu implizieren. Diese Information liegt jedoch nicht direkt beim \enquote{lesen} des Quelltextes vor, sondern erst nach der Auflösung dieser internen Referenz.
+
 
 \subsubsection{Externe Referenzen}
 Mittels \texttt{cite} oder Ähnlichem wird auf ein anderes Werk verwiesen, welches nicht das aktuelle Dokument ist, jedoch einen neuen Kontext für die Übersetzung schafft.
@@ -53,10 +29,9 @@ Mittels \texttt{cite} oder Ähnlichem wird auf ein anderes Werk verwiesen, welch
 Zudem müssen einige Instanzen bedacht werden, in welchen zwar nicht eine Übersetzung selbst stattfinden muss, aber Texte in einem Dokument verändert werden müssen, nachdem diese bereits kompiliert wurden, bzw.\ in einer PDF vorliegen, welche ihrerseits angepasst werden müsste, was sich nur mit einem erneuten Kompilieren ändern lässt (da logische Änderungen innerhalb des Dokumentes auftraten).% Zeitformen bitte nochmals prüfen... Meint übrigens: Inhaltsverzeichnisse, Abbildungsverzeichnisse (wenn deren Captions übersetzt werden, wie sie es werden sollten), ...
 
 
+
 % Die gröbste Struktur eines Dokumentes entscheidet die Präambel von \TeX{}-Dokumenten, welche sich aus verschiedenen Formen von Befehlen zusammensetzt, von welchen nur begrenzt viele Inhalte übersetzt werden dürften (meist:\ keine).
 % Nach der Präambel, also im Teil, der \textit{tatsächliche} Inhalte im Dokument beschreiben soll, ist nach Befehlen (Kommandos) und Umgebungen zu klassifizieren, deren Funktion innerhalb des Quellcodes auch nach einem Übersetzen erhalten bleiben muss. Im Normalfall sei davon auszugehen, dass Kommandos innerhalb eines Dokumentes entweder bestimmte globale Parameter definieren (bspw.\ in der Präambel) oder in andere graphische Elemente (bspw.\ Formelzeichen, Stilisierung von Zeichenketten, \ldots) aufgelöst werden und Umgebungen Änderungen an größeren Teilen eines Abschnittes vornehmen\pdfcomment{beliebiger hierarchischen Höhe im DOM}. Einzelne Elemente der Präambel deuten jedoch darauf hin, welche Art von anderen Technologien (auf \TeX{}-aufbauend) in einem Dokument genutzt werden und wohingegen ein übersetztendes Programm die Suche nach zu übersetzenden Strings über das eigentliche Dokument (bzw.\ einen einzelnen Quellcode) hinaus ausweiten muss.
-
-
 
 
 
@@ -65,8 +40,7 @@ Zudem müssen einige Instanzen bedacht werden, in welchen zwar nicht eine Übers
 
 %\paragraph{Beispielliste}
 %\subparagraph*{Inhaltsverzeichnisse, Abbildungsverzeichnisse, Tabellenlisten}
-%\paragraph*{Beispiel}
-%\paragraph*{Erläuterung}
+
 %Ändern wir den Titel eines Paragraphen oder Abschnittes, dann erfasst dies der \TeX{} Compiler beim ersten Durchlauf. Jedoch der String im Inhaltsverzeichnis kann nur verändert werden, sobald diese Information zu Beginn des nächsten Kompilierungsprozesses in der entsprechenden Hilfsdatei vorliegt (\texttt{.toc}).
 
 %\subparagraph{Backrefs}
@@ -79,24 +53,9 @@ Zudem müssen einige Instanzen bedacht werden, in welchen zwar nicht eine Übers
 %\paragraph*{Beispiel}
 %\paragraph*{Erläuterung}
 
-%\subparagraph*{PDF Funktionen}
-%\paragraph*{Beispiel}
-%\paragraph*{Erläuterung}
-
 %\subparagraph*{\enquote{footnotes}}
 %\paragraph*{Beispiel}
 %\paragraph*{Erläuterung}
-
-
-
-
-
-
-% Bemerkung: Nur die Suche (google.com) nach "salomon c programmierung" führt bspw. Gemini zu einer vermuteten Verwechslung mit dem Begriff "System" (Stand: 09.10.2025, 12:29).
-% ISBN führt zur gleichen Minute direkt zum Institut (Angewandte Mikroelektronik und Datentechnik)... wobei Thalia denkt, dass ich "1984" online kaufen möchte...
-\paragraph*{Abstrahierung}
-Einfache Cloud-Architektur. Ein Client möchte auf ein beliebiges Wissen einer Webseite (bzw.\ dem Server und den beanspruchten Speicherplätzen in einem (beliebigen) Rechenzentrum\footnote{Hierbei ist nicht von Festspeicher zu reden. Aus Sicherheitsgründen sei davon auszugehen, dass sich die physischen Adressen des wissensrepräsentierenden Speichers regelmäßig und unvorhersehbar ändern} zugreifen).
-
 
 
 

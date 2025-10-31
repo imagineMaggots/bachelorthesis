@@ -28,7 +28,7 @@ Abschlussarbeit ITTI B.Sc.:
         - ist: Ausgangssituation beschreiben
             - ist: Nötige Strukturen erklären
                 - ist: Abstrakte (Logische) Strukturen schildern
-                - ist: Bennenung bekannter Strukturen // aus gewöhnlichen Dokumenten //
+                - ist: Bennenung bekannter Strukturen // aus gewöhnlichen Dokumenten, keine Listung, die später //
             - ist: Realisierung der Strukturen im Kontext // ggb. normalen Texten //
         - ist: Verallgemeinertes Problem schildern
             - ist: Technische Perspektive beschreiben
@@ -37,6 +37,10 @@ Abschlussarbeit ITTI B.Sc.:
 // Stand des letzten Arbeitens.
     - ist: Einzelne Beispiele darstellen
         - soll: Tabellarisch auflisten --- Soll/Ist
+            - soll: Häufige Fälle darlegen // Probleme, auf die ein Jederman stößt //
+            - soll: Seltenere Fälle präsentieren // welche allerdings durchaus nützlich sein könnten //
+            - soll: Spezielle technische Probleme zeigen // wie nützlich diese sind, sei fraglich //
+            - soll: Andere Probleme // Fehlerquellen im gegebenen Kontext, aber nicht direkt lösbar oder relevant für das Thema //
         - ist: Beispiele verdeutlichen
         - soll: Beispiele typographisch herausstellen
             - soll: Fehler noch auffälliger zeigen 
