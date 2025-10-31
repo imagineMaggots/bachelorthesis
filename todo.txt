@@ -47,8 +47,8 @@ Abschlussarbeit ITTI B.Sc.:
             - soll: Visuell schnell erfassbar sein 
             - soll: Überlesbarkeiten vermeiden
     - soll: Auflistung von Fehlern
-        - soll: Führt von häufig zu selten
-        - soll: Leicht nachvollziehbar
+        - ist: Führt von häufig zu selten
+        - evtl: Leicht nachvollziehbar
     - soll: Potentielle Schwächen aufzeigen 
 - technologien (6 bis 7 Seiten) [1 bis 1,5 Wochen]
     - soll: Kandidaten betrachten (2 Seiten) [1 bis 2 Tage]

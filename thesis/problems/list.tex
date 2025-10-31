@@ -87,6 +87,7 @@ Es zeigt sich also eine weitere Form \textit{zu übersetzende} Texte zu erkennen
 \subsubsection{Verzeichnisse für bestimmte Elemente}% Meint: Table of Contents, List of Figures/Tables, aber auch Literaturverzeichnisse (Änderungen in der .bib müssen auch im Dokument landen, nicht nur in der Bib) und dergleichen
 %\subsubsection{Literaturverzeichnisse}% Was man BibTeX aus einem Quelltext heraus mitgeben kann.
 
+\subsubsection{Verbatim und Kommentare}% Wir gehen in ein Verbatim environment. Hört dort das Verständnis von "hier ist TeX Code" TeX auf, wie es in Kommentaren zu erwarten wäre?
 
 %%% Gefällt mir hier in der Reihenfolge nicht... bekomm ich das an den Anfang / nach oben? Siehe "Umgebungen und Verweise".
 \subsubsection{Die Präambel}% Im wesentlichen eigentlich key-value Paare, hypersetup ist nur gutes Beispiel und wird üblicherweise nach dem Einbinden des Paketes direkt verwendet (was aber nicht zwingend ist)
@@ -112,7 +113,7 @@ Fehlerquellen dieser Art sind im Quelltext in der Form \verb|\command{Non-transl
 %%% Darstellung einzelner Beispiele // Tabellarische Auflistung // Seltenere Fälle
 
 %% Listung von häufig nach seltener (Was muss man bei der Übersetzung eines Dokumentes, das aus mehrerer Dateien besteht, beachten? Bzw. welche Art von anderen Quelltexten sind bekannt / werden öfters genutzt?): 
-%%% Einfach .tex -> .bib -> .sty -> .cls -> .bst -> andere, beliebige Quelltexte
+%%% Einfach .tex -> .bib -> .sty/.dtx -> .cls -> .bst -> andere, beliebige Quelltexte
 
 \subsection{Probleme für mehrere Quelltexte}
 \subsubsection{Triviale Fälle}% Einbindung von einfachen .tex... da springt das Übersetzen dann einfach in diese Datei rüber. Und Root+Unterverzeichnisse
@@ -133,7 +134,7 @@ Viele Pakete erlauben es, dass die in Ihnen vorliegenden textlichen Inhalte, die
 Nun 
 
 \subsubsection{Zitationsstil und Bibliotheken}% BibTeX-assoziierte Dateien sollen angepasst werden, insb. .bst, nicht nur .bib!
-\subsubsection{Nicht zu interpretierende Quelltexte}% Meint: minted und lstlisting
+\subsubsection{Darstellung von Quellcode}% Meint: minted und lstlisting
 
 
 
