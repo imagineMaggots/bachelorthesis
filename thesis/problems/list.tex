@@ -50,21 +50,29 @@ Die Darstellung des erläuterten Beispiels gilt musterhaft für folgende Beispie
 \subsection{Elemente in einem Quelltext}
 
 %%% Darstellung einzelner Beispiele // Tabellarische Auflistung // Häufige Fälle
-% Welche Strukturen nutzt man häufig in Dokumenten?
 
-\subsubsection{Fließtexte, Überschriften und Captions}\phantomsection\label{subsubsec:problems:texts}% Alt.: Texte?
+%% Listung von häufig nach seltener (Was benutzt man in \TeX{}? Bzw. in welcher Reihenfolge werden diese Elemente interessant/relevant?): Paragraphen -> Abschnitte -> Fuß-/Randnotizen -> Listen -> Photos und Tabellen -> Untertitel/Beschreibungen -> Mathematische Formeln/Gleichungen -> Umgebungen -> Graphiken und Diagramme -> Referenzen/Verweise -> Literatur- und Inhaltsverzeichnisse -> Eigene Kommandos -> Eigene Umgebungen -> Nutzung von Paketen -> Einbinden von anderen Dokumenten/Quelltexten
+
+%% Story wohl lieber: "Wir bauen ein Dokument auf, wie können wir vorgehen"... zumindest von der Denkweise
+
+
+\subsubsection{Paragraphen, Überschriften und Anmerkungen}\phantomsection\label{subsubsec:problems:texts}% Alt.: Texte?
 Am leichtesten wäre einem Übersetzer das Übersetzen von reinen Fließtexten. Strukturlose und unformatierte Blocktexte erschweren einem Leser (Endnutzer) aber das Nachvollziehen der Inhalte und verhindern es, dass zum Beispiel Inhalte von Paragraphen mit deren Überschriften assoziiert werden könnten, um hierbei den Fokus von der exakten Wortwahl hin zur Bedeutung des Themas zu rücken.% Das gut?
 Als einfachstes stilistisches Mittel sind hier, wie angedeutet, Überschriften oder Kapiteltitel denkbar. Diese sind (vorerst) einfach an einer endlichen Menge an Befehlen erkennbar. Wichtig ist in solchen Fällen, dass --- selbstverständlich --- die eigentlichen Befehle nicht übersetzt werden, damit ihre Bedeutung innerhalb der Programmiersprache \TeX{} erhalten bleibt. Konkreter sollte zum Beispiel \verb|\chapter{Bracelets}| zu \verb|\chapter{Armbänder}| werden und nicht in \verb|\Kapitel{Armbänder}|.
 % Umfasst auch: footnotes, marginnotes, ...
 Parallel hierzu sollten auch Untertitel (Captions), Randbemerkungen (Fußzeile, Randbereiche, als auch sonstige Orte) und der Titel des Dokumentes selbst übersetzt sein. Technisch sind solche Wort- bzw.\ Zeichenketten im Quelltext in der Form \verb|\command{Translatable content}| vorliegend, wobei Kommandos generell nicht übersetzt werden sollten.
 
+% ToDo-Listen sind toll. Tabellen können Ergebnisse der Arbeit gut festhalten.
+\subsubsection{Listen und Tabellen}% Hier auch: \command[translatable]
+Weitere stilistische Mittel, welche sich innerhalb von Dokumenten finden lassen, sind beispielsweise Listen oder Tabellen. Diese erscheinen auf den ersten Blick nicht als neues Problem, da innerhalb dieser Strukturen freistehende (Fließ-) Texte für gewöhnlich ihren Weg in das Dokument finden sollen. Problematisch können allerdings Fälle werden, in denen solche Strukturen Inhalte tragen, die nicht übersetzt werden dürfen.  
 
+% Oh weh, es wird gerechnet.
 \subsubsection{Mathematische Typsetzung}
 Üblicherweise wird man in einem \TeX{}-Dokument mathematische Inhalte vorliegen haben, bspw.\ Formeln, Matrizen oder Gleichungen. \TeX{} selbst wechselt hier durch ein Dollarzeichen \verb|$| in den \textit{math mode} hinein (und heraus), aber ein Übersetzer steht zunächst nur vor Fragezeichen. Im ersten Moment wäre davon auszugehen, dass solche \enquote{Mathematik-Bereiche} in einem Dokument keine sprachlichen Inhalte tragen und daher ohnehin nicht übersetzt werden würden. Es muss allerdings darauf geachtet werden, dass diese Bereiche sprachliche Inhalte tragen \textit{könnten} und das in einer entweder direkt erkennbaren Form (da bspw.\ mittels \verb|\text{}| innerhalb des Bereiches ein Textbereich erzeugt wird) oder in einer Form, welche Interpretationsspielraum lässt. 
 So wäre es für zum Beispiel \verb|$x = 4 \textbf{means: something is equal to four.}$| klar, dass zu \verb|$x = 4 \textbf{bedeutet: etwas ist gleich vier.}$| übersetzt werden soll. 
 In der Zeichenfolge \verb|$x = 4 means: something is equal to four.$| fehlt ein solcher Indikator allerdings, wodurch es fraglich ist, ob eine Übersetzung \verb|$x = 4 bedeutet: etwas ist gleich vier.$| entstehen wird. Genauso könnte der Fall eintreten, dass an der Stelle von einzelnen Zeichen, ganze Wörter als Variablennamen genutzt werden. Beispielsweise sollte \verb|$cars = 3, price = 10\$ $| nicht zu \verb|$Autos = 3, Preis = 10\$ $| werden, da ein Verändern der Variablennamen das Nachvollziehen von mathematischen Herleitungen unmöglich macht. Dementsprechend wäre ein Übersetzen von Wörtern innerhalb mathematischer Umgebungen zwar nicht immer falsch, aber sicherer wäre ein Absehen von diesem (da es vorgesehene und erkennbare Wege gibt, Texte in mathematischen Bereichen zu integrieren).
 
-\subsubsection{Umgebungen und Verweise}
+\subsubsection{Umgebungen und Verweise}% Wird evtl.: Umgebungen und Pakete und dann Verweise einzeln?
 Zuvor beschriebene \enquote{mathematische Bereiche} sind nur eine Art spezielle Einstellungen für bestimmte Flächen eines Dokumentes vorzunehmen. Ob innerhalb einer Umgebung übersetzt werden soll, muss für diese spezifisch ausgewertet werden (worauf in~\ref{subsubsec:problems:uniqueenvironments} näher eingegangen wird). Wichtiger ist zunächst, dass die syntaktischen Regeln bei der Nutzung von Umgebungen innerhalb \TeX{} erhalten bleiben. So darf \verb|\begin{escape}| nicht zu \verb|\begin{Flucht}| werden und \verb|\end{escape}| nicht zu \verb|\end{Flucht}|. 
 Was zunächst trivial wirkt, kann aus technischer Sicht Probleme hervorrufen. Entgegen der in~\ref{subsubsec:problems:texts} geschilderten Art und Weise mit welcher zu übersetzende Strings erkannt werden könnten, sind in gleicher Form auch Zeichenketten vorliegend, welche nicht übersetzt werden dürften. Dies gilt für mehr als nur die Arbeit mit Umgebungen, welche vermutlich seltener auftreten könnten, denn auch (Hyper-) Referenzen und Links fallen in diese Kategorie. Einfache URL zu erkennen, ist auf Grund deren vorgegebener Struktur sehr leicht 
 %(\verb|\url{port-association://location-relative-to-domain.extension}|)
@@ -73,14 +81,25 @@ Was zunächst trivial wirkt, kann aus technischer Sicht Probleme hervorrufen. En
 
 Inhalte von geschwungenen Klammern sind demnach individuell auszuwerten. Allerdings ist dies nicht die einzige Art von Klammer, welche eine syntaktische Bedeutung in \TeX{} trägt. Beispielsweise können benannte Labels auch mit \verb|\hyperref| referenziert werden. Dieser Befehl erlaubt es den Schlüssel in eckige Klammern zu schreiben und danach in geschwungenen Klammern den Text zu denotieren, welcher im Dokument als Maske für die Verknüpfung dienen soll. 
 Es zeigt sich also eine weitere Form \textit{zu übersetzende} Texte zu erkennen und zwar \verb|\command[non-translatable string]{translatable content}|.
+% \marginpar[left text]{right text} might be more suitable as an example?
 
-\subsubsection{Listen und Tabellen}
-Weitere stilistische Mittel, welche sich innerhalb von Dokumenten finden lassen, sind beispielsweise Listen oder Tabellen. Diese erscheinen auf den ersten Blick nicht als neues Problem, da innerhalb dieser Strukturen freistehende (Fließ-) Texte für gewöhnlich ihren Weg in das Dokument finden sollen. Problematisch können allerdings Fälle werden, in denen solche Strukturen Inhalte tragen, die nicht übersetzt werden dürfen.  
 
+\subsubsection{Verzeichnisse für bestimmte Elemente}% Meint: Table of Contents, List of Figures/Tables, aber auch Literaturverzeichnisse (Änderungen in der .bib müssen auch im Dokument landen, nicht nur in der Bib) und dergleichen
+%\subsubsection{Literaturverzeichnisse}% Was man BibTeX aus einem Quelltext heraus mitgeben kann.
+
+
+%%% Gefällt mir hier in der Reihenfolge nicht... bekomm ich das an den Anfang / nach oben? Siehe "Umgebungen und Verweise".
 \subsubsection{Die Präambel}% Im wesentlichen eigentlich key-value Paare, hypersetup ist nur gutes Beispiel und wird üblicherweise nach dem Einbinden des Paketes direkt verwendet (was aber nicht zwingend ist)
-%%% Darstellung einzelner Beispiele // Tabellarische Auflistung // Seltenere Fälle
 
-\subsubsection{Eigene Umgebungen und Makros}\phantomsection\label{subsubsec:problems:uniqueenvironments}
+Das gleichnamige Paket, aus welchem dieser \texttt{hyperref}-Befehl stammt, zeigt, wie es einige Pakete erlauben Schlüssel-Wert Paare für das Setzen einiger spezifischer Optionen zu übergeben. Beispielsweise würde der Befehl \verb|\usepackage[pdftitle=something]{hyperref}| den Titel der entstehenden PDF (für einen PDF-Reader/Renderer) zu \enquote{something} ändern. Nachdem das Dokument übersetzt wurde, wäre es durchaus wünschenswert, wenn auch der Titel übersetzt wurde (\verb|\usepackage[pdftitle=Irgendetwas]{hyperref}|). Demnach können auch eckige Klammern Strings enthalten, welche es zu übersetzen gilt. 
+Neben Paketen, wie \texttt{hyperref}, erlaubt die Präambel einer Vielzahl an solchen strukturellen Änderungen oder anderen Einstellungen, welche sich über das ganze Dokument erstrecken. 
+Insbesondere ist in dieser die Definition von eigenen Umgebungen von Interesse, da diese textliche Inhalte in verschiedenen Formen tragen können, welche es alle zu übersetzen gilt.
+\footnote{Makros lassen sich im gesamten Dokument definieren. Umgebungen allerdings ausschließlich in der Präambel.}
+
+
+%%% Darstellung einzelner Beispiele // Tabellarische Auflistung // Seltenere Fälle
+\subsubsection{Eigene Makros}
+\paragraph*{Eigene Umgebungen}\phantomsection\label{subsubsec:problems:uniqueenvironments}
 
 
 \subsubsection{Der Weg zu anderen Quelltexten (und Dateien)}% Überleitung zu mehreren Quelltexten/Paketen
@@ -89,26 +108,48 @@ Würde beispielsweise \verb|\include{clock}| zu \verb|\include{Uhr}| übersetzen
 Das Gleiche gilt auch für den Befehl \verb|\input| und \verb|\includepdf| (oder auch:\ \verb|\includegraphics| und Weitere). Interessant wird an dieser Stelle auch, inwiefern die Inhalte von anderen Dokumenten (PDF) erkannt werden, bzw.\ wie mit diesen Umgegangen wird oder werden sollte/könnte. Dies wird im späteren Kapitel~\ref{subsubsec:problems:pdfinclusion} näher betrachtet.
 Fehlerquellen dieser Art sind im Quelltext in der Form \verb|\command{Non-translatable content}| vorliegend.
 
+\newpage
+%%% Darstellung einzelner Beispiele // Tabellarische Auflistung // Seltenere Fälle
 
-\subsection{Probleme in mehreren Quelltexte}
-\subsubsection{Triviale Fälle}% Einbindung von einfachen .tex... da springt das Übersetzen dann einfach in diese Datei rüber.
-\subsubsection{Pakete und Klassen}% Sind andere Quelltexte, da .sty
+%% Listung von häufig nach seltener (Was muss man bei der Übersetzung eines Dokumentes, das aus mehrerer Dateien besteht, beachten? Bzw. welche Art von anderen Quelltexten sind bekannt / werden öfters genutzt?): 
+%%% Einfach .tex -> .bib -> .sty -> .cls -> .bst -> andere, beliebige Quelltexte
+
+\subsection{Probleme für mehrere Quelltexte}
+\subsubsection{Triviale Fälle}% Einbindung von einfachen .tex... da springt das Übersetzen dann einfach in diese Datei rüber. Und Root+Unterverzeichnisse
+Bereits bekannt ist, dass Befehle, welche andere Quelltexte einbeziehen, um ein gesamtes Dokument zu beschreiben, nicht übersetzt werden dürfen, dürfen nun aber auch die Inhalte dieser Dateien nicht unübersetzt bleiben.
+% Hier: Wenn Befehl \include{document} benutzt wird, dann müssen die Inhalte von document.tex übersetzt werden. Beispielhafte Inhalte von document.tex:
+%%% \section{document} this content should be translated!
+% muss zu:
+%%% \section{Dokument} diese Inhalte sollten übersetzt werden!
+% werden!
+%% Das Gleiche gilt für jede Form von Input reiner .tex-files!
+Wichtig ist bei einem Einbinden von anderen Quelltexten auf diese Art und Weise, dass die Dateipfade relativ zum Ausgangsquelltext vermerkt werden. 
+Sieht ein Übersetzer also ein \verb|\input{clock.tex}|, dann muss er diese Datei beginnend im \textit{root}-Verzeichnis des Dokumentes suchen und darf nicht ausgehend von der aktuellen Datei, in welcher er sich befindet, eine Suche beginnen.~\verb|\include| können sich nur im ursprünglichen Quelltext befinden, \verb|\input| kann allerdings auch in einem Quelltext stehen, der seinerseits bereits über ein \verb|\include| oder \verb|\input| eingebunden wurde und könnte in einem Unterverzeichnes von \textit{root} liegen.
+
+\subsubsection{Pakete und Klassen}% Sind andere Quelltexte, da .sty... wird evtl. zur "Präambel"
 % Klassen sind an sich das Gleiche, wie Pakete nur andere Dateiendung/Einbindung in TeX. Für den Übersetzer ist _diese_ technische Bedeutung aber zweitrangig
-\subsubsection{Zitationen}% BibTeX-assoziierte Dateien sollen angepasst werden, insb. .bst, nicht nur .bib!
-\subsubsection{Nicht zu interpretierende Quelltexte}
+Viele Pakete erlauben es, dass die in Ihnen vorliegenden textlichen Inhalte, die auch im enstehenden Dokument gedruckt werden, angepasst werden können. Dies ist allerdings nicht immer (einfach) möglich. Nicht jedes Paket liefert einen eigenen Befehl hierfür oder muss die spezifischen Makros und deren Definitionen erkenntlich/öffentlich machen, damit deren Funktion reproduziert und gewünschte Strings geändert werden können. Allerdings müssen alle mit einem Dokument assoziierten Dateien (zu welchen Pakete \texttt{.sty} zählen) vorliegen, sobald dieses entstehen soll.
+% Hier examplarisches Paket zeigen und wie es übersetzt werden soll.
+Nun 
+
+\subsubsection{Zitationsstil und Bibliotheken}% BibTeX-assoziierte Dateien sollen angepasst werden, insb. .bst, nicht nur .bib!
+\subsubsection{Nicht zu interpretierende Quelltexte}% Meint: minted und lstlisting
 
 
 
 
 %%% Darstellung einzelner Beispiele // Tabellarische Auflistung // Spezielle technische Probleme
+%% Listung von häufig nach seltener (Welche speziellen Aktionen sorgen für uneindeutige Erkennung von den geschilderten Problemen? Genauer, warum ist die Syntax nicht als festes Maß zu werten? Eigentlich: Ausnahmen von den Regeln!)
+%% Ändern von einzelnen Zeichen ist möglich -> Einige Befehle erlauben die Nutzung von beliebigen Zeichen als Klammern -> Alte Makros können neu/anders definiert werden -> Zusätzliche Funktionen in digitalen Dokumenten
 \subsection{Spezielle/Spezifische Probleme}
-\subsubsection{Verzeichnisse für bestimmte Elemente}% Meint: Table of Contents, List of Figures/Tables, aber auch Literaturverzeichnisse (Änderungen in der .bib müssen auch im Dokument landen, nicht nur in der Bib) und dergleichen
+
 \subsubsection{Category Codes}
 \subsubsection{Nutzer-eigene Klammern}
 \subsubsection{Neudefinition bekannter Makros}% Man kann sich nicht einfach nur die Titel und Autoren merken und Standardmäßig bei jedem bspw. \maketitle die normalen Angaben drucken, da sich dieser Befehl ändern könnte
 \subsubsection{PDF-Kommentare}% Nicht wichtig, aber nice to have
 
 %%% Darstellung einzelner Beispiele // Tabellarische Auflistung // Andere Probleme
+%% Reihenfolge hier wahrscheinlich nicht mehr so relevant. Sinnvoll ist: Menschensprachliche Probleme (Mehrdeutigkeiten, Abkürzungen, ...) -> Provozierte (technische) Mehrdeutigkeiten -> PDF-Erkennung/Auswertung -> Layouting-Probleme (TikZ und sonstige Überlappungen)
 \subsection{Andere Probleme}
 \subsubsection{Provozierte Schwierigkeiten}
 \subsubsection{Erkennung und Auswirkung von PDF}\phantomsection\label{subsubsec:problems:pdfinclusion}
