@@ -51,13 +51,18 @@ Die Darstellung des erläuterten Beispiels gilt musterhaft für folgende Beispie
 
 %%% Darstellung einzelner Beispiele // Tabellarische Auflistung // Häufige Fälle
 
-%% Listung von häufig nach seltener (Was benutzt man in \TeX{}? Bzw. in welcher Reihenfolge werden diese Elemente interessant/relevant?): Paragraphen -> Abschnitte -> Fuß-/Randnotizen -> Listen -> Photos und Tabellen -> Untertitel/Beschreibungen -> Mathematische Formeln/Gleichungen -> Umgebungen -> Graphiken und Diagramme -> Referenzen/Verweise -> Literatur- und Inhaltsverzeichnisse -> Eigene Kommandos -> Eigene Umgebungen -> Nutzung von Paketen -> Einbinden von anderen Dokumenten/Quelltexten
+%% Listung von häufig nach seltener (Was benutzt man in \TeX{}? Bzw. in welcher Reihenfolge werden diese Elemente interessant/relevant?): Paragraphen/Texte -> Abschnitte -> Fuß-/Randnotizen -> Listen -> Photos und Tabellen -> Untertitel/Beschreibungen -> Mathematische Formeln/Gleichungen -> Umgebungen -> Graphiken und Diagramme -> Referenzen/Verweise -> Literatur- und Inhaltsverzeichnisse -> Eigene Kommandos -> Eigene Umgebungen -> Nutzung von Paketen -> Einbinden von anderen Dokumenten/Quelltexten
 
 %% Story wohl lieber: "Wir bauen ein Dokument auf, wie können wir vorgehen"... zumindest von der Denkweise
 
 
 \subsubsection{Paragraphen, Überschriften und Anmerkungen}\phantomsection\label{subsubsec:problems:texts}% Alt.: Texte?
-Am leichtesten wäre einem Übersetzer das Übersetzen von reinen Fließtexten. Strukturlose und unformatierte Blocktexte erschweren einem Leser (Endnutzer) aber das Nachvollziehen der Inhalte und verhindern es, dass zum Beispiel Inhalte von Paragraphen mit deren Überschriften assoziiert werden könnten, um hierbei den Fokus von der exakten Wortwahl hin zur Bedeutung des Themas zu rücken.% Das gut?
+Die einfachste Form in welcher ein Übersetzer zu übersetzende Zeichen- / Wortketten innerhalb eines Quelltextes vorfinden kann, sind reine Fließtexte. So wäre das einfachste Dokument, welches übersetzt werden könnte, ähnlich zu Beispiel~\ref{exem:problems:paragraph}
+
+
+
+
+Strukturlose und unformatierte Blocktexte erschweren einem Leser (Endnutzer) aber das Nachvollziehen der Inhalte und verhindern es, dass zum Beispiel Inhalte von Paragraphen mit deren Überschriften assoziiert werden könnten, um hierbei den Fokus von der exakten Wortwahl hin zur Bedeutung des Themas zu rücken.% Das gut?
 Als einfachstes stilistisches Mittel sind hier, wie angedeutet, Überschriften oder Kapiteltitel denkbar. Diese sind (vorerst) einfach an einer endlichen Menge an Befehlen erkennbar. Wichtig ist in solchen Fällen, dass --- selbstverständlich --- die eigentlichen Befehle nicht übersetzt werden, damit ihre Bedeutung innerhalb der Programmiersprache \TeX{} erhalten bleibt. Konkreter sollte zum Beispiel \verb|\chapter{Bracelets}| zu \verb|\chapter{Armbänder}| werden und nicht in \verb|\Kapitel{Armbänder}|.
 % Umfasst auch: footnotes, marginnotes, ...
 Parallel hierzu sollten auch Untertitel (Captions), Randbemerkungen (Fußzeile, Randbereiche, als auch sonstige Orte) und der Titel des Dokumentes selbst übersetzt sein. Technisch sind solche Wort- bzw.\ Zeichenketten im Quelltext in der Form \verb|\command{Translatable content}| vorliegend, wobei Kommandos generell nicht übersetzt werden sollten.

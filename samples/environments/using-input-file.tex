@@ -1,0 +1,16 @@
+\documentclass{article}
+\newenvironment{displaySourceCode}[1][] % Will fail without proper path to file
+{
+    \begin{center}
+    \input{#1}
+}
+{
+    \end{center}
+}
+
+\begin{document}
+
+\begin{displaySourceCode}[knowledge]
+\end{displaySourceCode}
+
+\end{document}

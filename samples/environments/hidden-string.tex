@@ -1,0 +1,19 @@
+\documentclass{article}
+% Contains a string that will be printed in front of everything else inside the environment
+\newenvironment{displaySourceCode}[1][Basic]
+{
+    \begin{center}
+    #1
+}
+{
+    \end{center}
+}
+
+\begin{document}
+
+\begin{displaySourceCode}
+Knowledge
+\end{displaySourceCode}
+% Both "Basic" and "Knowledge" have to be translated 
+
+\end{document}

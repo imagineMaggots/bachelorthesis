@@ -6,7 +6,7 @@
 %		\textwidth, \paperwidth, ...
 
 \documentclass[11pt,toc,multi=tcblisting]{article}
-\renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\sfdefault}
 \setcounter{secnumdepth}{6}
 
 \usepackage{ifthen}
@@ -17,7 +17,8 @@
 \usepackage{booktabs,array}
 \usepackage[author={Hendrik Theede}]{pdfcomment}
 \usepackage{tabularx}
-
+\usepackage{paracol}
+\usepackage{framed}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -49,24 +50,81 @@
 	breakindent=13pt,
     framesep=2mm,
     framerule=0mm,
-    abovecaptionskip=5mm,
-    aboveskip=\baselineskip,
-    belowskip=\baselineskip,
+    abovecaptionskip=1ex,
+    belowcaptionskip=1ex,
+    aboveskip=1ex,
+    belowskip=1ex,
 	lineskip=1ex,
-	postbreak=\raisebox{0ex}[0ex][0ex]{\tiny\tiny$\hookrightarrow$}, % \rule[Offset (Y)]{Breite}{Höhe}, hiermit nochmal rumspielen. 
+	postbreak=\mbox{\textcolor{red}{\tiny\tiny$\hookrightarrow$}\space}, % \rule[Offset (Y)]{Breite}{Höhe}, hiermit nochmal rumspielen. 
+    columns=fullflexible,
 	% Captions
-    captionpos=b,                    
+    captionpos=t,                    
     keepspaces=true,    
 	% Linenumbers
     numbers=left,      % where to place numbers
-    numbersep=0pt,     % distance to the (here) left   
+    numbersep=2pt,     % distance to the (here) left   
     % Encodings
 	inputencoding=utf8,
 	extendedchars=true,
 	literate=
 		{ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
 }
-\lstset{style=texstyle}
+\lstset{
+    style=texstyle,
+    morecomment=[l][\color{green}]{//}
+    }
+
+\newcounter{displaySourceCode}[section]
+\newenvironment{displaySourceCode}[4][Beispiel]
+{
+    \refstepcounter{displaySourceCode}
+    \def\description{#1}%
+
+    
+    \textbf{\description~\thesection.\thedisplaySourceCode~(Anfang)}
+    \vspace{2pt}
+    \hrule%
+    \vspace{.2em}
+
+
+    \begin{paracol}{3}
+    \raggedright%
+    \begin{framed}
+    \lstinputlisting[nolol, title={\textit{Original}}, captionpos=t]{#2.tex}
+    \end{framed}
+
+    \switchcolumn%
+
+    \raggedleft%
+    \begin{framed}
+    \lstinputlisting[nolol, title={\textit{Potentieller} Fehler}, captionpos=t]{#3.tex}
+    \end{framed}
+
+    \switchcolumn%
+
+    \raggedleft%
+    \begin{framed}
+        % Note: Putting "Ä" "Ö" or "Ü" in a Box prevents their dots from raising the one the character's currently in
+        % Otherwise: The Box around the Code-Sample will be raised above the Title/Caption
+    \lstinputlisting[nolol, title={\textit{Soll}-\raisebox{0em}[0em][0em]{Ü}bersetzung}, captionpos=t]{#4.tex}
+    \end{framed}
+
+    \switchcolumn%
+    \end{paracol}
+
+    \hrule%
+    \vspace{1em}
+}
+{
+    %\newgeometry{left=2cm, right=2cm}
+    %\newgeometry{left=.5\textwidth}
+    %\lstinputlisting[caption=aha]{#2.tex} 
+    \\\noindent
+    \raggedleft%
+    \hrule%
+    \vspace{.5em}
+    \textbf{\description~\thesection.\thedisplaySourceCode~(Ende)}\\[1em]\noindent
+}
 
 
 

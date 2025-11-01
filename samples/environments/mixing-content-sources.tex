@@ -1,0 +1,23 @@
+% Contains strings inside the document, a unique environment, as well as a file (that is called from inside the environment)
+\documentclass{article}
+\newenvironment{displaySourceCode}[1][]
+{
+    \begin{center}
+        \begin{tabular}{l|r}
+        \hline
+        \input{#1} &
+}
+{
+        and wisdom\\
+        \hline
+        \end{tabular}
+    \end{center}
+}
+
+\begin{document}
+
+\begin{displaySourceCode}[knowledge]
+    even more knowledge
+\end{displaySourceCode}
+
+\end{document}

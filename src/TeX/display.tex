@@ -1,0 +1,166 @@
+% For displaying code side by side.
+% Standard: Left is a correct/flawless code, Right depicts code with errors
+% Might still need some further code-sensitive highlighting options
+% 
+
+\documentclass{article}
+\usepackage[left=2cm, right=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{longtable}
+\usepackage{paracol}
+\usepackage{inconsolata}
+
+\lstdefinestyle{texstyle}{
+	% Colors
+	backgroundcolor=\color{white},
+    commentstyle=\color{SeaGreen},
+    keywordstyle=\color{Magenta},
+    numberstyle=\tiny\color{red},
+    stringstyle=\color{Fuchsia},
+    basicstyle=\ttfamily\footnotesize\color{black},
+	% Linebreaks and Whitespace
+    breaklines=true,% Sagt: Bei benötigtem Zeilenumbruch gehen wir in eine neue Zeile
+	%breakatwhitespace=true,   
+	showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,
+	frame=single,
+	xleftmargin=13pt,
+	aboveskip=13pt,
+	%
+	% Indentation
+	tabsize=2,
+	breakindent=13pt,
+    framesep=2mm,
+    framerule=0mm,
+    abovecaptionskip=1ex,
+    belowcaptionskip=1ex,
+    aboveskip=1ex,
+    belowskip=1ex,
+	lineskip=1ex,
+	postbreak=\mbox{\textcolor{red}{\tiny\tiny$\hookrightarrow$}\space}, % \rule[Offset (Y)]{Breite}{Höhe}, hiermit nochmal rumspielen. 
+    columns=fullflexible,
+	% Captions
+    captionpos=t,                    
+    keepspaces=true,    
+	% Linenumbers
+    numbers=left,      % where to place numbers
+    numbersep=2pt,     % distance to the (here) left   
+    % Encodings
+	inputencoding=utf8,
+	extendedchars=true,
+	literate=
+		{ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+}
+\lstset{
+    style=texstyle,
+    morecomment=[s][\color{green}]{//}{//}
+    }
+
+\newcounter{displaySourceCode}[section]
+\newenvironment{displaySourceCode}[4][Beispiel]
+{
+    \refstepcounter{displaySourceCode}
+    \def\description{#1}%
+
+    
+    \textbf{\description~\thesection.\thedisplaySourceCode~(Anfang)}
+    \vspace{2pt}
+    \hrule%
+    \vspace{.2em}
+
+
+    % can be adjusted for multiple more/less columns. right now i need 3. might add an option for user-selection of the amount of columns later.
+    \begin{paracol}{3}
+    \raggedright%
+    \begin{framed}
+    \lstinputlisting[nolol, title={\textit{Original}}, captionpos=t]{#2.tex}
+    \end{framed}
+
+    \switchcolumn%
+
+    \raggedleft%
+    \begin{framed}
+    \lstinputlisting[nolol, title={\textit{Potentieller} Fehler}, captionpos=t]{#3.tex}
+    \end{framed}
+
+    \switchcolumn%
+
+    \raggedleft%
+    \begin{framed}
+        % Note: Putting "Ä" "Ö" or "Ü" in a Box prevents their dots from raising the one the character's currently in
+        % Otherwise: The Box around the Code-Sample will be raised above the Title/Caption
+    \lstinputlisting[nolol, title={\textit{Soll}-\raisebox{0em}[0em][0em]{Ü}bersetzung}, captionpos=t]{#4.tex}
+    \end{framed}
+
+    \switchcolumn%
+    \end{paracol}
+
+    \hrule%
+    \vspace{1em}
+}
+{
+    %\newgeometry{left=2cm, right=2cm}
+    %\newgeometry{left=.5\textwidth}
+    %\lstinputlisting[caption=aha]{#2.tex} 
+    \\\noindent
+    \raggedleft%
+    \hrule%
+    \vspace{.5em}
+    \textbf{\description~\thesection.\thedisplaySourceCode~(Ende)}\\[1em]\noindent
+}
+
+\begin{document}
+\section{Beispiel}
+
+% usage [text-instead-of-Beispiel]{original.tex}{wrong-translation.tex}{ideal-translation.tex}
+\begin{displaySourceCode}[Fehlerquelle]{knowledge}{misinformation}{wissen}
+    Text describing the code.
+\end{displaySourceCode}
+
+
+Text after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after code
+Text after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after code
+
+\newpage
+
+\begin{displaySourceCode}[Fehlerquelle]{knowledge}{misinformation}{wissen}
+    Dies ist eine beispielhafte Beschreibung.
+\end{displaySourceCode}
+Text after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after code
+Text after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after code
+
+\newpage
+
+\begin{displaySourceCode}[Problem]{knowledge}{misinformation}{wissen}
+    I am aware that a blindtext package exists.
+\end{displaySourceCode}
+Text after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after code
+Text after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after code
+
+\newpage
+
+\section{Beispiel 2}
+\begin{displaySourceCode}[Fehlerquelle]{knowledge}{misinformation}{wissen}
+    Text describing the code
+\end{displaySourceCode}
+Text after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after code
+Text after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after code
+
+\begin{displaySourceCode}[Problemo]{knowledge}{misinformation}{wissen}
+    Text describing the code
+\end{displaySourceCode}
+Text after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after code
+Text after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after codeText after code
+
+\newpage
+\begin{displaySourceCode}[Fehlerquelle]{knowledge}{misinformation}{wissen}
+    Text describing the code
+\end{displaySourceCode}
+Lorem Ipsum could also be used.
+
+\newpage
+\end{document}

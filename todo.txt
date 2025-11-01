@@ -42,10 +42,10 @@ Abschlussarbeit ITTI B.Sc.:
             - soll: Spezielle technische Probleme zeigen // wie nützlich diese sind, sei fraglich //
             - soll: Andere Probleme // Fehlerquellen im gegebenen Kontext, aber nicht direkt lösbar oder relevant für das Thema //
         - ist: Beispiele verdeutlichen
-        - soll: Beispiele typographisch herausstellen
-            - soll: Fehler noch auffälliger zeigen 
-            - soll: Visuell schnell erfassbar sein 
-            - soll: Überlesbarkeiten vermeiden
+        - ist: Beispiele typographisch herausstellen
+            - ist: Fehler noch auffälliger zeigen 
+            - ist: Visuell schnell erfassbar sein 
+            - evtl: Überlesbarkeiten vermeiden
     - soll: Auflistung von Fehlern
         - ist: Führt von häufig zu selten
         - evtl: Leicht nachvollziehbar
