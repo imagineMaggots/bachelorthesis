@@ -9,50 +9,56 @@ Reallocating 'name_of_file' (item size: 1) to 18 items.
 A level-1 auxiliary file: problems/list.aux
 Reallocating 'name_of_file' (item size: 1) to 25 items.
 A level-1 auxiliary file: technologies/summary.aux
+Reallocating 'name_of_file' (item size: 1) to 26 items.
+A level-1 auxiliary file: contribution/workflow.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: conclusion/ending.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: appendices/appendix.aux
 Database file #1: index.bib
-Warning--I didn't find a database entry for "math:galo"
-You've used 3 entries,
+Warning--I didn't find a database entry for "https://www.loremipsum.de/ueber_lorem_ipsum.html"
+Warning--I didn't find a database entry for "https://support.microsoft.com/de-de/topic/hinweise-zum-text-lorem-ipsum-dolor-sit-amet-in-der-hilfe-von-microsoft-word-bf3b0a9e-8f6b-c2ab-edd9-41c1f9aa2ea0"
+Warning--I didn't find a database entry for "https://info.arxiv.org/help/bulk_data.html"
+You've used 4 entries,
             2909 wiz_defined-function locations,
-            662 strings with 5602 characters,
-and the built_in function-call counts, 5976 in all, are:
-= -- 910
-> -- 72
+            672 strings with 6212 characters,
+and the built_in function-call counts, 7952 in all, are:
+= -- 1216
+> -- 96
 < -- 0
-+ -- 401
-- -- 21
-* -- 446
-:= -- 1338
-add.period$ -- 5
-call.type$ -- 3
-change.case$ -- 40
-chr.to.int$ -- 3
-cite$ -- 3
-duplicate$ -- 47
-empty$ -- 85
-format.name$ -- 27
-if$ -- 1042
++ -- 534
+- -- 28
+* -- 594
+:= -- 1777
+add.period$ -- 6
+call.type$ -- 4
+change.case$ -- 54
+chr.to.int$ -- 4
+cite$ -- 4
+duplicate$ -- 58
+empty$ -- 111
+format.name$ -- 36
+if$ -- 1389
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 5
-newline$ -- 14
-num.names$ -- 30
-pop$ -- 19
+newline$ -- 17
+num.names$ -- 40
+pop$ -- 27
 preamble$ -- 1
-purify$ -- 45
+purify$ -- 60
 quote$ -- 0
-skip$ -- 33
+skip$ -- 44
 stack$ -- 0
-substring$ -- 1221
-swap$ -- 5
-text.length$ -- 42
+substring$ -- 1630
+swap$ -- 6
+text.length$ -- 56
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 12
 warning$ -- 0
-while$ -- 63
+while$ -- 84
 width$ -- 0
-write$ -- 42
-(There was 1 warning)
+write$ -- 54
+(There were 3 warnings)

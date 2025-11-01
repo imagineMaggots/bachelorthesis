@@ -57,13 +57,23 @@ Die Darstellung des erläuterten Beispiels gilt musterhaft für folgende Beispie
 
 
 \subsubsection{Paragraphen, Überschriften und Anmerkungen}\phantomsection\label{subsubsec:problems:texts}% Alt.: Texte?
-Die einfachste Form in welcher ein Übersetzer zu übersetzende Zeichen- / Wortketten innerhalb eines Quelltextes vorfinden kann, sind reine Fließtexte. So wäre das einfachste Dokument, welches übersetzt werden könnte, ähnlich zu Beispiel~\ref{exem:problems:paragraph}
+Die einfachste Form in welcher ein Übersetzer zu übersetzende Zeichen- / Wortketten innerhalb eines Quelltextes vorfinden kann, sind reine Fließtexte. So wäre das einfachste Dokument, welches übersetzt werden könnte, 
+\addtocounter{displaySourceCode}{1}
+ähnlich zum Original im beispielhaften Problem~\hyperref[exem:problems:paragraph]{\thesection.\thedisplaySourceCode}. 
+\addtocounter{displaySourceCode}{-1}
+
+Es würden hierbei insbesondere dann Fehler entstehen, wenn Befehle selbst (wie \texttt{documentclass}) und deren Parameter (wie \texttt{document}) übersetzt werden. Idealerweise sehen sich nur die Strings eines Dokumentes übersetzt, welche am Ende auch (nach dem Kompilieren durch einen \TeX{}-Compiler) in diesem zu sehen sein sollten.
+
+\begin{displaySourceCode}[Problem]{../samples/minimal/document-o}{../samples/minimal/document-e}{../samples/minimal/document-c}
+    Alle Wörter in einem \TeX{}-Quellcode zu übersetzen produziert garantiert einen Fehler.\\
+    Nur bestimmte Inhalte dürfen übersetzt werden.
+\end{displaySourceCode}\label{exem:problems:paragraph}
+
+Nun ist, gegensätzlich zu dem, was einleitendes Beispiel~\hyperref[exem:problems:paragraph]{\thesection.\thedisplaySourceCode} vermuten ließe, nicht jeder Parameter eines Kommandos gänzlich von einer Übersetzung auszuschließen. Während sich mit den Elementen der Präambel später~\ref{} auseinander gesetzt wird, sind zunächst Elemente eines (beliebigen) Dokumenten-Körpers von Interesse. Das einleitende Beispiel begann bei einem einzelnen Wort, welches seinerseits bereits als kürzest möglicher Fließtext interpretiert werden könnte. Bekannt ist aus längeren Fließtexten, dass diese oftmals stilistische/strukturgebende Elemente beinhalten, damit es einem Leser (evtl.) leichter wird, konkrete Inhalte eines Textes wiederzufinden, indem dieser anhand der z.B.\ Überschrift eines Kapitels abwägen kann, ob die vom Leser gesuchten Inhalte in dem Abschnitt vorliegen werden, bevor dieser den Abschnitt liest. Als einfachstes stilistisches Mittel für diesen Zweck sind Überschriften oder Kapiteltitel denkbar. Jene sind (vorerst) an einer endlichen Menge an Befehlen erkennbar. Wichtig ist in solchen Fällen, dass --- selbstverständlich --- die eigentlichen Befehle nicht übersetzt werden, damit ihre Bedeutung innerhalb der Programmiersprache \TeX{} erhalten bleibt, aber ihre \enquote{Parameter} übersetzt werden. 
 
 
-
-
-Strukturlose und unformatierte Blocktexte erschweren einem Leser (Endnutzer) aber das Nachvollziehen der Inhalte und verhindern es, dass zum Beispiel Inhalte von Paragraphen mit deren Überschriften assoziiert werden könnten, um hierbei den Fokus von der exakten Wortwahl hin zur Bedeutung des Themas zu rücken.% Das gut?
-Als einfachstes stilistisches Mittel sind hier, wie angedeutet, Überschriften oder Kapiteltitel denkbar. Diese sind (vorerst) einfach an einer endlichen Menge an Befehlen erkennbar. Wichtig ist in solchen Fällen, dass --- selbstverständlich --- die eigentlichen Befehle nicht übersetzt werden, damit ihre Bedeutung innerhalb der Programmiersprache \TeX{} erhalten bleibt. Konkreter sollte zum Beispiel \verb|\chapter{Bracelets}| zu \verb|\chapter{Armbänder}| werden und nicht in \verb|\Kapitel{Armbänder}|.
+%%% In ein Beispiel wie oben zu überführen
+Konkreter sollte zum Beispiel \verb|\chapter{Bracelets}| zu \verb|\chapter{Armbänder}| werden und nicht in \verb|\Kapitel{Armbänder}|.
 % Umfasst auch: footnotes, marginnotes, ...
 Parallel hierzu sollten auch Untertitel (Captions), Randbemerkungen (Fußzeile, Randbereiche, als auch sonstige Orte) und der Titel des Dokumentes selbst übersetzt sein. Technisch sind solche Wort- bzw.\ Zeichenketten im Quelltext in der Form \verb|\command{Translatable content}| vorliegend, wobei Kommandos generell nicht übersetzt werden sollten.
 

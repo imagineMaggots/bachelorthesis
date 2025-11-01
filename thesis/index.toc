@@ -2,28 +2,37 @@
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
 \contentsline {section}{\numberline {2}Problemfälle}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Herangehensweise}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Elemente in einem Quelltext}{3}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Kommandos}{3}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Zusätzliche Parameter}{5}{subsubsection.2.2.2}%
-\contentsline {paragraph}{\numberline {2.2.2.1}Erkennung}{6}{paragraph.2.2.2.1}%
-\contentsline {subparagraph}{\numberline {2.2.2.1.1}Problem bei diesem Ansatz}{6}{subparagraph.2.2.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.2.3}Makros und Umgebungen}{6}{subsubsection.2.2.3}%
-\contentsline {paragraph}{\numberline {2.2.3.1}Umgebungen}{6}{paragraph.2.2.3.1}%
-\contentsline {subsection}{\numberline {2.3}Mehrere Quelltexte}{8}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}\TeX {} und Andere}{8}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Pakete und Klassen}{9}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Hilfsdateien}{9}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}Zitationen}{10}{subsubsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.4}Spezifisch}{10}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Sprachliche Hürden}{10}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Fehlinterpretierbare Verweise}{11}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}Layouting-Probleme}{11}{subsubsection.2.4.3}%
-\contentsline {section}{\numberline {3}Stand der Technik}{12}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Übersicht}{12}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Nicht auf \TeX {} spezialisierte Werkzeuge}{12}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Existierende Technologien und Ansätze}{13}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Nicht auf Sprachübersetzung konzentrierte Werkzeuge}{14}{subsubsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}Testverfahren}{14}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {2.1.1}Vorgehen}{3}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Darstellung der Beispiele}{5}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Elemente in einem Quelltext}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Paragraphen, Überschriften und Anmerkungen}{6}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Listen und Tabellen}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Mathematische Typsetzung}{7}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Umgebungen und Verweise}{7}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Verzeichnisse für bestimmte Elemente}{8}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Verbatim und Kommentare}{8}{subsubsection.2.2.6}%
+\contentsline {subsubsection}{\numberline {2.2.7}Die Präambel}{8}{subsubsection.2.2.7}%
+\contentsline {subsubsection}{\numberline {2.2.8}Eigene Makros}{8}{subsubsection.2.2.8}%
+\contentsline {subsubsection}{\numberline {2.2.9}Der Weg zu anderen Quelltexten (und Dateien)}{8}{subsubsection.2.2.9}%
+\contentsline {subsection}{\numberline {2.3}Probleme für mehrere Quelltexte}{10}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Triviale Fälle}{10}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Pakete und Klassen}{10}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Zitationsstil und Bibliotheken}{10}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Darstellung von Quellcode}{10}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Spezielle/Spezifische Probleme}{10}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Category Codes}{10}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Nutzer-eigene Klammern}{10}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Neudefinition bekannter Makros}{10}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}PDF-Kommentare}{10}{subsubsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.5}Andere Probleme}{10}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Provozierte Schwierigkeiten}{10}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Erkennung und Auswirkung von PDF}{10}{subsubsection.2.5.2}%
+\contentsline {section}{\numberline {3}Stand der Technik}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Übersicht}{11}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Nicht auf \TeX {} spezialisierte Werkzeuge}{11}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Existierende Technologien und Ansätze}{12}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Nicht auf Sprachübersetzung konzentrierte Werkzeuge}{13}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Testverfahren}{13}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Tests}{14}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Erzielte Werte}{14}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Auswertung}{14}{subsubsection.3.3.2}%
@@ -43,5 +52,5 @@
 \contentsline {subsection}{\numberline {5.2}Ausblick}{16}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Weiterführend}{16}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Eigenständigkeitserklärung}{17}{section.6}%
-\contentsline {section}{Literatur}{18}{section*.31}%
+\contentsline {section}{Literatur}{18}{section*.25}%
 \contentsline {section}{\numberline {A}Anhänge}{19}{section.chX.1}%
