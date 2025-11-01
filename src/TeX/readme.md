@@ -1,0 +1,1 @@
+"display.tex" contains an environment for displaying code in three columns. this code uses "lstlisting" and "parcol", as well as "framed".

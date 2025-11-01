@@ -1,0 +1,17 @@
+\documentclass{article}
+\newenvironment{displaySourceCode}[1][Basic]
+{
+    \begin{center}
+    #1
+}
+{
+    \end{center}
+}
+
+\begin{document}
+
+% "Basic" won't be printed and thus does not need to be translated
+\begin{displaySourceCode}[Knowledge]
+\end{displaySourceCode}
+
+\end{document}

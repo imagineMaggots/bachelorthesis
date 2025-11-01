@@ -28,21 +28,27 @@ Abschlussarbeit ITTI B.Sc.:
         - ist: Ausgangssituation beschreiben
             - ist: Nötige Strukturen erklären
                 - ist: Abstrakte (Logische) Strukturen schildern
-                - ist: Bennenung bekannter Strukturen // aus gewöhnlichen Dokumenten //
+                - ist: Bennenung bekannter Strukturen // aus gewöhnlichen Dokumenten, keine Listung, die später //
             - ist: Realisierung der Strukturen im Kontext // ggb. normalen Texten //
         - ist: Verallgemeinertes Problem schildern
+            - ist: Technische Perspektive beschreiben
+            - ist: Allgemeine Perspektive bewahren --- Erwartete Anforderungen der Endnutzer
+        - ist: Darstellung einzelner Beispiele erklären
 // Stand des letzten Arbeitens.
-        - soll: Darstellung einzelner Beispiele erklären
     - ist: Einzelne Beispiele darstellen
         - soll: Tabellarisch auflisten --- Soll/Ist
+            - soll: Häufige Fälle darlegen // Probleme, auf die ein Jederman stößt //
+            - soll: Seltenere Fälle präsentieren // welche allerdings durchaus nützlich sein könnten //
+            - soll: Spezielle technische Probleme zeigen // wie nützlich diese sind, sei fraglich //
+            - soll: Andere Probleme // Fehlerquellen im gegebenen Kontext, aber nicht direkt lösbar oder relevant für das Thema //
         - ist: Beispiele verdeutlichen
-        - soll: Beispiele typographisch herausstellen
-            - soll: Fehler noch auffälliger zeigen 
-            - soll: Visuell schnell erfassbar sein 
-            - soll: Überlesbarkeiten vermeiden
+        - ist: Beispiele typographisch herausstellen
+            - ist: Fehler noch auffälliger zeigen 
+            - ist: Visuell schnell erfassbar sein 
+            - evtl: Überlesbarkeiten vermeiden
     - soll: Auflistung von Fehlern
-        - soll: Führt von häufig zu selten
-        - soll: Leicht nachvollziehbar
+        - ist: Führt von häufig zu selten
+        - evtl: Leicht nachvollziehbar
     - soll: Potentielle Schwächen aufzeigen 
 - technologien (6 bis 7 Seiten) [1 bis 1,5 Wochen]
     - soll: Kandidaten betrachten (2 Seiten) [1 bis 2 Tage]
@@ -50,6 +56,7 @@ Abschlussarbeit ITTI B.Sc.:
         - evtl: Später genutzte Technologien vorstellen
     - ist: Testverfahren beschreiben (1 Seite) [1 bis 2 Stunden]
         - ist: Automatisches Verfahren mit vielen Daten
+        - soll: Mathematische/Algorithmische Grundlagen der Verfahren erklären
         - ist: Manuelles Verfahren mit gezielten Proben
         - soll: Besprechung der Methodik
 // Bis hier soll textuell bis: 04.11.2025 mit Termin am 05.11.2025 14:30 //
