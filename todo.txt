@@ -4,9 +4,9 @@
         - Unterpunkt des ToDo 
             - Sub-Unterpunkt 
         - Unterscheidung nach key:
-            - soll: "to do"
-            - ist:  "done"
-            - evtl: schwaches soll/ist --- "nice-to-haves"
+            - soll: "to do" (= soll gemacht werden)
+            - ist:  "done" (= ist erledigt worden)
+            - evtl: schwaches soll/ist --- "nice-to-haves" (= wird evtl. gemacht/gelöscht)
     - Notizen von zwei Slashes umklammert "// Notiz //"
         - Fehler/Fehlannahmen oder verbundene Erläuterung --- Kennzeichnung
         - Klammern () [] beschreiben Arbeitsumfang nach (Anzahl an Seiten) oder [Vermutung des restlichen Zeitumfangs]
